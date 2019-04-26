@@ -1,0 +1,193 @@
+/*Eliminamos los margenes y paddings que agrega el navegador por defecto*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.mibody {
+	background-image: url("./bg3.jpg");
+	background-color: #17202a;
+	text-decoration-color: #ffffff;
+}
+
+.adminbody{
+	background-image: url("./abg5.jpg");
+	background-color: #17202a;
+	color: #000000;
+	text-decoration-color: #000000;
+}
+
+/*Agregamos margenes inferiores a los parrafos*/
+p {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight:bold;
+ /* text-align: center;*/
+}
+
+.tcolor{
+	color: #000000;
+	background-color: #17202a;
+}
+.textcolorw{
+	 color: #ffffff;
+}
+.textcolorb{
+	 color: #000000;
+}
+
+.bgblanco{
+	background-color: #ffffff;
+}
+
+.titulo {
+	font-size: 80px;
+	line-height: 1.05;
+	font-weight: 600;
+	letter-spacing: -.015em;
+	font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.center{
+	text-align: center;
+}
+
+.pad{
+	padding-top: 100px;
+}
+
+ul {
+	/*text-align: justify;*/
+}
+
+table {
+	color: #ffffff;
+	font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	font-weight:bold;
+	text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+	color: #ffffff;
+	font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-weight:bold;
+	/*text-align: center;*/
+}
+
+a{
+	color:  #2e86c1 ;
+}
+
+.colorbg {
+	background: rgba(0,0,0,0.7);
+}
+
+header {
+  background: rgba(0,0,0,0.9);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+
+}
+
+nav {
+ /* float: left; /* Desplazamos el nav hacia la izquierda */
+
+  vertical-align: middle;
+
+}
+
+nav ul {
+  list-style: none;
+  overflow: hidden; /* Limpiamos errores de float */
+
+}
+ 
+nav ul li {
+  float: left;
+  font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight:bold;
+  text-align: center;
+}
+ 
+nav ul li a {
+  display: block; /* Convertimos los elementos a en elementos bloque para manipular el padding */
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/*evento hover para cambiar fondo cuando se pase el mouse sobre elemento*/
+nav ul li:hover {
+  background: #3ead47;
+}
+
+.contenido {
+  padding-top: 80px;
+}
+
+.wrapper {
+  width: 80%;
+  margin: auto;
+  overflow:hidden;
+}
+
+/* */
+
+/* Carrusel */
+.slider{
+	width: 95%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 400% ;
+
+	animation: cambio 20s infinite alternate linear;
+	animation-timing-function: ease-in-out;
+}
+
+.slider li {
+	width: 100%
+	list-style: none;
+}
+
+.slider img {
+	width: 100%;
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+
+	25% {margin-left: -100%}
+	45% {margin-left: -100%}
+
+	50% {margin-left: -200%}
+	70% {margin-left: -200%}
+
+	75% {margin-left: -300%}
+	100% {margin-left: -300%}
+}
+
+.tablaUser tr:nth-child(odd) {
+    background-color:#f2f2f2;
+}
+	
+.tablaUser tr:nth-child(even) {
+    background-color:#fbfbfb;
+}
+
+.tablaUser th {
+	color: #000000;
+}
+
+.mifooter {
+	background-color: #000000;
+}

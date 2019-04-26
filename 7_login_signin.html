@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login/Signin</title>
+	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
+	<!-- Bootstrap -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- /Bootstrap -->
+</head>
+<body class="mibody">
+	<!--  <body>-->
+	<!-- HEADER -->
+	<header class="container-fluid">
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg navbar-dark ">
+				<a class="navbar-brand" href="#">
+					<!-- logo -->
+					<img src=".\img\logo.png" class="img-fluid" alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela
+				</a>
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="navbar-collapse collapse" id="navbarColor01" style="">
+					<ul class="navbar-nav mr-auto">
+						<!-- Opciones -->
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Inicio<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="3_nosotros.html">Sobre Nosotros</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"href="4_productos.html">Productos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="5_cursos.html">Cursos</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Contacto</a>
+						</li>
+					</ul>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<!-- Barra Busqueda  -->
+					<form class="form-inline">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+						<button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button>
+					</form>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!-- MAIN -->
+	<div class="container pad">
+		<!-- RENGLON -->
+		<!-- Titulo Iniciar Sesion-->
+	 	<div class="row justify-content-center">
+			<div class="col-xs-12 ">
+				<h1 class="titulo text-center">Iniciar Sesi&oacute;n</h1>
+			</div>
+		</div>
+		<br>
+		<!-- Formulario Iniciar Sesion -->
+		<form action="#" id="formlogin" name="formLogin" method="post" >
+			<div class="row justify-content-center">
+				<div class="form-group col-xs-12 col-4">
+					<label for="email" class="textcolorw">Email</label>
+					<input type="email" class="form-control textcolorw" id="email" name="email"	aria-describedby="emailHelp" placeholder="Introduce tu email" onblur=validarEmail();>
+					<small id="emailHelp" class="textcolorw colorbg form-text text-muted ">No compartiremos su cuenta de correo con nadie más.</small>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="form-group justify-content-center col-xs-12 col-4">
+					<label for="pass" class="textcolorw">Contrase&ntilde;a</label>
+					<input type="password" class="form-control" id="pass" name="pass" placeholder="Password" onblur=validarPass();>
+				</div>
+			</div>
+			<!-- <div class="form-group form-check justify-content-center">
+				<input type="checkbox" class="form-check-input" id="exampleCheck1">
+				<label class="form-check-label" for="exampleCheck1">Check me out</label>
+			</div> -->
+			<div class="row justify-content-center">
+				<!-- Boton para enviar datos -->
+				<button id="login" type="submit" class="btn btn-primary" onclick=validarLogin();>Iniciar Sesi&oacute;n</button>
+			</div>
+		</form>
+		<br>
+		<br>
+		<br>
+		<!-- RENGLON -->
+		<!-- BANNER -->
+		<div class="row justify-content-center">
+			<div class="col-xs-12 ">
+				<img src=".\img\jard1.jpg" class="img-fluid" alt="Responsive image" width="1300" height="537">	
+			</div>
+		</div>
+		<hr>
+		<div class="row justify-content-center">
+			<div class="col-xs-12">
+				<h1 class="text-center">¿No tienes una cuenta?</h1>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-xs-12">
+				<h4 class="text-center">Regístrate gratis:</h4>
+			</div>
+		</div>
+		<div class="row justify-content-center">
+			<div class="col-xs-12">
+				<a href="8_signin.html"><img src=".\img\reg.png" class="img-fluid" alt="Responsive image" width="200" height="50"></a>
+			</div>			
+		</div>
+		<hr>
+	</div>		
+	<br>
+	<hr>
+	<!-- FOOTER -->
+	<footer class="mifooter">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xs-12">
+					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class=" col-xs-12 ">
+					<a href="www.facebook.com"><img src=".\img\fb.png" class="img-fluid" alt="Responsive image" width="50" height="50"></a>
+					<a href="www.instagram.com"><img src=".\img\ins.png" class="img-fluid" alt="Responsive image" width="50" height="50"></a>
+					<a href="www.twitter.com"><img src=".\img\tw.png" class="img-fluid" alt="Responsive image" width="50" height="50"></a>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid ">
+			<div class="row justify-content-center">
+				<div class="col-xs-12">
+					<p class="center">
+						© 2019. Todos los derechos reservados. Aviso de privacidad. Políticas de devolución. <br>
+						El uso de este sitio está sujeto a ciertos términos de uso que requieren un acuerdo legal entre Usted y El Jar&iacute;n de la Abuela. Este aplicaci&oacute;n web es con fines acad&eacute;micos.
+					</p>
+				</div>
+			</div>
+		</div>	
+	</footer>
+	<!-- JavaScript -->
+	<script type="text/javascript" src=".\JS\validar.js"></script>
+
+	<!-- Scripts Bootstrap JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

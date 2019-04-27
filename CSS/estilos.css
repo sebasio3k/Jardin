@@ -5,8 +5,11 @@
 }
 
 .mibody {
-	background-image: url("./bg3.jpg");
-	background-color: #17202a;
+	background-image: url("./w.jpg");
+	background-attachment: fixed;
+	background-size: cover;
+	/*background-color: #17202a;*/
+	background-color: #ffffff;
 	text-decoration-color: #ffffff;
 }
 
@@ -17,10 +20,18 @@
 	text-decoration-color: #000000;
 }
 
+/*para la barra de busqueda-----------------------------------------------------------*/
+
+
+
+
+/*--------------------------------------------------------------------------------*/
+
+
 /*Agregamos margenes inferiores a los parrafos*/
 p {
   margin-bottom: 20px;
-  color: #ffffff;
+  color: #767676;
   font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight:bold;
  /* text-align: center;*/
@@ -30,8 +41,11 @@ p {
 	color: #000000;
 	background-color: #17202a;
 }
-.textcolorw{
+.w{
 	 color: #ffffff;
+}
+.b{
+	 color: #000000;
 }
 .textcolorb{
 	 color: #000000;
@@ -57,6 +71,11 @@ p {
 	padding-top: 100px;
 }
 
+.pad2{
+	padding-top: 85px;
+
+}
+
 ul {
 	/*text-align: justify;*/
 }
@@ -70,7 +89,14 @@ table {
 }
 
 h1, h2, h3, h4, h5, h6{
-	color: #ffffff;
+	color: #767676;
+	font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-weight:bold;
+	/*text-align: center;*/
+}
+
+.h1_2{
+	color: #2DCC02;
 	font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
 	font-weight:bold;
 	/*text-align: center;*/
@@ -85,7 +111,7 @@ a{
 }
 
 header {
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.6);
   width: 100%;
   position: fixed;
   z-index: 100;
@@ -191,3 +217,118 @@ nav ul li:hover {
 .mifooter {
 	background-color: #000000;
 }
+
+.form-inline input {
+        display: inline-block;
+        width: 100px;
+}
+
+
+/*SCENE--------------------------------------------------------------------*/
+
+/**/
+
+/*PARALLAX*/
+
+.content {
+  font-size: 1.875rem;
+  color: #262626;
+  background-size: 100% auto;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.right {
+  padding: 1.618em 6.472em 3.236em 50%;
+  background-position: 0 50%;
+}
+
+.illustration_01 {
+  /*background-color: #FFFFFF;*/
+  background-image: url("../img/b2.jpg");
+}
+
+.smallscreen {
+  display: none;
+}
+
+
+@media (max-width: 106.25rem) {
+  .wrapper,
+  .separator {
+    font-size: 1.6875rem;
+  }
+}
+@media (max-width: 93.75rem) {
+  .content,
+  .separator {
+    font-size: 1.5rem;
+  }
+  .right {
+    padding: 1.618em 4.854em 1.618em 50%;
+  }
+  .left {
+    padding: 1.618em 50% 1.618em 4.854em;
+  }
+}
+@media (max-width: 81.25rem) {
+  .content,
+  .separator {
+    font-size: 1.3125rem;
+  }
+  .right {
+    padding: 1.618em 3.236em 1.618em 45%;
+    background-size: 44% auto;
+    background-position: 0 55%;
+  }
+  .left {
+    padding: 1.618em 45% 1.618em 3.236em;
+    background-size: 44% auto;
+    background-position: 100% 55%;
+  }
+}
+@media (max-width: 68.75rem) {
+  .content,
+  .separator {
+    font-size: 1.125rem;
+  }
+  .right {
+    padding: 1.618em 3.236em 1.618em 40%;
+    background-size: 39% auto;
+    background-position: 0 60%;
+  }
+  .left {
+    padding: 1.618em 40% 1.618em 3.236em;
+    background-size: 39% auto;
+    background-position: 100% 60%;
+  }
+}
+@media (max-width: 50rem) {
+  .smallscreen {
+    display: block;
+  }
+  .right {
+    padding: 1.618em 3.236em;
+    background-image: none;
+  }
+  .left {
+    padding: 1.618em 3.236em;
+    background-image: none;
+  }
+}
+@media (max-width: 31.25rem) {
+  .right {
+    padding: 1.618em 1.618em;
+  }
+  .left {
+    padding: 1.618em 1.618em;
+  }
+}
+@media (max-width: 12rem) {
+  html {
+    min-width: 12rem;
+  }
+}
+
+
+/**/

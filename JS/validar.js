@@ -1,3 +1,4 @@
+
 //
 //Variables
 //login
@@ -248,3 +249,5 @@
   var onloadCallback = function() {
     alert("grecaptcha is ready!");
   };
+
+// Barra de busqueda ----------------------------------------------------------------

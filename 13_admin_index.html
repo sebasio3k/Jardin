@@ -120,21 +120,79 @@
 		<br>
 		<br>
 		<br>
+		<!-- Menu de navegacion -->
 		<div class="row">
 			<div class="col-3">
-				<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-					<a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="13_admin_index.html" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio - Opciones</a>
-					<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#14_a_usuarios.html" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuarios</a>
-					<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="19_a_cursos.html" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cursos</a>
-					<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="24_a_productos.html" role="tab" aria-controls="v-pills-settings" aria-selected="false">Productos</a>
+				<div class="nav flex-column nav-pills" id="v-tabindex" role="tablist" aria-orientation="vertical">
+					<a class="nav-link active" id="home" data-toggle="pill" href="#v-tabhome" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio - Opciones</a>
+					<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-tabusuarios" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuarios</a>
+					<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-tabcursos" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cursos</a>
+					<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-tabproductos" role="tab" aria-controls="v-pills-settings" aria-selected="false">Productos</a>
 				</div>
 			</div>
+			<!-- Contenido de los tabs -->
 			<div class="col-9">
 				<div class="tab-content" id="v-pills-tabContent">
-					<div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">...</div>
-					<div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-					<div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">..</div>
-					<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+					<!-- MENU INICIO -->
+					<div class="tab-pane fade show active" id="v-tabhome" role="tabpanel" aria-labelledby="v-pills-home-tab">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-sm-12 col-md-auto justify-content-center">
+									<p>De clic en una opcion</p>
+								</div>
+							</div>
+							<div class="row justify-content-center">
+								<div class="col-sm-12 col-md-2">
+									<!-- vacio -->
+								</div>
+								<div class="col-sm-12 col-md-3">
+									<a class="btn btn-primary textcolorb" href="14_a_usuarios.html" role="button">Usuarios</a>
+								</div>
+								<div class="col-sm-12 col-md-3">
+									<a class="btn btn-primary textcolorb" href="19_a_cursos.html" role="button">Cursos</a>
+								</div>
+								<div class="col-sm-12 col-md-3">
+									<a class="btn btn-primary textcolorb" href="24_a_productos.html" role="button">Productos</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<!-- MENU USUARIOS -->
+					<div class="tab-pane fade" id="v-tabusuarios" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+						<!-- RENGLON -->
+						<div class="row justify-content-center">
+								<div class="col-sm-12 col-md-auto justify-content-center">
+									<p>De clic en una opcion</p>
+								</div>
+							</div>
+						<div class="row justify-content-center">
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="15_u_insertar.html" role="button">Agregar</a>
+							</div>
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="16_u_eliminar.html" role="button">Eliminar</a>
+							</div>
+						</div>
+						<br>
+						<!-- RENGLON -->
+						<div class="row justify-content-center">
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="17_u_actualizar.html" role="button">Actualizar</a>
+							</div>
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="18_u_consultar.html" role="button">Consultar</a>
+							</div>
+						</div>
+					</div>
+					<!-- MENU CURSOS -->
+					<div class="tab-pane fade" id="v-tabcursos" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+						estas
+					</div>
+					<!-- MENU PRODUCTOS -->
+					<div class="tab-pane fade" id="v-tabproductos" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+						...
+					</div>
 				</div>
 			</div>
 		</div>
@@ -143,6 +201,14 @@
 	<br>
 	<br>
 	<hr>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+  <div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">hol</div>
+  <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab">como</div>
+  <div class="tab-pane" id="settings" role="tabpanel" aria-labelledby="settings-tab">estas</div>
+</div>
 
 	</div>
 

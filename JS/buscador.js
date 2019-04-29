@@ -21,6 +21,9 @@ $("#inputBusqueda").keyup(function(){
 	}
 })
 
+
+
+// Funcion para controlar el foco de la barra de buscador
 function foco(){
 	$("header").css({
 			"height": "auto",

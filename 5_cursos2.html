@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Ordenes</title>
+	<title>Cursos</title>
 	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
+	<!-- JavaScript -->
+	<script type="text/javascript" src=".\JS\funciones.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
@@ -47,7 +49,7 @@
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
-					<form class="form-inline`justify-content-center" id="barra_bus" name="barra_bus">
+					<form class="form-inline`justify-content-center">
 						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" onBlur=foco();>
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
@@ -115,66 +117,118 @@
 			</div>
 		</div>
 	</header>
-	<!-- CUERPO -->
-	<div class="container pad">
+	<!-- MAIN -->
+	<div class="container">
 		<!-- RENGLON -->
-	 	<div class="row justify-content-center">
-			<div class="col-xs-12 align-self-center">
-				<!-- Titulo Carrito-->
-				<h1 class="titulo text-center">Mis Ordenes</h1>
-			</div>
-		</div>
-		<br>
-		<table class="table bgblanco textcolorb">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Num. Orden</th>
-					<th scope="col">Ver Reporte</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<!--  -->
-						1
-					</td>
-					<td><a href="10_pago.html"> Ver Reporte </a></td>
-				</tr>
-				<tr>
-					<td>
-						<!--  -->
-						2
-					</td>
-					<td><a href="10_pago.html"> Ver Reporte </a></td>
-				</tr>
-			</tbody>
-		</table>
-		<br>
-		<br>
-		<div class="row justify-content-center">
-			<!-- RENGLON -->
-			<form action="#" method="post" >
-				<div class="form-group col-xs-12 col-4 align-self-center text-center">
-					<button type="submit" class="btn btn-primary" >Seguir Comprando</button>
-				</div>
-			</form>
-		</div>
-		<br>
-		<br>
-		<hr>
 		<div class="row justify-content-center">
 			<div class="col-xs-12">
-				<p class="text-center">
-					Ud. podr&aacute; recoger sus productos en la dirección <br>
-					BLVD. GUADALUPE VICTORIA 219, LAS ENCINAS,DURANGO,<br>
-					C.P.34039,DGO (618)128-8253. En la fecha del reporte <br>
-					correspondiente
-				</p>
+				<h1 class="titulo pad text-center">Nuestros Cursos para ti</h1>
 			</div>
 		</div>
-
+		<br>
+		<div class="row justify-content-center">
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\c1.jpg" width="500" height="250" class="card-img-top" alt="Curso1">
+					<div class="card-body">
+						<h5 class="card-title tcolor">Cuidado de cesped</h5>
+					   	<p class="card-text tcolor">Aprende cada cu&aacute;ndo hay que regar el cesped para tener uno ¡espectacular!</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
+					</div>
+				</div>	
+			</div>
+			<!-- COLUMNA --> 
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\c2.jpg" width="200" height="250" class="card-img-top" alt="Curso2">
+					<div class="card-body ">
+						<h5 class="card-title tcolor">Hacer un jard&iacute;n interior</h5>
+					   	<p class="card-text tcolor">Conoce los secretos para tener un jard&iacute;n interior. Ideal para hogares pequeños.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
+					</div>
+				</div>	
+			</div>
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\c3.jpg" width="200" height="250" class="card-img-top" alt="Curso3">
+					<div class="card-body">
+						<h5 class="card-title tcolor">Elige tus muebles del jard&iacute;n</h5>
+					   	<p class="card-text tcolor">¿Tienes buen gusto por los muebles? Aprende a elegir los de tu jard&iacute;n.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<br>
+		<br>
+		<!-- RENGLON -->
+		<div class="row justify-content-center">
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\c4.jpg" width="200" height="250" class="card-img-top" alt="Curso4">
+					<div class="card-body">
+						<h5 class="card-title tcolor">Cuidado de plantas en macetas</h5>
+					   	<p class="card-text tcolor tcolor">Que no se te sequen tus plantas, Aprende primeros auxilios para ellas.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
+					</div>
+				</div>
+			</div>
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\c5.jpg" width="200" height="250" class="card-img-top" alt="Curso5">
+					<div class="card-body">
+						<h5 class="card-title tcolor">Renueva tu jard&iacute;n</h5>
+					   	<p class="card-text tcolor">¿Cansado de la misma vista que te ofrece tu jard&iacute;n? Inscribete para aprender algo nuevo.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
+					</div>
+				</div>	
+			</div>
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\c6.jpg" width="600" height="250" class="card-img-top" alt="Curso6">
+					<div class="card-body">
+						<h5 class="card-title tcolor">¡Manos a la obra jardinero!</h5>
+					   	<p class="card-text tcolor">Aprende a utilizar correctamente herramientas de jardinería, y pon en pr&aacute;ctica tus conocimientos.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
+					</div>
+				</div>	
+			</div>
+		</div>
 		<hr>
+
+		<div class="row justify-content-center">
+			<nav aria-label="...">
+				<ul class="pagination">
+					<li class="page-item disabled">
+						<span class="page-link">Previous</span>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item active" aria-current="page">
+						<span class="page-link">
+							2
+							<span class="sr-only">(current)</span>
+						</span>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#">Next</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</div>
+
 	<!-- FOOTER -->
 	<footer class="mifooter">
 		<div class="container">
@@ -240,7 +294,5 @@
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
 	<script src="./JS/buscador.js"></script>
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\validar.js"></script>
 </body>
 </html>

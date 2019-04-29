@@ -125,7 +125,7 @@ nav {
 
 }
 
-nav ul {
+nav .ul2 {
   list-style: none;
   overflow: hidden; /* Limpiamos errores de float */
 
@@ -133,6 +133,14 @@ nav ul {
  
 nav ul li {
   float: left;
+  font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight:bold;
+  text-align: center;
+}
+
+.ul2 {
+  /*float: left;*/
   font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 14px;
   font-weight:bold;

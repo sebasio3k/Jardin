@@ -56,7 +56,7 @@
 						<tr>
 							<td><a href="13_admin_index.html">Inicio</a></td>
 						</tr>
-<!-- 						<tr>
+						<tr>
 							<td><a href="14_a_usuarios.html">Usuarios</a></td></a>
 						</tr>
 						<tr>
@@ -64,7 +64,7 @@
 						</tr>
 						<tr>
 							<td><a href="24_a_productos.html">Productos</a></td>
-						</tr> -->
+						</tr>
 						<tr>
 							<td><a href="15_u_insertar.html">Insertar Usuario</a></td>
 						</tr>
@@ -106,141 +106,179 @@
 			</div>
 		</div>
 	</header>
+		<br>
+	<!-- MAIN -->
+	<div class="container pad">
+		<!-- RENGLON -->
+	 	<div class="row justify-content-center">
+			<div class="col-xs-12 align-self-center">
+				<!-- Titulo Admin-->
+				<h1 class="titulo text-center b">CONSULTAR CURSO</h1>
+			</div>
+		</div>
+		<hr>
+		<br>
+		<br>
+		<br>
 
-<body background=".\img\wp2.png" margin= padding=> 
-<!--  <body>-->
-	<center>
-		<!-- BARRA MENU -->
-		<table bgcolor="#ffffff" cellpadding="0"> 
-			<tr> 
-				<td> <!-- logo -->
-					<img src=".\img\logo.png" width="120" height="120">&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-				</td>
-				<!-- Barra Busqueda  -->
-				<form action="#" method="post"> 
-					<td>
-						<div>
-							<input type="search" placeholder="search">
-							                     
+		<!-- Menu de navegacion -->
+		<div class="row">
+			<div class="col-3">
+				<div class="nav flex-column nav-pills" id="v-tabindex" role="tablist" aria-orientation="vertical">
+					<a class="nav-link " id="home" data-toggle="pill" href="#v-tabhome" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio - Opciones</a>
+					<a class="nav-link " id="v-pills-profile-tab" data-toggle="pill" href="#v-tabusuarios" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuarios</a>
+					<a class="nav-link active" id="v-pills-messages-tab" data-toggle="pill" href="#v-tabcursos" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cursos</a>
+					<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-tabproductos" role="tab" aria-controls="v-pills-settings" aria-selected="false">Productos</a>
+				</div>
+			</div>
+			<!-- Contenido de los tabs -->
+			<div class="col-9">
+				<div class="tab-content" id="v-pills-tabContent">
+					<!-- MENU INICIO -->
+					<div class="tab-pane fade " id="v-tabhome" role="tabpanel" aria-labelledby="v-pills-home-tab">
+
+							<div class="row justify-content-center">
+								<div class="col-xs-12 col-4 align-self-center text-center">
+									<P>- I N I C I O-</P>
+									<p>De clic en una opcion</p>
+								</div>
+							</div>
+							<div class="row justify-content-center text-center">
+								<div class="col-sm-12 col-md-3 align-self-center">
+									<a class="btn btn-primary textcolorb" href="14_a_usuarios.html" role="button">Usuarios</a>
+								</div>
+								<div class="col-sm-12 col-md-3 align-self-center">
+									<a class="btn btn-primary textcolorb" href="19_a_cursos.html" role="button">Cursos</a>
+								</div>
+								<div class="col-sm-12 col-md-3 align-self-center">
+									<a class="btn btn-primary textcolorb" href="24_a_productos.html" role="button">Productos</a>
+								</div>
+							</div>
+
+					</div>
+					<!-- MENU USUARIOS -->
+					<div class="tab-pane fade " id="v-tabusuarios" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+						<!-- RENGLON -->
+						<div class="row justify-content-center">
+								<div class="col-xs-12 col-4 align-self-center text-center">
+									<p>- U S U A R I O S -</p>
+									<p>De clic en una opcion</p>
+								</div>
+							</div>
+						<div class="row justify-content-center text-center">
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="15_u_insertar.html" role="button">Agregar</a>
+							</div>
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="16_u_eliminar.html" role="button">Eliminar</a>
+							</div>
 						</div>
-					</td>
-					<td>
-						<input type="submit" value="&#x1F50E;"/> &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;
-				</td>
-					</td>
-				</form>
-				<td> <!-- Cerrar Sesion-->
-					<a href="login_signin.html">Cerrar Sesi&oacute;n</a>
-				</td>
-			</tr>
-		</table>
+						<br>
+						<!-- RENGLON -->
+						<div class="row justify-content-center">
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="17_u_actualizar.html" role="button">Actualizar</a>
+							</div>
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="18_u_consultar.html" role="button">Consultar</a>
+							</div>
+						</div>
+					</div>
+					<!-- MENU CURSOS -->
+					<div class="tab-pane fade show active" id="v-tabcursos" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+						<!-- TITULO -->
+						<div class="row justify-content-center">
+							<div class="col-sm-12 sm-col-4 col-4align-self-center text-center">
+								<p>- C U R S O S - C O N S U L T A R -</p>
+							</div>
+						</div>
+						<!-- CONTENIDO -->
+						<br>
+						<!-- Formulario Registro-->
+						<form action="#" method="post" >
+							<!-- RENGLON -->
+							<div class="row form-group justify-content-center ">
+								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para Consultar:</label>
+								<!-- <div class=" col-xs-12 col-4"> -->
+								<div class="col-sm-4 ">
+									<input type="text" class="form-control" id="nombre" placeholder="id" required=”required”>
+								</div>
+							</div>
+							<div class="row justify-content-center">
+								<div class="form-group col-xs-12 col-4 align-self-center text-center">
+									<button type="submit" class="btn btn-primary" >Buscar Registro</button>
+								</div>
+							</div>
+						</form>
+						<br>
+						<br>
+						<!-- TABLA  -->
+						<!-- TABLA  -->
+						<table class="table bgblanco textcolorb table-responsive">
+							<CAPTION>CURSOS EN SISTEMA</CAPTION>
+							<thead class="thead-dark">
+								<tr>
+									<th scope="col">ID</th>
+									<th scope="col">Nombre</th>
+									<th scope="col">Descripcion</th>
+									<th scope="col">Precio</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<br>
+						<br>
+						<br>
+						<!-- BOTON PARA REGRESAR A OPCIONES -->
+						<div class="row justify-content-center text-center">
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="19_a_cursos.html" role="button">Regresar a Opciones Curso</a>
+							</div>
+						</div>
+					</div>
+					<!-- MENU PRODUCTOS -->
+					<div class="tab-pane fade" id="v-tabproductos" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+						<!-- RENGLON -->
+						<div class="row justify-content-center">
+								<div class="col-xs-12 col-4 align-self-center text-center">
+									<P>- P R O D U C T O S -</P>
+									<p>De clic en una opcion</p>
+								</div>
+							</div>
+						<div class="row justify-content-center text-center">
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="25_p_insertar.html" role="button">Agregar</a>
+							</div>
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="26_p_eliminar.html" role="button">Eliminar</a>
+							</div>
+						</div>
+						<br>
+						<!-- RENGLON -->
+						<div class="row justify-content-center">
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="27_p_actualizar.html" role="button">Actualizar</a>
+							</div>
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="28_p_consultar.html" role="button">Consultar</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		<br>
 		<br>
 		<hr>
-		<!-- CUERPO -->
-		<h1>CONSULTAR REGISTRO</h1>
-		<br>
-		<br>
-		<table border="2">
-			<tr>
-				<th>Id</th>
-				<th>Nombre</th>
-				<th>Descripci&oacute;n</th>
-				<th>Precio</th>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</table>
-		<br>
-		<br>
-		<table>
-			<form action="" method="post">
-				<br>
-				<ul>
-					<tr>
-						<td>
-							<a href="admin_index.html">Opciones</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</td>
-						<td>
-							Escribe ID para Consultar:
-						</td>
-						<td>
-							<input type="text" name="id"><br>
-							<input type="submit" name="buscar" value="Buscar Registro" disabled>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<li><a href="a_usuarios.html">Usuarios</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</td>
-						<td>
-							
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<li><a href="a_cursos.html">Cursos</a></li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</td>
-						<td>
-							
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<li><a href="a_productos.html">Productos</a></li>
-						</td>
-						<td>
-							
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</td>
-						<td>
-							
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</td>
-						<td>
-						
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-				</ul>
-			</form>
-		</table>
-		
-	</center>
+	</div>
+
 	<footer class="mifooter">
 		<div class="container-fluid ">
 			<div class="row justify-content-center">

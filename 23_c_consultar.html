@@ -2,14 +2,110 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>C - Consultar</title>
-	/* Bootstrap */
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	/* /Bootstrap */
+	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
+	<!-- Bootstrap -->
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- /Bootstrap -->
+	<!-- hoja de estilos2 para barra busqueda -->
+	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
+
+<body class="adminbody"> 
+<!--  <body>-->
+	<!-- HEADER -->
+	<header class="container-fluid">
+		<div class="container-fluid">
+			<nav class="navbar navbar-expand-lg navbar-dark ">
+				<a class="navbar-brand " href="13_admin_index.html">
+					<!-- logo -->
+					<img src=".\img\logo.png" class="img-fluid " alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela - A D M I N I S T R A D O R - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				</a>
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="navbar-collapse collapse" id="navbarColor01" style="">
+					<!-- Barra Busqueda  -->
+					<form class="form-inline justify-content-center" id="barra_bus" name="barra_bus">
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" onBlur=foco();>
+						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
+					</form>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<ul class="navbar-nav mr-auto">
+						<li>
+							<!-- Cerrar Sesion -->
+							<a class="nav-link" href="7_login_signin.html">Cerrar Sesi&oacute;n</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<!-- CONTENEDOR PARA MOSTRAR RESULTADO DE BUSQUEDA -->
+		<div class="container">
+			<div class="search" id="search">
+				<table class="search-table" id="searchTable" name="searchTable">
+					<thead>
+						<tr>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><a href="13_admin_index.html">Inicio</a></td>
+						</tr>
+<!-- 						<tr>
+							<td><a href="14_a_usuarios.html">Usuarios</a></td></a>
+						</tr>
+						<tr>
+							<td><a href="19_a_cursos.html">Cursos</a></td>
+						</tr>
+						<tr>
+							<td><a href="24_a_productos.html">Productos</a></td>
+						</tr> -->
+						<tr>
+							<td><a href="15_u_insertar.html">Insertar Usuario</a></td>
+						</tr>
+						<tr>
+							<td><a href="16_u_eliminar.html">Eliminar Usuario</a></td>
+						</tr>
+						<tr>
+							<td><a href="18_u_consultar.html">Consultar Usuario</a></td>
+						</tr>
+						<tr>
+							<td><a href="17_u_actualizar.html">Actualizar Usuario</a></td>
+						</tr>
+						<tr>
+							<td><a href="20_c_insertar.html">Insertar Curso</a></td>
+						</tr>
+						<tr>
+							<td><a href="21_c_eliminar.html">Eliminar Curso</a></td>
+						</tr>
+						<tr>
+							<td><a href="23_c_consultar.html">Consultar Curso</a></td>
+						</tr>
+						<tr>
+							<td><a href="22_c_actualizar.html">Actualizar Curso</a></td>
+						</tr>
+						<tr>
+							<td><a href="25_p_insertar.html">Insertar Producto</a></td>
+						</tr>
+						<tr>
+							<td><a href="26_p_eliminar.html">Eliminar Producto</a></td>
+						</tr>
+						<tr>
+							<td><a href="28_p_consultar.html">Consultar Producto</a></td>
+						</tr>
+						<tr>
+							<td><a href="27_p_actualizar.html">Actualizar Producto</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</header>
 
 <body background=".\img\wp2.png" margin= padding=> 
 <!--  <body>-->
@@ -145,10 +241,26 @@
 		</table>
 		
 	</center>
-	/* Scripts Bootstrap JQuery */
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	/* /Scripts Bootstrap JQuery */	
+	<footer class="mifooter">
+		<div class="container-fluid ">
+			<div class="row justify-content-center">
+				<div class="col-xs-12">
+					<p class="center">
+						© 2019. Todos los derechos reservados. Aviso de privacidad. Políticas de devolución. <br>
+						El uso de este sitio está sujeto a ciertos términos de uso que requieren un acuerdo legal entre Usted y El Jar&iacute;n de la Abuela. Esta aplicaci&oacute;n web es con fines acad&eacute;micos.
+					</p>
+				</div>
+			</div>
+		</div>	
+	</footer>
+	<!-- Scripts Bootstrap JQuery -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src=".\JS\jquery.js"></script>
+	<script src=".\JS\jquery.dataTables.min.js"></script>
+	<script src="./JS/buscador.js"></script>
+	<!-- JavaScript -->
+	<script type="text/javascript" src=".\JS\validar.js"></script>
 </body>
 </html>

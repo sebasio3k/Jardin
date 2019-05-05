@@ -10,6 +10,8 @@
 	<!-- /Bootstrap -->
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
+	<!-- ICONO EN LA PESTAÑA -->
+	<link rel="shortcur icon" href=".\img\icon.png">
 
 </head>	
 <body class="mibody">
@@ -28,8 +30,8 @@
 				<div class="navbar-collapse collapse" id="navbarColor01" style="">
 					<ul class="navbar-nav mr-auto">
 						<!-- Opciones -->
-						<li class="nav-item active">
-							<a class="nav-link" href="1_index.html">Inicio<span class="sr-only">(current)</span></a>
+						<li class="nav-item ">
+							<a class="nav-link" href="1_index.html">Inicio</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="3_nosotros.html">Sobre Nosotros</a>
@@ -105,28 +107,28 @@
 		<br>
 		<!-- Formulario Registro-->
 		<form id="formRegistro" method="post" action=".\php\contact.php" role="form">
-			<!-- RENGLON -->
+			<!-- NOMBRE -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="exampleInputEmail1" class="textcolorw">Nombre</label>
 					<input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required=”required” onblur=validarNombre();>
 				</div>
 			</div>
-			<!-- RENGLON -->
+			<!-- AP -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="exampleInputEmail1" class="textcolorw">Apellido paterno</label>
 					<input type="text" class="form-control" id="ap" placeholder="Tu Apellido Paterno" required=”required” onblur=validarAp>
 				</div>
 			</div>
-			<!-- RENGLON -->
+			<!-- AM -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="exampleInputEmail1" class="textcolorw">Apellido materno</label>
 					<input type="text" class="form-control" id="am" placeholder="Tu Apellido Materno" required=”required” onblur=validarAm>
 				</div>
 			</div>
-			<!-- RENGLON -->
+			<!-- SEXO -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
 					<label for="exampleInputEmail1" class="textcolorw text-center">Sexo</label>
@@ -143,32 +145,32 @@
 					</div>
 				</div>
 			</div>
-			<!-- RENGLON -->
+			<!-- TELEFONO -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="exampleInputEmail1" class="textcolorw">Tel&eacute;fono</label>
-					<input id="phone" name="phone" type="text" placeholder="Phone" class="form-control" onblur=validarTel();>
+					<input id="phone" name="phone" type="text" placeholder="888 888 88 88" class="form-control" onblur=validarTel();>
 				</div>
 			</div>
-			<!-- RENGLON -->
+			<!-- EMAIL -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="exampleInputEmail1" class="textcolorw">Email</label>
 					<input type="email" class="form-control textcolorw" id="email" aria-describedby="emailHelp" placeholder="Enter email" onblur=validarEmail();>
-					<small id="emailHelp" class="textcolorw colorbg form-text text-muted ">*Tu correo electrónico será tu usuario para acceder a tu cuenta</small>
+					<small id="emailHelp" class="form-text text-muted ">*Tu correo electrónico será tu usuario para acceder a tu cuenta</small>
 				</div>
 			</div>
-			<!-- RENGLON -->
+			<!-- PASSWORD -->
 			<div class="row justify-content-center">
 				<div class="form-group justify-content-center  col-xs-12 col-4">
 					<label for="exampleInputPassword1 " class="textcolorw">Contrase&ntilde;a</label>
 					<input type="password" class="form-control" id="pass1" placeholder="Password" aria-describedby="passwordHelpBlock" onblur=validarPass1();>
-					<small id="passwordHelpBlock" class="form-text text-muted colorbg">
+					<small id="passwordHelpBlock" class="form-text text-muted ">
   						Tu contraseña debe ser de 8-6 caracteres de longitud, debe contener al menos 1 letra y 1 n&uacute;meros, no debe contener espacios, caracteres especiales, o emoji.
 					</small>
 				</div>
 			</div>
-			<!-- RENGLON -->
+			<!-- PASSWORD VERIFICATION -->
 			<div class="row justify-content-center">
 				<div class="form-group justify-content-center  col-xs-12 col-4">
 					<label for="exampleInputPassword1 " class="textcolorw">Verificar Contrase&ntilde;a</label>
@@ -178,17 +180,21 @@
 			<div class="row justify-content-center">
 				<div class="form-group">
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" id="prom">
+						<div class="custom-control custom-switch">
+							<input type="checkbox" class="custom-control-input" id="customSwitch1">
+							<label class="custom-control-label" for="customSwitch1">Sí, quiero recibir promociones exclusivas, tips e ideas para mejorar mi hogar.</label>
+						</div>
+						<!-- <input class="form-check-input" type="checkbox" id="prom">
 						<label class="form-check-label textcolorw" for="gridCheck">
 							Sí, quiero recibir promociones exclusivas, tips e ideas para mejorar mi hogar.
-						</label>
+						</label> -->
 					</div>
 				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="form-group">
 					<div class="form-check">
-						<input class="form-check-input" type="checkbox" id="tyc">
+						<input class="form-check-input" type="checkbox" id="tyc" required>
 						<label class="form-check-label textcolorw" for="gridCheck">
 							He leído y acepto los <a class="colorbg" href="">Términos y Condiciones y Aviso de privacidad.</a>
 						</label>
@@ -203,14 +209,16 @@
 					<div class="help-block with-errors"></div>
 				</div>
 			</div>
-			<!-- RENGLON -->
+			<!-- BOTONES -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
-					<button type="submit" class="btn btn-primary" >Cancelar</button>
+					<a class="btn btn-primary textcolorb" role="button" href="1_index.html">Cancelar</a>
+					<!-- <button type="submit" class="btn btn-primary" >Cancelar</button> -->
 				</div>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
-					<button id="registro" type="submit" class="btn btn-primary " onclick=validarRegistro();>Registrarme</button>
+					<input type="button" id="" type="submit" value="Registrarme" class=" btn btn-primary shadow-lg" onclick=validarSignin();>
+					<!-- <button id="registro" type="submit" class="btn btn-primary " onclick=validarRegistro();>Registrarme</button> -->
 				</div>
 			</div>
 		</form>
@@ -249,19 +257,19 @@
 	 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
     </script>
-
-    <script src=".\JS\validator.js"></script>
-    <script src=".\JS\contact.js"></script>
+<!--<script src=".\JS\validator.js"></script>
+    <script src=".\JS\contact.js"></script> -->
 	<!-- Captcha -->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\validar.js"></script>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- para barra de busqueda -->
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
-	<script src=".\JS\buscador.js"></script>
+	<script src="./JS/buscador.js"></script>
+	<!-- JavaScript Validaciones-->
+	<script type="text/javascript" src=".\JS\val.js"></script>
 </body>
 </html>

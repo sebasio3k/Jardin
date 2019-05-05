@@ -12,7 +12,7 @@
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
 
-<body class="mibody"> 
+<body class="mibody" onload=carga();> 
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -29,7 +29,7 @@
 				<div class="navbar-collapse collapse" id="navbarColor01" style="">
 					<ul class="navbar-nav mr-auto ul2">
 						<!-- Opciones -->
-						<li class="nav-item active">
+						<li class="nav-item">
 							<a class="nav-link" href="2_index_2.html">Inicio<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
@@ -55,7 +55,7 @@
 					<ul class="navbar-nav mr-auto ul2">
 						<li>
 							<!-- Carrito -->
-							<a class="nav-link" href="9_carrito.html">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20"></a>
+							<a class="nav-link active" href="9_carrito.html">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20"></a>
 						</li>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- Example single danger button -->
@@ -179,16 +179,16 @@
 			<div class="form-check">
 				<div class="row justify-content-center">
 					<div class="form-group col-xs-12 col-6">
-						<input class="form-check-input" type="radio" name="pago" id="tienda" value="option1" checked>
+						<input class="form-check-input" type="radio" name="pago" id="tienda" value="option1" onclick=deshabilitar();>
 						<label class="form-check-label textcolorw" for="tienda">Pagar en la tienda</label>
 					</div>
 					<div class="form-group col-xs-12 col-6 text-center">
-						<input class="form-check-input " type="radio" name="pago" id="tarjeta" value="option2">
+						<input class="form-check-input " type="radio" name="pago" id="tarjeta" value="option2" onclick=habilitar();>
 						<label class="form-check-label textcolorw text-center" for="gridRadios2">Pagar con Tarjeta</label>
 					</div>
 				</div>
 			</div>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<br>
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-6">
@@ -196,7 +196,7 @@
 						Con esta opción se generar&aacute; su orden de pedido, en cuanto recoja su pedido en la tienda, ud. pagar&aacute; el monto correspondiente.
 						</p>
 				</div>
-				<div class="form-group col-xs-12 col-6">
+				<div class="form-group col-xs-12 col-6 " >
 					<!-- RENGLON -->
 					<div class="row justify-content-center">
 						<div class="form-group col-xs-12 ">
@@ -211,11 +211,11 @@
 							<input type="text" class="form-control" id="nombre1" placeholder="Tu nombre" required=”required” onblur=validarNombre();>
 						</div>
 					</div>
-					<!-- RENGLON -->
 					<div class="row justify-content-center">
 						<div class="form-group col-xs-12 ">
 							<label for="vence" class="textcolorw">Vence en:</label>
-							<input type="text" class="form-control" id="expire" placeholder="MM / YYYY" required=”required” onblur=validarNombre();>
+							<!-- <input type="date"  id="expire" min="2019-01-01" max="2020-01-31" required> -->
+							<input type="text" class="form-control" id="expire" placeholder="MM / YYYY" pattern="\d{1,2}/\d{4}"  >
 						</div>
 					</div>
 					<!-- RENGLON -->
@@ -230,7 +230,12 @@
 			</div>
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
-					<button type="submit" class="btn btn-primary" >Generar Orden de Pedido</button>
+					<a class="btn btn-primary textcolorb" role="button" href="9_carrito.html">Cancelar</a>
+					<!-- <button type="submit" class="btn btn-primary" >Cancelar</button> -->
+				</div>
+				<div class="form-group col-xs-12 col-4 align-self-center text-center">
+					<input type="button" id="btpago" type="submit" value="Generar Orden de Pedido" class="btn btn-primary shadow-lg disabled"  onclick=validarPago(); disabled=true>
+					<!-- <button type="submit" class="btn btn-primary" >Generar Orden de Pedido</button> -->
 				</div>
 			</div>
 		</form>
@@ -298,11 +303,12 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- para barra de busqueda -->
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
 	<script src="./JS/buscador.js"></script>
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\validar.js"></script>
+	<!-- JavaScript Validaciones-->
+	<script type="text/javascript" src=".\JS\val.js"></script>
 	
 </body>
 </html>

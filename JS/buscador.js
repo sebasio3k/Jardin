@@ -11,7 +11,7 @@ $("#inputBusqueda").keyup(function(){
 	if ($("#inputBusqueda").val() == ""){
 		$("header").css({
 			"height": "auto",
-			"background": "rgba(0,0,0,0.6)"
+			"background": "rgba(0,0,0,0.7)"
 		})
 
 		$("#search").hide()
@@ -27,7 +27,7 @@ $("#inputBusqueda").keyup(function(){
 function foco(){
 	$("header").css({
 			"height": "auto",
-			"background": "rgba(0,0,0,0.6)"
+			"background": "rgba(0,0,0,0.7)"
 		})
 
 		$("#search").hide()

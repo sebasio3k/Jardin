@@ -1,9 +1,20 @@
+/*PADDING----------------------------------------------------------------------------------------------------*/
 /*Eliminamos los margenes y paddings que agrega el navegador por defecto*/
 * {
   padding: 0;
   margin: 0;
 }
 
+.pad{
+  padding-top: 100px;
+}
+
+.pad2{
+  padding-top: 85px;
+
+}
+
+/*BODY-----------------------------------------------------------------------------------------------------------*/
 .mibody {
 	background-image: url("./w.jpg");
 	background-attachment: fixed;
@@ -20,6 +31,10 @@
 	text-decoration-color: #000000;
 }
 
+.colorbg {
+  background: rgba(0,0,0,0.1);
+}
+
 /*para la barra de busqueda-----------------------------------------------------------*/
 
 
@@ -28,6 +43,7 @@
 /*--------------------------------------------------------------------------------*/
 
 
+/*TEXTO---------------------------------------------------------------------------------------------------------*/
 /*Agregamos margenes inferiores a los parrafos*/
 p {
   margin-bottom: 20px;
@@ -47,9 +63,6 @@ p {
 .b{
 	 color: #000000;
 }
-.textcolorb{
-	 color: #000000;
-}
 
 .bgblanco{
 	background-color: #ffffff;
@@ -67,14 +80,27 @@ p {
 	text-align: center;
 }
 
-.pad{
-	padding-top: 100px;
+
+/*.trans {
+  opacity: 0.5;
+}*/
+
+.blurb{
+  background: rgba(0,0,0,0.7);
+  color: #FFFFFF;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
 }
 
-.pad2{
-	padding-top: 85px;
-
+.blurw{
+  background: rgba(255,255,255,0.7);
+  color: #000000;
 }
+
+
+/*BARRA DE NAVEGACION----------------------------------------------------------------------------------------------*/
 
 ul {
 	/*text-align: justify;*/
@@ -106,12 +132,9 @@ a{
 	color:  #2e86c1 ;
 }
 
-.colorbg {
-	background: rgba(0,0,0,0.7);
-}
 
 header {
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.7);
   width: 100%;
   position: fixed;
   z-index: 100;
@@ -156,7 +179,10 @@ nav ul li a {
 
 /*evento hover para cambiar fondo cuando se pase el mouse sobre elemento*/
 nav ul li:hover {
-  background: #3ead47;
+  background: rgba(255,217,142,0.8);
+ /* background: #ebefd0;*/
+  
+  /*#3ead47*/
 }
 
 .contenido {
@@ -171,7 +197,7 @@ nav ul li:hover {
 
 /* */
 
-/* Carrusel */
+/* Carrusel----------------------------------------------------------------------------------------------------- */
 .slider{
 	width: 95%;
 	margin: auto;
@@ -210,6 +236,9 @@ nav ul li:hover {
 	100% {margin-left: -300%}
 }
 
+
+/*TABLAS-------------------------------------------------------------------------------------------------------*/
+
 .tablaUser tr:nth-child(odd) {
     background-color:#f2f2f2;
 }
@@ -232,9 +261,7 @@ nav ul li:hover {
 }
 
 
-/*SCENE--------------------------------------------------------------------*/
-
-/**/
+/*IMAGEN PARALLAX-----------------------------------------------------------------------------------------*/
 
 /*PARALLAX*/
 
@@ -251,11 +278,54 @@ nav ul li:hover {
   background-position: 0 50%;
 }
 
+.right2 {
+  padding: 1.618em 6.472em 3.236em 111%;
+  background-position: 0 50%;
+}
+
+/*IMAGENES A PONER*/
 .illustration_01 {
   /*background-color: #FFFFFF;*/
+  background-image: url("../img/jard2.jpeg");
+}
+
+.illustration_02 {
+  background-image: url("../img/4.jpg");
+}
+
+.illustration_03 {
+  background-image: url("../img/c3.jpg");
+}
+
+.illustration_04 {
   background-image: url("../img/b2.jpg");
 }
 
+.illustration_05 {
+  background-image: url("../img/b5.jpg");
+}
+
+.illustration_06 {
+  background-image: url("../img/jard1.jpg");
+}
+
+.caption1 {
+  position: absolute;
+  right: 15%;
+  left: 15%;
+  z-index: 10;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #fff;
+  text-align: center;
+  bottom: -85%;
+}
+
+.illustration_0 {
+  background-image: url("../img/.png .jpg");
+}
+
+/*Para hacerlo responsive*/
 .smallscreen {
   display: none;
 }
@@ -337,6 +407,5 @@ nav ul li:hover {
     min-width: 12rem;
   }
 }
-
 
 /**/

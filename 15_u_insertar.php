@@ -1,3 +1,9 @@
+<?php 
+
+	$conexion=mysqli_connect('localhost','root','','jardinabuela');
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -264,23 +270,37 @@
 								<caption>USUARIOS EN SISTEMA</caption>
 								<thead class="thead-dark">
 									<tr>
+										<th scope="col">Id</th>
 										<th scope="col">Nombre</th>
 										<th scope="col">Apellido Paterno</th>
 										<th scope="col">Apellido Materno</th>
+										<th scope="col">Sexo</th>
 										<th scope="col">Tel&eacute;fono</th>
 										<th scope="col">Correo</th>
 										<th scope="col">Contrase&ntilde;a</th>
 									</tr>
 								</thead>
 								<tbody>
+									<?php 
+									$sql="SELECT * from usuarios";
+									$result=mysqli_query($conexion,$sql);
+
+									while($mostrar=mysqli_fetch_array($result)){
+										?>	
+
 									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
+										<td><?php echo $mostrar['idusuario'] ?></td>
+										<td><?php echo $mostrar['nombre'] ?></td>
+										<td><?php echo $mostrar['apaterno'] ?></td>
+										<td><?php echo $mostrar['amaterno'] ?></td>
+										<td><?php echo $mostrar['sexo'] ?></td>
+										<td><?php echo $mostrar['telefono'] ?></td>
+										<td><?php echo $mostrar['email'] ?></td>
+										<td><?php echo $mostrar['password'] ?></td>
 									</tr>
+										<?php 
+									}
+							 		?>
 								</tbody>
 							</table>
 							<br>

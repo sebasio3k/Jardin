@@ -7,6 +7,10 @@
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Alertify -->
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/alertify.css">
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/themes/default.css">
+	<script src="./alertifyjs/alertify.js"></script>
 	<!-- /Bootstrap -->
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
@@ -232,3 +236,38 @@
 	<script type="text/javascript" src=".\JS\val.js"></script>
 </body>
 </html>
+
+<!-- Autenticar usuario login -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#login').click(function(){
+
+			if($('#email').val()==""){
+				alertify.alert("Debes agregar el usuario");
+				return false;
+			}else if($('#pass').val()==""){
+				alertify.alert("Debes agregar el password");
+				return false;
+			}
+
+			cadena="usuario=" + $('#email').val() + 
+					"&password=" + $('#pass').val();
+			console.log(cadena);
+					$.ajax({
+						type:"POST",
+						url:"php/login.php",
+						data:cadena,
+						success:function(r){
+							console.log(r);
+							if(r==1){
+								window.location="2_index_2.php";
+								mysql_close($conexion);
+								
+							}else{
+								alertify.alert("Fallo al entrar :(");
+							}
+						}
+					});
+		});	
+	});
+</script>

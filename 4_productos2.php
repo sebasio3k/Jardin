@@ -1,13 +1,22 @@
+<?php 
+
+	$conexion=mysqli_connect('localhost','Sebastian','ifuseekamy','jardinabuela');
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>El Jard&iacute;n De la Abuela</title>
+	<title>Productos</title>
 	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
+	<!-- JavaScript -->
+	<script type="text/javascript" src=".\JS\funciones.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
@@ -15,11 +24,12 @@
 </head>
 
 <body class="mibody"> 
+<!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
-				<a class="navbar-brand" href="2_index_2.html">
+				<a class="navbar-brand" href="2_index_2.php">
 					<!-- logo -->
 					<img src=".\img\logo.png" class="img-fluid" alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela
 				</a>
@@ -30,14 +40,14 @@
 				<div class="navbar-collapse collapse" id="navbarColor01" style="">
 					<ul class="navbar-nav mr-auto ul2">
 						<!-- Opciones -->
-						<li class="nav-item active">
-							<a class="nav-link" href="2_index_2.html">Inicio<span class="sr-only">(current)</span></a>
+						<li class="nav-item">
+							<a class="nav-link" href="2_index_2.php">Inicio</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="3_nosotros2.html">Sobre Nosotros</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link"href="4_productos2.html">Productos</a>
+						<li class="nav-item active">
+							<a class="nav-link"href="4_productos2.php">Productos<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="5_cursos2.html">Cursos</a>
@@ -70,7 +80,7 @@
 								<a class="dropdown-item" href="11_orden.html">Mis Ordenes</a>
 								<!-- <a class="dropdown-item" href="5_cursos2.html">Mis Cursos</a> -->
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="7_login_signin.html">Cerrar Sesi&oacute;n</a>
+								<a class="dropdown-item" href="php/salir.php">Cerrar Sesi&oacute;n</a>
 							</div>
 						</li>				
 					</ul>
@@ -118,211 +128,137 @@
 	</header>
 	<!-- MAIN -->
 	<div class="container">
-		<br>
-		<!-- Carrousel -->
-		<div class="bd-example pad">
-		<!-- <input type="search" placeholder="Buscar . . ." id="inputBusqueda"> -->
-			<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-			    <ol class="carousel-indicators">
-			    	<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-			      	<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-			      	<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-			    </ol>
-			    <div class="carousel-inner">
-			    	<div class="carousel-item active">
-			        	<img src="./img/c6.jpg" class="d-block w-100" alt="...">
-			        	<div class="carousel-caption d-none d-md-block blurb">
-			          		<h5 class="w">LA MEJOR TIENDA DE JARDINERÍA</h5>
-			          		<p class="w">Grandes art&iacute;culos que puedes encontrar</p>
-			        	</div>
-			      	</div>
-			      	<div class="carousel-item">
-			        	<img src="./img/2.jpg" class="d-block w-100" alt="...">
-			      	</div>
-			      	<div class="carousel-item">
-			        	<img src="./img/3.png" class="d-block w-100" alt="...">
-			        	<div class="carousel-caption d-none d-md-block blurb">
-			          		<h5 class="w">APRENDE CON NUESTROS CURSOS</h5>
-			 		         <p class="w">Pre&aacute;rate con los cursos y cuida tu jard&iacute;n.</p>
-			 	       </div>
-			    	</div>
-			    </div>
-			    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-			    	<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			      	<span class="sr-only">Previous</span>
-			    </a>
-			    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-			    	<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			      	<span class="sr-only">Next</span>
-			    </a>
-			</div>
-		</div>
-		<hr>
-	</div>
-	<!-- Titulo -->
-	<div class="container">
-	 	<div class="row justify-content-center">
-			<div class="col-xs-12 ">
-				<h1 class="titulo text-center">El Jard&iacute;n De la Abuela</h1>
-			</div>
-		</div>
-		<!-- Logo -->
+		<!-- RENGLON -->
 		<div class="row justify-content-center">
-			<div class="col-xs-12 ">
-				<img src=".\img\logo.png" class="img-fluid" alt="Responsive image" width="233" height="215">
+			<div class="col-xs-12">
+				<h1 class="titulo pad text-center">Productos</h1>
+			</div>
+		</div>
+		<br>
+		<!-- sql="SELECT * from usuarios";
+									$result=mysqli_query($conexion,$sql);
+
+									while($mostrar=mysqli_fetch_array($result)){
+										?>	 -->
+		<?php
+			$sql = "SELECT imagen FROM productos"; 
+    		$result = mysql_query($conexion,$sql);
+    		$imagen = $result[0];
+    		echo $imagen;
+		    // while($row = mysql_fetch_array($result)) {
+		    // 	echo '<img src="data:image/jpeg;base64,'.base64_encode($result).'"/>';
+		?>
+		<?php       
+		    // }
+		    
+		    mysql_close($conn);
+		?>
+		<div class="row justify-content-center">
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					
+					
+					<img src="<?php echo $mostrar['imagen']; ?>" class="card-img-top" alt="Producto2">
+					<div class="card-body">
+						<h5 class="card-title blurw"><?php echo $mostrar['descripcion'] ?></h5>
+					   	<p class="card-text blurw text-justify"><?php echo $mostrar['precio'] ?></p>
+					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto2">
+					<div class="card-body ">
+						<h5 class="card-title blurw">Producto 2</h5>
+					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+					</div>
+				</div>	
+			</div>
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto3">
+					<div class="card-body">
+						<h5 class="card-title blurw">Producto 3</h5>
+					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+		<br>
+		<br>
+		<!-- RENGLON -->
+		<div class="row justify-content-center">
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\p4.jpg" class="card-img-top" alt="Producto4">
+					<div class="card-body">
+						<h5 class="card-title blurw">Producto 4</h5>
+					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
+					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+					</div>
+				</div>
+			</div>
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\p5.jpg" class="card-img-top" alt="Producto5">
+					<div class="card-body">
+						<h5 class="card-title blurw">Producto 5</h5>
+					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+					</div>
+				</div>	
+			</div>
+			<!-- COLUMNA -->
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<!-- Tarjeta de producto -->
+				<div class="card" style="width: 18rem;">
+					<img src=".\img\p6.jpg" class="card-img-top" alt="Producto6">
+					<div class="card-body">
+						<h5 class="card-title blurw">Producto 6</h5>
+					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
+					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+					</div>
+				</div>	
 			</div>
 		</div>
 		<hr>
-	</div>
-	<!-- IMAGEN PARALLAX -->
-	<div class="container-fluid">
-		<div class="row justify-content-center ">
-			<div class="smallscreen">
-  				<img class="img-fluid" src="./img/jard2.jpeg">
-  				<!-- <h2 class="b">¡ven y con&oacute;cenos!</h2>
-        		<p class="b">Tenemos los mejores artículos para jardinería en la ciudad</p> -->
-			</div>
-			<div class="content left illustration_01 img-fluid blurw">
-        		<br>
-        		<br>
-        		<br>
-				<br>
-        		<br>
-        		<br>
-        		<br>
-				<br>
-        		<p class="blurb">&nbsp;¡VEN Y CONÓCENOS! <br>
-        		Tenemos los mejores artículos para jardinería  en la ciudad</p>
-    			<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-    		</div>  
-		</div>
-	</div>
-	<!-- IMAGEN PARALLAX -->
-	<div class="container-fluid">
-		<div class="row justify-content-center ">
-			<div class="smallscreen">
-  				<img class="img-fluid" src="./img/4.jpg">
-  				<!-- <h2 class="b">¡ven y con&oacute;cenos!</h2>
-        		<p class="b">Tenemos los mejores artículos para jardinería en la ciudad</p> -->
-			</div>
-			<div class="content right illustration_02 img-fluid blurw">
-        		<br>
-        		<br>
-        		<br>
-				<br>
-        		<br>
-        		<br>
-        		<br>
-				<br>
-        		<p class="blurb">&nbsp;¡CONTAMOS CON SERVICIOS DE JARDINERÍA! <br>
-        		Anímate y pregunta por ellos.</p>
-    			<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-    		</div>  
-		</div>
-	</div>
-	<!-- IMAGEN PARALLAX -->
-	<div class="container-fluid">
-		<div class="row justify-content-center ">
-			<div class="smallscreen">
-  				<img class="img-fluid" src="./img/c3.jpg">
-  				<!-- <h2 class="b">¡ven y con&oacute;cenos!</h2>
-        		<p class="b">Tenemos los mejores artículos para jardinería en la ciudad</p> -->
-			</div>
-			<div class="content right illustration_03 img-fluid blurw">
-        		<br>
-        		<br>
-        		<br>
-				<br>
-        		<br>
-        		<br>
-        		<br>
-				<br>
-        		<p class="blurb">&nbsp;¡TÚ TAMBIÉN PUEDES HACERLO! <br>
-        		Convertir tu jardín en un maravilloso lugar de tu hogar.</p>
-    			<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-    		</div>  
-		</div>
-	</div>
-	<!-- IMAGEN PARALLAX -->
-	<div class="container-fluid">
-		<div class="row justify-content-center ">
-			<div class="smallscreen">
-  				<img class="img-fluid" src="./img/b2.jpg">
-  				<!-- <h2 class="b">¡ven y con&oacute;cenos!</h2>
-        		<p class="b">Tenemos los mejores artículos para jardinería en la ciudad</p> -->
-			</div>
-			<div class="content left illustration_04 img-fluid blurw">
-        		<br>
-        		<br>
-        		<br>
-				<br>
-        		<br>
-        		<br>
-        		<br>
-				<br>
-        		<p class="blurb">&nbsp;¡Aprovecha nuestras promociones! <br>
-        		y adquiere grandes productos sólo para ti y tu hogar.</p>
-    			<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-				<br>
-    		</div>  
+
+		<div class="row justify-content-center">
+			<nav aria-label="...">
+				<ul class="pagination">
+					<li class="page-item disabled">
+						<span class="page-link">Previous</span>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item active" aria-current="page">
+						<span class="page-link">
+							2
+							<span class="sr-only">(current)</span>
+						</span>
+					</li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item">
+						<a class="page-link" href="#">Next</a>
+					</li>
+				</ul>
+			</nav>
 		</div>
 	</div>
 
-<hr>
-	<div class="container">
-		<!-- Centro -->
-		<div class="row justify-content-center">
-			<div class="col-xs-12">
-				<h1 class="text-center">¿Ya tienes cuenta?</h1>
-			</div>
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-xs-12">
-				<h4 class="text-center">Registrate para comprar nuestros productos</h4>
-			</div>
-		</div>
-		<div class="row justify-content-center">
-			<div class="col-xs-12">
-				<a href="8_signin.html"><img src=".\img\reg.png" class="img-fluid" alt="Responsive image" width="200" height="50"></a>
-			</div>			
-		</div>
-		<hr>
-		<!-- <div class="row align-items-center">
-			<div class="col-xs-12 col-sm-6 col-md-7">
-				<p>Aprovecha estas grandes promociones que tenemos para ti</p>
-			</div>
-			<div class="col-xs-12 col-sm-6 col-md-5">
-				<img src=".\img\b4.png" class="img-fluid" alt="Responsive image" width="500" height="137">
-			</div>
-		</div>	 -->
-	</div>
 	<!-- FOOTER -->
 	<footer class="mifooter">
 		<div class="container">
@@ -332,9 +268,9 @@
 						<ul>
 							<h5 >Cu&eacute;ntanos...</h5>
 							<h6>¿Cómo podemos ayudarte?</h6>
-							<li><a href="3_nosotros.html">Preguntas Frecuentes</a></li>
-							<li><a href="3_nosotros.html">Sobre Nosotros</a></li>
-							<li><a href="3_nosotros.html">Cont&aacute;ctanos</a></li>
+							<li><a href="3_nosotros2.html">Preguntas Frecuentes</a></li>
+							<li><a href="3_nosotros2.html">Sobre Nosotros</a></li>
+							<li><a href="3_nosotros2.html">Cont&aacute;ctanos</a></li>
 						</ul>
 					</p>
 				</div>
@@ -342,9 +278,9 @@
 					<p >
 						<ul>
 							<h5>Sitios Recomendados</h5>
-							<li><a href="5_cursos.html">Nuestros Cursos</a></li>
-							<li><a href="5_cursos.html">Plantas</a></li>
-							<li><a href="4_productos.html">Productos</a></li>
+							<li><a href="5_cursos2.html">Nuestros Cursos</a></li>
+							<li><a href="5_cursos2.html">Plantas</a></li>
+							<li><a href="4_productos2.html">Productos</a></li>
 						</ul>
 					</p>
 				</div>
@@ -388,6 +324,6 @@
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
 	<script src="./JS/buscador.js"></script>
-
 </body>
 </html>
+

@@ -1,5 +1,7 @@
 // VALIDACIONES
 
+
+
 // LOGIN------------------------------------------------------------------------------------
 function validarLogin(){
 	var ema = document.getElementById("email").value;
@@ -11,34 +13,36 @@ function validarLogin(){
 	// var excorreo=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
 	/*Aqui va a ir el código PHP que valida los datos y entra al sistema*/
 	if((ema=="") || (pas=="")){
-		alert("Se requiere que todos los campos esten llenos");
+		alertify.alert('Campos Requeridos', 'Se requiere que todos los campos esten llenos!', function(){ alertify.error('Verifica campos'); });
 		emav.className = "form-control textcolorw is-invalid";
 		pasv.className = "form-control textcolorw is-invalid";
 	}
 	else{
 		/*VALIDA QUE EL formato de correo SEA VALIDO*/
 		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(ema)){
-			alert("CORREO CORRECTO");
-			if((ema=="bastianhdezo@gmail.com") && (pas=="1234")){
-				/*document.form.submit();*/
-				location.href="2_index_2.html";
-			}
-			else{
-				alert("CONTRASEÑA Y/O USUARIO INCORRECTO(S)");
-				emav.value ="";
-				pasv.value ="";
-				// history.back();
-				history.go(-1)
-			}
+			emav.className = "form-control textcolorw is-valid";
+			// alert("CORREO CORRECTO");
+			// if((ema=="bastianhdezo@gmail.com") && (pas=="1234")){
+			// 	/*document.form.submit();*/
+			// 	location.href="2_index_2.html";
+			// }
+			// else{
+			// 	alertify.alert('Alerta', 'CONTRASEÑA Y/O USUARIO INCORRECTO(S)', function(){ alertify.error('Verifica campos'); });
+			// 	emav.value ="";
+			// 	pasv.value ="";
+			// 	// history.back();
+			// 	// history.go(-1)
+			// }
 		}
 		else{
-			alert("Formato de correo inválido, por favor verificalo");
+			alertify.alert('Alerta', 'Formato de correo inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
 			emav.className = "form-control textcolorw is-invalid";
 		}
 	}
 }
 
 // SIGN IN (REGISTRARSE)------------------------------------------------------------------------------------------
+
 function validarSignin(){
 	var nam = document.getElementById("nombre").value;
 	var ap = document.getElementById("ap").value;
@@ -54,11 +58,13 @@ function validarSignin(){
 	var regam=/^([A-Za-z\sáéíóú]{2,30})+$/;
 	var regcorreo=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
 	var regtel=/^([0-9]{10})+$/;
+	var regcontra=/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
 	// variables para cambiar la clase de error
 	var namv = document.getElementById("nombre");
 	var apv = document.getElementById("ap");
 	var amv = document.getElementById("am");
 	// Ssexov
+	var sexv = document.getElementsByName("sexo");
 	var telv = document.getElementById("phone");
 	var correov = document.getElementById("email");
 	var contrav = document.getElementById("pass1");
@@ -66,7 +72,7 @@ function validarSignin(){
 	
 	// Si estan vacios:				
 	if((nam=="") || (ap=="")  || (am=="") || (correo=="") || (tel=="") || (contra=="") || (contrac=="")){
-		alert("Se requiere que todos los campos esten llenos");
+		alertify.alert('Alerta', 'Se requiere que todos los campos esten llenos', function(){ alertify.error('Verifica campos'); });
 		namv.className = "form-control textcolorw is-invalid";
 		apv.className = "form-control textcolorw is-invalid";
 		amv.className = "form-control textcolorw is-invalid";
@@ -74,65 +80,89 @@ function validarSignin(){
 		telv.className = "form-control textcolorw is-invalid";
 		contrav.className = "form-control textcolorw is-invalid";
 		contracv.className = "form-control textcolorw is-invalid";
+		return false;
 	}
 	else{//si no
 		/*VALIDA QUE EL formato de correo SEA VALIDO*/
 		if(regnom.test(nam)){
-			alert("NOMBRE CORRECTO");
 			namv.className = "form-control textcolorw is-valid";
 			if(regap.test(ap)){
-				alert("apellido paterno CORRECTO");
 				apv.className = "form-control textcolorw is-valid";
 				if(regam.test(am)){
-					alert("apellido materno CORRECTO");
 					amv.className = "form-control textcolorw is-valid";
-					if(regtel.test(tel)){
-						alert("Telefono CORRECTO");
-						correov.className = "form-control textcolorw is-valid";
-						if(regcorreo.test(correo)){
-							alert("email CORRECTO");
+					// if (('input[name=sexo]:radio').is(':checked')){
+					// if (('input[name=sexo]:checked').val()==""){
+					if($("#formRegistro input[name='sexo']:radio").is(':checked')){
+						if(regtel.test(tel)){
 							telv.className = "form-control textcolorw is-valid";
-							if(contra==contrac){
-								contracv.className = "form-control textcolorw is-valid";
-								contrav.className = "form-control textcolorw is-valid";
-								if(tyc.checked){
-									alert("REGISTRANDO");
-									// document.getElementById("registro").submit();
-									location.href="7_login_signin.html";
+							if(regcorreo.test(correo)){
+								correov.className = "form-control textcolorw is-valid";
+								if(regcontra.test(contra)){
+									contrav.className = "form-control textcolorw is-valid";
+									if(contra==contrac){
+										contracv.className = "form-control textcolorw is-valid";
+										contrav.className = "form-control textcolorw is-valid";
+										if(tyc.checked){
+											return true;
+
+
+										// alert("REGISTRANDO");
+										// // document.getElementById("registro").submit();
+										// location.href="7_login_signin.html";
+										}
+										else{
+											alertify.alert('Alerta', 'Debes aceptar los términos y condiciones', function(){ alertify.error('Verifica campos'); });
+											tyc.className = " form-check-input is-invalid";
+											return false;
+										}
+									}
+									else {
+										alertify.alert('Alerta', 'Las contraseñas no coinciden', function(){ alertify.error('Verifica campos'); });
+										contracv.className = "form-control textcolorw is-invalid";
+										return false;
+									}
 								}
 								else{
-									alert("Debes aceptar los términos y condiciones");
-									tyc.className = " form-check-input is-invalid";
+									alertify.alert('Alerta', 'Formato de contraseña inválido, por favor verifícalo', function(){ alertify.error('Verifica campos'); });
+									contra.className = "form-control textcolorw is-invalid";
+									return false;
 								}
 							}
 							else{
-								alert("Las contraseñas no coinciden");
-								contracv.className = "form-control textcolorw is-invalid";
+								alertify.alert('Alerta', 'Formato de email inválido, por favor verificalo, por favor verifícalo', function(){ alertify.error('Verifica campos'); });
+								correov.className = "form-control textcolorw is-invalid";
+								return false;
 							}
 						}
 						else{
-							alert("Formato de email inválido,por favor verificalo");
+							alertify.alert('Alerta', 'Formato de telefono inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
 							telv.className = "form-control textcolorw is-invalid";
+							return false;
 						}
+
 					}
 					else{
-						alert("Formato de telefono inválido,por favor verificalo");
-						correov.className = "form-control textcolorw is-invalid";
+						alertify.alert('Alerta', 'Selecciona el sexo por favor', function(){ alertify.error('Verifica campos'); });
+						sexv.className = "form-control textcolorw is-invalid";
+						return false;
 					}
 				}
 				else{
-					alert("Formato de apellido materno inválido,por favor verificalo");
+					alertify.alert('Alerta', 'Formato de apellido materno inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
 					amv.className = "form-control textcolorw is-invalid";
+					return false;
 				}
 			}
 			else{
-				alert("Formato de apellido paterno inválido,por favor verificalo");
+				alertify.alert('Alerta', 'Formato de apellido paterno inválido,por favor verificalo', function(){ alertify.error('Verifica campos'); });
 				apv.className = "form-control textcolorw is-invalid";
+				return false;
 			}								
 		}
 		else{
-			alert("Formato de NOMBRE inválido,por favor verificalo");
+			alertify.alert('Alerta', 'Formato de NOMBRE inválido,por favor verificalo', function(){ alertify.error('Verifica campos'); });
 			namv.className = "form-control textcolorw is-invalid";
+			return false;
 		}
 	}
 }

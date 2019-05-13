@@ -173,18 +173,22 @@
 								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para Consultar:</label>
 								<!-- <div class=" col-xs-12 col-4"> -->
 								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="nombre" placeholder="id" required=”required”>
+									<input type="text" class="form-control" id="buscar" name="buscar" placeholder="id" required=”required”>
 								</div>
 							</div>
-							<div class="row justify-content-center">
+							<!-- <div class="row justify-content-center">
 								<div class="form-group col-xs-12 col-4 align-self-center text-center">
 									<button type="submit" class="btn btn-primary" >Buscar Registro</button>
 								</div>
-							</div>
+							</div> -->
 						</form>
 						<br>
 						<br>
 						<!-- TABLA  -->
+						<div id="datos">
+
+						</div>
+						<!-- TABLA 
 						<table class="table bgblanco textcolorb table-responsive">
 							<thead class="thead-dark">
 								<tr>
@@ -208,7 +212,7 @@
 									<td></td>
 								</tr>
 							</tbody>
-						</table>
+						</table> -->
 						
 						<!-- Boton para regresar -->
 						<div class="row justify-content-center text-center">
@@ -304,3 +308,31 @@
 	<script type="text/javascript" src=".\JS\validar.js"></script>
 </body>
 </html>
+
+<script>
+	$(buscar_datos());
+
+	function buscar_datos(consulta){
+		$.ajax({
+			url:"php/consultarU.php",
+			type:"POST",
+			dataType:'html',
+			data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			$("#datos").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+	$(document).on('keyup', '#buscar', function(){
+		var valor = $(this).val();
+		if(valor != ""){
+			buscar_datos(valor);
+		}
+		else{
+			buscar_datos();
+		}
+	});
+</script>

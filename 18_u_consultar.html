@@ -173,7 +173,7 @@
 								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para Consultar:</label>
 								<!-- <div class=" col-xs-12 col-4"> -->
 								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="buscar" name="buscar" placeholder="id" required=”required”>
+									<input type="text" class="form-control" id="buscaru" name="buscaru" placeholder="id" required=”required”>
 								</div>
 							</div>
 							<!-- <div class="row justify-content-center">
@@ -326,7 +326,7 @@
 			console.log("Error");
 		})
 	}
-	$(document).on('keyup', '#buscar', function(){
+	$(document).on('keyup', '#buscaru', function(){
 		var valor = $(this).val();
 		if(valor != ""){
 			buscar_datos(valor);

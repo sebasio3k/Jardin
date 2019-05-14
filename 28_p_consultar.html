@@ -228,25 +228,26 @@
 								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para Consultar:</label>
 								<!-- <div class=" col-xs-12 col-4"> -->
 								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="nombre" placeholder="id" required=”required”>
+									<input type="text" class="form-control" id="buscarp" name="buscarp" placeholder="id" required=”required”>
 								</div>
 							</div>
-							<div class="row justify-content-center">
+							<!-- <div class="row justify-content-center">
 								<div class="form-group col-xs-12 col-4 align-self-center text-center">
 									<button type="submit" class="btn btn-primary" >Buscar Registro</button>
 								</div>
-							</div>
+							</div> -->
 						</form>
 						<br>
 						<br>
+						<div id="datos"></div>
 						<!-- TABLA  -->
-						<table class="table bgblanco textcolorb table-responsive">
+						<!-- <table class="table bgblanco textcolorb table-responsive">
 							<CAPTION>PRODUCTOS EN SISTEMA</CAPTION>
 							<thead class="thead-dark">
 								<tr>
 									<th scope="col">ID</th>
 									<!-- <th scope="col">Nombre</th> -->
-									<th scope="col">Descripcion</th>
+									<!-- <th scope="col">Descripcion</th>
 									<th scope="col">Precio</th>
 								</tr>
 							</thead>
@@ -254,11 +255,11 @@
 								<tr>
 									<td></td>
 									<!-- <td></td> -->
-									<td></td>
+									<!-- <td></td>
 									<td></td>
 								</tr>
 							</tbody>
-						</table>
+						</table>   -->
 						<br>
 						<br>
 						<br>
@@ -300,3 +301,31 @@
 	<script type="text/javascript" src=".\JS\validar.js"></script>
 </body>
 </html>
+
+<script>
+		$(buscar_datos());
+	
+		function buscar_datos(consulta){
+			$.ajax({
+				url:"php/consultarP.php",
+				type:"POST",
+				dataType:'html',
+				data: {consulta: consulta},
+			})
+			.done(function(respuesta){
+				$("#datos").html(respuesta);
+			})
+			.fail(function(){
+				console.log("Error");
+			})
+		}
+		$(document).on('keyup', '#buscarp', function(){
+			var valor = $(this).val();
+			if(valor != ""){
+				buscar_datos(valor);
+			}
+			else{
+				buscar_datos();
+			}
+		});
+	</script>

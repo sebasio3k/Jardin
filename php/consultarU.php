@@ -3,8 +3,8 @@
     // $id = $_POST['buscar'];
     $mysqli = new mysqli("localhost", "Sebastian", "ifuseekamy", "jardinabuela");
     $salida = "";
-    $query = "SELECT * FROM usuarios ORDER BY id"; 
-
+    $query = "SELECT * FROM usuarios ORDER BY idusuario"; 
+    $q="";
     if(isset($_POST['consulta'])){
         $q = $mysqli->real_escape_string($_POST['consulta']);
         $query = "SELECT idusuario,nombre,apaterno,amaterno,sexo,telefono,email,password FROM usuarios WHERE idusuario LIKE '%".$q."%' OR nombre LIKE '%".$q."%' OR email LIKE '%".$q."%' ";
@@ -12,18 +12,23 @@
 
     $resultado = $mysqli->query($query);
 
-    if ($resultado == ""){
+    // if ($resultado == ""){
+
+    // }
+    // else {
+    if($q==""){
 
     }
-    else {
+    else{
         if($resultado -> num_rows > 0){
-            $salida.= "<table class='table bgblanco textcolorb table-responsive'>
+            $salida.= "<table class='table bgblanco textcolorb table-responsive table-striped table-bordered table-sm'>
                             <thead class='thead-dark'>
                                 <tr>
                                     <th scope='col'>ID</th>
                                     <th scope='col'>Nombre</th>
                                     <th scope='col'>Apellido Paterno</th>
                                     <th scope='col'>Apellido Materno</th>
+                                    <th scope='col'>Sexo</th>
                                     <th scope='col'>Tel&eacute;fono</th>
                                     <th scope='col'>Correo</th>
                                     <th scope='col'>Contrase&ntilde;a</th>
@@ -47,6 +52,7 @@
         else {
             $salida.="No hay datos :c";
         }
+    // }
     }
     echo $salida;
     $mysqli->close();

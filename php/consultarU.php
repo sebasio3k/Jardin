@@ -7,7 +7,7 @@
     $q="";
     if(isset($_POST['consulta'])){
         $q = $mysqli->real_escape_string($_POST['consulta']);
-        $query = "SELECT idusuario,nombre,apaterno,amaterno,sexo,telefono,email,password FROM usuarios WHERE idusuario LIKE '%".$q."%' OR nombre LIKE '%".$q."%' OR email LIKE '%".$q."%' ";
+        $query = "SELECT idusuario,nombre,apaterno,amaterno,sexo,telefono,email,password,tipo FROM usuarios WHERE idusuario LIKE '%".$q."%' OR nombre LIKE '%".$q."%' OR email LIKE '%".$q."%' OR tipo LIKE '%".$q."%' ";
     }
 
     $resultado = $mysqli->query($query);
@@ -32,6 +32,7 @@
                                     <th scope='col'>Tel&eacute;fono</th>
                                     <th scope='col'>Correo</th>
                                     <th scope='col'>Contrase&ntilde;a</th>
+                                    <th scope='col'>Tipo</th>
                                 </tr>
                             </thead>
                             <tbody>";
@@ -45,6 +46,7 @@
                             <td>".$fila['telefono']."</td>
                             <td>".$fila['email']."</td>
                             <td>".$fila['password']."</td>
+                            <td>".$fila['tipo']."</td>
                             </tr>";
             }
             $salida.="</tbody></table>";                

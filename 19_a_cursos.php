@@ -1,8 +1,22 @@
+<?php
+	// Sesiones acceder a variable de sesion
+	session_start();
+	// si existe la variable de sesiones
+	if(isset($_SESSION['user'])) {
+		// que tipo se usuario ingresa para redireccionar
+		if($_SESSION['user']['tipo'] != "Admin"){
+			header('Location: 2_index_2.php ');
+		}
+	}else {//no existe, nadie se ha loggeado
+			header('Location: 1_index.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>P - Consultar</title>
+	<title>CURSOS</title>
 	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -18,7 +32,7 @@
 	<header class="container-fluid">
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
-				<a class="navbar-brand " href="13_admin_index.html">
+				<a class="navbar-brand " href="13_admin_index.php">
 					<!-- logo -->
 					<img src=".\img\logo.png" class="img-fluid " alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela - A D M I N I S T R A D O R - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</a>
@@ -26,7 +40,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<div class="navbar-collapse collapse" id="navbarColor01" >
+				<div class="navbar-collapse collapse" id="navbarColor01" style="">
 					<!-- Barra Busqueda  -->
 					<form class="form-inline justify-content-center" id="barra_bus" name="barra_bus">
 						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" onBlur=foco();>
@@ -37,7 +51,7 @@
 					<ul class="navbar-nav mr-auto">
 						<li>
 							<!-- Cerrar Sesion -->
-							<a class="nav-link" href="7_login_signin.html">Cerrar Sesi&oacute;n</a>
+							<a class="nav-link" href="./php/salir.php">Cerrar Sesi&oacute;n</a>
 						</li>
 					</ul>
 				</div>
@@ -54,80 +68,82 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><a href="13_admin_index.html">Inicio</a></td>
-						</tr>
-<!-- 						<tr>
-							<td><a href="14_a_usuarios.html">Usuarios</a></td></a>
+							<td><a href="13_admin_index.php">Inicio</a></td>
 						</tr>
 						<tr>
-							<td><a href="19_a_cursos.html">Cursos</a></td>
+							<td><a href="14_a_usuarios.php">Usuarios</a></td></a>
 						</tr>
 						<tr>
-							<td><a href="24_a_productos.html">Productos</a></td>
-						</tr> -->
-						<tr>
-							<td><a href="15_u_insertar.html">Insertar Usuario</a></td>
+							<td><a href="19_a_cursos.php">Cursos</a></td>
 						</tr>
 						<tr>
-							<td><a href="16_u_eliminar.html">Eliminar Usuario</a></td>
+							<td><a href="24_a_productos.php">Productos</a></td>
 						</tr>
 						<tr>
-							<td><a href="18_u_consultar.html">Consultar Usuario</a></td>
+							<td><a href="15_u_insertar.php">Insertar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="17_u_actualizar.html">Actualizar Usuario</a></td>
+							<td><a href="16_u_eliminar.php">Eliminar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="20_c_insertar.html">Insertar Curso</a></td>
+							<td><a href="18_u_consultar.php">Consultar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="21_c_eliminar.html">Eliminar Curso</a></td>
+							<td><a href="17_u_actualizar.php">Actualizar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="23_c_consultar.html">Consultar Curso</a></td>
+							<td><a href="20_c_insertar.php">Insertar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="22_c_actualizar.html">Actualizar Curso</a></td>
+							<td><a href="21_c_eliminar.php">Eliminar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="25_p_insertar.html">Insertar Producto</a></td>
+							<td><a href="23_c_consultar.php">Consultar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="26_p_eliminar.html">Eliminar Producto</a></td>
+							<td><a href="22_c_actualizar.php">Actualizar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="28_p_consultar.html">Consultar Producto</a></td>
+							<td><a href="25_p_insertar.php">Insertar Producto</a></td>
 						</tr>
 						<tr>
-							<td><a href="27_p_actualizar.html">Actualizar Producto</a></td>
+							<td><a href="26_p_eliminar.php">Eliminar Producto</a></td>
+						</tr>
+						<tr>
+							<td><a href="28_p_consultar.php">Consultar Producto</a></td>
+						</tr>
+						<tr>
+							<td><a href="27_p_actualizar.php">Actualizar Producto</a></td>
 						</tr>
 					</tbody>
 				</table>
 			</div>
 		</div>
 	</header>
-		<br>
+	<br>
 	<!-- MAIN -->
 	<div class="container pad">
 		<!-- RENGLON -->
 	 	<div class="row justify-content-center">
 			<div class="col-xs-12 align-self-center">
 				<!-- Titulo Admin-->
-				<h1 class="titulo text-center b">CONSULTAR PRODUCTO</h1>
+				<h1 class="titulo text-center b">Administrador <?php echo $_SESSION['user']['nombre'] ?></h1>
+				<h1 class="titulo2 text-center b">Elija la opción de la izquierda para trabajar con los registros</h1>
 			</div>
 		</div>
 		<hr>
 		<br>
 		<br>
 		<br>
+
 		<!-- Menu de navegacion -->
 		<div class="row">
 			<div class="col-3">
 				<div class="nav flex-column nav-pills" id="v-tabindex" role="tablist" aria-orientation="vertical">
-					<a class="nav-link" id="home" data-toggle="pill" href="#v-tabhome" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio - Opciones</a>
-					<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-tabusuarios" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuarios</a>
-					<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-tabcursos" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cursos</a>
-					<a class="nav-link active" id="v-pills-settings-tab" data-toggle="pill" href="#v-tabproductos" role="tab" aria-controls="v-pills-settings" aria-selected="false">Productos</a>
+					<a class="nav-link " id="home" data-toggle="pill" href="#v-tabhome" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio - Opciones</a>
+					<a class="nav-link " id="v-pills-profile-tab" data-toggle="pill" href="#v-tabusuarios" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuarios</a>
+					<a class="nav-link active" id="v-pills-messages-tab" data-toggle="pill" href="#v-tabcursos" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cursos</a>
+					<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-tabproductos" role="tab" aria-controls="v-pills-settings" aria-selected="false">Productos</a>
 				</div>
 			</div>
 			<!-- Contenido de los tabs -->
@@ -144,18 +160,19 @@
 							</div>
 							<div class="row justify-content-center text-center">
 								<div class="col-sm-12 col-md-3 align-self-center">
-									<a class="btn btn-primary textcolorb" href="14_a_usuarios.html" role="button">Usuarios</a>
+									<a class="btn btn-primary textcolorb" href="14_a_usuarios.php" role="button">Usuarios</a>
 								</div>
 								<div class="col-sm-12 col-md-3 align-self-center">
-									<a class="btn btn-primary textcolorb" href="19_a_cursos.html" role="button">Cursos</a>
+									<a class="btn btn-primary textcolorb" href="19_a_cursos.php" role="button">Cursos</a>
 								</div>
 								<div class="col-sm-12 col-md-3 align-self-center">
-									<a class="btn btn-primary textcolorb" href="24_a_productos.html" role="button">Productos</a>
+									<a class="btn btn-primary textcolorb" href="24_a_productos.php" role="button">Productos</a>
 								</div>
 							</div>
+
 					</div>
 					<!-- MENU USUARIOS -->
-					<div class="tab-pane fade" id="v-tabusuarios" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+					<div class="tab-pane fade " id="v-tabusuarios" role="tabpanel" aria-labelledby="v-pills-profile-tab">
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 								<div class="col-xs-12 col-4 align-self-center text-center">
@@ -165,25 +182,25 @@
 							</div>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="15_u_insertar.html" role="button">Agregar</a>
+								<a class="btn btn-primary textcolorb" href="15_u_insertar.php" role="button">Agregar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="16_u_eliminar.html" role="button">Eliminar</a>
+								<a class="btn btn-primary textcolorb" href="16_u_eliminar.php" role="button">Eliminar</a>
 							</div>
 						</div>
 						<br>
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="17_u_actualizar.html" role="button">Actualizar</a>
+								<a class="btn btn-primary textcolorb" href="17_u_actualizar.php" role="button">Actualizar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="18_u_consultar.html" role="button">Consultar</a>
+								<a class="btn btn-primary textcolorb" href="18_u_consultar.php" role="button">Consultar</a>
 							</div>
 						</div>
 					</div>
 					<!-- MENU CURSOS -->
-					<div class="tab-pane fade" id="v-tabcursos" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+					<div class="tab-pane fade show active" id="v-tabcursos" role="tabpanel" aria-labelledby="v-pills-messages-tab">
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 								<div class="col-xs-12 col-4 align-self-center text-center">
@@ -193,82 +210,50 @@
 							</div>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="20_c_insertar.html" role="button">Agregar</a>
+								<a class="btn btn-primary textcolorb" href="20_c_insertar.php" role="button">Agregar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="21_c_eliminar.html" role="button">Eliminar</a>
+								<a class="btn btn-primary textcolorb" href="21_c_eliminar.php" role="button">Eliminar</a>
 							</div>
 						</div>
 						<br>
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="22_c_actualizar.html" role="button">Actualizar</a>
+								<a class="btn btn-primary textcolorb" href="22_c_actualizar.php" role="button">Actualizar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="23_c_consultar.html" role="button">Consultar</a>
+								<a class="btn btn-primary textcolorb" href="23_c_consultar.php" role="button">Consultar</a>
 							</div>
 						</div>
 					</div>
 					<!-- MENU PRODUCTOS -->
-					<div class="tab-pane fade show active" id="v-tabproductos" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-						<!-- TITULO -->
+					<div class="tab-pane fade" id="v-tabproductos" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+						<!-- RENGLON -->
 						<div class="row justify-content-center">
-							<div class="col-sm-12 sm-col-4 col-4align-self-center text-center">
-								<p>- P R O D U C T O S - C O N S U L T A R -</p>
-								<p></p>
-							</div>
-						</div>
-						<!-- CONTENIDO -->
-						<br>
-						<!-- Formulario Registro-->
-						<form action="#" method="post" >
-							<!-- RENGLON -->
-							<div class="row form-group justify-content-center ">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para Consultar:</label>
-								<!-- <div class=" col-xs-12 col-4"> -->
-								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="buscarp" name="buscarp" placeholder="id" required=”required”>
+								<div class="col-xs-12 col-4 align-self-center text-center">
+									<P>- P R O D U C T O S -</P>
+									<p>De clic en una opcion</p>
 								</div>
 							</div>
-							<!-- <div class="row justify-content-center">
-								<div class="form-group col-xs-12 col-4 align-self-center text-center">
-									<button type="submit" class="btn btn-primary" >Buscar Registro</button>
-								</div>
-							</div> -->
-						</form>
-						<br>
-						<br>
-						<div id="datos"></div>
-						<!-- TABLA  -->
-						<!-- <table class="table bgblanco textcolorb table-responsive">
-							<CAPTION>PRODUCTOS EN SISTEMA</CAPTION>
-							<thead class="thead-dark">
-								<tr>
-									<th scope="col">ID</th>
-									<!-- <th scope="col">Nombre</th> -->
-									<!-- <th scope="col">Descripcion</th>
-									<th scope="col">Precio</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td></td>
-									<!-- <td></td> -->
-									<!-- <td></td>
-									<td></td>
-								</tr>
-							</tbody>
-						</table>   -->
-						<br>
-						<br>
-						<br>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="24_a_productos.html" role="button">Regresar a Opciones Producto</a>
+								<a class="btn btn-primary textcolorb" href="25_p_insertar.php" role="button">Agregar</a>
+							</div>
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="26_p_eliminar.php" role="button">Eliminar</a>
 							</div>
 						</div>
-					
+						<br>
+						<!-- RENGLON -->
+						<div class="row justify-content-center">
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="27_p_actualizar.php" role="button">Actualizar</a>
+							</div>
+							<div class="col-xs-12 col-4 align-self-center text-center">
+								<a class="btn btn-primary textcolorb" href="28_p_consultar.php" role="button">Consultar</a>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -301,31 +286,3 @@
 	<script type="text/javascript" src=".\JS\validar.js"></script>
 </body>
 </html>
-
-<script>
-		$(buscar_datos());
-	
-		function buscar_datos(consulta){
-			$.ajax({
-				url:"php/consultarP.php",
-				type:"POST",
-				dataType:'html',
-				data: {consulta: consulta},
-			})
-			.done(function(respuesta){
-				$("#datos").html(respuesta);
-			})
-			.fail(function(){
-				console.log("Error");
-			})
-		}
-		$(document).on('keyup', '#buscarp', function(){
-			var valor = $(this).val();
-			if(valor != ""){
-				buscar_datos(valor);
-			}
-			else{
-				buscar_datos();
-			}
-		});
-	</script>

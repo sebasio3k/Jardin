@@ -16,7 +16,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Index - Admin - EJDLA </title>
+	<title>U - Actualizar</title>
 	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -32,15 +32,15 @@
 	<header class="container-fluid">
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
-				<a class="navbar-brand col-auto" href="13_admin_index.php">
+				<a class="navbar-brand " href="13_admin_index.php">
 					<!-- logo -->
-					<img src=".\img\logo.png" class="" alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela - A D M I N I S T R A D O R - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src=".\img\logo.png" class="img-fluid " alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela - A D M I N I S T R A D O R - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</a>
 				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<div class="navbar-collapse collapse" id="navbarColor01" >
+				<div class="navbar-collapse collapse" id="navbarColor01" style="">
 					<!-- Barra Busqueda  -->
 					<form class="form-inline justify-content-center" id="barra_bus" name="barra_bus">
 						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" onBlur=foco();>
@@ -128,7 +128,7 @@
 			<div class="col-xs-12 align-self-center">
 				<!-- Titulo Admin-->
 				<h1 class="titulo text-center b">Administrador <?php echo $_SESSION['user']['nombre'] ?></h1>
-				<h1 class="titulo2 text-center b">Elija la opción de la izquierda para trabajar con los registros</h1>
+				<h1 class="titulo2 text-center b">ACTUALIZAR  USUARIO</h1>
 			</div>
 		</div>
 		<hr>
@@ -139,8 +139,8 @@
 		<div class="row">
 			<div class="col-3">
 				<div class="nav flex-column nav-pills" id="v-tabindex" role="tablist" aria-orientation="vertical">
-					<a class="nav-link active" id="home" data-toggle="pill" href="#v-tabhome" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio - Opciones</a>
-					<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-tabusuarios" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuarios</a>
+					<a class="nav-link " id="home" data-toggle="pill" href="#v-tabhome" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio - Opciones</a>
+					<a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-tabusuarios" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuarios</a>
 					<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-tabcursos" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cursos</a>
 					<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-tabproductos" role="tab" aria-controls="v-pills-settings" aria-selected="false">Productos</a>
 				</div>
@@ -149,7 +149,7 @@
 			<div class="col-9">
 				<div class="tab-content" id="v-pills-tabContent">
 					<!-- MENU INICIO -->
-					<div class="tab-pane fade show active" id="v-tabhome" role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="tab-pane fade " id="v-tabhome" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
 							<div class="row justify-content-center">
 								<div class="col-xs-12 col-4 align-self-center text-center">
@@ -171,31 +171,139 @@
 
 					</div>
 					<!-- MENU USUARIOS -->
-					<div class="tab-pane fade" id="v-tabusuarios" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+					<div class="tab-pane fade show active" id="v-tabusuarios" role="tabpanel" aria-labelledby="v-pills-profile-tab">
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
-								<div class="col-xs-12 col-4 align-self-center text-center">
-									<p>- U S U A R I O S -</p>
-									<p>De clic en una opcion</p>
-								</div>
-							</div>
-						<div class="row justify-content-center text-center">
-							<div class="col-xs-12 col-4 align-self-center text-center">
-								<!-- 15_u_insertar.php -->
-								<a class="btn btn-primary textcolorb" href="insertarU.jsp" role="button">Agregar</a>
-							</div>
-							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="16_u_eliminar.php" role="button">Eliminar</a>
+							<div class="col-sm-12 sm-col-4 col-4align-self-center text-center">
+								<p>- U S U A R I O S - A C T U A L I Z A R -</p>
+								<p></p>
 							</div>
 						</div>
 						<br>
-						<!-- RENGLON -->
-						<div class="row justify-content-center">
-							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="17_u_actualizar.php" role="button">Actualizar</a>
+						<!-- Formulario Registro-->
+						<form action="#" method="post" >
+							<!-- RENGLON -->
+							<div class="row form-group justify-content-center">
+								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para Buscar Registro:</label>
+								<!-- <div class=" col-xs-12 col-4"> -->
+								<div class="col-sm-4 ">
+									<input type="text" class="form-control" id="id" placeholder="id" required=”required”>
+								</div>
 							</div>
+							<div class="row justify-content-center">
+								<div class="form-group col-xs-12 col-4 align-self-center text-center">
+									<button type="submit" class="btn btn-primary" >Buscar Registro</button>
+								</div>
+							</div>
+							<br>
+							<br>
+							<!-- TABLA  -->
+							<table class="table bgblanco textcolorb table-responsive">
+								<CAPTION>USUARIOS EN SISTEMA</CAPTION>
+								<thead class="thead-dark">
+									<tr>
+										<th scope="col">ID</th>
+										<th scope="col">Nombre</th>
+										<th scope="col">Apellido Paterno</th>
+										<th scope="col">Apellido Materno</th>
+										<th scope="col">Tel&eacute;fono</th>
+										<th scope="col">Correo</th>
+										<th scope="col">Contrase&ntilde;a</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+							<br>
+							<br>
+							<!-- CAMPOS PARA ACTUALIZAR -->
+							<div class="row form-group justify-content-center">
+								<!-- <label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe datos para Actualizar</label> -->
+								<P>Escribe datos para Actualizar</P>
+							</div>
+							<!-- RENGLON -->
+							<div class="row form-group justify-content-center">
+								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Nombre</label>
+								<!-- <div class=" col-xs-12 col-4"> -->
+								<div class="col-sm-4 ">
+									<input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required=”required”>
+								</div>
+							</div>
+							<!-- RENGLON -->
+							<div class="row form-group justify-content-center">
+								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Apellido paterno</label>
+								<div class="col-sm-4 ">
+									<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tu nombre" required=”required”>
+								</div>
+							</div>
+							<!-- RENGLON -->
+							<div class="row form-group justify-content-center">
+								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Apellido materno</label>
+								<div class="col-sm-4 ">
+									<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tu nombre" required=”required”>
+								</div>
+							</div>
+							<!-- RENGLON -->
+							<!-- <div class="row justify-content-center">
+								<div class="form-group col-xs-12 col-4 align-self-center text-center">
+									<label for="exampleInputEmail1" class="textcolorw text-center">Sexo</label>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="sexo" id="mujer" value="option1" checked>
+										<label class="form-check-label textcolorw" for="gridRadios1">
+											Mujer
+										</label>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<input class="form-check-input" type="radio" name="sexo" id="hombre" value="option2">
+										<label class="form-check-label textcolorw" for="gridRadios2">
+											Hombre
+										</label>
+									</div>
+								</div>
+							</div> -->
+							<!-- RENGLON -->
+							<div class="row form-group justify-content-center ">
+								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Tel&eacute;fono</label>
+								<div class="col-sm-4 ">
+									<input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
+								</div>
+							</div>
+							<!-- RENGLON -->
+							<div class="row form-group justify-content-center">
+								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Email</label>
+								<div class="col-sm-4 ">
+									<input type="email" class="form-control textcolorw" id="exampleInputEmail1" placeholder="Enter email">
+								</div>
+							</div>
+							<!-- RENGLON -->
+							<div class="row form-group justify-content-center">
+								<label for="exampleInputPassword1 " class="col-sm-2 col-form-label textcolorB">Contrase&ntilde;a</label>
+								<div class="col-sm-4 ">
+									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+								</div>
+							</div>
+							<br>
+							<div class="row justify-content-center">
+								<div class="form-group col-xs-12 col-4 align-self-center text-center">
+									<button type="submit" class="btn btn-primary" >Actualizar Registro</button>
+								</div>
+							</div>
+						</form>
+						<br>
+						<br>
+						
+						<!-- Boton para regresar -->
+						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="18_u_consultar.php" role="button">Consultar</a>
+								<a class="btn btn-primary textcolorb" href="14_a_usuarios.php" role="button">Regresar a Opciones Usuario</a>
 							</div>
 						</div>
 					</div>
@@ -263,7 +371,6 @@
 		<hr>
 	</div>
 
-	
 	<footer class="mifooter">
 		<div class="container-fluid ">
 			<div class="row justify-content-center">

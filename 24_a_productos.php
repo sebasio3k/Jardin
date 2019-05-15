@@ -16,8 +16,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Index - Admin - EJDLA </title>
-	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
+	<title>PRODUCTOS</title>
+		<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -32,15 +32,15 @@
 	<header class="container-fluid">
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
-				<a class="navbar-brand col-auto" href="13_admin_index.php">
+				<a class="navbar-brand " href="13_admin_index.php">
 					<!-- logo -->
-					<img src=".\img\logo.png" class="" alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela - A D M I N I S T R A D O R - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<img src=".\img\logo.png" class="img-fluid " alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela - A D M I N I S T R A D O R - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</a>
 				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<div class="navbar-collapse collapse" id="navbarColor01" >
+				<div class="navbar-collapse collapse" id="navbarColor01" style="">
 					<!-- Barra Busqueda  -->
 					<form class="form-inline justify-content-center" id="barra_bus" name="barra_bus">
 						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" onBlur=foco();>
@@ -70,7 +70,7 @@
 						<tr>
 							<td><a href="13_admin_index.php">Inicio</a></td>
 						</tr>
-						<tr>
+<!-- 						<tr>
 							<td><a href="14_a_usuarios.php">Usuarios</a></td></a>
 						</tr>
 						<tr>
@@ -78,7 +78,7 @@
 						</tr>
 						<tr>
 							<td><a href="24_a_productos.php">Productos</a></td>
-						</tr>
+						</tr> -->
 						<tr>
 							<td><a href="15_u_insertar.php">Insertar Usuario</a></td>
 						</tr>
@@ -139,17 +139,17 @@
 		<div class="row">
 			<div class="col-3">
 				<div class="nav flex-column nav-pills" id="v-tabindex" role="tablist" aria-orientation="vertical">
-					<a class="nav-link active" id="home" data-toggle="pill" href="#v-tabhome" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio - Opciones</a>
+					<a class="nav-link" id="home" data-toggle="pill" href="#v-tabhome" role="tab" aria-controls="v-pills-home" aria-selected="true">Inicio - Opciones</a>
 					<a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-tabusuarios" role="tab" aria-controls="v-pills-profile" aria-selected="false">Usuarios</a>
 					<a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-tabcursos" role="tab" aria-controls="v-pills-messages" aria-selected="false">Cursos</a>
-					<a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-tabproductos" role="tab" aria-controls="v-pills-settings" aria-selected="false">Productos</a>
+					<a class="nav-link active" id="v-pills-settings-tab" data-toggle="pill" href="#v-tabproductos" role="tab" aria-controls="v-pills-settings" aria-selected="false">Productos</a>
 				</div>
 			</div>
 			<!-- Contenido de los tabs -->
 			<div class="col-9">
 				<div class="tab-content" id="v-pills-tabContent">
 					<!-- MENU INICIO -->
-					<div class="tab-pane fade show active" id="v-tabhome" role="tabpanel" aria-labelledby="v-pills-home-tab">
+					<div class="tab-pane fade " id="v-tabhome" role="tabpanel" aria-labelledby="v-pills-home-tab">
 
 							<div class="row justify-content-center">
 								<div class="col-xs-12 col-4 align-self-center text-center">
@@ -181,8 +181,7 @@
 							</div>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<!-- 15_u_insertar.php -->
-								<a class="btn btn-primary textcolorb" href="insertarU.jsp" role="button">Agregar</a>
+								<a class="btn btn-primary textcolorb" href="15_u_insertar.php" role="button">Agregar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
 								<a class="btn btn-primary textcolorb" href="16_u_eliminar.php" role="button">Eliminar</a>
@@ -228,7 +227,7 @@
 						</div>
 					</div>
 					<!-- MENU PRODUCTOS -->
-					<div class="tab-pane fade" id="v-tabproductos" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+					<div class="tab-pane fade show active" id="v-tabproductos" role="tabpanel" aria-labelledby="v-pills-settings-tab">
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 								<div class="col-xs-12 col-4 align-self-center text-center">
@@ -263,7 +262,6 @@
 		<hr>
 	</div>
 
-	
 	<footer class="mifooter">
 		<div class="container-fluid ">
 			<div class="row justify-content-center">

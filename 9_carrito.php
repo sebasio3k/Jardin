@@ -1,6 +1,4 @@
-<?php 
-	$conexion=mysqli_connect('localhost','Sebastian','ifuseekamy','jardinabuela');
-
+<?php
 	// Sesiones acceder a variable de sesion
 	session_start();
 	// si existe la variable de sesiones
@@ -11,26 +9,21 @@
 		}
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
-	}
+	}	
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Productos</title>
+	<title>Carrito</title>
 	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\funciones.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
-	<!-- ICONO EN LA PESTAÑA -->
-	<link rel="shortcur icon" href=".\img\icon.png">
 </head>
 
 <body class="mibody"> 
@@ -51,13 +44,13 @@
 					<ul class="navbar-nav mr-auto ul2">
 						<!-- Opciones -->
 						<li class="nav-item">
-							<a class="nav-link" href="2_index_2.php">Inicio</a>
+							<a class="nav-link" href="2_index_2.php">Inicio<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="3_nosotros2.php">Sobre Nosotros</a>
 						</li>
-						<li class="nav-item active">
-							<a class="nav-link"href="4_productos2.php">Productos<span class="sr-only">(current)</span></a>
+						<li class="nav-item">
+							<a class="nav-link"href="4_productos2.php">Productos</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="5_cursos2.php">Cursos</a>
@@ -76,7 +69,7 @@
 					<ul class="navbar-nav mr-auto ul2">
 						<li>
 							<!-- Carrito -->
-							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20"></a>
+							<a class="nav-link active" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20"></a>
 						</li>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- Example single danger button -->
@@ -137,138 +130,126 @@
 		</div>
 	</header>
 	<!-- MAIN -->
-	<div class="container">
+	<div class="container pad">
 		<!-- RENGLON -->
-		<div class="row justify-content-center">
-			<div class="col-xs-12">
-				<h1 class="titulo pad text-center">Productos</h1>
+	 	<div class="row justify-content-center">
+			<div class="col-xs-12 align-self-center">
+				<!-- Titulo Carrito-->
+				<h1 class="titulo text-center">Mis Compras</h1>
 			</div>
 		</div>
 		<br>
-		<!-- sql="SELECT * from usuarios";
-									$result=mysqli_query($conexion,$sql);
-
-									while($mostrar=mysqli_fetch_array($result)){
-										?>	 -->
-		<?php
-			$sql = "SELECT imagen FROM productos"; 
-    		$result = mysql_query($conexion,$sql);
-    		$imagen = $result[0];
-    		echo $imagen;
-		    // while($row = mysql_fetch_array($result)) {
-		    // 	echo '<img src="data:image/jpeg;base64,'.base64_encode($result).'"/>';
-		?>
-		<?php       
-		    // }
-		    
-		    mysql_close($conn);
-		?>
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					
-					
-					<img src="<?php echo $mostrar['imagen']; ?>" class="card-img-top" alt="Producto2">
-					<div class="card-body">
-						<h5 class="card-title blurw"><?php echo $mostrar['descripcion'] ?></h5>
-					   	<p class="card-text blurw text-justify"><?php echo $mostrar['precio'] ?></p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-		</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto2">
-					<div class="card-body ">
-						<h5 class="card-title blurw">Producto 2</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto3">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 3</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-		</div>
-		<br>
-		<br>
-		<!-- RENGLON -->
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p4.jpg" class="card-img-top" alt="Producto4">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 4</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
+		<table class="table bgblanco textcolorb">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Producto</th>
+					<th scope="col">Cantidad</th>
+					<th scope="col">Precio</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						Producto 1
+						<br>
+						<img src=".\img\p4.jpg" width="90" height="95">
+					</td>
+					<td>2</td>
+					<td>$$$</td>
+				</tr>
+				<tr>
+					<td>
+						Producto 2
+						<br>
+						<img src=".\img\p5.jpg" width="90" height="95">
+					</td>
+					<td>1</td>
+					<td>$$$</td>
+				</tr>
+				<tr>
+					<td>
+						Producto 3
+						<br>
+						<img src=".\img\p6.jpg" width="90" height="95">
+					</td>
+					<td>1</td>
+					<td>$$$</td>
+				</tr>
+			</tbody>
+		</table>
+		<!-- <form action="#" method="post" >
+			<div class="row justify-content-center">
+				<div class="form-group col-xs-12 col-4 align-self-center text-center">
+					<button type="submit" class="btn btn-primary" >Seguir Comprando</button>
+				</div>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="form-group col-xs-12 col-4 align-self-center text-center">
+					<button type="submit" class="btn btn-primary disabled">Realizar Pedido</button>
 				</div>
 			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p5.jpg" class="card-img-top" alt="Producto5">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 5</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
+		</form> -->
+		<!-- RENGLON BOTONES -->
+		<div class="row justify-content-center">
+			<div class="form-group col-xs-12 col-4 align-self-center text-center">
+				<a class="btn btn-primary textcolorb" role="button" href="4_productos2.php">Seguir Comprando</a>
 			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p6.jpg" class="card-img-top" alt="Producto6">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 6</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<div class="form-group col-xs-12 col-4 align-self-center text-center">
+				<a class="btn btn-primary textcolorb disabled" role="button" href="10_pago.php">Realizar Pedido</a>
 			</div>
 		</div>
-		<hr>
 
+	</div>
+	<br>
+	<hr>
+	<br>
+		<!-- RENGLON -->
 		<div class="row justify-content-center">
-			<nav aria-label="...">
-				<ul class="pagination">
-					<li class="page-item disabled">
-						<span class="page-link">Previous</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item active" aria-current="page">
-						<span class="page-link">
-							2
-							<span class="sr-only">(current)</span>
-						</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item">
-						<a class="page-link" href="#">Next</a>
-					</li>
-				</ul>
-			</nav>
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<h3 class="text-center">Preguntas Frecuentes</h3>
+				<p class="text-center">
+					FAQs sobre envío <br>
+					¿Realizan envíos? <br>
+					<br>
+					FAQs sobre incidencias<br>
+					¿Tienen una atención al cliente?<br>
+					¿Se permiten devoluciones?<br>
+					¿Cómo puedo contactar con ustedes?<br>
+					¿Qué hago si el producto no es el que quiero?<br>
+					<br>
+				</p>
+			</div>
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<h3 class="text-center">Contactos corporativos</h3>
+				<p class="text-justify">
+					México
+					El Jardin de la Abuela (para consumidores)
+					001-800 696-4723 Correo (para empresas y consumidores)
+					abuelasgarden@mail.com 
+				</p>
+			</div>
+		</div>
+		<!-- RENGLON -->
+		<div class="row justify-content-center">
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<p class="text-center">
+					FAQs sobre el producto<br>
+					¿El producto realmente es natural?<br>
+					¿El producto es auténtico?<br>
+					¿El producto es seguro para niños?<br>
+				</p>
+			</div>
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<h3 class="text-center">Dirección corporativa</h3>
+				<p class="text-justify">
+					BLVD. GUADALUPE VICTORIA 219, <br>
+					LAS ENCINAS,DURANGO,C.P.34039,DGO <br>
+					(618)128-8253
+				</p>
+			</div>
 		</div>
 	</div>
-
+	<hr>
 	<!-- FOOTER -->
 	<footer class="mifooter">
 		<div class="container">
@@ -336,4 +317,3 @@
 	<script src="./JS/buscador.js"></script>
 </body>
 </html>
-

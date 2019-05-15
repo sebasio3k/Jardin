@@ -1,6 +1,4 @@
-<?php 
-	$conexion=mysqli_connect('localhost','Sebastian','ifuseekamy','jardinabuela');
-
+<?php
 	// Sesiones acceder a variable de sesion
 	session_start();
 	// si existe la variable de sesiones
@@ -11,26 +9,21 @@
 		}
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
-	}
+	}	
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Productos</title>
+	<title>Ordenes</title>
 	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\funciones.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
-	<!-- ICONO EN LA PESTAÑA -->
-	<link rel="shortcur icon" href=".\img\icon.png">
 </head>
 
 <body class="mibody"> 
@@ -50,14 +43,14 @@
 				<div class="navbar-collapse collapse" id="navbarColor01" style="">
 					<ul class="navbar-nav mr-auto ul2">
 						<!-- Opciones -->
-						<li class="nav-item">
-							<a class="nav-link" href="2_index_2.php">Inicio</a>
+						<li class="nav-item active">
+							<a class="nav-link" href="2_index_2.php">Inicio<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="3_nosotros2.php">Sobre Nosotros</a>
 						</li>
-						<li class="nav-item active">
-							<a class="nav-link"href="4_productos2.php">Productos<span class="sr-only">(current)</span></a>
+						<li class="nav-item">
+							<a class="nav-link"href="4_productos2.php">Productos</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="5_cursos2.php">Cursos</a>
@@ -68,7 +61,7 @@
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
-					<form class="form-inline`justify-content-center">
+					<form class="form-inline`justify-content-center" id="barra_bus" name="barra_bus">
 						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" onBlur=foco();>
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
@@ -136,139 +129,64 @@
 			</div>
 		</div>
 	</header>
-	<!-- MAIN -->
-	<div class="container">
+	<!-- CUERPO -->
+	<div class="container pad">
 		<!-- RENGLON -->
+	 	<div class="row justify-content-center">
+			<div class="col-xs-12 align-self-center">
+				<!-- Titulo Carrito-->
+				<h1 class="titulo text-center">Mis Ordenes</h1>
+			</div>
+		</div>
+		<br>
+		<table class="table bgblanco textcolorb">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Num. Orden</th>
+					<th scope="col">Ver Reporte</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<!--  -->
+						1
+					</td>
+					<td><a href="10_pago.php"> Ver Reporte </a></td>
+				</tr>
+				<tr>
+					<td>
+						<!--  -->
+						2
+					</td>
+					<td><a href="10_pago.php"> Ver Reporte </a></td>
+				</tr>
+			</tbody>
+		</table>
+		<br>
+		<br>
+		<!-- BOTON SEGUIR COMPRANDO -->
+		<div class="row justify-content-center">
+			<div class="form-group col-xs-12 col-4 align-self-center text-center">
+				<a class="btn btn-primary textcolorb" role="button" href="4_productos2.php">Seguir Comprando</a>
+			</div>
+		</div>
+		<br>
+		<br>
+		<hr>
 		<div class="row justify-content-center">
 			<div class="col-xs-12">
-				<h1 class="titulo pad text-center">Productos</h1>
+				<p class="text-center">
+					Ud. podr&aacute; recoger sus productos en la dirección <br>
+					BLVD. GUADALUPE VICTORIA 219, LAS ENCINAS,DURANGO,<br>
+					C.P.34039,DGO (618)128-8253. En la fecha del reporte <br>
+					correspondiente
+				</p>
 			</div>
 		</div>
-		<br>
-		<!-- sql="SELECT * from usuarios";
-									$result=mysqli_query($conexion,$sql);
 
-									while($mostrar=mysqli_fetch_array($result)){
-										?>	 -->
-		<?php
-			$sql = "SELECT imagen FROM productos"; 
-    		$result = mysql_query($conexion,$sql);
-    		$imagen = $result[0];
-    		echo $imagen;
-		    // while($row = mysql_fetch_array($result)) {
-		    // 	echo '<img src="data:image/jpeg;base64,'.base64_encode($result).'"/>';
-		?>
-		<?php       
-		    // }
-		    
-		    mysql_close($conn);
-		?>
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					
-					
-					<img src="<?php echo $mostrar['imagen']; ?>" class="card-img-top" alt="Producto2">
-					<div class="card-body">
-						<h5 class="card-title blurw"><?php echo $mostrar['descripcion'] ?></h5>
-					   	<p class="card-text blurw text-justify"><?php echo $mostrar['precio'] ?></p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-		</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto2">
-					<div class="card-body ">
-						<h5 class="card-title blurw">Producto 2</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto3">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 3</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-		</div>
-		<br>
-		<br>
-		<!-- RENGLON -->
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p4.jpg" class="card-img-top" alt="Producto4">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 4</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p5.jpg" class="card-img-top" alt="Producto5">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 5</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p6.jpg" class="card-img-top" alt="Producto6">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 6</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-		</div>
 		<hr>
-
-		<div class="row justify-content-center">
-			<nav aria-label="...">
-				<ul class="pagination">
-					<li class="page-item disabled">
-						<span class="page-link">Previous</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item active" aria-current="page">
-						<span class="page-link">
-							2
-							<span class="sr-only">(current)</span>
-						</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item">
-						<a class="page-link" href="#">Next</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
 	</div>
-
 	<!-- FOOTER -->
 	<footer class="mifooter">
 		<div class="container">
@@ -334,6 +252,7 @@
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
 	<script src="./JS/buscador.js"></script>
+	<!-- JavaScript -->
+	<script type="text/javascript" src=".\JS\validar.js"></script>
 </body>
 </html>
-

@@ -1,3 +1,18 @@
+<?php
+	// Sesiones
+	session_start();
+	// si existe la variable de sesiones
+	if(isset($_SESSION['user'])) {
+		// que tipo se usuario ingresa para redireccionar
+		if($_SESSION['user']['tipo'] == "Admin"){
+			header('Location: 13_admin_index.php');
+		}
+		else if($_SESSION['user']['tipo'] == "User"){
+				header('Location: 2_index_2.php');
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +38,7 @@
 	<header class="container-fluid">
 		<div class="container-fluid justify-content-center">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
-				<a class="navbar-brand" href="1_index.html">
+				<a class="navbar-brand" href="1_index.php">
 					<!-- logo -->
 					<img src=".\img\logo.png" class="img-fluid" alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela
 				</a>
@@ -35,19 +50,19 @@
 					<ul class="navbar-nav mr-auto">
 						<!-- Opciones -->
 						<li class="nav-item ">
-							<a class="nav-link" href="1_index.html">Inicio</a>
+							<a class="nav-link" href="1_index.php">Inicio</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="3_nosotros.html">Sobre Nosotros</a>
+							<a class="nav-link" href="3_nosotros.php">Sobre Nosotros</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link"href="4_productos.html">Productos</a>
+							<a class="nav-link"href="4_productos.php">Productos</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="5_cursos.html">Cursos</a>
+							<a class="nav-link" href="5_cursos.php">Cursos</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="3_nosotros.html">Contacto</a>
+							<a class="nav-link" href="3_nosotros.php">Contacto</a>
 						</li>
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -70,28 +85,28 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><a href="1_index.html">Inicio</a></td>
+							<td><a href="1_index.php">Inicio</a></td>
 						</tr>
 						<tr>
-							<td><a href="5_cursos.html">Cursos</a></td></a>
+							<td><a href="5_cursos.php">Cursos</a></td></a>
 						</tr>
 						<tr>
-							<td><a href="3_nosotros.html">Empresa</a></td>
+							<td><a href="3_nosotros.php">Empresa</a></td>
 						</tr>
 						<tr>
-							<td><a href="3_nosotros.html">Contacto</a></td>
+							<td><a href="3_nosotros.php">Contacto</a></td>
 						</tr>
 						<tr>
-							<td><a href="1_index.html">Jardin</a></td>
+							<td><a href="1_index.php">Jardin</a></td>
 						</tr>
 						<tr>
-							<td><a href="4_productos.html">Productos</a></td>
+							<td><a href="4_productos.php">Productos</a></td>
 						</tr>
 						<tr>
-							<td><a href="7_login_signin.html">Iniciar Sesión</a></td>
+							<td><a href="7_login_signin.php">Iniciar Sesión</a></td>
 						</tr>
 						<tr>
-							<td><a href="8_signin.html">Registrarse</a></td>
+							<td><a href="8_signin.php">Registrarse</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -216,7 +231,7 @@
 			<!-- BOTONES -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
-					<a class="btn btn-primary textcolorb" role="button" href="1_index.html">Cancelar</a>
+					<a class="btn btn-primary textcolorb" role="button" href="1_index.php">Cancelar</a>
 					<!-- <button type="submit" class="btn btn-primary" >Cancelar</button> -->
 				</div>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

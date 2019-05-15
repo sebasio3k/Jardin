@@ -1,3 +1,17 @@
+<?php
+	// Sesiones acceder a variable de sesion
+	session_start();
+	// si existe la variable de sesiones
+	if(isset($_SESSION['user'])) {
+		// que tipo se usuario ingresa para redireccionar
+		if($_SESSION['user']['tipo'] != "Admin"){
+			header('Location: 2_index_2.php ');
+		}
+	}else {//no existe, nadie se ha loggeado
+			header('Location: 1_index.php');
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +32,7 @@
 	<header class="container-fluid">
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
-				<a class="navbar-brand " href="13_admin_index.html">
+				<a class="navbar-brand " href="13_admin_index.php">
 					<!-- logo -->
 					<img src=".\img\logo.png" class="img-fluid " alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela - A D M I N I S T R A D O R - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</a>
@@ -37,7 +51,7 @@
 					<ul class="navbar-nav mr-auto">
 						<li>
 							<!-- Cerrar Sesion -->
-							<a class="nav-link" href="7_login_signin.html">Cerrar Sesi&oacute;n</a>
+							<a class="nav-link" href="7_login_signin.php">Cerrar Sesi&oacute;n</a>
 						</li>
 					</ul>
 				</div>
@@ -54,52 +68,52 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><a href="13_admin_index.html">Inicio</a></td>
+							<td><a href="13_admin_index.php">Inicio</a></td>
 						</tr>
 						<tr>
-							<td><a href="14_a_usuarios.html">Usuarios</a></td></a>
+							<td><a href="14_a_usuarios.php">Usuarios</a></td></a>
 						</tr>
 						<tr>
-							<td><a href="19_a_cursos.html">Cursos</a></td>
+							<td><a href="19_a_cursos.php">Cursos</a></td>
 						</tr>
 						<tr>
-							<td><a href="24_a_productos.html">Productos</a></td>
+							<td><a href="24_a_productos.php">Productos</a></td>
 						</tr>
 						<tr>
-							<td><a href="15_u_insertar.html">Insertar Usuario</a></td>
+							<td><a href="15_u_insertar.php">Insertar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="16_u_eliminar.html">Eliminar Usuario</a></td>
+							<td><a href="16_u_eliminar.php">Eliminar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="18_u_consultar.html">Consultar Usuario</a></td>
+							<td><a href="18_u_consultar.php">Consultar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="17_u_actualizar.html">Actualizar Usuario</a></td>
+							<td><a href="17_u_actualizar.php">Actualizar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="20_c_insertar.html">Insertar Curso</a></td>
+							<td><a href="20_c_insertar.php">Insertar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="21_c_eliminar.html">Eliminar Curso</a></td>
+							<td><a href="21_c_eliminar.php">Eliminar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="23_c_consultar.html">Consultar Curso</a></td>
+							<td><a href="23_c_consultar.php">Consultar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="22_c_actualizar.html">Actualizar Curso</a></td>
+							<td><a href="22_c_actualizar.php">Actualizar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="25_p_insertar.html">Insertar Producto</a></td>
+							<td><a href="25_p_insertar.php">Insertar Producto</a></td>
 						</tr>
 						<tr>
-							<td><a href="26_p_eliminar.html">Eliminar Producto</a></td>
+							<td><a href="26_p_eliminar.php">Eliminar Producto</a></td>
 						</tr>
 						<tr>
-							<td><a href="28_p_consultar.html">Consultar Producto</a></td>
+							<td><a href="28_p_consultar.php">Consultar Producto</a></td>
 						</tr>
 						<tr>
-							<td><a href="27_p_actualizar.html">Actualizar Producto</a></td>
+							<td><a href="27_p_actualizar.php">Actualizar Producto</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -108,12 +122,14 @@
 	</header>
 	<br>
 	<!-- MAIN -->
+
 	<div class="container pad">
 		<!-- RENGLON -->
 	 	<div class="row justify-content-center">
 			<div class="col-xs-12 align-self-center">
-				<!-- Titulo Admin-->
-				<h1 class="titulo text-center textcolorb">CONSULTAR  USUARIO</h1>
+				<!--Titulo Admin-->
+				<h1 class="titulo text-center b">Administrador <?php echo $_SESSION['user']['nombre'] ?></h1>
+				<h1 class="titulo2 text-center b">CONSULTAR  USUARIO</h1>
 			</div>
 		</div>
 		<hr>
@@ -144,19 +160,20 @@
 							</div>
 							<div class="row justify-content-center text-center">
 								<div class="col-sm-12 col-md-3 align-self-center">
-									<a class="btn btn-primary textcolorb" href="14_a_usuarios.html" role="button">Usuarios</a>
+									<a class="btn btn-primary textcolorb" href="14_a_usuarios.php" role="button">Usuarios</a>
 								</div>
 								<div class="col-sm-12 col-md-3 align-self-center">
-									<a class="btn btn-primary textcolorb" href="19_a_cursos.html" role="button">Cursos</a>
+									<a class="btn btn-primary textcolorb" href="19_a_cursos.php" role="button">Cursos</a>
 								</div>
 								<div class="col-sm-12 col-md-3 align-self-center">
-									<a class="btn btn-primary textcolorb" href="24_a_productos.html" role="button">Productos</a>
+									<a class="btn btn-primary textcolorb" href="24_a_productos.php" role="button">Productos</a>
 								</div>
 							</div>
 
 					</div>
 					<!-- MENU USUARIOS -->
-					<div class="tab-pane fade show active" id="v-tabusuarios" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+					<div class="tab-pane fade show active" id="v-tabusuarios" role="tabpanel" aria-labelle
+					dby="v-pills-profile-tab">
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 							<div class="col-sm-12 sm-col-4 col-4align-self-center text-center">
@@ -185,7 +202,7 @@
 						<br>
 						<br>
 						<!-- TABLA  -->
-						<div id="datos">
+						<div id="data">
 
 						</div>
 						<!-- TABLA 
@@ -217,7 +234,7 @@
 						<!-- Boton para regresar -->
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="14_a_usuarios.html" role="button">Regresar a Opciones Usuario</a>
+								<a class="btn btn-primary textcolorb" href="14_a_usuarios.php" role="button">Regresar a Opciones Usuario</a>
 							</div>
 						</div>
 					</div>
@@ -232,20 +249,20 @@
 							</div>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="20_c_insertar.html" role="button">Agregar</a>
+								<a class="btn btn-primary textcolorb" href="20_c_insertar.php" role="button">Agregar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="21_c_eliminar.html" role="button">Eliminar</a>
+								<a class="btn btn-primary textcolorb" href="21_c_eliminar.php" role="button">Eliminar</a>
 							</div>
 						</div>
 						<br>
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="22_c_actualizar.html" role="button">Actualizar</a>
+								<a class="btn btn-primary textcolorb" href="22_c_actualizar.php" role="button">Actualizar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="23_c_consultar.html" role="button">Consultar</a>
+								<a class="btn btn-primary textcolorb" href="23_c_consultar.php" role="button">Consultar</a>
 							</div>
 						</div>
 					</div>
@@ -260,20 +277,20 @@
 							</div>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="25_p_insertar.html" role="button">Agregar</a>
+								<a class="btn btn-primary textcolorb" href="25_p_insertar.php" role="button">Agregar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="26_p_eliminar.html" role="button">Eliminar</a>
+								<a class="btn btn-primary textcolorb" href="26_p_eliminar.php" role="button">Eliminar</a>
 							</div>
 						</div>
 						<br>
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="27_p_actualizar.html" role="button">Actualizar</a>
+								<a class="btn btn-primary textcolorb" href="27_p_actualizar.php" role="button">Actualizar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="28_p_consultar.html" role="button">Consultar</a>
+								<a class="btn btn-primary textcolorb" href="28_p_consultar.php" role="button">Consultar</a>
 							</div>
 						</div>
 					</div>
@@ -320,7 +337,7 @@
 			data: {consulta: consulta},
 		})
 		.done(function(respuesta){
-			$("#datos").html(respuesta);
+			$("#data").html(respuesta);
 		})
 		.fail(function(){
 			console.log("Error");

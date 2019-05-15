@@ -1,6 +1,4 @@
-<?php 
-	$conexion=mysqli_connect('localhost','Sebastian','ifuseekamy','jardinabuela');
-
+<?php
 	// Sesiones acceder a variable de sesion
 	session_start();
 	// si existe la variable de sesiones
@@ -11,22 +9,19 @@
 		}
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
-	}
+	}	
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Productos</title>
+	<title>Sobre Nosotros</title>
 	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\funciones.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
@@ -53,11 +48,11 @@
 						<li class="nav-item">
 							<a class="nav-link" href="2_index_2.php">Inicio</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="3_nosotros2.php">Sobre Nosotros</a>
-						</li>
 						<li class="nav-item active">
-							<a class="nav-link"href="4_productos2.php">Productos<span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="3_nosotros2.php">Sobre Nosotros<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link"href="4_productos2.php">Productos</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="5_cursos2.php">Cursos</a>
@@ -141,134 +136,137 @@
 		<!-- RENGLON -->
 		<div class="row justify-content-center">
 			<div class="col-xs-12">
-				<h1 class="titulo pad text-center">Productos</h1>
+				<!-- Logo -->
+				<img src=".\img\logo.png" class="img-fluid" alt="Responsive image" width="285" height="256">
 			</div>
 		</div>
-		<br>
-		<!-- sql="SELECT * from usuarios";
-									$result=mysqli_query($conexion,$sql);
-
-									while($mostrar=mysqli_fetch_array($result)){
-										?>	 -->
-		<?php
-			$sql = "SELECT imagen FROM productos"; 
-    		$result = mysql_query($conexion,$sql);
-    		$imagen = $result[0];
-    		echo $imagen;
-		    // while($row = mysql_fetch_array($result)) {
-		    // 	echo '<img src="data:image/jpeg;base64,'.base64_encode($result).'"/>';
-		?>
-		<?php       
-		    // }
-		    
-		    mysql_close($conn);
-		?>
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					
-					
-					<img src="<?php echo $mostrar['imagen']; ?>" class="card-img-top" alt="Producto2">
-					<div class="card-body">
-						<h5 class="card-title blurw"><?php echo $mostrar['descripcion'] ?></h5>
-					   	<p class="card-text blurw text-justify"><?php echo $mostrar['precio'] ?></p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
+		<!-- IMAGEN PARALLAX -->
+		<div class="container-fluid">
+			<div class="row justify-content-center ">
+				<div class="smallscreen">
+	  				<!-- <img class="img-fluid" src="./img/b5.jpg"> -->
+	  				<!-- <h2 class="b">¡ven y con&oacute;cenos!</h2>
+	        		<p class="b">Tenemos los mejores artículos para jardinería en la ciudad</p> -->
+				</div>
+				<div class="content right2 illustration_05 img-fluid blurw">
+					<div class="carousel-caption d-none d-md-block blurb">
+			        	<h5 class="w">SOBRE NOSOTROS</h5>
+			 		    <p class="w">El Jardín de la Abuela.</p>
+			 	    </div>
+	        		<br>
+	        		<br>
+	        		<br>
+					<br>
+	        		<br>
+	        		<br>
+	        		<br>
+					<br>
+	    			<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+	    		</div>  
 			</div>
 		</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto2">
-					<div class="card-body ">
-						<h5 class="card-title blurw">Producto 2</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
+		<!-- BANNER -->
+		<!-- <div class="row justify-content-center">
+			<div class="col-xs-12">
+				<img src=".\img\b5.jpg" class="img-fluid" alt="Responsive image" width="1200" height="537">	
 			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto3">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 3</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-		</div>
+		</div> -->
 		<br>
-		<br>
+		<hr>
 		<!-- RENGLON -->
 		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p4.jpg" class="card-img-top" alt="Producto4">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 4</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p5.jpg" class="card-img-top" alt="Producto5">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 5</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p6.jpg" class="card-img-top" alt="Producto6">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 6</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
+			<div class="col-xs-12 ">
+				<!-- Titulo -->
+				<h1  class="titulo text-center">EL JARD&Iacute;N DE LA ABUELA</h1>
 			</div>
 		</div>
+		<br>
+		<!-- RENGLON -->
+		<div class="row justify-content-justify">
+			<div class="col-xs-12 ">
+				<p class="text-center">
+					El Jardín de la abuela es un negocio que ofrece los siguientes servicios: 
+					Venta de productos de jardinería (herramientas, aspersores, macetas, costales de tierra, graba de ornamento, semillas florales y de plantas, muebles de jardín, entre otros.) 
+					Oferta de diversos cursos de jardinería, en los cuales se enseñan consejos, técnicas y métodos que ayudan tanto a construir tu propio jardín ideal, como al cuidado de las plantas.
+				</p>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
 		<hr>
-
+		<!-- RENGLON -->
 		<div class="row justify-content-center">
-			<nav aria-label="...">
-				<ul class="pagination">
-					<li class="page-item disabled">
-						<span class="page-link">Previous</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item active" aria-current="page">
-						<span class="page-link">
-							2
-							<span class="sr-only">(current)</span>
-						</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
-					<li class="page-item">
-						<a class="page-link" href="#">Next</a>
-					</li>
-				</ul>
-			</nav>
+			<div class="col-auto  col-xs-12  col-md-4 align-self-center">
+				<h3 class="text-center">Misi&oacute;n</h3>
+				<p class="text-justify">
+					Brindar el mejor servicio y atención a nuestros clientes, buscando satisfacer sus necesidades y requerimientos de jardiner&iacute;.
+				</p>
+			</div>
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<h3 class="text-center">Visi&oacute;n</h3>
+				<p class="text-justify">
+					Ser un empresa líder nacional en servicio y atención, con un enfoque dirigido hacia las mejoras de jard&iacute; del hoogar.
+				</p>
+			</div>
+		</div>
+		<br>
+		<br>
+		<hr>
+		<!-- RENGLON -->
+		<div class="row justify-content-center">
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<h3 class="text-center">Preguntas Frecuentes</h3>
+				<p class="text-center">
+					FAQs sobre envío <br>
+					¿Realizan envíos? <br>
+					<br>
+					FAQs sobre incidencias<br>
+					¿Tienen una atención al cliente?<br>
+					¿Se permiten devoluciones?<br>
+					¿Cómo puedo contactar con ustedes?<br>
+					¿Qué hago si el producto no es el que quiero?<br>
+					<br>
+				</p>
+			</div>
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<h3 class="text-center">Contactos corporativos</h3>
+				<p class="text-justify">
+					México
+					El Jardin de la Abuela (para consumidores)
+					001-800 696-4723 Correo (para empresas y consumidores)
+					abuelasgarden@mail.com 
+				</p>
+			</div>
+		</div>
+		<!-- RENGLON -->
+		<div class="row justify-content-center">
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<p class="text-center">
+					FAQs sobre el producto<br>
+					¿El producto realmente es natural?<br>
+					¿El producto es auténtico?<br>
+					¿El producto es seguro para niños?<br>
+				</p>
+			</div>
+			<div class="col-auto col-xs-12 col-md-4 align-self-center">
+				<h3 class="text-center">Dirección corporativa</h3>
+				<p class="text-justify">
+					BLVD. GUADALUPE VICTORIA 219, <br>
+					LAS ENCINAS,DURANGO,C.P.34039,DGO <br>
+					(618)128-8253
+				</p>
+			</div>
 		</div>
 	</div>
-
+	<hr>
 	<!-- FOOTER -->
 	<footer class="mifooter">
 		<div class="container">
@@ -336,4 +334,3 @@
 	<script src="./JS/buscador.js"></script>
 </body>
 </html>
-

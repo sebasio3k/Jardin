@@ -1,6 +1,4 @@
-<?php 
-	$conexion=mysqli_connect('localhost','Sebastian','ifuseekamy','jardinabuela');
-
+<?php
 	// Sesiones acceder a variable de sesion
 	session_start();
 	// si existe la variable de sesiones
@@ -9,17 +7,17 @@
 		if($_SESSION['user']['tipo'] != "Usuario"){
 			header('Location: 13_admin_index.php ');
 		}
-	}else {//no existe, nadie se ha loggeado
-			header('Location: 1_index.php');
 	}
+	else {//no existe, nadie se ha loggeado
+		header('Location: 1_index.php');
+	}	
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Productos</title>
+	<title>Cursos</title>
 	<link rel="stylesheet" type="text/css" href=".\CSS\estilos.css">
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -56,11 +54,11 @@
 						<li class="nav-item">
 							<a class="nav-link" href="3_nosotros2.php">Sobre Nosotros</a>
 						</li>
-						<li class="nav-item active">
-							<a class="nav-link"href="4_productos2.php">Productos<span class="sr-only">(current)</span></a>
-						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="5_cursos2.php">Cursos</a>
+							<a class="nav-link"href="4_productos2.php">Productos</a>
+						</li>
+						<li class="nav-item active">
+							<a class="nav-link" href="5_cursos2.php">Cursos<span class="sr-only">(current)</span></a>
 						</li>
 						<!-- <li class="nav-item">
 							<a class="nav-link" href="3_nosotros2.php">Contacto</a>
@@ -141,53 +139,32 @@
 		<!-- RENGLON -->
 		<div class="row justify-content-center">
 			<div class="col-xs-12">
-				<h1 class="titulo pad text-center">Productos</h1>
+				<h1 class="titulo pad text-center">Nuestros Cursos para ti</h1>
 			</div>
 		</div>
 		<br>
-		<!-- sql="SELECT * from usuarios";
-									$result=mysqli_query($conexion,$sql);
-
-									while($mostrar=mysqli_fetch_array($result)){
-										?>	 -->
-		<?php
-			$sql = "SELECT imagen FROM productos"; 
-    		$result = mysql_query($conexion,$sql);
-    		$imagen = $result[0];
-    		echo $imagen;
-		    // while($row = mysql_fetch_array($result)) {
-		    // 	echo '<img src="data:image/jpeg;base64,'.base64_encode($result).'"/>';
-		?>
-		<?php       
-		    // }
-		    
-		    mysql_close($conn);
-		?>
 		<div class="row justify-content-center">
 			<!-- COLUMNA -->
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
 				<!-- Tarjeta de producto -->
 				<div class="card" style="width: 18rem;">
-					
-					
-					<img src="<?php echo $mostrar['imagen']; ?>" class="card-img-top" alt="Producto2">
+					<img src=".\img\c1.jpg" width="500" height="250" class="card-img-top" alt="Curso1">
 					<div class="card-body">
-						<h5 class="card-title blurw"><?php echo $mostrar['descripcion'] ?></h5>
-					   	<p class="card-text blurw text-justify"><?php echo $mostrar['precio'] ?></p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+						<h5 class="card-title blurw text-justify">Cuidado de cesped</h5>
+					   	<p class="card-text blurw text-justify">Aprende cada cu&aacute;ndo hay que regar el cesped para tener uno ¡espectacular!</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
 					</div>
 				</div>	
 			</div>
-		</div>
-			<!-- COLUMNA -->
+			<!-- COLUMNA --> 
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
 				<!-- Tarjeta de producto -->
 				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto2">
+					<img src=".\img\c2.jpg" width="200" height="250" class="card-img-top" alt="Curso2">
 					<div class="card-body ">
-						<h5 class="card-title blurw">Producto 2</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+						<h5 class="card-title blurw text-justify">Hacer un jard&iacute;n interior</h5>
+					   	<p class="card-text blurw text-justify">Conoce los secretos para tener un jard&iacute;n interior. Ideal para hogares pequeños.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
 					</div>
 				</div>	
 			</div>
@@ -195,11 +172,11 @@
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
 				<!-- Tarjeta de producto -->
 				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto3">
+					<img src=".\img\c3.jpg" width="200" height="250" class="card-img-top" alt="Curso3">
 					<div class="card-body">
-						<h5 class="card-title blurw">Producto 3</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+						<h5 class="card-title blurw text-justify">Elige tus muebles del jard&iacute;n</h5>
+					   	<p class="card-text blurw text-justify">¿Tienes buen gusto por los muebles? Aprende a elegir los de tu jard&iacute;n.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
 					</div>
 				</div>	
 			</div>
@@ -212,11 +189,11 @@
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
 				<!-- Tarjeta de producto -->
 				<div class="card" style="width: 18rem;">
-					<img src=".\img\p4.jpg" class="card-img-top" alt="Producto4">
+					<img src=".\img\c4.jpg" width="200" height="250" class="card-img-top" alt="Curso4">
 					<div class="card-body">
-						<h5 class="card-title blurw">Producto 4</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+						<h5 class="card-title blurw text-justify">Cuidado de plantas en macetas</h5>
+					   	<p class="card-text blurw text-justify blurw text-justify">Que no se te sequen tus plantas, Aprende primeros auxilios para ellas.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
 					</div>
 				</div>
 			</div>
@@ -224,11 +201,11 @@
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
 				<!-- Tarjeta de producto -->
 				<div class="card" style="width: 18rem;">
-					<img src=".\img\p5.jpg" class="card-img-top" alt="Producto5">
+					<img src=".\img\c5.jpg" width="200" height="250" class="card-img-top" alt="Curso5">
 					<div class="card-body">
-						<h5 class="card-title blurw">Producto 5</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+						<h5 class="card-title blurw text-justify">Renueva tu jard&iacute;n</h5>
+					   	<p class="card-text blurw text-justify">¿Cansado de la misma vista que te ofrece tu jard&iacute;n? Inscribete para aprender algo nuevo.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
 					</div>
 				</div>	
 			</div>
@@ -236,11 +213,11 @@
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
 				<!-- Tarjeta de producto -->
 				<div class="card" style="width: 18rem;">
-					<img src=".\img\p6.jpg" class="card-img-top" alt="Producto6">
+					<img src=".\img\c6.jpg" width="600" height="250" class="card-img-top" alt="Curso6">
 					<div class="card-body">
-						<h5 class="card-title blurw">Producto 6</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
+						<h5 class="card-title blurw text-justify">¡Manos a la obra jardinero!</h5>
+					   	<p class="card-text blurw text-justify">Aprende a utilizar correctamente herramientas de jardinería, y pon en pr&aacute;ctica tus conocimientos.</p>
+					   	<a href="#" class="btn btn-primary">Inscribirme</a>
 					</div>
 				</div>	
 			</div>
@@ -336,4 +313,3 @@
 	<script src="./JS/buscador.js"></script>
 </body>
 </html>
-

@@ -1,4 +1,4 @@
- <?php
+<?php
 	// Sesiones acceder a variable de sesion
 	session_start();
 	// si existe la variable de sesiones
@@ -8,7 +8,7 @@
 			header('Location: 13_admin_index.php ');
 		}
 	}else {//no existe, nadie se ha loggeado
-			header('Location: 1_index.html');
+			header('Location: 1_index.php');
 	}	
 ?>
 
@@ -48,16 +48,16 @@
 							<a class="nav-link" href="2_index_2.php">Inicio<span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="3_nosotros2.html">Sobre Nosotros</a>
+							<a class="nav-link" href="3_nosotros2.php">Sobre Nosotros</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link"href="4_productos2.php">Productos</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="5_cursos2.html">Cursos</a>
+							<a class="nav-link" href="5_cursos2.php">Cursos</a>
 						</li>
 						<!-- <li class="nav-item">
-							<a class="nav-link" href="3_nosotros2.html">Contacto</a>
+							<a class="nav-link" href="3_nosotros2.php">Contacto</a>
 						</li> -->
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -70,7 +70,7 @@
 					<ul class="navbar-nav mr-auto ul2">
 						<li>
 							<!-- Carrito -->
-							<a class="nav-link" href="9_carrito.html">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20"></a>
+							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20"></a>
 						</li>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- Example single danger button -->
@@ -78,11 +78,11 @@
 					<!-- Dropdown MI CUENTA -->
 					<ul class="navbar-nav mr-auto ">
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="12_cuenta.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['user']['nombre'] ?></a>
+							<a class="nav-link dropdown-toggle" href="12_cuenta.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['user']['nombre'] ?></a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="12_cuenta.html">Perfil</a>
-								<a class="dropdown-item" href="11_orden.html">Mis Ordenes</a>
-								<!-- <a class="dropdown-item" href="5_cursos2.html">Mis Cursos</a> -->
+								<a class="dropdown-item" href="12_cuenta.php">Mi Perfil</a>
+								<a class="dropdown-item" href="11_orden.php">Mis Ordenes</a>
+								<!-- <a class="dropdown-item" href="5_cursos2.php">Mis Cursos</a> -->
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="./php/salir.php">Cerrar Sesi&oacute;n</a>
 							</div>
@@ -102,29 +102,29 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><a href="1_index.html">Inicio</a></td>
+							<td><a href="2_index_2.php">Inicio</a></td>
 						</tr>
 						<tr>
-							<td><a href="5_cursos.html">Cursos</a></td></a>
+							<td><a href="5_cursos2.php">Cursos</a></td>
 						</tr>
 						<tr>
-							<td><a href="3_nosotros.html">Empresa</a></td>
+							<td><a href="3_nosotros2.php">Empresa</a></td>
 						</tr>
 						<tr>
-							<td><a href="3_nosotros.html">Contacto</a></td>
+							<td><a href="3_nosotros2.php">Contacto</a></td>
 						</tr>
 						<tr>
-							<td><a href="1_index.html">Jardin</a></td>
+							<td><a href="2_index_2.php">Jardin</a></td>
 						</tr>
 						<tr>
-							<td><a href="4_productos.html">Productos</a></td>
+							<td><a href="4_productos2.php">Productos</a></td>
+						</tr>
+						<!-- <tr>
+							<td><a href="7_login_signin.php">Iniciar Sesión</a></td>
 						</tr>
 						<tr>
-							<td><a href="7_login_signin.html">Iniciar Sesión</a></td>
-						</tr>
-						<tr>
-							<td><a href="8_signin.html">Registrarse</a></td>
-						</tr>
+							<td><a href="8_signin.php">Registrarse</a></td>
+						</tr> -->
 					</tbody>
 				</table>
 			</div>
@@ -319,9 +319,9 @@
 						<ul>
 							<h5 >Cu&eacute;ntanos...</h5>
 							<h6>¿Cómo podemos ayudarte?</h6>
-							<li><a href="3_nosotros.html">Preguntas Frecuentes</a></li>
-							<li><a href="3_nosotros.html">Sobre Nosotros</a></li>
-							<li><a href="3_nosotros.html">Cont&aacute;ctanos</a></li>
+							<li><a href="3_nosotros2.php">Preguntas Frecuentes</a></li>
+							<li><a href="3_nosotros2.php">Sobre Nosotros</a></li>
+							<li><a href="3_nosotros2.php">Cont&aacute;ctanos</a></li>
 						</ul>
 					</p>
 				</div>
@@ -329,9 +329,9 @@
 					<p >
 						<ul>
 							<h5>Sitios Recomendados</h5>
-							<li><a href="5_cursos.html">Nuestros Cursos</a></li>
-							<li><a href="5_cursos.html">Plantas</a></li>
-							<li><a href="4_productos.html">Productos</a></li>
+							<li><a href="5_cursos2.php">Nuestros Cursos</a></li>
+							<li><a href="5_cursos2.php">Plantas</a></li>
+							<li><a href="4_productos2.php">Productos</a></li>
 						</ul>
 					</p>
 				</div>

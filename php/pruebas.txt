@@ -1,0 +1,85 @@
+login.php
+	<!-- session_start();
+	require_once "conexion.php";
+
+	$conexion=conexion();
+
+		$usuario=$_POST['usuario'];
+		// $pass=sha1($_POST['password']);
+		$pass=($_POST['password']);
+
+		$sql="SELECT * from usuarios where email='$usuario' and password='$pass'";
+		$result=mysqli_query($conexion,$sql);
+
+		if(mysqli_num_rows($result) > 0){
+			$_SESSION['user']=$usuario;
+			echo 1;
+		}else{
+			echo 0;
+		}
+  -->
+
+
+  login.php
+
+  <?php
+	require 'connect.php';
+	sleep(1);
+
+	$usuarios = $mysqli->query("SELECT email, tipo FROM usuarios WHERE email = '".$_POST['email']."' AND password ='".$_POST['pass']."'");
+
+	if($usuarios->num_rows == 1):
+		$datos = $usuarios->fetch_assoc();
+		echo json_encode(array('error'=> false, 'tipo' => $datos['tipo']));
+	else:
+		echo json_encode(array('error'=> true));
+	endif;
+
+	$mysqli->close();
+		
+?>
+
+
+login_signin.php
+<!-- Autenticar usuario login -->
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#login').click(function(){
+
+			if($('#email').val()==""){
+				alertify.alert("Debes agregar el usuario");
+				return false;
+			}else if($('#pass').val()==""){
+				alertify.alert("Debes agregar el password");
+				return false;
+			}
+
+			cadena="usuario=" + $('#email').val() + 
+					"&password=" + $('#pass').val();
+			console.log(cadena);
+					$.ajax({
+						type:"POST",
+						url:"php/login.php",
+						data:cadena,
+						success:function(r){
+							console.log(r);
+							if(r==1){
+								window.location="2_index_2.php";
+								mysql_close($conexion);
+								
+							}else{
+								alertify.alert("Fallo al entrar :(");
+							}
+						}
+					});
+		});	
+	});
+</script>
+
+
+
+<?php
+} else {
+	header("location:1_index.html");
+	}
+ ?>

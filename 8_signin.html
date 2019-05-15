@@ -31,7 +31,7 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="navbar-collapse collapse" id="navbarColor01" style="">
+				<div class="navbar-collapse collapse" id="navbarColor01">
 					<ul class="navbar-nav mr-auto">
 						<!-- Opciones -->
 						<li class="nav-item ">
@@ -322,7 +322,6 @@
 						url:"php/registro.php",
 						data:cadena,
 						success:function(r){
-							console.log(r);
 
 							if(r==2){
 								alertify.alert("Este usuario ya existe, prueba con otro :)");
@@ -340,6 +339,8 @@
 							}else{
 								alertify.error("Fallo al agregar");
 							}
+							
+							console.log(r);
 						}
 					});
 		});

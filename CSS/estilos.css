@@ -76,6 +76,14 @@ p {
 	font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
+.titulo2{
+    font-size: 40px;
+    line-height: 1.05;
+    font-weight: 600;
+    letter-spacing: -.015em;
+    font-family: "SF Pro Display","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
 .center{
 	text-align: center;
 }
@@ -102,9 +110,9 @@ p {
 
 /*BARRA DE NAVEGACION----------------------------------------------------------------------------------------------*/
 
-ul {
-	/*text-align: justify;*/
-}
+/* ul {
+	text-align: justify;
+} */
 
 table {
 	color: #ffffff;
@@ -214,7 +222,7 @@ nav ul li:hover {
 }
 
 .slider li {
-	width: 100%
+	width: 100%;
 	list-style: none;
 }
 
@@ -406,6 +414,15 @@ nav ul li:hover {
   html {
     min-width: 12rem;
   }
+}
+
+.errorl{
+  background-color: #E74F4F;
+  border-radius:  0 0 5px 5px;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  display: none;
 }
 
 /**/

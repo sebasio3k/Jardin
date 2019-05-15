@@ -3,6 +3,7 @@
 
 
 // LOGIN------------------------------------------------------------------------------------
+
 function validarLogin(){
 	var ema = document.getElementById("email").value;
 	var pas = document.getElementById("pass").value;
@@ -21,6 +22,13 @@ function validarLogin(){
 		/*VALIDA QUE EL formato de correo SEA VALIDO*/
 		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(ema)){
 			emav.className = "form-control textcolorw is-valid";
+			if (/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/.test(pas)){
+				pasv.className = "form-control textcolorw is-valid";
+			}
+			else{
+				alertify.alert('Alerta', 'Formato de Contaseña inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+				pasv.className = "form-control textcolorw is-invalid";
+			}
 			// alert("CORREO CORRECTO");
 			// if((ema=="bastianhdezo@gmail.com") && (pas=="1234")){
 			// 	/*document.form.submit();*/

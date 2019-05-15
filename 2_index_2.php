@@ -1,8 +1,16 @@
-<?php 
+ <?php
+	// Sesiones acceder a variable de sesion
 	session_start();
-
-	if(isset($_SESSION['user'])){
- ?>
+	// si existe la variable de sesiones
+	if(isset($_SESSION['user'])) {
+		// que tipo se usuario ingresa para redireccionar
+		if($_SESSION['user']['tipo'] != "Usuario"){
+			header('Location: 13_admin_index.php ');
+		}
+	}else {//no existe, nadie se ha loggeado
+			header('Location: 1_index.html');
+	}	
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,13 +78,13 @@
 					<!-- Dropdown MI CUENTA -->
 					<ul class="navbar-nav mr-auto ">
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="12_cuenta.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mi Cuenta</a>
+							<a class="nav-link dropdown-toggle" href="12_cuenta.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['user']['nombre'] ?></a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="12_cuenta.html">Perfil</a>
 								<a class="dropdown-item" href="11_orden.html">Mis Ordenes</a>
 								<!-- <a class="dropdown-item" href="5_cursos2.html">Mis Cursos</a> -->
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="php/salir.php">Cerrar Sesi&oacute;n</a>
+								<a class="dropdown-item" href="./php/salir.php">Cerrar Sesi&oacute;n</a>
 							</div>
 						</li>				
 					</ul>
@@ -370,9 +378,3 @@
 
 </body>
 </html>
-
-<?php
-} else {
-	header("location:1_index.html");
-	}
- ?>

@@ -1,3 +1,18 @@
+<?php
+	// Sesiones
+	session_start();
+	// si existe la variable de sesiones
+	if(isset($_SESSION['user'])) {
+		// que tipo se usuario ingresa para redireccionar
+		if($_SESSION['user']['tipo'] == "Admin"){
+			header('Location: 13_admin_index.php');
+		}
+		else if($_SESSION['user']['tipo'] == "User"){
+				header('Location: 2_index_2.php');
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -108,19 +123,20 @@
 			</div>
 		</div>
 		<br>
+
 		<!-- Formulario Iniciar Sesion -->
-		<form action="#" id="formlogin" name="formLogin" method="post" >
+		<form  id="formlogin" name="formlogin" method="post" >
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="email" class="textcolorw">Email</label>
-					<input type="email" class="form-control textcolorw" id="email" name="email"	aria-describedby="emailHelp" placeholder="Introduce tu email" onblur=validarEmail();>
+					<input type="email" class="form-control textcolorw" id="email" name="email"	aria-describedby="emailHelp" placeholder="Introduce tu email" required>
 					<small id="emailHelp" class="form-text text-muted shadow-lg">No compartiremos su cuenta de correo con nadie más.</small>
 				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="form-group justify-content-center col-xs-12 col-4">
 					<label for="pass" class="textcolorw">Contrase&ntilde;a</label>
-					<input type="password" class="form-control" id="pass" name="pass" placeholder="Password" onblur=validarPass();>
+					<input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
 				</div>
 			</div>
 			<!-- <div class="form-group form-check justify-content-center">
@@ -128,8 +144,14 @@
 				<label class="form-check-label" for="exampleCheck1">Check me out</label>
 			</div> -->
 			<!-- Boton para enviar datos -->
+			
+			<!-- error -->
+		<div class="errorl ">
+				<span>Datos de Ingreso no V&aacute;lidos, Int&eacute;ntalo de nuevo</span>
+		</div>
+		<br>
 			<div class="row justify-content-center">
-				<input type="button" id="login" type="submit" value="Iniciar Sesi&oacute;n" class=" btn btn-primary shadow-lg" onclick=validarLogin();>
+				<input type="submit" id="login" value="Iniciar Sesi&oacute;n" class=" btn btn-primary shadow-lg" onmouseover=validarLogin();>
 			</div>
 		</form>
 		<br>
@@ -234,40 +256,7 @@
 	<script src="./JS/buscador.js"></script>
 	<!-- JavaScript Validaciones-->
 	<script type="text/javascript" src=".\JS\val.js"></script>
+	<!-- validar login -->
+	<script type="text/javascript" src=".\JS\login.js"></script>
 </body>
 </html>
-
-<!-- Autenticar usuario login -->
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#login').click(function(){
-
-			if($('#email').val()==""){
-				alertify.alert("Debes agregar el usuario");
-				return false;
-			}else if($('#pass').val()==""){
-				alertify.alert("Debes agregar el password");
-				return false;
-			}
-
-			cadena="usuario=" + $('#email').val() + 
-					"&password=" + $('#pass').val();
-			console.log(cadena);
-					$.ajax({
-						type:"POST",
-						url:"php/login.php",
-						data:cadena,
-						success:function(r){
-							console.log(r);
-							if(r==1){
-								window.location="2_index_2.php";
-								mysql_close($conexion);
-								
-							}else{
-								alertify.alert("Fallo al entrar :(");
-							}
-						}
-					});
-		});	
-	});
-</script>

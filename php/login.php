@@ -1,22 +1,37 @@
-<?php 
+<?php
 
+	if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])=='xmlhttprequest'){
 
-	session_start();
-	require_once "conexion.php";
+		require 'connect.php';
+		sleep(1);
+		// Sesiones
+		session_start();
 
-	$conexion=conexion();
+		$mysqli->set_charset('utf8');
 
-		$usuario=$_POST['usuario'];
-		// $pass=sha1($_POST['password']);
-		$pass=($_POST['password']);
+		$usuario = $mysqli->real_escape_string($_POST['email']);
+		$pas = $mysqli->real_escape_string($_POST['pass']);
 
-		$sql="SELECT * from usuarios where email='$usuario' and password='$pass'";
-		$result=mysqli_query($conexion,$sql);
+		if($nueva_consulta = $mysqli->prepare("SELECT nombre, email, tipo FROM usuarios WHERE email = ? AND password = ? ")){
+			$nueva_consulta->bind_param('ss',$usuario,$pas);
 
-		if(mysqli_num_rows($result) > 0){
-			$_SESSION['user']=$usuario;
-			echo 1;
-		}else{
-			echo 0;
+			$nueva_consulta->execute();
+
+			$resultado = $nueva_consulta->get_result();
+
+			if($resultado->num_rows == 1){
+				$datos = $resultado->fetch_assoc();
+				$_SESSION['user'] = $datos;
+				echo json_encode(array('error'=>false,'tipo'=>$datos['tipo']));
+			}
+			else{
+				echo json_encode(array('error'=>true));
+			}
+			$nueva_consulta->close();
 		}
- ?>
+
+	}
+
+	$mysqli->close();
+		
+?>

@@ -34,7 +34,7 @@
 				<div class="navbar-collapse collapse" id="navbarColor01" style="">
 					<!-- Barra Busqueda  -->
 					<form class="form-inline justify-content-center" id="barra_bus" name="barra_bus">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" onBlur=foco();>
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

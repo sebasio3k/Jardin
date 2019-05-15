@@ -67,7 +67,7 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
 					<form class="form-inline`justify-content-center">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" onBlur=foco();>
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -91,14 +91,13 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><a  href=".\1_index.php">Inicio</a> 
-								</td>
+							<td><a href="1_index.php">Inicio</a></td>
 						</tr>
 						<tr>
-							<td><a class="nav-link" href="5_cursos.php">Cursos</a></td>
+							<td><a href="5_cursos.php">Cursos</a></td></a>
 						</tr>
 						<tr>
-							<td><a href="./3_nosotros.php">Empresa</a></td>
+							<td><a href="3_nosotros.php">Empresa</a></td>
 						</tr>
 						<tr>
 							<td><a href="3_nosotros.php">Contacto</a></td>
@@ -390,7 +389,7 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
-	<script src=".\JS\buscador.js"></script>
+	<script src="./JS/buscador.js"></script>
 
 </body>
 </html>

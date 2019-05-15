@@ -24,11 +24,11 @@ $("#inputBusqueda").keyup(function(){
 
 
 // Funcion para controlar el foco de la barra de buscador
-function foco(){
-	$("header").css({
-			"height": "auto",
-			"background": "rgba(0,0,0,0.7)"
-		})
+// function foco(){
+// 	$("header").css({
+// 			"height": "auto",
+// 			"background": "rgba(0,0,0,0.7)"
+// 		})
 
-		$("#search").hide()
-}
+// 		$("#search").hide()
+// }

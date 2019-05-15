@@ -64,6 +64,9 @@
 						<li class="nav-item">
 							<a class="nav-link" href="3_nosotros.php">Contacto</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="7_login_signin.php">Iniciar Sesión</a>
+						</li>
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->

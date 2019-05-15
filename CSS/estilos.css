@@ -416,6 +416,10 @@ nav ul li:hover {
   }
 }
 
+
+/**/
+
+/* login */
 .errorl{
   background-color: #E74F4F;
   border-radius:  0 0 5px 5px;
@@ -425,4 +429,24 @@ nav ul li:hover {
   display: none;
 }
 
-/**/
+/* eliminar */
+
+/* .content{
+  position: absolute;
+  min-height: 50%;
+  width: 80%;
+  top: 20%;
+  left: 5%;
+} */
+
+.selected{
+  cursor: pointer;
+}
+
+.selected:hover{
+  background-color: #0585C0;
+}
+.seleccionada{
+  background-color: #0585C0;
+  color: black;
+}

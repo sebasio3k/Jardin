@@ -22,6 +22,10 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
+	<!-- Alertify -->
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/alertify.css">
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/themes/default.css">
+	<script src="./alertifyjs/alertify.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
@@ -129,6 +133,7 @@
 				<!-- Titulo Admin-->
 				<h1 class="titulo text-center b">Administrador <?php echo $_SESSION['user']['nombre'] ?></h1>
 				<h1 class="titulo2 text-center b">ELIMINAR  USUARIO</h1>
+
 			</div>
 		</div>
 		<hr>
@@ -174,12 +179,18 @@
 						<div class="row justify-content-center">
 							<div class="col-sm-12 sm-col-4 col-4align-self-center text-center">
 								<p>- U S U A R I O S - E L I M I N A R-</p>
-								<p></p>
+								<label  class=" b text center">Selecciona un usuario y presiona Eliminar para borrarlo:</label>
+								<br>
+								<br>
+								<button id="btn_del" class="btn btn-dark">Eliminar</button>
 							</div>
 						</div>
 						<br>
+						<div id="data"></div>
+						<div class="content">
+
 						<!-- TABLA  -->
-						<table class="table bgblanco textcolorb table-responsive">
+						<!-- <table class="table bgblanco textcolorb table-responsive" id="tabla">
 							<CAPTION>USUARIOS EN SISTEMA</CAPTION>
 							<thead class="thead-dark">
 								<tr>
@@ -203,15 +214,15 @@
 									<td></td>
 								</tr>
 							</tbody>
-						</table>
-
+						</table> -->
+						</div>
 						<!-- Formulario Registro-->
-						<form action="#" method="post" >
-							<!-- RENGLON -->
+						<!-- <form action="#" method="post" >
+							
 							<div class="row form-group justify-content-center">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para eliminar:</label>
+								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para eliminar:</label> -->
 								<!-- <div class=" col-xs-12 col-4"> -->
-								<div class="col-sm-4 ">
+								<!-- <div class="col-sm-4 ">
 									<input type="text" class="form-control" id="nombre" placeholder="id" required=”required”>
 								</div>
 							</div>
@@ -223,7 +234,7 @@
 									<button type="submit" class="btn btn-primary" >Eliminar Registro</button>
 								</div>
 							</div>
-						</form>
+						</form> -->
 						<br>
 						<br>
 						<!-- Boton para regresar -->
@@ -318,5 +329,30 @@
 	<script src="./JS/buscador.js"></script>
 	<!-- JavaScript -->
 	<script type="text/javascript" src=".\JS\validar.js"></script>
+	<script type="text/javascript" src=".\JS\eliminar.js"></script>
 </body>
 </html>
+
+<script>
+	$(buscar_datos());
+
+	function buscar_datos(){
+		$.ajax({
+			url:"php/buscareliminar.php",
+			type:"POST",
+			dataType:'html'
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			console.log(respuesta);
+			$("#data").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+	$(document).on('load', function(){
+			buscar_datos();
+		
+	});
+</script>

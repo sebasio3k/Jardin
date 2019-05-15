@@ -240,10 +240,10 @@
 						<form action="#" method="post" >
 							<!-- RENGLON -->
 							<div class="row form-group justify-content-center ">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para Consultar:</label>
+								<label for="exampleInputEmail1" class=" col-form-label textcolorB">Escribe una coindicencia para Consultar:</label>
 								<!-- <div class=" col-xs-12 col-4"> -->
 								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="buscarp" name="buscarp" placeholder="id" required=”required”>
+									<input type="text" class="form-control" id="buscarp" name="buscarp" placeholder="id o descripcion o precio " required=”required”>
 								</div>
 							</div>
 							<!-- <div class="row justify-content-center">

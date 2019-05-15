@@ -213,10 +213,10 @@
 						<form action="#" method="post" >
 							<!-- RENGLON -->
 							<div class="row form-group justify-content-center ">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para Consultar:</label>
+								<label for="exampleInputEmail1" class=" col-form-label textcolorB">Escribe una coincidencia para Consultar:</label>
 								<!-- <div class=" col-xs-12 col-4"> -->
 								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="buscarc" name="buscarc" placeholder="id" required=”required”>
+									<input type="text" class="form-control" id="buscarc" name="buscarc" placeholder="id o nombre o precio" required=”required”>
 								</div>
 							</div>
 							<!-- <div class="row justify-content-center">

@@ -182,12 +182,12 @@
 								<label  class=" b text center">Selecciona un usuario y presiona Eliminar para borrarlo:</label>
 								<br>
 								<br>
+								<br>
 								<button id="btn_del" class="btn btn-dark">Eliminar</button>
 							</div>
 						</div>
 						<br>
 						<div id="data"></div>
-						<div class="content">
 
 						<!-- TABLA  -->
 						<!-- <table class="table bgblanco textcolorb table-responsive" id="tabla">
@@ -215,7 +215,6 @@
 								</tr>
 							</tbody>
 						</table> -->
-						</div>
 						<!-- Formulario Registro-->
 						<!-- <form action="#" method="post" >
 							
@@ -338,7 +337,7 @@
 
 	function buscar_datos(){
 		$.ajax({
-			url:"php/buscareliminar.php",
+			url:"php/buscareliminarU.php",
 			type:"POST",
 			dataType:'html'
 			// data: {consulta: consulta},
@@ -355,4 +354,5 @@
 			buscar_datos();
 		
 	});
+	
 </script>

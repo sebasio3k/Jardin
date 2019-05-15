@@ -13,6 +13,7 @@ $(document).ready(function(){
                 buscar_datos();
                 Id=0;
                 counter=0;
+                id_fila_selected=0;
             },
             function(){
                 alertify.error('Cancelado');
@@ -22,7 +23,7 @@ $(document).ready(function(){
     });
 });
 
-var id_fila_selected;
+var id_fila_selected=0;
 var Id=0;
 var counter=0;
 
@@ -30,12 +31,14 @@ function seleccionar(id_fila){
     if($('#'+id_fila).hasClass('seleccionada')){
         $('#'+id_fila).removeClass('seleccionada');
         counter=0;
+        id_fila_selected=0;
+        Id=0;
     }
     else{
         $('#'+id_fila).addClass('seleccionada');
-        counter++;   
+        counter++;
     }
-    id_fila_selected = id_fila;
+   
     if (counter>1){
         $('#'+id_fila).removeClass('seleccionada');
         alertify.alert("ATENCION","Sólo se puede eliminar un registro a la vez",
@@ -44,16 +47,19 @@ function seleccionar(id_fila){
             });
     }
     else{
-        Id = document.getElementById(id_fila).getElementsByTagName('td')[0].innerHTML;
-        console.log(Id)
+        if(counter==1){
+            Id = document.getElementById(id_fila).getElementsByTagName('td')[0].innerHTML;
+            id_fila_selected = id_fila;
+            console.log(Id)
+            console.log('#'+id_fila_selected);
+        }
     }
-    
 }
 
 function eliminar(){
    
     $.ajax({
-		url:"php/eliminar.php",
+		url:"php/eliminarC.php",
 		type:"POST",
 		dataType:'html',
 		data: {Id: Id}
@@ -64,7 +70,22 @@ function eliminar(){
 	.fail(function(){
         console.log("Error");
         buscar_datos();
-	})
+    })
 
-    $('#'+Id).remove();
+}
+
+function buscar_datos(){
+    $.ajax({
+        url:"../php/buscareliminarC.php",
+        type:"POST",
+        dataType:'html'
+        // data: {consulta: consulta},
+    })
+    .done(function(respuesta){
+        console.log(respuesta);
+        $("#data").html(respuesta);
+    })
+    .fail(function(){
+        console.log("Error");
+    })
 }

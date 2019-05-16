@@ -22,6 +22,10 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
+	<!-- Alertify -->
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/alertify.css">
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/themes/default.css">
+	<script src="./alertifyjs/alertify.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
@@ -176,127 +180,93 @@
 						<div class="row justify-content-center">
 							<div class="col-sm-12 sm-col-4 col-4align-self-center text-center">
 								<p>- U S U A R I O S - A C T U A L I Z A R -</p>
-								
+								<label  class=" b text center">Haz clic Actualizar para editar usuario:</label>
+								<br>
 							</div>
 						</div>
 						<br>
-						<!-- Formulario Registro-->
-						<form action="#" method="post" >
-							<!-- RENGLON -->
-							<div class="row form-group justify-content-center">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe ID para Buscar Registro:</label>
-								<!-- <div class=" col-xs-12 col-4"> -->
-								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="id" placeholder="id" required=”required”>
-								</div>
-							</div>
-							<div class="row justify-content-center">
-								<div class="form-group col-xs-12 col-4 align-self-center text-center">
-									<button type="submit" class="btn btn-primary" >Buscar Registro</button>
-								</div>
-							</div>
-							<br>
-							<br>
-							<!-- TABLA  -->
-							<table class="table bgblanco textcolorb table-responsive">
-								<CAPTION>USUARIOS EN SISTEMA</CAPTION>
-								<thead class="thead-dark">
-									<tr>
-										<th scope="col">ID</th>
-										<th scope="col">Nombre</th>
-										<th scope="col">Apellido Paterno</th>
-										<th scope="col">Apellido Materno</th>
-										<th scope="col">Tel&eacute;fono</th>
-										<th scope="col">Correo</th>
-										<th scope="col">Contrase&ntilde;a</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td></td>
-									</tr>
-								</tbody>
-							</table>
-							<br>
-							<br>
-							<!-- CAMPOS PARA ACTUALIZAR -->
-							<div class="row form-group justify-content-center">
-								<!-- <label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Escribe datos para Actualizar</label> -->
-								<P>Escribe datos para Actualizar</P>
-							</div>
-							<!-- RENGLON -->
-							<div class="row form-group justify-content-center">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Nombre</label>
-								<!-- <div class=" col-xs-12 col-4"> -->
-								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required=”required”>
-								</div>
-							</div>
-							<!-- RENGLON -->
-							<div class="row form-group justify-content-center">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Apellido paterno</label>
-								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tu nombre" required=”required”>
-								</div>
-							</div>
-							<!-- RENGLON -->
-							<div class="row form-group justify-content-center">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Apellido materno</label>
-								<div class="col-sm-4 ">
-									<input type="text" class="form-control" id="formGroupExampleInput" placeholder="Tu nombre" required=”required”>
-								</div>
-							</div>
-							<!-- RENGLON -->
-							<!-- <div class="row justify-content-center">
-								<div class="form-group col-xs-12 col-4 align-self-center text-center">
-									<label for="exampleInputEmail1" class="textcolorw text-center">Sexo</label>
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="sexo" id="mujer" value="option1" checked>
-										<label class="form-check-label textcolorw" for="gridRadios1">
-											Mujer
-										</label>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-										<input class="form-check-input" type="radio" name="sexo" id="hombre" value="option2">
-										<label class="form-check-label textcolorw" for="gridRadios2">
-											Hombre
-										</label>
+						<div id="data"></div>
+						
+						<!-- Formulario fade -->
+						<div class="modal fade" id="responsive" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          					<div class="modal-dialog">
+            					<div class="modal-content">
+              						<div class="modal-header">
+                						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                						<h2 class="modal-title">Datos de Usuario</h2>
+              						</div>
+              						<div class="modal-body">
+                						<div class="alert alert-success text-center" id="exito" style="display:none;">
+                  							<span class="glyphicon glyphicon-ok"> </span><span> Su cuenta ha sido Actulizada</span>
+                						</div>
+										<!-- FORMULARIO -->
+                						<form class="form-horizontal" id="formau">
+                 							 <div class="form-group">
+                    							<label for="nombres" class="control-label col-xs-5">Nombre :</label>
+                    							<div class="col-xs-5">
+                      								<input id="nombre" name="nombre" type="text" class="form-control" placeholder="Ingrese Nombre">
+                   								 </div>
+                  							</div>
+                  							<div class="form-group">
+                   								 <label for="apellidos" class="control-label col-xs-5">Apellido Paterno :</label>
+                    							<div class="col-xs-5">
+                      								<input id="ap" name="ap"  type="text" class="form-control" placeholder="Ingrese Apellido Paterno">
+                    							</div>
+                 							 </div>
+											  <div class="form-group">
+                   								 <label for="apellidos" class="control-label col-xs-5">Apellidos Materno :</label>
+                    							<div class="col-xs-5">
+                      								<input id="am" name="am"  type="text" class="form-control" placeholder="Ingrese Apellido Materno">
+                    							</div>
+                 							 </div>
+											  <!-- SEXO -->
+											<div class="form-group  align-self-center text-center">
+												<label for="sexo" class="textcolorw text-center">Sexo</label>
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="sexo" id="rmujer" value="Mujer">
+													<label class="form-check-label textcolorw" for="gridRadios1">
+														Mujer
+													</label>
+													&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+													<input class="form-check-input" type="radio" name="sexo" id="rhombre" value="Hombre">
+													<label class="form-check-label textcolorw" for="gridRadios2">
+														Hombre
+													</label>
+												</div>
+											</div>
+											<!-- TELEFONO -->
+											<div class="form-group">
+												<label for="telefono" class="textcolorw">Tel&eacute;fono</label>
+												<input id="phone" name="phone" type="text" placeholder="888 888 88 88" class="form-control">
+											</div>
+                  							<div class="form-group">
+												<label for="email2" class="control-label col-xs-5">Email:</label>
+												<div class="col-xs-5">
+													<input id="email" name="email" type="email" class="form-control" placeholder="Ingrese Email">
+												</div>
+                 							 </div>
+											 <div class="form-group">
+											 	<label for="pass" class="control-label col-xs-5">Contraseña:</label>
+												<div class="col-xs-5">
+													<input id="pass" name="pass" type="password" class="form-control" placeholder="Ingrese Contraseña">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="tipo">Tipo Usuario</label>
+												<select class="form-control" id="tipou" name="tipou">
+													<option>Admin</option>
+													<option>Usuario</option>
+												</select>
+											</div>
+                						</form>
+              						</div>
+									<div class="modal-footer">  
+										<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+										<button id="actualizar" type="button" class="btn btn-success">Guardar</button>
 									</div>
-								</div>
-							</div> -->
-							<!-- RENGLON -->
-							<div class="row form-group justify-content-center ">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Tel&eacute;fono</label>
-								<div class="col-sm-4 ">
-									<input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-								</div>
-							</div>
-							<!-- RENGLON -->
-							<div class="row form-group justify-content-center">
-								<label for="exampleInputEmail1" class="col-sm-2 col-form-label textcolorB">Email</label>
-								<div class="col-sm-4 ">
-									<input type="email" class="form-control textcolorw" id="exampleInputEmail1" placeholder="Enter email">
-								</div>
-							</div>
-							<!-- RENGLON -->
-							<div class="row form-group justify-content-center">
-								<label for="exampleInputPassword1 " class="col-sm-2 col-form-label textcolorB">Contrase&ntilde;a</label>
-								<div class="col-sm-4 ">
-									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-								</div>
-							</div>
-							<br>
-							<div class="row justify-content-center">
-								<div class="form-group col-xs-12 col-4 align-self-center text-center">
-									<button type="submit" class="btn btn-primary" >Actualizar Registro</button>
-								</div>
-							</div>
-						</form>
+            					</div><!-- /.modal-content -->
+          					</div><!-- /.modal-dialog -->
+        				</div><!-- /.modal -->
 						<br>
 						<br>
 						
@@ -392,5 +362,32 @@
 	<script src="./JS/buscador.js"></script>
 	<!-- JavaScript -->
 	<script type="text/javascript" src=".\JS\validar.js"></script>
+	<script type="text/javascript" src=".\JS\actualizarU.js"></script>
 </body>
 </html>
+
+<script>
+
+	$(buscar_datos());
+
+	function buscar_datos(){
+		$.ajax({
+			url:"php/buscaractualizarU.php",
+			type:"POST",
+			dataType:'html'
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			console.log(respuesta);
+			$("#data").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+	$(document).on('load', function(){
+			buscar_datos();
+		
+	});
+	
+</script>

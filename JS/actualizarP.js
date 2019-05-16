@@ -1,91 +1,63 @@
-$(document).ready(function(){
-    $('#btn_del').click(function(){
-        // console.log(Id);
-        // Si no se ha seleccionado ningun row no hace nada
-        if(Id==0){
+var num=0;
+	 function actualiza (n){
+	
+	num = n;
+	}
 
-        }
-        else{// Pregunta antes de eliminar
-            alertify.confirm("ATENCION","¿Esta SEGURO de eliminar el registro seleccionado?",
-            function(){
-                alertify.success('Eliminado');
-                eliminar();
-                buscar_datos();
-                Id=0;
-                counter=0;
-                id_fila_selected=0;
-            },
-            function(){
-                alertify.error('Cancelado');
-            }).set('labels', {ok:'Estoy Seguro.', cancel:'¡Cancelar!'});
-        }
-       
-    });
+$('#actualizar').click(function(){
+
+	
+	if($('#idcat').val()=="" ){
+		alertify.alert("Debes agregar el id de categorría");
+		return false;
+	}else if($('#desc').val()==""){
+		alertify.alert("Debes agregar la descripcion");
+		return false;
+	}else if($('#precio').val()==""){
+		alertify.alert("Debes agregar el precio");
+		return false;
+	// }else if($('#ima').val()==""){
+	// 	alertify.alert("Debes agregar la imagen");
+	// 	return false;
+    // }
+    }
+
+
+	console.log(num);
+	var Id = document.getElementById(num).getElementsByTagName('td')[1].innerHTML;
+	console.log(Id)
+	
+	cadena="id=" + Id +
+			"&idc=" + $('#idcat').val() +
+			"&desc=" + $('#desc').val() +
+			"&precio=" + $('#precio').val() +
+			"&ima=" + document.getElementById('ima').files[0];
+			// console.log(cadena);
+			$.ajax({
+				type:"POST",
+				url:"php/actualizarP.php",
+				data:cadena,
+				success:function(r){
+
+					if(r==2){
+						alertify.alert("Este Producto ya existe, prueba con otro :)");
+					}
+					else if(r==1){
+						$('#formau')[0].reset();
+						buscar_datos();
+						alertify.confirm('Mensaje', 'Usuario Actualizado con exito',
+							function(){
+								alertify.success('Actualizado');
+							  },
+							function(){
+								alertify.error('Cancel');
+							});
+					}else{
+						alertify.error("Fallo al Actualizar");
+					}
+					
+					console.log(r);
+				}
+			});
+
 });
-
-var id_fila_selected=0;
-var Id=0;
-var counter=0;
-
-function seleccionar(id_fila){
-    if($('#'+id_fila).hasClass('seleccionada')){
-        $('#'+id_fila).removeClass('seleccionada');
-        counter=0;
-        id_fila_selected=0;
-        Id=0;
-    }
-    else{
-        $('#'+id_fila).addClass('seleccionada');
-        counter++;
-    }
-   
-    if (counter>1){
-        $('#'+id_fila).removeClass('seleccionada');
-        alertify.alert("ATENCION","Sólo se puede eliminar un registro a la vez",
-            function(){
-                alertify.error('Selecciona solo 1 campo');
-            });
-    }
-    else{
-        if(counter==1){
-            Id = document.getElementById(id_fila).getElementsByTagName('td')[0].innerHTML;
-            id_fila_selected = id_fila;
-            console.log(Id)
-            console.log('#'+id_fila_selected);
-        }
-    }
-}
-
-function eliminar(){
-   
-    $.ajax({
-		url:"php/eliminarU.php",
-		type:"POST",
-		dataType:'html',
-		data: {Id: Id}
-	})
-	.done(function(respuesta){
-		alert( respuesta);
-	})
-	.fail(function(){
-        console.log("Error");
-        buscar_datos();
-    })
-
-}
-
-function buscar_datos(){
-    $.ajax({
-        url:"../php/buscareliminarU.php",
-        type:"POST",
-        dataType:'html'
-        // data: {consulta: consulta},
-    })
-    .done(function(respuesta){
-        console.log(respuesta);
-        $("#data").html(respuesta);
-    })
-    .fail(function(){
-        console.log("Error");
-    })
-}

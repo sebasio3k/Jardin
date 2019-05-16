@@ -27,7 +27,6 @@
                                     <th scope='col'>Correo</th>
                                     <th scope='col'>Contrase&ntilde;a</th>
                                     <th scope='col'>Tipo</th>
-                                    <th scope='col'>Tipo</th>
                                 </tr>
                             </thead>
                             <tbody>";

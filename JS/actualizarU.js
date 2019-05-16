@@ -65,7 +65,7 @@ $('#actualizar').click(function(){
 						buscar_datos();
 						alertify.confirm('Mensaje', 'Usuario Actualizado con exito',
 							function(){
-								alertify.success('Actuaizado');
+								alertify.success('Actualizado');
 							  },
 							function(){
 								alertify.error('Cancel');

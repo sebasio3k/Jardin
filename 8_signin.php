@@ -26,11 +26,13 @@
 	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/alertify.css">
 	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/themes/default.css">
 	<script src="./alertifyjs/alertify.js"></script>
-	<!-- /Bootstrap -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href=".\img\icon.png">
+	<!-- captcha -->
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>	
 <body class="mibody">
@@ -127,27 +129,27 @@
 			</div>
 		</div>
 		<br>
-		<!-- Formulario Registro-->
-		<form id="formRegistro" method="post" action=".\php\contact.php" role="form">
+		<!-- Formulario Registro ./php/procesa.php -->
+		<form id="formRegistro" method="post" action="./php/procesa.php" role="form">
 			<!-- NOMBRE -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="exampleInputEmail1" class="textcolorw">Nombre</label>
-					<input type="text" class="form-control" id="nombre" placeholder="Tu nombre" required=”required”>
+					<input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required=”required”>
 				</div>
 			</div>
 			<!-- AP -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="exampleInputEmail1" class="textcolorw">Apellido paterno</label>
-					<input type="text" class="form-control" id="ap" placeholder="Tu Apellido Paterno" required=”required”>
+					<input type="text" class="form-control" id="ap" name="ap" placeholder="Tu Apellido Paterno" required=”required”>
 				</div>
 			</div>
 			<!-- AM -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="exampleInputEmail1" class="textcolorw">Apellido materno</label>
-					<input type="text" class="form-control" id="am" placeholder="Tu Apellido Materno" required=”required”>
+					<input type="text" class="form-control" id="am" name="am" placeholder="Tu Apellido Materno" required=”required”>
 				</div>
 			</div>
 			<!-- SEXO -->
@@ -178,7 +180,7 @@
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
 					<label for="exampleInputEmail1" class="textcolorw">Email</label>
-					<input type="email" class="form-control textcolorw" id="email" aria-describedby="emailHelp" placeholder="Enter email" >
+					<input type="email" class="form-control textcolorw" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" >
 					<small id="emailHelp" class="form-text text-muted ">*Tu correo electrónico será tu usuario para acceder a tu cuenta</small>
 				</div>
 			</div>
@@ -186,7 +188,7 @@
 			<div class="row justify-content-center">
 				<div class="form-group justify-content-center  col-xs-12 col-4">
 					<label for="exampleInputPassword1 " class="textcolorw">Contrase&ntilde;a</label>
-					<input type="password" class="form-control" id="pass1" placeholder="Password" aria-describedby="passwordHelpBlock" >
+					<input type="password" class="form-control" id="pass1" name="pass1"  placeholder="Password" aria-describedby="passwordHelpBlock" >
 					<small id="passwordHelpBlock" class="form-text text-muted ">
   						Tu contraseña debe ser de 8-6 caracteres de longitud, debe contener al menos 1 letra y 1 n&uacute;meros, no debe contener espacios, caracteres especiales, o emoji.
 					</small>
@@ -196,14 +198,14 @@
 			<div class="row justify-content-center">
 				<div class="form-group justify-content-center  col-xs-12 col-4">
 					<label for="exampleInputPassword1 " class="textcolorw">Verificar Contrase&ntilde;a</label>
-					<input type="password" class="form-control" id="passv" placeholder="Password" >
+					<input type="password" class="form-control" id="passv" name="passv" placeholder="Password" >
 				</div>
 			</div>
 			<div class="row justify-content-center">
 				<div class="form-group">
 					<div class="form-check">
 						<div class="custom-control custom-switch">
-							<input type="checkbox" class="custom-control-input" id="customSwitch1">
+							<input type="checkbox" class="custom-control-input" id="customSwitch1"> 
 							<label class="custom-control-label" for="customSwitch1">Sí, quiero recibir promociones exclusivas, tips e ideas para mejorar mi hogar.</label>
 						</div>
 						<!-- <input class="form-check-input" type="checkbox" id="prom">
@@ -226,9 +228,7 @@
 			<!-- RENGLON CAPTCHA-->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 align-self-center text-center">
-					<div class="g-recaptcha" data-sitekey="6Lf-d5sUAAAAAHltZwgWXlmFdgQqCzrPTQP-W_tm" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
-					<input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
-					<div class="help-block with-errors"></div>
+					<div class="g-recaptcha" data-sitekey="6LcMBaQUAAAAADhJNjszatqBfSQRPbK-ikDpkFNM" ></div>
 				</div>
 			</div>
 			<!-- BOTONES -->
@@ -239,12 +239,13 @@
 				</div>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
-					<input type="button" id="registro" type="submit" value="Registrarme" class=" btn btn-primary shadow-lg" onmouseenter=validarSignin();>
+					<input  id="registro" type="submit" value="Registrarme" class=" btn btn-primary shadow-lg" onmouseenter=validarSignin();>
 					<!-- onclick=validarSignin(); -->
 					<!-- <button id="registro" type="submit" class="btn btn-primary " onclick=validarRegistro();>Registrarme</button> -->
 				</div>
 			</div>
 		</form>
+
 	</div>
 		<br>
 		<br>
@@ -277,9 +278,9 @@
 		</div>	
 	</footer>
 
-	 <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+	 <!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
         async defer>
-    </script>
+    </script> -->
 <!--<script src=".\JS\validator.js"></script>
     <script src=".\JS\contact.js"></script> -->
 	<!-- Captcha -->
@@ -297,70 +298,218 @@
 </body>
 </html>
 
+<!-- <script>
+
+$('#registro').on('mouseover', function() {
+	if ($('#g-recaptcha-response').val()==""){
+		console.log("vacio");
+	}
+	else{
+		console.log($('#g-recaptcha-response').val());
+	}
+	
+});
+
+	function alerta(n){
+		if(n==1){
+			swal("CAPTCHA VERIFICADO");
+		}
+		if (n==2){
+			swal("CAPTCHA SIN VERIFICAR");
+		}
+	}
+</script> -->
+
 <!-- validar que nose inserten campos iguales -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	$(document).ready(function(){
-		$('#registro').click(function(){
 
+		$('#registro').on('click', function() {
+			// var res = "resp=" + grecaptcha.getResponse();
+			// console.log(res);
+			$.ajax({
+				url: "php/procesa.php",
+				type: 'POST', 
+				dataType: 'json',
+				// data:res,
+				data: {
+					// 'foo': foo,
+					'response': grecaptcha.getResponse()
+				},
+				success: function() {
+					// registro
+					alertify.alert("Captcha confirmado");
+					if($('#nombre').val()=="" ){
+						alertify.alert("Debes agregar el nombre");
+						return false;
+					}else if($('#ap').val()==""){
+						alertify.alert("Debes agregar el apellido paterno");
+						return false;
+					}else if($('#am').val()==""){
+						alertify.alert("Debes agregar el apellido materno");
+						return false;
+					}else if($('input[name=sexo]:checked').val()==""){
+						alertify.alert("Debes seleccionar el sexo");
+						return false;
+					}else if($('#phone').val()==""){
+						alertify.alert("Debes agregar el telefono");
+						return false;
+					}else if($('#email').val()==""){
+						alertify.alert("Debes agregar el email");
+						return false;
+					}else if($('#passv').val()==""){
+						alertify.alert("Debes agregar el password");
+						return false;
+					}
 
-			if($('#nombre').val()=="" ){
-				alertify.alert("Debes agregar el nombre");
-				return false;
-			}else if($('#ap').val()==""){
-				alertify.alert("Debes agregar el apellido paterno");
-				return false;
-			}else if($('#am').val()==""){
-				alertify.alert("Debes agregar el apellido materno");
-				return false;
-			}else if($('input[name=sexo]:checked').val()==""){
-				alertify.alert("Debes seleccionar el sexo");
-				return false;
-			}else if($('#phone').val()==""){
-				alertify.alert("Debes agregar el telefono");
-				return false;
-			}else if($('#email').val()==""){
-				alertify.alert("Debes agregar el email");
-				return false;
-			}else if($('#passv').val()==""){
-				alertify.alert("Debes agregar el password");
-				return false;
-			}
-
-
-			cadena="nombre=" + $('#nombre').val() +
-					"&ap=" + $('#ap').val() +
-					"&am=" + $('#am').val() +
-					"&sex=" + $('input[name=sexo]:checked').val() +
-					"&phone=" + $('#phone').val() +
-					"&usuario=" + $('#email').val() + 
-					"&password=" + $('#passv').val();
-					// console.log(cadena);
+					// forma cadena para enviar datos de registro
+					var cadena="nombre=" + $('#nombre').val() +
+						"&ap=" + $('#ap').val() +
+						"&am=" + $('#am').val() +
+						"&sex=" + $('input[name=sexo]:checked').val() +
+						"&phone=" + $('#phone').val() +
+						"&usuario=" + $('#email').val() + 
+						"&password=" + $('#passv').val() ;
+						// "&";
+							// console.log(cadena);
 					$.ajax({
 						type:"POST",
 						url:"php/registro.php",
 						data:cadena,
 						success:function(r){
-
-							if(r==2){
-								alertify.alert("Este usuario ya existe, prueba con otro :)");
-							}
-							else if(r==1){
-								$('#formRegistro')[0].reset();
-								alertify.confirm('Mensaje', 'Usuario Registrado con exito',
-									function(){
-    									alertify.success('IniciarSesion');
-    									location.href="7_login_signin.php";
-  									},
-									function(){
-									    alertify.error('Cancel');
-									});
-							}else{
-								alertify.error("Fallo al agregar");
-							}
-							
-							console.log(r);
+								if(r==2){
+									alertify.alert("Este usuario ya existe, prueba con otro :)");
+								}
+								else if(r==1){
+									$('#formRegistro')[0].reset();
+										alertify.confirm('Mensaje', 'Usuario Registrado con exito',
+										function(){
+											alertify.success('IniciarSesion');
+											location.href="7_login_signin.php";
+										},
+										function(){
+											alertify.error('Cancel');
+										});
+								}
+								else{
+									alertify.alert("Error al Registrar");
+								}
+								console.log(r);
 						}
 					});
+				}
+			});
+			// return false;
 		});
 	});
-</script>
+
+	// function valirdaCaptcha(){
+		// 	// valida captcha
+		// 	$.ajax({
+		// 		type:"POST",
+		// 		url:"php/procesa.php",
+		// 		data:re,
+				
+		// 		success:function(s){
+		// 			if(s==2){ 
+		// 				alertify.alert('Alerta', 'Captcha sin confirmar',
+		// 					function(){
+		// 					    alertify.error('Verifica Captcha');
+		// 					});
+		// 			}
+		// 			else if(s==1){ 
+		// 				alertify.alert("Captcha Confirmado...",
+		// 				function(){
+		// 					    alertify.success('Registrando...');
+		// 					});
+						
+							
+		// 			}else{
+		// 				alertify.alert("Error captcha");
+		// 				console.log(s);
+							
+		// 			}
+					
+		// 		}
+		// 	});
+		// }
+
+		// window.verifyRecaptchaCallback = function (response) {
+        // 	$('input[data-recaptcha]').val(response).trigger('change')
+		// }
+
+    	// window.expiredRecaptchaCallback = function () {
+      	// 	$('input[data-recaptcha]').val("").trigger('change')
+    	// }
+
+    // $('#formRegistro').validator();
+
+		// cuando se de clic en registro, valida captcha
+		// $('#registro').click(function(){
+			// var re = grecaptcha.getResponse('#registro');
+
+			// if($('#nombre').val()=="" ){
+			// 	alertify.alert("Debes agregar el nombre");
+			// 	return false;
+			// }else if($('#ap').val()==""){
+			// 	alertify.alert("Debes agregar el apellido paterno");
+			// 	return false;
+			// }else if($('#am').val()==""){
+			// 	alertify.alert("Debes agregar el apellido materno");
+			// 	return false;
+			// }else if($('input[name=sexo]:checked').val()==""){
+			// 	alertify.alert("Debes seleccionar el sexo");
+			// 	return false;
+			// }else if($('#phone').val()==""){
+			// 	alertify.alert("Debes agregar el telefono");
+			// 	return false;
+			// }else if($('#email').val()==""){
+			// 	alertify.alert("Debes agregar el email");
+			// 	return false;
+			// }else if($('#passv').val()==""){
+			// 	alertify.alert("Debes agregar el password");
+			// 	return false;
+			// }
+
+			// forma cadena para enviar datos de registro
+			// cadena="nombre=" + $('#nombre').val() +
+			// 		"&ap=" + $('#ap').val() +
+			// 		"&am=" + $('#am').val() +
+			// 		"&sex=" + $('input[name=sexo]:checked').val() +
+			// 		"&phone=" + $('#phone').val() +
+			// 		"&usuario=" + $('#email').val() + 
+			// 		"&password=" + $('#passv').val() ;
+					// "&";
+			// console.log(cadena);
+			// $.ajax({
+			// 	type:"POST",
+			// 	url:"php/registro.php",
+			// 	data:cadena,
+			// 	success:function(){
+				// function(r){
+					// if(r==2){
+					// 	alertify.alert("Este usuario ya existe, prueba con otro :)");
+					// }
+					// else if(r==1){
+					// 	$('#formRegistro')[0].reset();
+					// 		alertify.confirm('Mensaje', 'Usuario Registrado con exito',
+					// 		function(){
+					// 			alertify.success('IniciarSesion');
+					// 			location.href="7_login_signin.php";
+					// 		},
+					// 		function(){
+					// 			alertify.error('Cancel');
+					// 		});
+					// }else{
+					// 	alertify.alert("Error al Registrar");
+					// }
+					// console.log(r);
+	// 			}
+	// 		});
+			
+	// 	});
+	// });
+
+</script> -->
+
+		

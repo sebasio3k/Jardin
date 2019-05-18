@@ -130,7 +130,7 @@
 		</div>
 		<br>
 		<!-- Formulario Registro ./php/procesa.php -->
-		<form id="formRegistro" method="post" action="./php/procesa.php" role="form">
+		<form id="formRegistro" method="post" role="form">
 			<!-- NOMBRE -->
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4">
@@ -239,7 +239,7 @@
 				</div>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
-					<input  id="registro" type="submit" value="Registrarme" class=" btn btn-primary shadow-lg" onmouseenter=validarSignin();>
+					<input  id="registro" type="button" value="Registrarme" class=" btn btn-primary shadow-lg" onmouseenter=validarSignin();>
 					<!-- onclick=validarSignin(); -->
 					<!-- <button id="registro" type="submit" class="btn btn-primary " onclick=validarRegistro();>Registrarme</button> -->
 				</div>
@@ -298,6 +298,11 @@
 </body>
 </html>
 
+
+
+
+
+
 <!-- <script>
 
 $('#registro').on('mouseover', function() {
@@ -320,196 +325,98 @@ $('#registro').on('mouseover', function() {
 	}
 </script> -->
 
-<!-- validar que nose inserten campos iguales -->
-<!-- <script type="text/javascript">
+
+<script>
+
 	$(document).ready(function(){
 
-		$('#registro').on('click', function() {
-			// var res = "resp=" + grecaptcha.getResponse();
-			// console.log(res);
-			$.ajax({
-				url: "php/procesa.php",
-				type: 'POST', 
-				dataType: 'json',
-				// data:res,
-				data: {
-					// 'foo': foo,
-					'response': grecaptcha.getResponse()
-				},
-				success: function() {
-					// registro
-					alertify.alert("Captcha confirmado");
-					if($('#nombre').val()=="" ){
-						alertify.alert("Debes agregar el nombre");
-						return false;
-					}else if($('#ap').val()==""){
-						alertify.alert("Debes agregar el apellido paterno");
-						return false;
-					}else if($('#am').val()==""){
-						alertify.alert("Debes agregar el apellido materno");
-						return false;
-					}else if($('input[name=sexo]:checked').val()==""){
-						alertify.alert("Debes seleccionar el sexo");
-						return false;
-					}else if($('#phone').val()==""){
-						alertify.alert("Debes agregar el telefono");
-						return false;
-					}else if($('#email').val()==""){
-						alertify.alert("Debes agregar el email");
-						return false;
-					}else if($('#passv').val()==""){
-						alertify.alert("Debes agregar el password");
-						return false;
-					}
+		$('#registro').on('mouseover', function() {
+			var res =  $('#g-recaptcha-response').val();
+			console.log(res);
+			// if ($('#g-recaptcha-response').val()==""){
+			if(res==""){
+				console.log("vacio");
+				swal("CAPTCHA SIN VERIFICAR");
+			}
+			else{
+				$.ajax({
+					url: "php/procesa.php",
+					type: 'POST', 
+					// dataType: 'json',
+					data:res,
+					// data: {
+					// 	// 'foo': foo,
+					// 	'response': grecaptcha.getResponse()
+					// },
+					success: function() {
+						// registro
+						// alertify.alert("Captcha confirmado");
+						if($('#nombre').val()=="" ){
+							alertify.alert("Debes agregar el nombre");
+							return false;
+						}else if($('#ap').val()==""){
+							alertify.alert("Debes agregar el apellido paterno");
+							return false;
+						}else if($('#am').val()==""){
+							alertify.alert("Debes agregar el apellido materno");
+							return false;
+						}else if($('input[name=sexo]:checked').val()==""){
+							alertify.alert("Debes seleccionar el sexo");
+							return false;
+						}else if($('#phone').val()==""){
+							alertify.alert("Debes agregar el telefono");
+							return false;
+						}else if($('#email').val()==""){
+							alertify.alert("Debes agregar el email");
+							return false;
+						}else if($('#passv').val()==""){
+							alertify.alert("Debes agregar el password");
+							return false;
+						}
 
-					// forma cadena para enviar datos de registro
-					var cadena="nombre=" + $('#nombre').val() +
-						"&ap=" + $('#ap').val() +
-						"&am=" + $('#am').val() +
-						"&sex=" + $('input[name=sexo]:checked').val() +
-						"&phone=" + $('#phone').val() +
-						"&usuario=" + $('#email').val() + 
-						"&password=" + $('#passv').val() ;
-						// "&";
-							// console.log(cadena);
-					$.ajax({
-						type:"POST",
-						url:"php/registro.php",
-						data:cadena,
-						success:function(r){
+						// forma cadena para enviar datos de registro
+						var cadena="nombre=" + $('#nombre').val() +
+							"&ap=" + $('#ap').val() +
+							"&am=" + $('#am').val() +
+							"&sex=" + $('input[name=sexo]:checked').val() +
+							"&phone=" + $('#phone').val() +
+							"&usuario=" + $('#email').val() + 
+							"&password=" + $('#passv').val() ;
+							// "&";
+								// console.log(cadena);
+						$.ajax({
+							type:"POST",
+							url:"php/registro.php",
+							data:cadena,
+							success:function(r){
 								if(r==2){
-									alertify.alert("Este usuario ya existe, prueba con otro :)");
+									alertify.alert("ATENCION","Este usuario ya existe, prueba con otro :)",
+									function(){
+										alertify.error('Prueba otro');
+									});
 								}
 								else if(r==1){
 									$('#formRegistro')[0].reset();
-										alertify.confirm('Mensaje', 'Usuario Registrado con exito',
-										function(){
-											alertify.success('IniciarSesion');
-											location.href="7_login_signin.php";
-										},
-										function(){
-											alertify.error('Cancel');
-										});
+									alertify.confirm('Mensaje', 'Usuario Registrado con exito',
+									function(){
+										alertify.success('IniciarSesion');
+										location.href="7_login_signin.php";
+									},
+									function(){
+										alertify.error('Cancel');
+									});
 								}
 								else{
 									alertify.alert("Error al Registrar");
 								}
 								console.log(r);
-						}
-					});
-				}
-			});
+							}
+						});
+					}
+				});
+			}
 			// return false;
 		});
 	});
 
-	// function valirdaCaptcha(){
-		// 	// valida captcha
-		// 	$.ajax({
-		// 		type:"POST",
-		// 		url:"php/procesa.php",
-		// 		data:re,
-				
-		// 		success:function(s){
-		// 			if(s==2){ 
-		// 				alertify.alert('Alerta', 'Captcha sin confirmar',
-		// 					function(){
-		// 					    alertify.error('Verifica Captcha');
-		// 					});
-		// 			}
-		// 			else if(s==1){ 
-		// 				alertify.alert("Captcha Confirmado...",
-		// 				function(){
-		// 					    alertify.success('Registrando...');
-		// 					});
-						
-							
-		// 			}else{
-		// 				alertify.alert("Error captcha");
-		// 				console.log(s);
-							
-		// 			}
-					
-		// 		}
-		// 	});
-		// }
-
-		// window.verifyRecaptchaCallback = function (response) {
-        // 	$('input[data-recaptcha]').val(response).trigger('change')
-		// }
-
-    	// window.expiredRecaptchaCallback = function () {
-      	// 	$('input[data-recaptcha]').val("").trigger('change')
-    	// }
-
-    // $('#formRegistro').validator();
-
-		// cuando se de clic en registro, valida captcha
-		// $('#registro').click(function(){
-			// var re = grecaptcha.getResponse('#registro');
-
-			// if($('#nombre').val()=="" ){
-			// 	alertify.alert("Debes agregar el nombre");
-			// 	return false;
-			// }else if($('#ap').val()==""){
-			// 	alertify.alert("Debes agregar el apellido paterno");
-			// 	return false;
-			// }else if($('#am').val()==""){
-			// 	alertify.alert("Debes agregar el apellido materno");
-			// 	return false;
-			// }else if($('input[name=sexo]:checked').val()==""){
-			// 	alertify.alert("Debes seleccionar el sexo");
-			// 	return false;
-			// }else if($('#phone').val()==""){
-			// 	alertify.alert("Debes agregar el telefono");
-			// 	return false;
-			// }else if($('#email').val()==""){
-			// 	alertify.alert("Debes agregar el email");
-			// 	return false;
-			// }else if($('#passv').val()==""){
-			// 	alertify.alert("Debes agregar el password");
-			// 	return false;
-			// }
-
-			// forma cadena para enviar datos de registro
-			// cadena="nombre=" + $('#nombre').val() +
-			// 		"&ap=" + $('#ap').val() +
-			// 		"&am=" + $('#am').val() +
-			// 		"&sex=" + $('input[name=sexo]:checked').val() +
-			// 		"&phone=" + $('#phone').val() +
-			// 		"&usuario=" + $('#email').val() + 
-			// 		"&password=" + $('#passv').val() ;
-					// "&";
-			// console.log(cadena);
-			// $.ajax({
-			// 	type:"POST",
-			// 	url:"php/registro.php",
-			// 	data:cadena,
-			// 	success:function(){
-				// function(r){
-					// if(r==2){
-					// 	alertify.alert("Este usuario ya existe, prueba con otro :)");
-					// }
-					// else if(r==1){
-					// 	$('#formRegistro')[0].reset();
-					// 		alertify.confirm('Mensaje', 'Usuario Registrado con exito',
-					// 		function(){
-					// 			alertify.success('IniciarSesion');
-					// 			location.href="7_login_signin.php";
-					// 		},
-					// 		function(){
-					// 			alertify.error('Cancel');
-					// 		});
-					// }else{
-					// 	alertify.alert("Error al Registrar");
-					// }
-					// console.log(r);
-	// 			}
-	// 		});
-			
-	// 	});
-	// });
-
-</script> -->
-
-		
+</script>

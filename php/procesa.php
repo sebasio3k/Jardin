@@ -1,14 +1,14 @@
 <?php
-	require_once "conexion.php";
-	$conexion=conexion();
+	// require_once "conexion.php";
+	// $conexion=conexion();
 
-	$nombre=$_POST['nombre'];
-	$ap=$_POST['ap'];
-	$am=$_POST['am'];
-	$sex=$_POST['sexo'];
-	$tel=$_POST['phone'];
-	$usuario=$_POST['email'];
-	$password=$_POST['passv'];
+	// $nombre=$_POST['nombre'];
+	// $ap=$_POST['ap'];
+	// $am=$_POST['am'];
+	// $sex=$_POST['sexo'];
+	// $tel=$_POST['phone'];
+	// $usuario=$_POST['email'];
+	// $password=$_POST['passv'];
 
 	$recaptcha =  $_POST['g-recaptcha-response'];
 	print($recaptcha);
@@ -33,42 +33,42 @@
 		// 	$usuario=$_POST['usuario'];
 		// 	$password=$_POST['password'];
 
-			if(buscaRepetido($usuario,$conexion)==1){
-				// echo 2;
-				echo "<script>
-                		alert('Este usuario ya existe, prueba con otro :)');
-    		  		  </script>";
+			// if(buscaRepetido($usuario,$conexion)==1){
+			// 	// echo 2;
+			// 	echo "<script>
+      //           		alert('Este usuario ya existe, prueba con otro :)');
+    	// 	  		  </script>";
 				
-			}else{
-				$sql="INSERT into usuarios (nombre,apaterno,amaterno,sexo,telefono,email,password,tipo)
-						values ('$nombre','$ap','$am','$sex','$tel','$usuario','$password','Usuario')";
-				mysqli_query($conexion,$sql);
-				// echo $result=mysqli_query($conexion,$sql);
-				echo "<script>
-				$('#formRegistro')[0].reset();
-				alertify.confirm('Mensaje', 'Usuario Registrado con exito',
-				function(){
-					alertify.success('IniciarSesion');
-					location.href='7_login_signin.php';
-				},
-				function(){
-					alertify.error('Cancel');
-				});	
-				</script>";
-			}
+			// }else{
+			// 	$sql="INSERT into usuarios (nombre,apaterno,amaterno,sexo,telefono,email,password,tipo)
+			// 			values ('$nombre','$ap','$am','$sex','$tel','$usuario','$password','Usuario')";
+			// 	mysqli_query($conexion,$sql);
+			// 	// echo $result=mysqli_query($conexion,$sql);
+			// 	echo "<script>
+			// 	$('#formRegistro')[0].reset();
+			// 	alertify.confirm('Mensaje', 'Usuario Registrado con exito',
+			// 	function(){
+			// 		alertify.success('IniciarSesion');
+			// 		location.href='7_login_signin.php';
+			// 	},
+			// 	function(){
+			// 		alertify.error('Cancel');
+			// 	});	
+			// 	</script>";
+			// }
 
 
-			function buscaRepetido($user,$conexion){
-				$sql="SELECT * from usuarios 
-					where email='$user'";
-				$result=mysqli_query($conexion,$sql);
+			// function buscaRepetido($user,$conexion){
+			// 	$sql="SELECT * from usuarios 
+			// 		where email='$user'";
+			// 	$result=mysqli_query($conexion,$sql);
 
-				if(mysqli_num_rows($result) > 0){
-					return 1;
-				}else{
-					return 0;
-				}
-			}
+			// 	if(mysqli_num_rows($result) > 0){
+			// 		return 1;
+			// 	}else{
+			// 		return 0;
+			// 	}
+			// }
 
 			// true
 			// echo "<script>
@@ -91,7 +91,6 @@
 		// echo "</script>;";
 		 echo "<script>
 		 alert('Captcha SIN VERIFICAR');
-		 window.location=document.referrer;
 	   </script>";
 		//  "<script>
 		//  			alertify.alert('Alerta', 'Captcha sin confirmar',

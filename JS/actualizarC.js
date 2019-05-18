@@ -20,7 +20,7 @@ $('#actualizar').click(function(){
 	console.log(num);
 	var Id = document.getElementById(num).getElementsByTagName('td')[1].innerHTML;
 	console.log(Id)
-	
+
 	cadena="id=" + Id +
 			"&nombre=" + $('#nombre').val() +
 			"&desc=" + $('#desc').val() +
@@ -48,7 +48,6 @@ $('#actualizar').click(function(){
 					}else{
 						alertify.error("Fallo al Actualizar");
 					}
-					
 					console.log(r);
 				}
 			});

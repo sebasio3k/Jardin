@@ -32,7 +32,7 @@
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href=".\img\icon.png">
 
-</head>	
+</head>
 <body class="mibody">
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -63,6 +63,9 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="3_nosotros.php">Contacto</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="8_signin.php">Registrarme</a>
 						</li>
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -144,7 +147,7 @@
 				<label class="form-check-label" for="exampleCheck1">Check me out</label>
 			</div> -->
 			<!-- Boton para enviar datos -->
-			
+
 			<!-- error -->
 		<div class="errorl ">
 				<span>Datos de Ingreso no V&aacute;lidos, Int&eacute;ntalo de nuevo</span>
@@ -161,7 +164,7 @@
 		<!-- IMAGEN PARALLAX -->
 		<div class="container-fluid">
 			<div class="row justify-content-center ">
-				
+
 				<div class="content right2 illustration_06 img-fluid">
 					<div class="caption1 d-none d-md-block rounded-pill blurb ">
 						<h1 class="text-center w">¿No tienes una cuenta?</h1>
@@ -180,7 +183,7 @@
 					<br>
 					<br>
 					<br>
-					<br>	
+					<br>
 					<br>
 					<br>
 					<br>
@@ -190,7 +193,7 @@
 	  				<h1 class="text-center b shadow-lg">¿No tienes una cuenta?</h1>
 					<h4 class="text-center b shadow-lg">Regístrate gratis:</h4>
 					<center><a href="8_signin.php"><img src=".\img\reg.png" class="img-fluid shadow-lg p-3 mb-5 rounded" alt="Responsive image" width="200" height="50"></a></center>
-				</div> 
+				</div>
 			</div>
 		</div>
 		<!-- BANNER -->
@@ -244,7 +247,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

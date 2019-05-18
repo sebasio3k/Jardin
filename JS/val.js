@@ -354,7 +354,6 @@ function validarPago(){
 }
 
 // ACTUALIZAR USUARIO------------------------------------------------------------------------------------------
-
 function validarActualizar(){
 	var nam = document.getElementById("nombre").value;
 	var ap = document.getElementById("ap").value;
@@ -460,6 +459,57 @@ function validarActualizar(){
 		}
 		else{
 			alertify.alert('Alerta', 'Formato de NOMBRE inválido,por favor verificalo', function(){ alertify.error('Verifica campos'); });
+			namv.className = "form-control textcolorw is-invalid";
+			return false;
+		}
+	}
+}
+
+// ACTUALIZAR CURSO------------------------------------------------------------------------------------------
+function validarActualizarC(){
+	var nam = document.getElementById("nombre").value;
+	var desc = document.getElementById("desc").value;
+	var precio = document.getElementById("precio").value;
+	var namv = document.getElementById("nombre");
+	var descv = document.getElementById("desc");
+	var preciov = document.getElementById("precio");
+
+	var regnom=/^([A-Za-z\sáéíóú]{5,20})+$/;
+	var regdesc=/^([A-Za-z\sáéíóú]{2,100})+$/;
+	var regprecio=/^([0-9]{3,4})+$/;
+
+	// Si estan vacios:
+	if((nam=="") || (desc=="")  || (precio=="")){
+		alertify.alert('Alerta', 'Se requiere que todos los campos esten llenos', function(){ alertify.error('Verifica campos'); });
+		namv.className = "form-control  is-invalid";
+		descv.className = "form-control  is-invalid";
+		preciov.className = "form-control  is-invalid";
+		return false;
+	}
+	else{//si no
+		/*VALIDA QUE EL formato de correo SEA VALIDO*/
+		if(regnom.test(nam)){
+			namv.className = "form-control textcolorw is-valid";
+			if(regdesc.test(desc)){
+				descv.className = "form-control textcolorw is-valid";
+				if(regprecio.test(precio)){
+					preciov.className = "form-control textcolorw is-valid";
+					return true;
+				}
+				else{
+					alertify.alert('Alerta', 'Formato de Precio inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+					preciov.className = "form-control textcolorw is-invalid";
+					return false;
+				}
+			}
+			else{
+				alertify.alert('Alerta', 'Formato de Descripción inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+				descv.className = "form-control textcolorw is-invalid";
+				return false;
+			}
+		}
+		else{
+			alertify.alert('Alerta', 'Formato de NOMBRE inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
 			namv.className = "form-control textcolorw is-invalid";
 			return false;
 		}

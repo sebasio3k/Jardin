@@ -515,3 +515,58 @@ function validarActualizarC(){
 		}
 	}
 }
+
+// ACTUALIZAR PRODUCTO------------------------------------------------------------------------------------------
+function validarActualizarP(){
+	var idcat = document.getElementById("idcat").value;
+	var desc = document.getElementById("desc").value;
+	var precio = document.getElementById("precio").value;
+	// var imagen = document.getElementById("imagen").value;
+	var idcatv = document.getElementById("idcat");
+	var descv = document.getElementById("desc");
+	var preciov = document.getElementById("precio");
+	// var imagenv = document.getElementById("imagen");
+
+	var regidcat=/^([0-9]{1,4})+$/;
+	var regdesc=/^([A-Za-z\sáéíóú]{2,100})+$/;
+	var regprecio=/^([0-9]{1,4})+$/;
+	// var regimagen
+
+	// Si estan vacios:
+	if((idcat=="") || (desc=="")  || (precio=="")){
+		alertify.alert('Alerta', 'Se requiere que todos los campos esten llenos', function(){ alertify.error('Verifica campos'); });
+		idcatv.className = "form-control  is-invalid";
+		descv.className = "form-control  is-invalid";
+		preciov.className = "form-control  is-invalid";
+		return false;
+	}
+	else{//si no
+		/*VALIDA QUE EL formato de correo SEA VALIDO*/
+		if(regidcat.test(idcat)){
+			idcatv.className = "form-control textcolorw is-valid";
+			if(regdesc.test(desc)){
+				descv.className = "form-control textcolorw is-valid";
+				if(regprecio.test(precio)){
+					preciov.className = "form-control textcolorw is-valid";
+					return true;
+				}
+				else{
+					alertify.alert('Alerta', 'Formato de Precio inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+					preciov.className = "form-control textcolorw is-invalid";
+					return false;
+				}
+			}
+			else{
+				alertify.alert('Alerta', 'Formato de Descripción inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+				descv.className = "form-control textcolorw is-invalid";
+				return false;
+			}
+		}
+		else{
+			alertify.alert('Alerta', 'Formato de Id inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+			idcatv.className = "form-control textcolorw is-invalid";
+			return false;
+		}
+	}
+}
+

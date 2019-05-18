@@ -3,7 +3,7 @@
     // $id = $_POST['buscar'];
     $mysqli = new mysqli("localhost", "Sebastian", "ifuseekamy", "jardinabuela");
     $salida = "";
-    $query = "SELECT * FROM productos ORDER BY idproducto"; 
+    $query = "SELECT * FROM productos ORDER BY idproducto";
     $q="";
 
     $resultado = $mysqli->query($query);
@@ -38,17 +38,14 @@
                             <td>".$fila['precio']."</td>
                             <td>".$fila['imagen']."</td>
                             </tr>";
-                        
             }
-            
-            $salida.="</tbody></table>"; 
-            // echo $salida;               
+            $salida.="</tbody></table>";
+            // echo $salida;
         }
         else {
             $salida.="No hay datos :c";
         }
     // }
-    
     echo $salida;
     $mysqli->close();
 ?>

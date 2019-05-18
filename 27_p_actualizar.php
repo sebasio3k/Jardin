@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
 
-<body class="adminbody"> 
+<body class="adminbody">
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -284,7 +284,7 @@
               						</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
-										<button id="actualizar" type="button" class="btn btn-success">Guardar</button>
+										<button id="actualizar" type="button" class="btn btn-success" onmouseenter=validarActualizarP();>Guardar</button>
 									</div>
             					</div><!-- /.modal-content -->
           					</div><!-- /.modal-dialog -->
@@ -324,8 +324,8 @@
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
 	<script src="./JS/buscador.js"></script>
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\validar.js"></script>
+	<!-- JavaScript Validaciones-->
+	<script type="text/javascript" src=".\JS\val.js"></script>
 	<script type="text/javascript" src=".\JS\actualizarP.js"></script>
 </body>
 </html>

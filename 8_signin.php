@@ -336,12 +336,12 @@ $('#registro').on('mouseover', function() {
 			// if ($('#g-recaptcha-response').val()==""){
 			if(res==""){
 				console.log("vacio");
-				swal("CAPTCHA SIN VERIFICAR");
+				swal("Oops" ,"CAPTCHA SIN VERIFICAR", "error");
 			}
 			else{
 				$.ajax({
 					url: "php/procesa.php",
-					type: 'POST', 
+					type: 'POST',
 					// dataType: 'json',
 					data:res,
 					// data: {
@@ -351,6 +351,7 @@ $('#registro').on('mouseover', function() {
 					success: function() {
 						// registro
 						// alertify.alert("Captcha confirmado");
+						swal("Bien", "CAPTCHA CONFIRMADO", "success");
 						if($('#nombre').val()=="" ){
 							alertify.alert("Debes agregar el nombre");
 							return false;
@@ -380,7 +381,7 @@ $('#registro').on('mouseover', function() {
 							"&am=" + $('#am').val() +
 							"&sex=" + $('input[name=sexo]:checked').val() +
 							"&phone=" + $('#phone').val() +
-							"&usuario=" + $('#email').val() + 
+							"&usuario=" + $('#email').val() +
 							"&password=" + $('#passv').val() ;
 							// "&";
 								// console.log(cadena);

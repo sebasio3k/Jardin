@@ -237,7 +237,7 @@
 						<!-- CONTENIDO -->
 						<br>
 						<!-- Formulario Registro-->
-						<form action="#" method="post" >
+						<form  method="post" >
 							<!-- RENGLON -->
 							<div class="row form-group justify-content-center ">
 								<label for="exampleInputEmail1" class=" col-form-label textcolorB">Escribe una coindicencia para Consultar:</label>
@@ -283,7 +283,6 @@
 								<a class="btn btn-primary textcolorb" href="24_a_productos.php" role="button">Regresar a Opciones Producto</a>
 							</div>
 						</div>
-					
 					</div>
 				</div>
 			</div>
@@ -303,7 +302,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -319,7 +318,7 @@
 
 <script>
 		$(buscar_datos());
-	
+
 		function buscar_datos(consulta){
 			$.ajax({
 				url:"php/consultarP.php",

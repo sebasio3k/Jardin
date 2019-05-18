@@ -214,10 +214,10 @@
 		<div class="row justify-content-center">
 			<div class="col-xs-12">
 				<a href="8_signin.php"><img src=".\img\reg.png" class="img-fluid" alt="Responsive image" width="200" height="50"></a>
-			</div>			
+			</div>
 		</div>
 		<hr>
-	</div>		
+	</div>
 	<br> -->
 	<!-- FOOTER -->
 	<footer class="mifooter">

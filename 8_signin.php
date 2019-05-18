@@ -26,6 +26,7 @@
 	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/alertify.css">
 	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/themes/default.css">
 	<script src="./alertifyjs/alertify.js"></script>
+	<!-- sweetalert -->
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
@@ -34,7 +35,7 @@
 	<!-- captcha -->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
-</head>	
+</head>
 <body class="mibody">
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -205,7 +206,7 @@
 				<div class="form-group">
 					<div class="form-check">
 						<div class="custom-control custom-switch">
-							<input type="checkbox" class="custom-control-input" id="customSwitch1"> 
+							<input type="checkbox" class="custom-control-input" id="customSwitch1">
 							<label class="custom-control-label" for="customSwitch1">Sí, quiero recibir promociones exclusivas, tips e ideas para mejorar mi hogar.</label>
 						</div>
 						<!-- <input class="form-check-input" type="checkbox" id="prom">
@@ -391,7 +392,7 @@ $('#registro').on('mouseover', function() {
 							data:cadena,
 							success:function(r){
 								if(r==2){
-									alertify.alert("ATENCION","Este usuario ya existe, prueba con otro :)",
+									alertify.alert("ATENCION","Este usuario ya existe, prueba con otro correo",
 									function(){
 										alertify.error('Prueba otro');
 									});

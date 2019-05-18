@@ -210,7 +210,7 @@
 						<!-- CONTENIDO -->
 						<br>
 						<!-- Formulario Registro-->
-						<form action="#" method="post" >
+						<form  method="post" >
 							<!-- RENGLON -->
 							<div class="row form-group justify-content-center ">
 								<label for="exampleInputEmail1" class=" col-form-label textcolorB">Escribe una coincidencia para Consultar:</label>

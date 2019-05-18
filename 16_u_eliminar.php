@@ -26,6 +26,8 @@
 	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/alertify.css">
 	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/themes/default.css">
 	<script src="./alertifyjs/alertify.js"></script>
+	<!-- sweetalert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
@@ -317,7 +319,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -328,7 +330,7 @@
 	<script src="./JS/buscador.js"></script>
 	<!-- JavaScript -->
 	<script type="text/javascript" src=".\JS\validar.js"></script>
-	<script type="text/javascript" src=".\JS\eliminar.js"></script>
+	<script type="text/javascript" src=".\JS\eliminarU.js"></script>
 </body>
 </html>
 
@@ -352,7 +354,5 @@
 	}
 	$(document).on('load', function(){
 			buscar_datos();
-		
 	});
-	
 </script>

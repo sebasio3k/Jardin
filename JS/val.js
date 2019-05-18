@@ -1,7 +1,6 @@
 // VALIDACIONES
 
 
-
 // LOGIN------------------------------------------------------------------------------------
 
 function validarLogin(){
@@ -9,6 +8,7 @@ function validarLogin(){
 	var pas = document.getElementById("pass").value;
 	var emav = document.getElementById("email");
 	var pasv = document.getElementById("pass");
+
 	// var contra=contrasena.value;
 	// var correo=correous.value;
 	// var excorreo=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
@@ -19,7 +19,7 @@ function validarLogin(){
 		pasv.className = "form-control textcolorw is-invalid";
 	}
 	else{
-		/*VALIDA QUE EL formato de correo SEA VALIDO*/
+		/*VALIDA QUE EL formato de ema SEA VALIDO*/
 		if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(ema)){
 			emav.className = "form-control textcolorw is-valid";
 			if (/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/.test(pas)){
@@ -29,7 +29,7 @@ function validarLogin(){
 				alertify.alert('Alerta', 'Formato de Contaseña inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
 				pasv.className = "form-control textcolorw is-invalid";
 			}
-			// alert("CORREO CORRECTO");
+			// alert("ema CORRECTO");
 			// if((ema=="bastianhdezo@gmail.com") && (pas=="1234")){
 			// 	/*document.form.submit();*/
 			// 	location.href="2_index_2.html";
@@ -52,6 +52,7 @@ function validarLogin(){
 // SIGN IN (REGISTRARSE)------------------------------------------------------------------------------------------
 
 function validarSignin(){
+
 	var nam = document.getElementById("nombre").value;
 	var ap = document.getElementById("ap").value;
 	var am = document.getElementById("am").value;
@@ -61,12 +62,6 @@ function validarSignin(){
 	var contra = document.getElementById("pass1").value;
 	var contrac = document.getElementById("passv").value;
 	var tyc = document.getElementById("tyc");
-	var regnom=/^([A-Za-z\sáéíóú]{2,15})+$/;
-	var regap=/^([A-Za-z\sáéíóú]{2,30})+$/;
-	var regam=/^([A-Za-z\sáéíóú]{2,30})+$/;
-	var regcorreo=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
-	var regtel=/^([0-9]{10})+$/;
-	var regcontra=/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
 	// variables para cambiar la clase de error
 	var namv = document.getElementById("nombre");
 	var apv = document.getElementById("ap");
@@ -77,8 +72,15 @@ function validarSignin(){
 	var correov = document.getElementById("email");
 	var contrav = document.getElementById("pass1");
 	var contracv = document.getElementById("passv");
-	
-	// Si estan vacios:				
+
+	var regnom=/^([A-Za-z\sáéíóú]{2,15})+$/;
+	var regap=/^([A-Za-z\sáéíóú]{2,30})+$/;
+	var regam=/^([A-Za-z\sáéíóú]{2,30})+$/;
+	var regcorreo=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
+	var regtel=/^([0-9]{10})+$/;
+	var regcontra=/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+
+	// Si estan vacios:
 	if((nam=="") || (ap=="")  || (am=="") || (correo=="") || (tel=="") || (contra=="") || (contrac=="")){
 		alertify.alert('Alerta', 'Se requiere que todos los campos esten llenos', function(){ alertify.error('Verifica campos'); });
 		namv.className = "form-control textcolorw is-invalid";
@@ -165,7 +167,7 @@ function validarSignin(){
 				alertify.alert('Alerta', 'Formato de apellido paterno inválido,por favor verificalo', function(){ alertify.error('Verifica campos'); });
 				apv.className = "form-control textcolorw is-invalid";
 				return false;
-			}								
+			}
 		}
 		else{
 			alertify.alert('Alerta', 'Formato de NOMBRE inválido,por favor verificalo', function(){ alertify.error('Verifica campos'); });
@@ -218,7 +220,7 @@ function deshabilitar(){
 	// habilita boton
 	pago.disabled=false;
 	pago.className = "btn btn-primary shadow-lg";
-	
+
 
 	// if (tienda.checked){
 	// 	ntv.setAttribute("disabled", "");
@@ -277,7 +279,7 @@ function habilitar(){
 //     if(event.keyCode == 8 && $(".expire").val().length == 4){
 //       $(this).val(month);
 //     }
-    
+
 //     if($(this).val().length === 0){
 //       $(".date_value").text("MM / YYYY");
 //     }
@@ -287,7 +289,7 @@ function habilitar(){
 //     $(".date_value").css("color", "white");
 //   });
 
-	
+
 function validarPago(){
 	var tienda = document.getElementById("tienda");
 	var tarj = document.getElementById("tarjeta");
@@ -341,12 +343,125 @@ function validarPago(){
 				else{
 					alert("Formato de Nombre inválido, por favor verificalo");
 					nv.className = "form-control textcolorw is-invalid";
-				}								
+				}
 			}
 			else{
 				alert("Formato de TARJETA inválido, por favor verificalo");
 				nvt.className = "form-control textcolorw is-valid";
 			}
+		}
+	}
+}
+
+// ACTUALIZAR USUARIO------------------------------------------------------------------------------------------
+
+function validarActualizar(){
+	var nam = document.getElementById("nombre").value;
+	var ap = document.getElementById("ap").value;
+	var am = document.getElementById("am").value;
+	// Ssexo
+	var tel = document.getElementById("phone").value;
+	var correo = document.getElementById("email").value;
+	var contrac = document.getElementById("passv").value;
+	var tyc = document.getElementById("tyc");
+	// variables para cambiar la clase de error
+	var namv = document.getElementById("nombre");
+	var apv = document.getElementById("ap");
+	var amv = document.getElementById("am");
+	// Ssexov
+	var sexv = document.getElementsByName("sexo");
+	var telv = document.getElementById("phone");
+	var correov = document.getElementById("email");
+	var contracv = document.getElementById("passv");
+
+	var regnom=/^([A-Za-z\sáéíóú]{2,15})+$/;
+	var regap=/^([A-Za-z\sáéíóú]{2,30})+$/;
+	var regam=/^([A-Za-z\sáéíóú]{2,30})+$/;
+	var regcorreo=/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
+	var regtel=/^([0-9]{10})+$/;
+	var regcontra=/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+
+	// Si estan vacios:
+	if((nam=="") || (ap=="")  || (am=="") || (correo=="") || (tel=="") || (contrac=="")){
+		alertify.alert('Alerta', 'Se requiere que todos los campos esten llenos', function(){ alertify.error('Verifica campos'); });
+		namv.className = "form-control  is-invalid";
+		apv.className = "form-control  is-invalid";
+		amv.className = "form-control  is-invalid";
+		correov.className = "form-control is-invalid";
+		telv.className = "form-control  is-invalid";
+		contracv.className = "form-control is-invalid";
+		return false;
+	}
+	else{//si no
+		/*VALIDA QUE EL formato de correo SEA VALIDO*/
+		if(regnom.test(nam)){
+			namv.className = "form-control textcolorw is-valid";
+			if(regap.test(ap)){
+				apv.className = "form-control textcolorw is-valid";
+				if(regam.test(am)){
+					amv.className = "form-control textcolorw is-valid";
+					// if (('input[name=sexo]:radio').is(':checked')){
+					// if (('input[name=sexo]:checked').val()==""){
+					if($("#formRegistro input[name='sexo']:radio").is(':checked')){
+						if(regtel.test(tel)){
+							telv.className = "form-control textcolorw is-valid";
+							if(regcorreo.test(correo)){
+								correov.className = "form-control textcolorw is-valid";
+								if(regcontra.test(contra)){
+									contracv.className = "form-control textcolorw is-valid";
+									contrav.className = "form-control textcolorw is-valid";
+									if(tyc.checked){
+										return true;
+										// alert("REGISTRANDO");
+										// // document.getElementById("registro").submit();
+										// location.href="7_login_signin.html";
+									}
+									else{
+										alertify.alert('Alerta', 'Debes aceptar los términos y condiciones', function(){ alertify.error('Verifica campos'); });
+										tyc.className = " form-check-input is-invalid";
+										return false;
+									}
+								}
+								else {
+									alertify.alert('Alerta', 'Formato de contraseña inválido, por favor verifícalo', function(){ alertify.error('Verifica campos'); });
+									contracv.className = "form-control textcolorw is-invalid";
+									return false;
+								}
+							}
+							else{
+								alertify.alert('Alerta', 'Formato de email inválido, por favor verificalo, por favor verifícalo', function(){ alertify.error('Verifica campos'); });
+								correov.className = "form-control textcolorw is-invalid";
+								return false;
+							}
+						}
+						else{
+							alertify.alert('Alerta', 'Formato de telefono inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+							telv.className = "form-control textcolorw is-invalid";
+							return false;
+						}
+					}
+					else{
+						alertify.alert('Alerta', 'Selecciona el sexo por favor', function(){ alertify.error('Verifica campos'); });
+						sexv.className = "form-control textcolorw is-invalid";
+						return false;
+					}
+				}
+				else{
+					alertify.alert('Alerta', 'Formato de apellido materno inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+					amv.className = "form-control textcolorw is-invalid";
+					return false;
+				}
+			}
+			else{
+				alertify.alert('Alerta', 'Formato de apellido paterno inválido,por favor verificalo', function(){ alertify.error('Verifica campos'); });
+				apv.className = "form-control textcolorw is-invalid";
+				return false;
+			}
+		}
+		else{
+			alertify.alert('Alerta', 'Formato de NOMBRE inválido,por favor verificalo', function(){ alertify.error('Verifica campos'); });
+			namv.className = "form-control textcolorw is-invalid";
+			return false;
 		}
 	}
 }

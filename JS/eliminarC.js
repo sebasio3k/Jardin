@@ -3,23 +3,50 @@ $(document).ready(function(){
         // console.log(Id);
         // Si no se ha seleccionado ningun row no hace nada
         if(Id==0){
-
+            swal({
+                title: "Atencion",
+                text: "Debes seleccionar un registro para poder eliminarlo",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              });
         }
         else{// Pregunta antes de eliminar
-            alertify.confirm("ATENCION","¿Esta SEGURO de eliminar el registro seleccionado?",
-            function(){
-                alertify.success('Eliminado');
-                eliminar();
-                buscar_datos();
-                Id=0;
-                counter=0;
-                id_fila_selected=0;
-            },
-            function(){
-                alertify.error('Cancelado');
-            }).set('labels', {ok:'Estoy Seguro.', cancel:'¡Cancelar!'});
+            swal({
+                title: "¿Esta SEGURO de eliminar el registro seleccionado?",
+                text: "Una vez confirmado, no será posible revertir los cambios",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+                    eliminar();
+                    buscar_datos();
+                    Id=0;
+                    counter=0;
+                    id_fila_selected=0;
+                    swal("Poof! Curso Eliminado!", {
+                    icon: "success",
+                  });
+                } else {
+                  swal("Curso no Eliminado");
+                }
+              });
+            // alertify.confirm("ATENCION","¿Esta SEGURO de eliminar el registro seleccionado?",
+            // function(){
+            //     alertify.success('Eliminado');
+            //     eliminar();
+            //     buscar_datos();
+            //     Id=0;
+            //     counter=0;
+            //     id_fila_selected=0;
+            // },
+            // function(){
+            //     alertify.error('Cancelado');
+            // }).set('labels', {ok:'Estoy Seguro.', cancel:'¡Cancelar!'});
         }
-       
+
     });
 });
 
@@ -38,7 +65,7 @@ function seleccionar(id_fila){
         $('#'+id_fila).addClass('seleccionada');
         counter++;
     }
-   
+
     if (counter>1){
         $('#'+id_fila).removeClass('seleccionada');
         alertify.alert("ATENCION","Sólo se puede eliminar un registro a la vez",
@@ -57,7 +84,7 @@ function seleccionar(id_fila){
 }
 
 function eliminar(){
-   
+
     $.ajax({
 		url:"php/eliminarC.php",
 		type:"POST",

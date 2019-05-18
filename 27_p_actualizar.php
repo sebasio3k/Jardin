@@ -241,7 +241,7 @@
 						</div>
 						<br>
 						<div id="data"></div>
-						
+
 						<!-- Formulario fade -->
 						<div class="modal fade" id="responsive" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           					<div class="modal-dialog">
@@ -282,7 +282,7 @@
                  							 </div>
                 						</form>
               						</div>
-									<div class="modal-footer">  
+									<div class="modal-footer">
 										<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
 										<button id="actualizar" type="button" class="btn btn-success">Guardar</button>
 									</div>
@@ -296,7 +296,6 @@
 								<a class="btn btn-primary textcolorb" href="24_a_productos.php" role="button">Regresar a Opciones Producto</a>
 							</div>
 						</div>
-					
 					</div>
 				</div>
 			</div>
@@ -316,7 +315,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -352,7 +351,5 @@
 	}
 	$(document).on('load', function(){
 			buscar_datos();
-		
 	});
-	
 </script>

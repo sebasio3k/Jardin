@@ -26,11 +26,13 @@
 	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/alertify.css">
 	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/themes/default.css">
 	<script src="./alertifyjs/alertify.js"></script>
+	<!-- sweetalert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
 
-<body class="adminbody"> 
+<body class="adminbody">
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -345,7 +347,5 @@
 	}
 	$(document).on('load', function(){
 			buscar_datos();
-		
 	});
-	
 </script>

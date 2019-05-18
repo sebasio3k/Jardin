@@ -1,15 +1,14 @@
 var num=0;
-	 function actualiza (n){
-	
+function actualiza (n){
 	num = n;
-	}
+}
 
-	var combo = document.getElementById("tipou");
-	var sele = combo.options[combo.selectedIndex].text;
+var combo = document.getElementById("tipou");
+var sele = combo.options[combo.selectedIndex].text;
 
 $('#actualizar').click(function(){
 
-	
+
 	if($('#nombre').val()=="" ){
 		alertify.alert("Debes agregar el nombre");
 		return false;
@@ -28,7 +27,7 @@ $('#actualizar').click(function(){
 	}else if($('#email').val()==""){
 		alertify.alert("Debes agregar el email");
 		return false;
-	}else if($('#pass').val()==""){
+	}else if($('#passv').val()==""){
 		alertify.alert("Debes agregar el password");
 		return false;
 	}else if( sele == ""){
@@ -40,14 +39,14 @@ $('#actualizar').click(function(){
 	console.log(num);
 	var Id = document.getElementById(num).getElementsByTagName('td')[1].innerHTML;
 	console.log(Id)
-	
+
 	cadena="id=" + Id +
 			"&nombre=" + $('#nombre').val() +
 			"&ap=" + $('#ap').val() +
 			"&am=" + $('#am').val() +
 			"&sex=" + $('input[name=sexo]:checked').val() +
 			"&phone=" + $('#phone').val() +
-			"&usuario=" + $('#email').val() + 
+			"&usuario=" + $('#email').val() +
 			"&password=" + $('#pass').val()+
 			"&tipo=" + sele;
 			// console.log(cadena);
@@ -73,7 +72,6 @@ $('#actualizar').click(function(){
 					}else{
 						alertify.error("Fallo al Actualizar");
 					}
-					
 					console.log(r);
 				}
 			});

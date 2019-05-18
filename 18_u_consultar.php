@@ -184,7 +184,7 @@
 						<br>
 						<!-- CONTENIDO -->
 						<!-- Formulario Registro-->
-						<form action="#" method="post" >
+						<form  method="post" >
 							<!-- RENGLON -->
 							<div class="row form-group justify-content-center ">
 								<label for="exampleInputEmail1" class=" col-form-label textcolorB">Escribe Una coincidencia para Consultar:</label>
@@ -205,7 +205,7 @@
 						<div id="data">
 
 						</div>
-						<!-- TABLA 
+						<!-- TABLA
 						<table class="table bgblanco textcolorb table-responsive">
 							<thead class="thead-dark">
 								<tr>
@@ -230,7 +230,7 @@
 								</tr>
 							</tbody>
 						</table> -->
-						
+
 						<!-- Boton para regresar -->
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
@@ -312,7 +312,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -9,7 +9,7 @@
 		}
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
-	}	
+	}
 ?>
 
 <!DOCTYPE html>
@@ -26,9 +26,14 @@
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href=".\img\icon.png">
+	<script>
+		function ingresar(){
+			location.href="./php/tienda.php?op=1";
+		}
+	</script>
 </head>
 
-<body class="mibody"> 
+<body class="mibody" onload="ingresar()">
 	<!-- HEADER -->
 	<header class="container-fluid">
 		<div class="container-fluid">
@@ -86,7 +91,7 @@
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="./php/salir.php">Cerrar Sesi&oacute;n</a>
 							</div>
-						</li>				
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -215,7 +220,7 @@
 				<br>
 				<br>
 				<br>
-    		</div>  
+    		</div>
 		</div>
 	</div>
 	<!-- IMAGEN PARALLAX -->
@@ -245,7 +250,7 @@
 				<br>
 				<br>
 				<br>
-    		</div>  
+    		</div>
 		</div>
 	</div>
 	<!-- IMAGEN PARALLAX -->
@@ -275,7 +280,7 @@
 				<br>
 				<br>
 				<br>
-    		</div>  
+    		</div>
 		</div>
 	</div>
 	<!-- IMAGEN PARALLAX -->
@@ -305,7 +310,7 @@
 				<br>
 				<br>
 				<br>
-    		</div>  
+    		</div>
 		</div>
 	</div>
 
@@ -343,7 +348,6 @@
 					</center>
 				</div>
 			</div>
-			
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -366,7 +370,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

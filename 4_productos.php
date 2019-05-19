@@ -222,7 +222,6 @@
 	<script src=".\JS\jquery.dataTables.min.js"></script>
 	<script src="./JS/buscador.js"></script>
 
-	
 
 </body>
 </html>

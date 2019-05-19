@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$conexion=mysqli_connect('localhost','Sebastian','ifuseekamy','jardinabuela');
 
 	// Sesiones acceder a variable de sesion
@@ -12,6 +12,8 @@
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
 	}
+	$lista=$_SESSION['lista'];
+	// echo sizeof($lista);
 ?>
 
 
@@ -25,15 +27,13 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\funciones.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href=".\img\icon.png">
 </head>
 
-<body class="mibody"> 
+<body class="mibody">
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -92,7 +92,7 @@
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="./php/salir.php">Cerrar Sesi&oacute;n</a>
 							</div>
-						</li>				
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -145,108 +145,12 @@
 			</div>
 		</div>
 		<br>
-		<!-- sql="SELECT * from usuarios";
-									$result=mysqli_query($conexion,$sql);
 
-									while($mostrar=mysqli_fetch_array($result)){
-										?>	 -->
-		<?php
-			$sql = "SELECT imagen FROM productos"; 
-    		$result = mysql_query($conexion,$sql);
-    		$imagen = $result[0];
-    		echo $imagen;
-		    // while($row = mysql_fetch_array($result)) {
-		    // 	echo '<img src="data:image/jpeg;base64,'.base64_encode($result).'"/>';
-		?>
-		<?php       
-		    // }
-		    
-		    mysql_close($conn);
-		?>
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					
-					
-					<img src="<?php echo $mostrar['imagen']; ?>" class="card-img-top" alt="Producto2">
-					<div class="card-body">
-						<h5 class="card-title blurw"><?php echo $mostrar['descripcion'] ?></h5>
-					   	<p class="card-text blurw text-justify"><?php echo $mostrar['precio'] ?></p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-		</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto2">
-					<div class="card-body ">
-						<h5 class="card-title blurw">Producto 2</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto3">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 3</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-		</div>
-		<br>
-		<br>
-		<!-- RENGLON -->
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p4.jpg" class="card-img-top" alt="Producto4">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 4</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p5.jpg" class="card-img-top" alt="Producto5">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 5</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p6.jpg" class="card-img-top" alt="Producto6">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 6</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Agregar al Carrito</a>
-					</div>
-				</div>	
-			</div>
-		</div>
+		<!-- RENGLON 4 productos -->
+		<div id="tarjeta"></div>
+
 		<hr>
-
+<!--
 		<div class="row justify-content-center">
 			<nav aria-label="...">
 				<ul class="pagination">
@@ -267,6 +171,7 @@
 				</ul>
 			</nav>
 		</div>
+	</div> -->
 	</div>
 
 	<!-- FOOTER -->
@@ -302,7 +207,7 @@
 					</center>
 				</div>
 			</div>
-			
+
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -325,7 +230,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -337,3 +242,30 @@
 </body>
 </html>
 
+<script>
+
+	function enviar(c){
+		location.href="detalle.php?cod="+c;
+	}
+
+	$(buscar_datos());
+
+	function buscar_datos(){
+		$.ajax({
+			url:"php/mostrarPP.php",
+			type:"POST",
+			dataType:'html'
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			console.log(respuesta);
+			$("#tarjeta").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+	$(document).on('load', function(){
+			buscar_datos();
+	});
+</script>

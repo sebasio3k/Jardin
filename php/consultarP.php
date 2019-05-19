@@ -3,7 +3,7 @@
     // $id = $_POST['buscar'];
     $mysqli = new mysqli("localhost", "Sebastian", "ifuseekamy", "jardinabuela");
     $salida = "";
-    $query = "SELECT * FROM productos ORDER BY idproducto"; 
+    $query = "SELECT * FROM productos ORDER BY idproducto";
 
     if(isset($_POST['consulta'])){
         $q = $mysqli->real_escape_string($_POST['consulta']);
@@ -37,7 +37,7 @@
                                 <td>".$fila['imagen']."</td>
                             </tr>";
             }
-            $salida.="</tbody></table>";                
+            $salida.="</tbody></table>";
         }
         else {
             $salida.="No hay datos :c";

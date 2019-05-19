@@ -320,7 +320,6 @@
 
 <script>
 		$(buscar_datos());
-	
 		function buscar_datos(consulta){
 			$.ajax({
 				url:"php/consultarC.php",

@@ -14,6 +14,8 @@
 	else{
 		session_destroy();
 	}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -26,17 +28,15 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\funciones.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href=".\img\icon.png">
 
-</head>	
+</head>
 <body class="mibody">
 	<!-- HEADER -->
-<header class="container-fluid">
+	<header class="container-fluid">
 		<div class="container-fluid justify-content-center">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
 				<a class="navbar-brand" href="1_index.php">
@@ -121,7 +121,7 @@
 			</div>
 		</div>
 	</header>
-	
+
 	<!-- MAIN -->
 	<div class="container">
 		<!-- TITULO -->
@@ -131,107 +131,29 @@
 			</div>
 		</div>
 		<br>
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p1.jpg" class="card-img-top" alt="Producto1">
-					<div class="card-body ">
-						<h5 class="card-title blurw">Producto 1</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Ver Información</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto2">
-					<div class="card-body ">
-						<h5 class="card-title blurw">Producto 2</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Ver Información</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p2.jpg" class="card-img-top" alt="Producto3">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 3</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Ver Información</a>
-					</div>
-				</div>	
-			</div>
-		</div>
-		<br>
-		<br>
-		<!-- RENGLON -->
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p4.jpg" class="card-img-top" alt="Producto4">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 4</h5>
-					   	<p class="card-text blurw blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Ver Información</a>
-					</div>
-				</div>
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p5.jpg" class="card-img-top" alt="Producto5">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 5</h5>
-					   	<p class="card-text blurw text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					   	<a href="#" class="btn btn-primary">Ver Información</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\p6.jpg" class="card-img-top" alt="Producto6">
-					<div class="card-body">
-						<h5 class="card-title blurw">Producto 6</h5>
-					   	<p class="card-text blurw text-justify">Tenemos los mejores artículos para jardinería en la ciudad, ven y con&oacute;cenos!</p>
-					   	<a href="#" class="btn btn-primary">Ver Información</a>
-					</div>
-				</div>	
-			</div>
-		</div>
+
+		<!-- RENGLON 4 productos -->
+		<div id="tarjeta"></div>
+
+
 		<hr>
 
-		<div class="row justify-content-center">
+		<!-- <div class="row justify-content-center">
 			<nav aria-label="...">
 				<ul class="pagination">
 					<li class="page-item disabled">
 						<span class="page-link">Previous</span>
 					</li>
-					<li class="page-item"><a class="page-link" href="#">1</a></li>
-					<li class="page-item active" aria-current="page">
-						<span class="page-link">
-							2
-							<span class="sr-only">(current)</span>
-						</span>
-					</li>
-					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-itema active"><a class="page-link" href="#1">1</a></li>
+					<li class="page-item " aria-current="page"><a class="page-link" href="#2">2</a></li>
+					<li class="page-item"><a class="page-link" href="#3">3</a></li>
 					<li class="page-item">
 						<a class="page-link" href="#">Next</a>
 					</li>
 				</ul>
 			</nav>
-		</div>
+		</div> -->
+
 	</div>
 
 	<!-- FOOTER -->
@@ -267,7 +189,7 @@
 					</center>
 				</div>
 			</div>
-			
+
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -290,7 +212,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -299,5 +221,31 @@
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
 	<script src="./JS/buscador.js"></script>
+
+	
+
 </body>
 </html>
+
+<script>
+	$(buscar_datos());
+
+	function buscar_datos(){
+		$.ajax({
+			url:"php/mostrarP.php",
+			type:"POST",
+			dataType:'html'
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			console.log(respuesta);
+			$("#tarjeta").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+	$(document).on('load', function(){
+			buscar_datos();
+	});
+</script>

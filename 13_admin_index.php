@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
 
-<body class="adminbody"> 
+<body class="adminbody">
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">

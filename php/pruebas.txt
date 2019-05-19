@@ -83,3 +83,253 @@ login_signin.php
 	header("location:1_index.html");
 	}
  ?>
+
+
+
+
+
+
+
+
+ $resultado = $mysqli->query($query);
+
+    $num=1;
+    if($resultado -> num_rows > 0){
+        $result = $mysqli->query('SELECT COUNT(*) as total_products FROM productos');
+        $row = $result->fetch_assoc();
+        $num_total_rows = $row['total_products'];
+        $num_pages = ceil($num_total_rows / 4);
+
+        $salida.= "
+                    <div class='card-deck tab-pane fade show active' id='".$num."'>
+                    ";
+        $count = 0;
+        while($fila=$resultado->fetch_assoc()){
+            $salida.= "
+
+                            <!-- Tarjeta de producto -->
+                            <div class='card' style='width: 18rem;'>
+                                <img src='./img/prod/".$fila['idproducto'].".jpg'  class='card-img-top img-fluid' alt='".$fila['descripcion']."'>
+                                <div class='card-body '>
+                                    <h5 class='card-title blurw'>".$fila['descripcion']."</h5>
+                                    <p class='card-text blurw text-justify'>".$fila['precio'].".</p>
+                                    <a href='#' class='btn btn-primary'>Ver Información</a>
+                                </div>
+                            </div>
+
+                    ";
+                $count++;
+                for ($i = $count; $i == 4; $i++) {
+                    // cuando sean 4
+                    $num++;
+                    $salida.="
+                    </div>
+                    <br>
+                    <div class='card-deck tab-pane fade' style'display: none' id='".$num."'>
+                    ";
+                    // reinicia contador
+                    $count=0;
+                    $i=0;
+                }
+        }
+        $salida.="<!-- ultimo -->
+                </div>
+                </div>";
+
+        if ($num_pages > 1) {
+            $salida.="
+            <div class='row justify-content-center'>
+			<nav aria-label='...'>
+                <ul class='pagination'>
+                <li class='page-item disabled'>
+						<span class='page-link'>Previous</span>
+				</li>";
+                for ($j=1;$j<=$num_pages;$j++) {
+                    $class_active = '';
+                    if ($j == 1) {
+                        $class_active = ' active';
+                    }
+                    $salida.= '<li class="page-item '.$class_active.'"><a class="page-link" href="#'.$j.'" data="'.$j.'">'.$j.'</a></li>';
+                }
+                $salida.= "</ul></nav></div>";
+
+
+		// 			<li class='page-item active'><a class='page-link' href='#1'>1</a></li>
+		// 			<li class='page-item ' aria-current='page'><a class='page-link' href='#2'>2</a></li>
+		// 			<li class='page-item'><a class='page-link' href='#3'>3</a></li>
+		// 			<li class='page-item'>
+		// 				<a class='page-link' href='#'>Next</a>
+		// 			</li>
+		// 		</ul>
+		// 	</nav>
+		// </div>
+                }
+
+    }
+    else {
+        $salida.="No hay datos :c";
+    }
+    echo $salida;
+    $mysqli->close();
+?>
+
+--------------------------------------------------------------------------------------------
+productos
+
+<script>
+
+$(document).ready(function () {
+	var n=1;
+	var rango="";
+
+	// .pagination li a
+	$('.pagination li .page-item a').on('click', 'a' , function(){
+		console.log('entro')
+		console.log($(this));
+		var page = $(this).attr('data');
+		buscar_datos(page);
+
+	});
+
+	$(buscar_datos(n));
+
+	function buscar_datos(n){
+		console.log(n);
+		var rango="";
+		switch (n) {
+			case 1:
+				rango = "n1=0 & n2=8";
+				break;
+			case 2:
+				rango = "n1=9 & n2= 16";
+				break;
+			case 3:
+				rango = "n1 = 17 & n2 = 24";
+				break;
+			case 4:
+				rango = "n1 = 25 & n2 = 32";
+				break;
+			case 5:
+				rango = "n1 = 33 & n2 = 40";
+				break;
+			case 6:
+				rango = "n1 = 41 & n2 = 48";
+				break;
+			case 7:
+				rango = "n1 = 49 & n2 = 56";
+				break;
+			case 8:
+				rango = "n1 = 57 & n2 = 64";
+				break;
+			default:
+				console.log('Lo lamentamos, por el momento no disponemos de rango');
+			}
+			rango = rango + "& pag="+n;
+		$.ajax({
+			url:"php/mostrarP.php",
+			type:"POST",
+			data: rango,
+		})
+		.done(function(respuesta){
+			console.log(respuesta);
+			$("#tarjeta").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+	$(document).on('load', function(){
+			buscar_datos(1);
+	});
+});
+</script>
+
+mostrar p
+
+<?php
+    // $rango =$_POST['rango'];
+    $n1 = $_POST['n1'];
+    $n2 = $_POST['n2'];
+    $num_pag =$_POST['pag'];
+    $mysqli = new mysqli("localhost", "Sebastian", "ifuseekamy", "jardinabuela");
+    $salida = "";
+    $query = "SELECT idproducto,idcategoria,descripcion,precio FROM productos WHERE idproducto BETWEEN $n1 AND $n2 ";
+    echo($query);
+    $resultado = $mysqli->query($query);
+
+    if($resultado -> num_rows > 0){
+        $salida.= "<div class='tab-pane fade show active' id='".$num_pag."'>
+                        <div class='card-deck'>
+                    ";
+        $count = 0;
+        while($fila=$resultado->fetch_assoc()){
+            $salida.= "
+
+                            <!-- Tarjeta de producto -->
+                            <div class='card' style='width: 18rem;'>
+                                <img src='./img/prod/".$fila['idproducto'].".jpg'  class='card-img-top img-fluid' alt='".$fila['descripcion']."'>
+                                <div class='card-body '>
+                                    <h5 class='card-title blurw'>".$fila['descripcion']."</h5>
+                                    <p class='card-text blurw text-justify'>".$fila['precio'].".</p>
+                                    <a href='#' class='btn btn-primary'>Ver Información</a>
+                                </div>
+                            </div>
+
+                    ";
+                $count++;
+                for ($i = $count; $i == 4; $i++) {
+                    // cuando sean 4
+                    $salida.="
+                    </div>
+                    <br>
+                    <div class='card-deck'>
+                    ";
+                    // reinicia contador
+                    $count=0;
+                    $i=0;
+                }
+        }
+        $salida.="<!-- ultimo -->
+                </div>
+                </div>
+                <hr>";
+
+            $salida.="
+            <div class='row justify-content-center'>
+			<nav aria-label='...'>
+                <ul class='pagination'>
+                <li class='page-item disabled'>
+						<span class='page-link'>Previous</span>
+				</li>";
+                for ($j=1;$j<=8;$j++) {
+                    $class_active = '';
+                    if ($j == 1) {
+                        $class_active = ' active';
+                    }
+                    $salida.= '<li class="page-item '.$class_active.'"><a id="v"'.$j.'"" class="page-link" href="#'.$j.'" data="'.$j.'">'.$j.'</a></li>';
+                }
+                $salida.= "</ul></nav></div>";
+
+
+		// 			<li class='page-item active'><a class='page-link' href='#1'>1</a></li>
+		// 			<li class='page-item ' aria-current='page'><a class='page-link' href='#2'>2</a></li>
+		// 			<li class='page-item'><a class='page-link' href='#3'>3</a></li>
+		// 			<li class='page-item'>
+		// 				<a class='page-link' href='#'>Next</a>
+		// 			</li>
+		// 		</ul>
+		// 	</nav>
+		// </div>
+
+    }
+    else {
+        $salida.="No hay datos :c";
+    }
+    echo $salida;
+    $mysqli->close();
+?>
+
+
+
+
+

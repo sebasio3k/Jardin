@@ -317,6 +317,9 @@
 </html>
 
 <script>
+$(document).ready(function() {
+        $('#tabladin').DataTable();
+    });
 		$(buscar_datos());
 
 		function buscar_datos(consulta){
@@ -342,4 +345,5 @@
 				buscar_datos();
 			}
 		});
+		
 	</script>

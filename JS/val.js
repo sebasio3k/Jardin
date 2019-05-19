@@ -521,16 +521,17 @@ function validarActualizarP(){
 	var idcat = document.getElementById("idcat").value;
 	var desc = document.getElementById("desc").value;
 	var precio = document.getElementById("precio").value;
-	// var imagen = document.getElementById("imagen").value;
+	var imagen = document.getElementById("ima").value;
 	var idcatv = document.getElementById("idcat");
 	var descv = document.getElementById("desc");
 	var preciov = document.getElementById("precio");
-	// var imagenv = document.getElementById("imagen");
+	var imagenv = document.getElementById("ima");
 
 	var regidcat=/^([0-9]{1,4})+$/;
-	var regdesc=/^([A-Za-z\sáéíóú]{2,100})+$/;
+	var regdesc=/^([A-Za-z\sáéíóú0-9._-'"/]{2,500})+$/;
 	var regprecio=/^([0-9]{1,4})+$/;
-	// var regimagen
+	var regimagen=/^([0-9]{1,4})+$/;
+
 
 	// Si estan vacios:
 	if((idcat=="") || (desc=="")  || (precio=="")){
@@ -548,7 +549,15 @@ function validarActualizarP(){
 				descv.className = "form-control textcolorw is-valid";
 				if(regprecio.test(precio)){
 					preciov.className = "form-control textcolorw is-valid";
-					return true;
+					if(regimagen.test(imagen) ){
+						imagenv.className = "form-control textcolorw is-valid";
+						return true;
+					}
+					else{
+						alertify.alert('Alerta', 'Formato de Imagen inválido, debe ser igual al id por favor verificalo', function(){ alertify.error('Verifica campos'); });
+						imagenv.className = "form-control textcolorw is-invalid";
+						return false;
+					}
 				}
 				else{
 					alertify.alert('Alerta', 'Formato de Precio inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });

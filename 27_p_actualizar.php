@@ -277,7 +277,7 @@
 											  <div class="form-group">
                    								 <label for="ima" class="control-label col-xs-5">Imagen:</label>
                     							<div class="col-xs-5">
-													<input type="file" class="form-control-file" id="ima" name="ima">
+													<input type="text" class="form-control-file" id="ima" name="ima">
                     							</div>
                  							 </div>
                 						</form>

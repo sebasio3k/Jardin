@@ -17,7 +17,7 @@
     }
     else {
         if($resultado -> num_rows > 0){
-            $salida.= "<table class='table bgblanco textcolorb table-responsive table-sm table table-striped'>
+            $salida.= "<table id='tabladin' class='table bgblanco textcolorb table-responsive table-sm table table-striped'>
                             <thead class='thead-dark'>
                                 <tr>
                                     <th scope='col'>ID</th>
@@ -34,7 +34,7 @@
                                 <td>".$fila['idcategoria']."</td>
                                 <td>".$fila['descripcion']."</td>
                                 <td>".$fila['precio']."</td>
-                                <td>".$fila['imagen']."</td>
+                                <td><img src='./img/prod/".$fila['idproducto'].".jpg'  class='card-img-top img-fluid'></td>
                             </tr>";
             }
             $salida.="</tbody></table>";

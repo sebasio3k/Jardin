@@ -36,7 +36,7 @@
                             <td>".$fila['idcategoria']."</td>
                             <td>".$fila['descripcion']."</td>
                             <td>".$fila['precio']."</td>
-                            <td>".$fila['imagen']."</td>
+                            <td><img src='./img/prod/".$fila['idproducto'].".jpg'  class='card-img-top img-fluid'></td>
                             </tr>";
             }
             $salida.="</tbody></table>";

@@ -14,6 +14,7 @@
 	}
 	$lista=$_SESSION['lista'];
 	// echo sizeof($lista);
+
 ?>
 
 
@@ -174,6 +175,42 @@
 	</div> -->
 	</div>
 
+	<div id="mostrar">
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel"><?php echo $nombre;?></h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				<div class="modal-body">
+					<div class="row justify-content-center">
+						<div class="col text-center justify-content-center">
+							<img class="img-fluid" src="./img/prod/<?php echo $cod; ?>.jpg" alt="" width="200" heigh="170">
+						</div>
+						<div class="row justify-content-center b">
+							<div class="col b">
+								$/. <?php echo $precio;?>
+							</div>
+							<div class="col">
+								Ingrese Cantidad: <input type="number" min="1" max="100" value="1" name="txtcan">
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary">Agregar a Carrito</button>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- FOOTER -->
 	<footer class="mifooter">
 		<div class="container">
@@ -243,10 +280,26 @@
 </html>
 
 <script>
-
+	 var resultado = document.getElementById("mostrar");
 	function enviar(c){
-		location.href="detalle.php?cod="+c;
-	}
+			var xmlhttp;
+			if(window.XMLHttpRequest){
+				xmlhttp=new XMLHttpRequest();
+			}
+			else{
+				xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+
+			xmlhttp.onreadystatechange=function(){
+				if(xmlhttp.readyState==3 && xmlhttp.status==200){
+					resultado.innerHTML=xmlhttp.responseText;
+				}
+			}
+			xmlhttp.open("GET","Detalle.php?cod="+c,true);
+			xmlhttp.send();
+
+		}
+
 
 	$(buscar_datos());
 

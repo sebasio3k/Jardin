@@ -36,7 +36,7 @@
                                 <div class='card-body '>
                                     <h5 class='card-title blurw'>".$fila['descripcion']."</h5>
                                     <p class='card-text blurw text-justify'>".$fila['precio'].".</p>
-                                    <button type='button' href='#' class='btn btn-primary' onclick='enviar(".$count2.")'>Agregar al carrito</button>
+                                    <button type='button' href='#' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' onmouseover='enviar(".$count2.")'>Agregar al carrito</button>
                                 </div>
                             </div>
 
@@ -65,6 +65,3 @@
     echo $salida;
     $mysqli->close();
 ?>
-
-
-

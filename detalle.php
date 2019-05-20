@@ -2,7 +2,7 @@
 
     include 'php/MetodosDAO.php';
 
-    $cod=$_REQUEST['cod'];
+    $codi=$_REQUEST['cod'];
     // echo $cod;
 
     // $objMetodos=new MetodosDAO();
@@ -20,7 +20,7 @@
 
     require_once "php/conexion.php";
 	$conexion=conexion();
-	$sql="SELECT * FROM productos WHERE idproducto='$cod'";
+	$sql="SELECT * FROM productos WHERE idproducto='$codi'";
 	// echo $result=mysqli_query($conexion,$sql);
     $resultado = $conexion->query($sql);
 
@@ -51,46 +51,71 @@
 	<link rel="shortcur icon" href=".\img\icon.png">
 </head>
 <body>
-    <div class="container">
+    <!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel"><?php echo $nombre;?></h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			<div class="modal-body">
+				<div class="row justify-content-center">
+					<div class="col text-center justify-content-center">
+						<img class="img-fluid" src="./img/prod/<?php echo $codi; ?>.jpg" alt="" width="200" heigh="170">
+					</div>
+					<div class="row justify-content-center b">
+						<div class="col b">
+							$/. <?php echo $precio;?>
+						</div>
+						<div class="col">
+							Ingrese Cantidad: <input type="number" min="1" max="100" value="1" name="txtcan">
+						</div>
+					</div>
+                </div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+				<button type="button" class="btn btn-primary">Agregar a Carrito</button>
+			</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+    <!-- <div class="container">
         <div class="row justify-content-center">
             <div class="col text-center justify-content-center">
+                <img class="img-fluid" src="./img/prod/<?php echo $cod; ?>.jpg" alt="" width="200" heigh="170">
+            </div>
+            <div class="col text-center justify-content-center">
+                <p class="b"> <?php echo $nombre;?></p>
+                <div class="row justify-content-center b">
+                    <div class="col b">
+                        $/. <?php echo $precio;?>
+                    </div>
+                    <div class="col">
+                        Ingrese Cantidad: <input type="number" min="1" max="100" value="1" name="txtcan">
+                    </div>
+                </div>
                 <form action="">
-                    <table border="10">
-                        <thead>
-                            <th class="b">
-                                Producto
-                            </th>
-                            <th class="b">
-                               <p> <?php echo $nombre;?></p>
-                            </th>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td rowspan="4">
-                                    <img class="img-fluid" src="./img/prod/<?php echo $cod; ?>.jpg" alt="" width="200" heigh="170">
-                                </td>
-                                <td class="b">
-                                    S/. <?php echo $precio;?>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td class="b"> Ingrese Cantidad: <input type="number" min="1" max="100" value="1" name="txtcan"></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <button type="button" class="btn btn-secondary">Cerrar
-                                    </button>
-                                    <button type="button" class="btn btn-primary">Agregar a Carrito
-                                    </button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="row justify-content-center b">
+                        <div class="col">
+                            <button type="button" class="btn btn-secondary">Cerrar
+                            </button>
+                            <button type="button" class="btn btn-primary">Agregar a Carrito
+                             </button>
+                         </div>
+                    </div>
                 </form>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

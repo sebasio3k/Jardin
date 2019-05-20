@@ -19,11 +19,12 @@
                                 <div class='card-body '>
                                     <h5 class='card-title blurw'>".$fila['descripcion']."</h5>
                                     <p class='card-text blurw text-justify'>".$fila['precio'].".</p>
-                                    <a href='#' class='btn btn-primary'>Ver Información</a>
+                                   
                                 </div>
                             </div>
 
                     ";
+                    // <a href='#' class='btn btn-primary'>Ver Información</a>
                 $count++;
                 for ($i = $count; $i == 4; $i++) {
                     // cuando sean 4

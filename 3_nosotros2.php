@@ -71,7 +71,7 @@
 					<ul class="navbar-nav mr-auto ul2">
 						<li>
 							<!-- Carrito -->
-							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20"></a>
+							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20">( <?php echo $_SESSION['cuantos'];?> )</a>
 						</li>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- Example single danger button -->

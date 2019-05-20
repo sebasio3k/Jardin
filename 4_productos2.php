@@ -15,6 +15,8 @@
 	// $lista=$_SESSION['lista'];
 	// echo sizeof($lista);
 
+
+
 ?>
 
 
@@ -77,7 +79,7 @@
 					<ul class="navbar-nav mr-auto ul2">
 						<li>
 							<!-- Carrito -->
-							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20"></a>
+							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20">( <?php echo $_SESSION['cuantos'];?> )</a>
 						</li>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- Example single danger button -->
@@ -261,6 +263,29 @@
 			xmlhttp.send();
 
 		}
+
+
+
+    function agrega(codi){
+		var cadena = "codi="+codi;
+        $.ajax({
+			url:"php/agregacarrito.php",
+			type:"POST",
+			data: cadena,
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			location.reload();
+			console.log(respuesta);
+			// $("#tarjeta").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+
+    }
+
+
 
 
 	$(buscar_datos());

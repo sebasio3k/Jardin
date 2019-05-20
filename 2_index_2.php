@@ -37,6 +37,13 @@
         }
 	}
 	$mysqli->close();
+
+	if(!isset($_SESSION['cuantos'])){
+		$_SESSION['cuantos']=0;
+	}
+	else{
+		$_SESSION['cuantos']=$_SESSION['cuantos'];
+	}
 	// $longitud=count($_SESSION['productos']);
 	// print($longitud);
 	// print_r($_SESSION['productos'][1]['precio']);
@@ -137,7 +144,7 @@
 					<ul class="navbar-nav mr-auto ul2">
 						<li>
 							<!-- Carrito -->
-							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20"></a>
+							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20">( <?php echo $_SESSION['cuantos'];?> )</a>
 						</li>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- Example single danger button -->

@@ -1,8 +1,29 @@
 <?php
 
+    session_start();
     include 'php/MetodosDAO.php';
 
     $codi=$_REQUEST['cod'];
+    $_SESSION['codigo']=$codi;
+    $listap = $_SESSION['productos'];
+    $salida = "";
+    $longitud=count($_SESSION['productos']);
+    $nombre=$_SESSION['productos'][$codi]['descripcion'];
+    $precio=$_SESSION['productos'][$codi]['precio'];
+
+
+    // $fila=$_SESSION['productos'];
+    // // if($resultado -> num_rows > 0){
+    //     $salida.= "<div class='card-deck'>
+    //                 ";
+    //     $count = 0;
+    //     $count2=0;
+    //     // while($fila=$resultado->fetch_assoc()){
+    //         // $count2++;
+    //         for ($o=0; $o<$longitud; $o++){
+    //             $count2++;
+    //         $salida.= "
+
     // echo $cod;
 
     // $objMetodos=new MetodosDAO();
@@ -56,7 +77,7 @@
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel"><?php echo $nombre;?></h5>
+					<h5 class="modal-title" id="exampleModalLabel"><?php echo $nombre; ?></h5>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 					</button>
@@ -68,7 +89,7 @@
 					</div>
 					<div class="row justify-content-center b">
 						<div class="col b">
-							$/. <?php echo $precio;?>
+							$/. <?php echo $precio; ?>
 						</div>
 						<div class="col">
 							Ingrese Cantidad: <input type="number" min="1" max="100" value="1" name="txtcan">
@@ -79,7 +100,7 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-				<button type="button" class="btn btn-primary">Agregar a Carrito</button>
+				<button type="button" class="btn btn-primary" onclick="agrega(<?php echo $codi; ?>);">Agregar a Carrito</button>
 			</div>
 			</div>
 		</div>

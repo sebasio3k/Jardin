@@ -8,8 +8,69 @@
 			header('Location: 13_admin_index.php ');
 		}
 	}else {//no existe, nadie se ha loggeado
-			header('Location: 1_index.php');
+		header('Location: 1_index.php');
 	}
+
+	// CREAR VARIABLE DE SESION productos PARA UTILZIARLA DESPUES
+	include_once 'php/conecta.php';
+	$mysqli = conecta();
+    // $salida = "";
+    $query = "SELECT idproducto,idcategoria,descripcion,precio FROM productos";
+    // echo($query);
+	$resultado = $mysqli->query($query);
+
+    if($resultado -> num_rows > 0){
+		if(!isset($_SESSION['productos'])){
+			$n=0;
+        	while($fila=$resultado->fetch_assoc()){
+                $listap=array(
+                    'idproducto'=>$fila['idproducto'],
+                    'idcategoria'=>$fila['idcategoria'],
+                    'descripcion'=>$fila['descripcion'],
+                    'precio'=>$fila['precio']
+                    // 'ruta'=>$fila['ruta']
+                    // 'stock'=>$id,
+                );
+                $_SESSION['productos'][$n]=$listap;
+                $n++;
+            }
+        }
+	}
+	$mysqli->close();
+	// $longitud=count($_SESSION['productos']);
+	// print($longitud);
+	// print_r($_SESSION['productos'][1]['precio']);
+
+
+
+	include 'php/MetodosDAO.php';
+    // $op=$_REQUEST['op'];
+
+    // switch($op){
+    //     case 1:
+            // unset($_SESSION['lista']);
+            // // MetodosDAO = listado
+            // $objMetodo=new MetodosDAO();
+            // $lista=$objMetodo->ListarProductos();
+			// $_SESSION['lista']=$lista;
+			// $lista_2 = $lista;
+			// print_r ($lista_2['idproducto']);
+			// print_r ($_SESSION['lista']);
+            // header("location: ../4_productos2.php");
+    //         break;
+    //     case 2:
+    //     break;
+	// }
+
+	// validar la variable de sesion de productos
+	// if(!isset($_SESSION['carrito'])){
+	// 	$producto=array(
+	// 		'id'=>$id,
+	// 		'id'=>$id,
+
+	// 	);
+	// }
+
 ?>
 
 <!DOCTYPE html>
@@ -27,13 +88,14 @@
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href=".\img\icon.png">
 	<script>
-		function ingresar(){
-			location.href="./php/tienda.php?op=1";
-		}
+		// function ingresar(){
+		// 	location.href="./php/tienda.php";
+		// }
 	</script>
 </head>
 
-<body class="mibody" onload="ingresar()">
+<body class="mibody" ">
+<!-- onload="ingresar()" -->
 	<!-- HEADER -->
 	<header class="container-fluid">
 		<div class="container-fluid">
@@ -124,12 +186,6 @@
 						<tr>
 							<td><a href="4_productos2.php">Productos</a></td>
 						</tr>
-						<!-- <tr>
-							<td><a href="7_login_signin.php">Iniciar Sesión</a></td>
-						</tr>
-						<tr>
-							<td><a href="8_signin.php">Registrarse</a></td>
-						</tr> -->
 					</tbody>
 				</table>
 			</div>

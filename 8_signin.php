@@ -313,7 +313,6 @@ $('#registro').on('mouseover', function() {
 	else{
 		console.log($('#g-recaptcha-response').val());
 	}
-	
 });
 
 	function alerta(n){

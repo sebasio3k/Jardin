@@ -22,7 +22,7 @@
 
             $res=$cn->prepare("SELECT * FROM productos WHERE idproducto = $cod");
             $res->execute();
-            
+
             foreach($res as $row){
                 $lista[]=$row;
             }

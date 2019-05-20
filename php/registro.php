@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	require_once "conexion.php";
 	$conexion=conexion();
@@ -21,7 +21,7 @@
 
 
 		function buscaRepetido($user,$conexion){
-			$sql="SELECT * from usuarios 
+			$sql="SELECT * from usuarios
 				where email='$user'";
 			$result=mysqli_query($conexion,$sql);
 

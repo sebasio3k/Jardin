@@ -12,7 +12,7 @@
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
 	}
-	$lista=$_SESSION['lista'];
+	// $lista=$_SESSION['lista'];
 	// echo sizeof($lista);
 
 ?>
@@ -109,28 +109,22 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><a href="1_index.php">Inicio</a></td>
+							<td><a href="2_index_2.php">Inicio</a></td>
 						</tr>
 						<tr>
-							<td><a href="5_cursos.php">Cursos</a></td></a>
+							<td><a href="5_cursos2.php">Cursos</a></td></a>
 						</tr>
 						<tr>
-							<td><a href="3_nosotros.php">Empresa</a></td>
+							<td><a href="3_nosotros2.php">Empresa</a></td>
 						</tr>
 						<tr>
-							<td><a href="3_nosotros.php">Contacto</a></td>
+							<td><a href="3_nosotros2.php">Contacto</a></td>
 						</tr>
 						<tr>
-							<td><a href="1_index.php">Jardin</a></td>
+							<td><a href="2_index_2.php">Jardin</a></td>
 						</tr>
 						<tr>
-							<td><a href="4_productos.php">Productos</a></td>
-						</tr>
-						<tr>
-							<td><a href="7_login_signin.php">Iniciar Sesión</a></td>
-						</tr>
-						<tr>
-							<td><a href="8_signin.php">Registrarse</a></td>
+							<td><a href="4_productos2.php">Productos</a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -176,39 +170,7 @@
 	</div>
 
 	<div id="mostrar">
-		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel"><?php echo $nombre;?></h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-				<div class="modal-body">
-					<div class="row justify-content-center">
-						<div class="col text-center justify-content-center">
-							<img class="img-fluid" src="./img/prod/<?php echo $cod; ?>.jpg" alt="" width="200" heigh="170">
-						</div>
-						<div class="row justify-content-center b">
-							<div class="col b">
-								$/. <?php echo $precio;?>
-							</div>
-							<div class="col">
-								Ingrese Cantidad: <input type="number" min="1" max="100" value="1" name="txtcan">
-							</div>
-						</div>
-					</div>
 
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-					<button type="button" class="btn btn-primary">Agregar a Carrito</button>
-				</div>
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<!-- FOOTER -->

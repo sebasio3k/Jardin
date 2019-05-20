@@ -10,7 +10,7 @@
 	}
 	else {//no existe, nadie se ha loggeado
 		header('Location: 1_index.php');
-	}	
+	}
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +31,7 @@
 	<link rel="shortcur icon" href=".\img\icon.png">
 </head>
 
-<body class="mibody"> 
+<body class="mibody">
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -90,7 +90,7 @@
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="./php/salir.php">Cerrar Sesi&oacute;n</a>
 							</div>
-						</li>				
+						</li>
 					</ul>
 				</div>
 			</nav>
@@ -106,28 +106,22 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><a href="1_index.php">Inicio</a></td>
+							<td><a href="2_index_2.php">Inicio</a></td>
 						</tr>
 						<tr>
-							<td><a href="5_cursos.php">Cursos</a></td></a>
+							<td><a href="5_cursos2.php">Cursos</a></td></a>
 						</tr>
 						<tr>
-							<td><a href="3_nosotros.php">Empresa</a></td>
+							<td><a href="3_nosotros2.php">Empresa</a></td>
 						</tr>
 						<tr>
-							<td><a href="3_nosotros.php">Contacto</a></td>
+							<td><a href="3_nosotros2.php">Contacto</a></td>
 						</tr>
 						<tr>
-							<td><a href="1_index.php">Jardin</a></td>
+							<td><a href="2_index_2.php">Jardin</a></td>
 						</tr>
 						<tr>
-							<td><a href="4_productos.php">Productos</a></td>
-						</tr>
-						<tr>
-							<td><a href="7_login_signin.php">Iniciar Sesión</a></td>
-						</tr>
-						<tr>
-							<td><a href="8_signin.php">Registrarse</a></td>
+							<td><a href="4_productos2.php">Productos</a></td>
 						</tr>
 					</tbody>
 				</table>

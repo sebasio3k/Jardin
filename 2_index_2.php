@@ -38,6 +38,7 @@
 	}
 	$mysqli->close();
 
+	// CREAR VARIABLE DE SESION cuantos PARA CONTROL DE CANTIDAD CARRITO
 	if(!isset($_SESSION['cuantos'])){
 		$_SESSION['cuantos']=0;
 	}

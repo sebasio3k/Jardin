@@ -135,6 +135,7 @@
 			</div>
 		</div>
 		<br>
+<<<<<<< HEAD
 		<div class="datos"></div>
 
 		<table class="table bgblanco textcolorb">
@@ -175,6 +176,36 @@
 				</tr>
 			</tbody>
 		</table>
+=======
+		<br>
+		<br>
+		<div id="datos" class="b text-center"></div>
+		<br>
+		<br>
+		<br>
+
+		<table class='table bgblanco textcolorb table-responsive table-striped table-bordered table-sm'>
+                                <thead class='thead-dark'>
+                                    <tr>
+                                        <th scope='col'>Producto</th>
+                                        <th scope='col'>Descripción</th>
+                                        <th scope='col'>Precio</th>
+                                        <th scope='col'>Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+								<tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                </tr>
+
+           </tbody></table>
+
+
+
+>>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 		<!-- <form action="#" method="post" >
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
@@ -198,6 +229,7 @@
 		</div>
 
 	</div>
+
 	<br>
 	<hr>
 	<br>
@@ -318,13 +350,21 @@
 
 <script>
 
+<<<<<<< HEAD
+=======
+	// 4 cuando de clic en el carrito va a imprimir lo que haya ahi
+>>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 	$(buscar_datos());
 
 	function buscar_datos(){
 		$.ajax({
 			url:"php/consultarCarrito.php",
 			type:"POST",
+<<<<<<< HEAD
 			dataType:'html'
+=======
+			// dataType:'html'
+>>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 			// data: {consulta: consulta},
 		})
 		.done(function(respuesta){

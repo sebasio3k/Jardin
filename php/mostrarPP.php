@@ -6,7 +6,6 @@
 
     $listap = $_SESSION['productos'];
 
-
     // $mysqli = new mysqli("localhost", "Sebastian", "ifuseekamy", "jardinabuela");
     $salida = "";
     // $query = "SELECT idproducto,idcategoria,descripcion,precio FROM productos";
@@ -50,6 +49,7 @@
                             </div>
 
                     ";
+                    // si da clic en boton envia num producto a funcion enviar en 4_productos2.php------------------
                 $count++;
                 for ($i = $count; $i == 4; $i++) {
                     // cuando sean 4

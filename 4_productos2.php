@@ -244,6 +244,10 @@
 </html>
 
 <script>
+<<<<<<< HEAD
+=======
+	// 2 manda id a detalle.php
+>>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 	var resultado = document.getElementById("mostrar");
 	function enviar(c){
 			var xmlhttp;
@@ -264,9 +268,9 @@
 
 		}
 
-
-
+		// 3 manda id a agregacarrito.php 
     function agrega(codi){
+<<<<<<< HEAD
 		var can = $('#txtcan').val()
 		console.log(can)
 		// function agrega(codi){
@@ -286,12 +290,33 @@
 		.fail(function(){
 			console.log("Error");
 		})
+=======
+			var can = $('#txtcan').val()
+			console.log(can)
+			// function agrega(codi){
+			var cadena = "codi="+codi+"&can="+can;
+			// var cadena = "codi="+codi;
+					$.ajax({
+				url:"php/agregacarrito.php",
+				type:"POST",
+				data: cadena,
+				// data: {consulta: consulta},
+			})
+			.done(function(respuesta){
+				location.reload();
+				console.log(respuesta);
+				// $("#tarjeta").html(respuesta);
+			})
+			.fail(function(){
+				console.log("Error");
+			})
+>>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 
     }
 
 
 
-
+// 1 muestra productos en pantalla (catalogo)-------------------------------
 	$(buscar_datos());
 
 	function buscar_datos(){

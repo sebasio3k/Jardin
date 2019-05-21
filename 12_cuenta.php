@@ -133,10 +133,12 @@
 			</div>
 		</div>
 		<br>
+		<div class="datos"></div>
+
 		<table class="table bgblanco textcolorb">
 			<thead class="thead-dark">
 				<tr>
-					<th scope="col">Curdo</th>
+					<th scope="col">Curso</th>
 					<th scope="col">Descripci&oacute;n</th>
 					<th scope="col">Fecha</th>
 				</tr>
@@ -227,7 +229,7 @@
 					</center>
 				</div>
 			</div>
-			
+
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -263,3 +265,24 @@
 	<script type="text/javascript" src=".\JS\validar.js"></script>
 </body>
 </html>
+
+<script>
+		$(buscar_datos());
+		function buscar_datos(){
+			$.ajax({
+				url:"php/consultarC2.php",
+				// type:"POST",
+				// dataType:'html',
+				// data: {consulta: consulta},
+			})
+			.done(function(respuesta){
+				$("#datos").html(respuesta);
+			})
+			.fail(function(){
+				console.log("Error");
+			})
+		}
+		$(document).on('load', function(){
+			buscar_datos();
+		});
+	</script>

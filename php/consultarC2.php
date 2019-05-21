@@ -7,7 +7,7 @@
     $q="";
     if(isset($_POST['consulta'])){
         $q = $mysqli->real_escape_string($_POST['consulta']);
-        $query = "SELECT idcurso,nombrecurso,descripcion,precio FROM cursos WHERE idcurso LIKE '%".$q."%' OR nombrecurso LIKE '%".$q."%' OR precio LIKE '%".$q."%' ";
+        $query = "SELECT idcurso,nombrecurso,descripcion,precio,fecha FROM cursos WHERE idcurso LIKE '%".$q."%' OR nombrecurso LIKE '%".$q."%' OR precio LIKE '%".$q."%' ";
     }
 
     $resultado = $mysqli->query($query);

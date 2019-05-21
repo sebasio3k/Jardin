@@ -244,7 +244,7 @@
 </html>
 
 <script>
-	 var resultado = document.getElementById("mostrar");
+	var resultado = document.getElementById("mostrar");
 	function enviar(c){
 			var xmlhttp;
 			if(window.XMLHttpRequest){
@@ -259,7 +259,7 @@
 					resultado.innerHTML=xmlhttp.responseText;
 				}
 			}
-			xmlhttp.open("GET","Detalle.php?cod="+c,true);
+			xmlhttp.open("GET","detalle.php?cod="+c,true);
 			xmlhttp.send();
 
 		}
@@ -267,7 +267,11 @@
 
 
     function agrega(codi){
-		var cadena = "codi="+codi;
+		var can = $('#txtcan').val()
+		console.log(can)
+		// function agrega(codi){
+		var cadena = "codi="+codi+"&can="+can;
+		// var cadena = "codi="+codi;
         $.ajax({
 			url:"php/agregacarrito.php",
 			type:"POST",

@@ -1,13 +1,25 @@
 <?php
     // include("conexion.php");
     // $id = $_POST['buscar'];
+
+    session_start();
+
+    $codi=$_REQUEST['cod'];
+    // $can = $_SESSION['can'];
+    $_SESSION['codigo']=$codi;
+    $listap = $_SESSION['productos'];
+    $salida = "";
+    $longitud=count($_SESSION['productos']);
+    $nombre=$_SESSION['productos'][$codi]['descripcion'];
+    $precio=$_SESSION['productos'][$codi]['precio'];
+
     $mysqli = new mysqli("localhost", "Sebastian", "ifuseekamy", "jardinabuela");
     $salida = "";
     $query = "SELECT * FROM cursos ORDER BY idcurso";
     $q="";
     if(isset($_POST['consulta'])){
         $q = $mysqli->real_escape_string($_POST['consulta']);
-        $query = "SELECT idcurso,nombrecurso,descripcion,precio FROM cursos WHERE idcurso LIKE '%".$q."%' OR nombrecurso LIKE '%".$q."%' OR precio LIKE '%".$q."%' ";
+        $query = "SELECT idcurso,nombrecurso,descripcion,precio,fecha FROM cursos WHERE idcurso LIKE '%".$q."%' OR nombrecurso LIKE '%".$q."%' OR precio LIKE '%".$q."%' ";
     }
 
     $resultado = $mysqli->query($query);

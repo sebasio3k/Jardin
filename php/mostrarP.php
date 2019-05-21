@@ -19,7 +19,7 @@
                                 <div class='card-body '>
                                     <h5 class='card-title blurw'>".$fila['descripcion']."</h5>
                                     <p class='card-text blurw text-justify'>".$fila['precio'].".</p>
-                                   
+
                                 </div>
                             </div>
 

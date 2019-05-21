@@ -92,7 +92,7 @@
 							$/. <?php echo $precio; ?>
 						</div>
 						<div class="col">
-							Ingrese Cantidad: <input type="number" min="1" max="100" value="1" name="txtcan">
+							Ingrese Cantidad: <input type="number" min="1" max="100" value="1" id="txtcan" name="txtcan">
 						</div>
 					</div>
                 </div>
@@ -108,7 +108,7 @@
 
 
 
-
+    <!-- ,docuemt.getElementById('#txtcan').val() -->
     <!-- <div class="container">
         <div class="row justify-content-center">
             <div class="col text-center justify-content-center">

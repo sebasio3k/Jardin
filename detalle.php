@@ -8,8 +8,8 @@
     $listap = $_SESSION['productos'];
     $salida = "";
     $longitud=count($_SESSION['productos']);
-    $nombre=$_SESSION['productos'][$codi]['descripcion'];
-    $precio=$_SESSION['productos'][$codi]['precio'];
+    $nombre=$_SESSION['productos'][$codi-1]['descripcion'];
+    $precio=$_SESSION['productos'][$codi-1]['precio'];
 
 
     // $fila=$_SESSION['productos'];
@@ -39,19 +39,19 @@
     // echo $nombre;
     // echo $precio;
 
-    require_once "php/conexion.php";
-	$conexion=conexion();
-	$sql="SELECT * FROM productos WHERE idproducto='$codi'";
-	// echo $result=mysqli_query($conexion,$sql);
-    $resultado = $conexion->query($sql);
+    // require_once "php/conexion.php";
+	// $conexion=conexion();
+	// $sql="SELECT * FROM productos WHERE idproducto='$codi'";
+	// // echo $result=mysqli_query($conexion,$sql);
+    // $resultado = $conexion->query($sql);
 
-    if($resultado -> num_rows > 0){
+    // if($resultado -> num_rows > 0){
 
-        while($fila=$resultado->fetch_assoc()){
-            $nombre=$fila['descripcion'];
-            $precio=$fila['precio'];
-        }
-    }
+    //     while($fila=$resultado->fetch_assoc()){
+    //         $nombre=$fila['descripcion'];
+    //         $precio=$fila['precio'];
+    //     }
+    // }
 
 ?>
 <!DOCTYPE html>
@@ -100,7 +100,8 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-				<button type="button" class="btn btn-primary" onclick="agrega(<?php echo $codi; ?>);">Agregar a Carrito</button>
+                <button type="button" class="btn btn-primary" onclick="agrega(<?php echo $codi; ?>);">Agregar a Carrito</button>
+                <!-- cuando de clic en boton manda id de producto seleccionado a funcion agrega en 4_productos2.php -->
 			</div>
 			</div>
 		</div>

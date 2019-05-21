@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
 
-<body class="mibody" onload="cargac()">
+<body class="mibody">
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -135,46 +135,34 @@
 			</div>
 		</div>
 		<br>
-		<div class="datos"></div>
+		<br>
+		<br>
+		<div id="datos" class="b text-center"></div>
+		<br>
+		<br>
+		<br>
 
-		<table class="table bgblanco textcolorb">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Producto</th>
-					<th scope="col">Cantidad</th>
-					<th scope="col">Precio</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						Producto 1
-						<br>
-						<img src=".\img\p4.jpg" width="90" height="95">
-					</td>
-					<td>2</td>
-					<td>$$$</td>
-				</tr>
-				<tr>
-					<td>
-						Producto 2
-						<br>
-						<img src=".\img\p5.jpg" width="90" height="95">
-					</td>
-					<td>1</td>
-					<td>$$$</td>
-				</tr>
-				<tr>
-					<td>
-						Producto 3
-						<br>
-						<img src=".\img\p6.jpg" width="90" height="95">
-					</td>
-					<td>1</td>
-					<td>$$$</td>
-				</tr>
-			</tbody>
-		</table>
+		<table class='table bgblanco textcolorb table-responsive table-striped table-bordered table-sm'>
+                                <thead class='thead-dark'>
+                                    <tr>
+                                        <th scope='col'>Producto</th>
+                                        <th scope='col'>Descripción</th>
+                                        <th scope='col'>Precio</th>
+                                        <th scope='col'>Cantidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+								<tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                </tr>
+
+           </tbody></table>
+
+
+
 		<!-- <form action="#" method="post" >
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
@@ -198,6 +186,7 @@
 		</div>
 
 	</div>
+
 	<br>
 	<hr>
 	<br>
@@ -318,13 +307,14 @@
 
 <script>
 
+	// 4 cuando de clic en el carrito va a imprimir lo que haya ahi
 	$(buscar_datos());
 
 	function buscar_datos(){
 		$.ajax({
 			url:"php/consultarCarrito.php",
 			type:"POST",
-			dataType:'html'
+			// dataType:'html'
 			// data: {consulta: consulta},
 		})
 		.done(function(respuesta){

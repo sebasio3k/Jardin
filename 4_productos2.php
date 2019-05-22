@@ -80,6 +80,8 @@
 						<li>
 							<!-- Carrito -->
 							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20">( <?php echo $_SESSION['cuantos'];?> )</a>
+							<!-- <div id="c"><?php echo $_SESSION['cuantos'];?> </div> -->
+							<!-- ( <?php echo $_SESSION['cuantos'];?> ) -->
 						</li>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						<!-- Example single danger button -->
@@ -279,6 +281,7 @@
 				// data: {consulta: consulta},
 			})
 			.done(function(respuesta){
+				// $("#c").html(respuesta);
 				location.reload();
 				console.log(respuesta);
 				// $("#tarjeta").html(respuesta);

@@ -147,7 +147,7 @@
 							<!-- Carrito -->
 							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20">( <?php echo $_SESSION['cuantos'];?> )</a>
 						</li>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 						<!-- Example single danger button -->
 					</ul>
 					<!-- Dropdown MI CUENTA -->
@@ -265,7 +265,7 @@
   				<!-- <h2 class="b">¡ven y con&oacute;cenos!</h2>
         		<p class="b">Tenemos los mejores artículos para jardinería en la ciudad</p> -->
 			</div>
-			<div class="content left illustration_01 img-fluid blurw">
+			<div class="content right  illustration_01 img-fluid blurw">
         		<br>
         		<br>
         		<br>
@@ -355,7 +355,7 @@
   				<!-- <h2 class="b">¡ven y con&oacute;cenos!</h2>
         		<p class="b">Tenemos los mejores artículos para jardinería en la ciudad</p> -->
 			</div>
-			<div class="content left illustration_04 img-fluid blurw">
+			<div class="content right illustration_04 img-fluid blurw">
         		<br>
         		<br>
         		<br>

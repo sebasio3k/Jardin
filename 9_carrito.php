@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
 
-<body class="mibody" onload="cargac()">
+<body class="mibody">
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -307,6 +307,31 @@
 
 <script>
 
+	// 5 elimina cosas de carrito
+	function quita(n){
+		// var n = $('#txtcan').val()
+		console.log(n)
+		// function agrega(codi){
+		var cadena = "n="+n;
+		// var cadena = "codi="+codi;
+		$.ajax({
+			url:"php/eliminacarrito.php",
+			type:"POST",
+			data: cadena,
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			// $("#c").html(respuesta);
+			location.reload();
+			console.log(respuesta);
+			// $("#tarjeta").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+    }
+
+
 	// 4 cuando de clic en el carrito va a imprimir lo que haya ahi
 	$(buscar_datos());
 
@@ -318,7 +343,7 @@
 			// data: {consulta: consulta},
 		})
 		.done(function(respuesta){
-			console.log(respuesta);
+			// console.log(respuesta);
 			$("#datos").html(respuesta);
 		})
 		.fail(function(){

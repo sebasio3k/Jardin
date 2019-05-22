@@ -135,48 +135,6 @@
 			</div>
 		</div>
 		<br>
-<<<<<<< HEAD
-		<div class="datos"></div>
-
-		<table class="table bgblanco textcolorb">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Producto</th>
-					<th scope="col">Cantidad</th>
-					<th scope="col">Precio</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						Producto 1
-						<br>
-						<img src=".\img\p4.jpg" width="90" height="95">
-					</td>
-					<td>2</td>
-					<td>$$$</td>
-				</tr>
-				<tr>
-					<td>
-						Producto 2
-						<br>
-						<img src=".\img\p5.jpg" width="90" height="95">
-					</td>
-					<td>1</td>
-					<td>$$$</td>
-				</tr>
-				<tr>
-					<td>
-						Producto 3
-						<br>
-						<img src=".\img\p6.jpg" width="90" height="95">
-					</td>
-					<td>1</td>
-					<td>$$$</td>
-				</tr>
-			</tbody>
-		</table>
-=======
 		<br>
 		<br>
 		<div id="datos" class="b text-center"></div>
@@ -205,7 +163,6 @@
 
 
 
->>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 		<!-- <form action="#" method="post" >
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
@@ -350,21 +307,14 @@
 
 <script>
 
-<<<<<<< HEAD
-=======
 	// 4 cuando de clic en el carrito va a imprimir lo que haya ahi
->>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 	$(buscar_datos());
 
 	function buscar_datos(){
 		$.ajax({
 			url:"php/consultarCarrito.php",
 			type:"POST",
-<<<<<<< HEAD
-			dataType:'html'
-=======
 			// dataType:'html'
->>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 			// data: {consulta: consulta},
 		})
 		.done(function(respuesta){

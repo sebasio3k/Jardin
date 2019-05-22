@@ -9,7 +9,7 @@
 		}
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
-	}	
+	}
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
 
-<body class="mibody" onload=carga();> 
+<body class="mibody" onload=carga();>
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">

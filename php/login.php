@@ -33,5 +33,4 @@
 	}
 
 	$mysqli->close();
-		
 ?>

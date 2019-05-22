@@ -9,7 +9,7 @@
 		}
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
-	}	
+	}
 ?>
 
 <!DOCTYPE html>

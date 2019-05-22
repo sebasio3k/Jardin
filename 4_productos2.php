@@ -30,6 +30,10 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
+	<!-- Alertify -->
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/alertify.css">
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/themes/default.css">
+	<script src="./alertifyjs/alertify.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
@@ -242,6 +246,7 @@
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
 	<script src="./JS/buscador.js"></script>
+	<script src="./JS/val.js"></script>
 </body>
 </html>
 
@@ -269,26 +274,31 @@
 
 		// 3 manda id a agregacarrito.php
     function agrega(codi){
-			var can = $('#txtcan').val()
-			console.log(can)
-			// function agrega(codi){
-			var cadena = "codi="+codi+"&can="+can;
-			// var cadena = "codi="+codi;
-					$.ajax({
-				url:"php/agregacarrito.php",
-				type:"POST",
-				data: cadena,
-				// data: {consulta: consulta},
-			})
-			.done(function(respuesta){
-				// $("#c").html(respuesta);
-				location.reload();
-				console.log(respuesta);
-				// $("#tarjeta").html(respuesta);
-			})
-			.fail(function(){
-				console.log("Error");
-			})
+			if(validarCant()){
+				var can = $('#txtcan').val()
+				console.log(can)
+				// function agrega(codi){
+				var cadena = "codi="+codi+"&can="+can;
+				// var cadena = "codi="+codi;
+						$.ajax({
+					url:"php/agregacarrito.php",
+					type:"POST",
+					data: cadena,
+					// data: {consulta: consulta},
+				})
+				.done(function(respuesta){
+					// $("#c").html(respuesta);
+					location.reload();
+					console.log(respuesta);
+					// $("#tarjeta").html(respuesta);
+				})
+				.fail(function(){
+					console.log("Error");
+				})
+			}
+			else{
+				console.log("cantidad invalida");
+			}
 
     }
 

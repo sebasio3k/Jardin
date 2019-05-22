@@ -14,7 +14,7 @@
 
         if($longitud>0){
             // for ($o=0; $o==$longitud; $o++){
-                $salida.= "<table class='table bgblanco textcolorb table-responsive table-striped table-bordered table-sm'>
+                $salida.= "<table id='tablapl' class='table bgblanco textcolorb table-responsive table-striped table-bordered table-sm'>
                                 <thead class='thead-dark'>
                                     <tr>
                                         <th scope='col'>Descripcion</th>

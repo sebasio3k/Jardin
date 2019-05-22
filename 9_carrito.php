@@ -142,25 +142,6 @@
 		<br>
 		<br>
 
-		<table class='table bgblanco textcolorb table-responsive table-striped table-bordered table-sm'>
-                                <thead class='thead-dark'>
-                                    <tr>
-                                        <th scope='col'>Producto</th>
-                                        <th scope='col'>Descripción</th>
-                                        <th scope='col'>Precio</th>
-                                        <th scope='col'>Cantidad</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-								<tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                </tr>
-
-           </tbody></table>
-
 
 
 		<!-- <form action="#" method="post" >
@@ -181,7 +162,8 @@
 			</div>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<div class="form-group col-xs-12 col-4 align-self-center text-center">
-				<a class="btn btn-primary textcolorb disabled" role="button" href="10_pago.php">Realizar Pedido</a>
+			<button id="btnpd" name="btnpd" type="button" class="btn btn-primary " disabled=true onmouseover=habilita();>Realizar Pedido</button>
+				<!-- <a id="btnpd" name="btnpd" class="btn btn-primary textcolorb disabled" role="button" href="10_pago.php" onmouseover="habilita()">Realizar Pedido</a> -->
 			</div>
 		</div>
 
@@ -350,6 +332,26 @@
 			console.log("Error");
 		})
 	}
+	$(document).on('load', function(){
+			buscar_datos();
+	});
+
+	// habilitar boton realizar pedido
+	function habilita(){
+		console.log("entra");
+		var pedido = document.getElementById("btnpd");
+			if($("#tablapl").length > 0){
+				pedido.disabled=false;
+				console.log("deshab");
+				// pedido.className = "btn btn-primary textcolorb disabled";
+			}
+			else{
+				pedido.disabled=true;
+				console.log("habili");
+				// pedido.className = "btn btn-primary textcolorb ";
+			}
+	}
+
 	$(document).on('load', function(){
 			buscar_datos();
 	});

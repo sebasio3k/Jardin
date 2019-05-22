@@ -1,6 +1,3 @@
-// VALIDACIONES
-
-
 // LOGIN------------------------------------------------------------------------------------
 
 function validarLogin(){
@@ -575,6 +572,38 @@ function validarActualizarP(){
 			alertify.alert('Alerta', 'Formato de Id inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
 			idcatv.className = "form-control textcolorw is-invalid";
 			return false;
+		}
+	}
+}
+
+function validarCant(){
+	var cant = document.getElementById("txtcan").value;
+	var cantv = document.getElementById("txtcan");
+	var imagenv = document.getElementById("ima");
+	var regidcant=/^([1-9]{1,2})+$/;
+
+	if(cant==""){
+		alertify.alert('Alerta', 'Se requiere que selecciones la cantidad correctamente ¬¬ pacheco', function(){ alertify.error('Verifica campos'); });
+		cantv.className = "  is-invalid";
+		return false;
+	}
+	else{//si no
+		/*VALIDA QUE EL formato de correo SEA VALIDO*/
+		if(regidcant.test(cant)){
+			// cantv.className = "form-control textcolorw is-valid";
+			return true;
+		}
+		else{
+			if(cant>=100){
+				alertify.alert('Alerta', 'Ud no aprende verdad? ¬¬', function(){ alertify.error('Verifica campos'); });
+				cantv.className = "  is-invalid";
+				return false;
+			}
+			else{
+				alertify.alert('Alerta', 'Formato de cantidad inválido', function(){ alertify.error('Verifica campos'); });
+				cantv.className = "  is-invalid";
+				return false;
+			}
 		}
 	}
 }

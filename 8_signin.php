@@ -240,8 +240,9 @@
 				</div>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
-					<input  id="registro" type="button" value="Registrarme" class=" btn btn-primary shadow-lg" onmouseenter=validarSignin();>
+					<input  id="btnregistro" type="button" value="Registrarme" class=" btn btn-primary shadow-lg" >
 					<!-- onclick=validarSignin(); -->
+					<!-- onmouseenter=validarSignin(); -->
 					<!-- <button id="registro" type="submit" class="btn btn-primary " onclick=validarRegistro();>Registrarme</button> -->
 				</div>
 			</div>
@@ -296,14 +297,7 @@
 	<script src="./JS/buscador.js"></script>
 	<!-- JavaScript Validaciones-->
 	<script type="text/javascript" src=".\JS\val.js"></script>
-</body>
-</html>
-
-
-
-
-
-
+	
 <!-- <script>
 
 $('#registro').on('mouseover', function() {
@@ -324,99 +318,108 @@ $('#registro').on('mouseover', function() {
 		}
 	}
 </script> -->
-
+</body>
+</html>
 
 <script>
 
 	$(document).ready(function(){
 
-		$('#registro').on('mouseover', function() {
-			var res =  $('#g-recaptcha-response').val();
-			console.log(res);
-			// if ($('#g-recaptcha-response').val()==""){
-			if(res==""){
-				console.log("vacio");
-				swal("Oops" ,"CAPTCHA SIN VERIFICAR", "error");
+		$('#btnregistro').on('mouseover', function() {
+			var val=validarSignin();
+			if(val){
+				var res =  $('#g-recaptcha-response').val();
+				console.log(res);
+				// if ($('#g-recaptcha-response').val()==""){
+				if(res==""){
+					console.log("vacio");
+					swal("Oops" ,"CAPTCHA SIN VERIFICAR", "error");
+				}
+				else{
+					$.ajax({
+						url: "php/procesa.php",
+						type: 'POST',
+						// dataType: 'json',
+						data:res,
+						// data: {
+						// 	// 'foo': foo,
+						// 	'response': grecaptcha.getResponse()
+						// },
+						success: function() {
+							// registro
+							// alertify.alert("Captcha confirmado");
+							swal("Bien", "CAPTCHA CONFIRMADO", "success");
+							if($('#nombre').val()=="" ){
+								alertify.alert("Debes agregar el nombre");
+								return false;
+							}else if($('#ap').val()==""){
+								alertify.alert("Debes agregar el apellido paterno");
+								return false;
+							}else if($('#am').val()==""){
+								alertify.alert("Debes agregar el apellido materno");
+								return false;
+							}else if($('input[name=sexo]:checked').val()==""){
+								alertify.alert("Debes seleccionar el sexo");
+								return false;
+							}else if($('#phone').val()==""){
+								alertify.alert("Debes agregar el telefono");
+								return false;
+							}else if($('#email').val()==""){
+								alertify.alert("Debes agregar el email");
+								return false;
+							}else if($('#passv').val()==""){
+								alertify.alert("Debes agregar el password");
+								return false;
+							}
+
+							// forma cadena para enviar datos de registro
+							var cadena="nombre=" + $('#nombre').val() +
+								"&ap=" + $('#ap').val() +
+								"&am=" + $('#am').val() +
+								"&sex=" + $('input[name=sexo]:checked').val() +
+								"&phone=" + $('#phone').val() +
+								"&usuario=" + $('#email').val() +
+								"&password=" + $('#passv').val() ;
+								// "&";
+									// console.log(cadena);
+							$.ajax({
+								type:"POST",
+								url:"php/registro.php",
+								data:cadena,
+								success:function(r){
+									if(r==2){
+										alertify.alert("ATENCION","Este usuario ya existe, prueba con otro correo",
+										function(){
+											alertify.error('Prueba otro');
+										});
+									}
+									else if(r==1){
+										$('#formRegistro')[0].reset();
+										alertify.confirm('Mensaje', 'Usuario Registrado con exito',
+										function(){
+											alertify.success('IniciarSesion');
+											location.href="7_login_signin.php";
+										},
+										function(){
+											alertify.error('Cancel');
+										});
+									}
+									else{
+										alertify.alert("Error al Registrar");
+									}
+									console.log(r);
+								}
+							});
+						}
+					});
+				}
+				// return false;
+
+
 			}
 			else{
-				$.ajax({
-					url: "php/procesa.php",
-					type: 'POST',
-					// dataType: 'json',
-					data:res,
-					// data: {
-					// 	// 'foo': foo,
-					// 	'response': grecaptcha.getResponse()
-					// },
-					success: function() {
-						// registro
-						// alertify.alert("Captcha confirmado");
-						swal("Bien", "CAPTCHA CONFIRMADO", "success");
-						if($('#nombre').val()=="" ){
-							alertify.alert("Debes agregar el nombre");
-							return false;
-						}else if($('#ap').val()==""){
-							alertify.alert("Debes agregar el apellido paterno");
-							return false;
-						}else if($('#am').val()==""){
-							alertify.alert("Debes agregar el apellido materno");
-							return false;
-						}else if($('input[name=sexo]:checked').val()==""){
-							alertify.alert("Debes seleccionar el sexo");
-							return false;
-						}else if($('#phone').val()==""){
-							alertify.alert("Debes agregar el telefono");
-							return false;
-						}else if($('#email').val()==""){
-							alertify.alert("Debes agregar el email");
-							return false;
-						}else if($('#passv').val()==""){
-							alertify.alert("Debes agregar el password");
-							return false;
-						}
-
-						// forma cadena para enviar datos de registro
-						var cadena="nombre=" + $('#nombre').val() +
-							"&ap=" + $('#ap').val() +
-							"&am=" + $('#am').val() +
-							"&sex=" + $('input[name=sexo]:checked').val() +
-							"&phone=" + $('#phone').val() +
-							"&usuario=" + $('#email').val() +
-							"&password=" + $('#passv').val() ;
-							// "&";
-								// console.log(cadena);
-						$.ajax({
-							type:"POST",
-							url:"php/registro.php",
-							data:cadena,
-							success:function(r){
-								if(r==2){
-									alertify.alert("ATENCION","Este usuario ya existe, prueba con otro correo",
-									function(){
-										alertify.error('Prueba otro');
-									});
-								}
-								else if(r==1){
-									$('#formRegistro')[0].reset();
-									alertify.confirm('Mensaje', 'Usuario Registrado con exito',
-									function(){
-										alertify.success('IniciarSesion');
-										location.href="7_login_signin.php";
-									},
-									function(){
-										alertify.error('Cancel');
-									});
-								}
-								else{
-									alertify.alert("Error al Registrar");
-								}
-								console.log(r);
-							}
-						});
-					}
-				});
+				swal("Oops" ,"VERIFICA LOS CAMPOPS", "error");
 			}
-			// return false;
 		});
 	});
 

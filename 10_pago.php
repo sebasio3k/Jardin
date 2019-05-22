@@ -242,7 +242,7 @@
 					<!-- <button type="submit" class="btn btn-primary" >Cancelar</button> -->
 				</div>
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
-					<input type="button" id="btpago" type="submit" value="Generar Orden de Pedido" class="btn btn-primary shadow-lg disabled"  onclick=validarPago(); disabled=true>
+					<input type="button" id="btpago" value="Generar Orden de Pedido" class="btn btn-primary shadow-lg disabled"  onclick=validarPago(); disabled=true>
 					<!-- <button type="submit" class="btn btn-primary" >Generar Orden de Pedido</button> -->
 				</div>
 			</div>

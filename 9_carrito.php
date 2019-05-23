@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 </head>
 
-<body class="mibody" onload="cargac()">
+<body class="mibody">
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -135,48 +135,6 @@
 			</div>
 		</div>
 		<br>
-<<<<<<< HEAD
-		<div class="datos"></div>
-
-		<table class="table bgblanco textcolorb">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Producto</th>
-					<th scope="col">Cantidad</th>
-					<th scope="col">Precio</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						Producto 1
-						<br>
-						<img src=".\img\p4.jpg" width="90" height="95">
-					</td>
-					<td>2</td>
-					<td>$$$</td>
-				</tr>
-				<tr>
-					<td>
-						Producto 2
-						<br>
-						<img src=".\img\p5.jpg" width="90" height="95">
-					</td>
-					<td>1</td>
-					<td>$$$</td>
-				</tr>
-				<tr>
-					<td>
-						Producto 3
-						<br>
-						<img src=".\img\p6.jpg" width="90" height="95">
-					</td>
-					<td>1</td>
-					<td>$$$</td>
-				</tr>
-			</tbody>
-		</table>
-=======
 		<br>
 		<br>
 		<div id="datos" class="b text-center"></div>
@@ -184,28 +142,8 @@
 		<br>
 		<br>
 
-		<table class='table bgblanco textcolorb table-responsive table-striped table-bordered table-sm'>
-                                <thead class='thead-dark'>
-                                    <tr>
-                                        <th scope='col'>Producto</th>
-                                        <th scope='col'>Descripción</th>
-                                        <th scope='col'>Precio</th>
-                                        <th scope='col'>Cantidad</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-								<tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                </tr>
-
-           </tbody></table>
 
 
-
->>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 		<!-- <form action="#" method="post" >
 			<div class="row justify-content-center">
 				<div class="form-group col-xs-12 col-4 align-self-center text-center">
@@ -224,7 +162,8 @@
 			</div>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<div class="form-group col-xs-12 col-4 align-self-center text-center">
-				<a class="btn btn-primary textcolorb disabled" role="button" href="10_pago.php">Realizar Pedido</a>
+			<button id="btnpd" name="btnpd" type="button" class="btn btn-primary " disabled=true onmouseover=habilita();>Realizar Pedido</button>
+				<!-- <a id="btnpd" name="btnpd" class="btn btn-primary textcolorb disabled" role="button" href="10_pago.php" onmouseover="habilita()">Realizar Pedido</a> -->
 			</div>
 		</div>
 
@@ -350,31 +289,69 @@
 
 <script>
 
-<<<<<<< HEAD
-=======
+	// 5 elimina cosas de carrito
+	function quita(n){
+		// var n = $('#txtcan').val()
+		console.log(n)
+		// function agrega(codi){
+		var cadena = "n="+n;
+		// var cadena = "codi="+codi;
+		$.ajax({
+			url:"php/eliminacarrito.php",
+			type:"POST",
+			data: cadena,
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			// $("#c").html(respuesta);
+			location.reload();
+			console.log(respuesta);
+			// $("#tarjeta").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+    }
+
+
 	// 4 cuando de clic en el carrito va a imprimir lo que haya ahi
->>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 	$(buscar_datos());
 
 	function buscar_datos(){
 		$.ajax({
 			url:"php/consultarCarrito.php",
 			type:"POST",
-<<<<<<< HEAD
-			dataType:'html'
-=======
 			// dataType:'html'
->>>>>>> a36e8f9202b43b72913cd7c027fbca340f14e9ac
 			// data: {consulta: consulta},
 		})
 		.done(function(respuesta){
-			console.log(respuesta);
+			// console.log(respuesta);
 			$("#datos").html(respuesta);
 		})
 		.fail(function(){
 			console.log("Error");
 		})
 	}
+	$(document).on('load', function(){
+			buscar_datos();
+	});
+
+	// habilitar boton realizar pedido
+	function habilita(){
+		console.log("entra");
+		var pedido = document.getElementById("btnpd");
+			if($("#tablapl").length > 0){
+				pedido.disabled=false;
+				console.log("deshab");
+				// pedido.className = "btn btn-primary textcolorb disabled";
+			}
+			else{
+				pedido.disabled=true;
+				console.log("habili");
+				// pedido.className = "btn btn-primary textcolorb ";
+			}
+	}
+
 	$(document).on('load', function(){
 			buscar_datos();
 	});

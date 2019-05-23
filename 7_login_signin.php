@@ -199,7 +199,7 @@
 		<!-- BANNER -->
 		<!-- <div class="row justify-content-center">
 			<div class="col-xs-12 ">
-				<img src=".\img\jard1.jpg" class="img-fluid" alt="Responsive image" width="1300" height="537">	
+				<img src=".\img\jard1.jpg" class="img-fluid" alt="Responsive image" width="1300" height="537">
 			</div>
 		</div> -->
 

@@ -315,7 +315,7 @@
 			// data: {consulta: consulta},
 		})
 		.done(function(respuesta){
-			console.log(respuesta);
+			// console.log(respuesta);
 			$("#tarjeta").html(respuesta);
 		})
 		.fail(function(){

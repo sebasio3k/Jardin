@@ -348,7 +348,7 @@ $('#registro').on('mouseover', function() {
 						success: function() {
 							// registro
 							// alertify.alert("Captcha confirmado");
-							swal("Bien", "CAPTCHA CONFIRMADO", "success");
+							// swal("Bien", "CAPTCHA CONFIRMADO", "success");
 							if($('#nombre').val()=="" ){
 								alertify.alert("Debes agregar el nombre");
 								return false;
@@ -414,8 +414,6 @@ $('#registro').on('mouseover', function() {
 					});
 				}
 				// return false;
-
-
 			}
 			else{
 				swal("Oops" ,"VERIFICA LOS CAMPOPS", "error");

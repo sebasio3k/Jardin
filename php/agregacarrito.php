@@ -35,7 +35,7 @@
             // 'stock'=>$id,
         );
         // $_SESSION['carrito'][$cuantosp]=$listac;
-        // recorrer vector
+        // recorrer vector PARA VER SI HAY UN PRODUCTO IGUAL
         for($i=0; $i<$cuantosp; $i++){
             // if($_SESSION['carrito'][$i]['idproducto']==$_SESSION['carrito'][$i+1]['idproducto']){
             if($_SESSION['carrito'][$i]['idproducto']==$listac['idproducto']){
@@ -56,15 +56,8 @@
                 break;
             }
             else{
-                
-                // if($_SESSION['carrito'][$i+1]['idproducto']==$listac['idproducto']){
-                //     // $_SESSION['carrito'][$i+1]=$listac;
-                // }
-                // else{
-                   
-                // }
+                //SIGUE RECORRIENDO
             }
-
         }
         if($bandera){
             // ya sumo la cantidad, no se guarda

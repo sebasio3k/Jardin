@@ -162,8 +162,9 @@
 			</div>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<div class="form-group col-xs-12 col-4 align-self-center text-center">
-			<button id="btnpd" name="btnpd" type="button" class="btn btn-primary " disabled=true onmouseover=habilita();>Realizar Pedido</button>
-				<!-- <a id="btnpd" name="btnpd" class="btn btn-primary textcolorb disabled" role="button" href="10_pago.php" onmouseover="habilita()">Realizar Pedido</a> -->
+			<!-- <button id="btnpd" name="btnpd" type="button" class="btn btn-primary " disabled=true >Realizar Pedido</button> -->
+			<!-- onmouseover=habilita(); -->
+			<a id="btnpd" name="btnpd" class="btn btn-primary textcolorb disabled" role="button" href="10_pago.php" ">Realizar Pedido</a>
 			</div>
 		</div>
 
@@ -327,6 +328,18 @@
 		.done(function(respuesta){
 			// console.log(respuesta);
 			$("#datos").html(respuesta);
+			// console.log("entra");
+			var pedido = document.getElementById("btnpd");
+			if($("#tablapl").length > 0){
+				// $("#btnpd").removeAttr('disabled');
+				console.log("deshab");
+				pedido.className = "btn btn-primary textcolorb ";
+			}
+			else{
+				// $("#btnpd").attr('disabled','disabled');
+				console.log("habili");
+				pedido.className = "btn btn-primary textcolorb disabled";
+			}
 		})
 		.fail(function(){
 			console.log("Error");
@@ -337,23 +350,8 @@
 	});
 
 	// habilitar boton realizar pedido
-	function habilita(){
-		console.log("entra");
-		var pedido = document.getElementById("btnpd");
-			if($("#tablapl").length > 0){
-				pedido.disabled=false;
-				console.log("deshab");
-				// pedido.className = "btn btn-primary textcolorb disabled";
-			}
-			else{
-				pedido.disabled=true;
-				console.log("habili");
-				// pedido.className = "btn btn-primary textcolorb ";
-			}
-	}
+	// function habilita(){
 
-	$(document).on('load', function(){
-			buscar_datos();
-	});
+	// }
 
 </script>

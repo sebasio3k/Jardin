@@ -42,7 +42,7 @@
             $salida.="
             <tr>
             <td >Total</td>
-            <td colspan='4'>$".number_format($_SESSION['totalcompra'],2)."</td>
+            <td colspan='5'>$".number_format($_SESSION['totalcompra'],2)."</td>
             </tr>
             </tbody></table>";
             echo $salida;

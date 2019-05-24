@@ -246,7 +246,7 @@
 	<script src=".\JS\jquery.js"></script>
 	<script src=".\JS\jquery.dataTables.min.js"></script>
 	<script src="./JS/buscador.js"></script>
-	<script src="./JS/val.js"></script>
+	<script src=".\JS\val.js"></script>
 </body>
 </html>
 
@@ -272,15 +272,47 @@
 
 		}
 
+	function validarCant(){
+	var cant = document.getElementById("txtcan").value;
+	var cantv = document.getElementById("txtcan");
+	var regidcant=/^([1-9]{1,3})+$/;
+
+	if(cant=="" || cant.indexOf('+') != -1 || cant.indexOf('-') != -1){
+		alertify.alert('Alerta', 'Se requiere que Selecciones la cantidad, VÁLIDA PACHECO ¬¬', function(){ alertify.error('Verifica campos'); });
+		cantv.className = "is-invalid";
+		return false;
+	}
+	else{//si no
+		/*VALIDA QUE EL formato SEA VALIDO*/
+		if(regidcant.test(cant) && cant>0 && cant<=100){
+			// cantv.className = "form-control textcolorw is-valid";
+			return true;
+		}
+		else{
+			if(cant==0 || cant>100 ){
+				alertify.alert('Alerta', 'Ud no aprende verdad? ¬¬', function(){ alertify.error('Verifica campos'); });
+				cant.className = "is-invalid";
+				return false;
+			}
+			else{
+				alertify.alert('Alerta', 'Formato de cantidad inválido', function(){ alertify.error('Verifica campos'); });
+				cantv.className = "is-invalid";
+				return false;
+			}
+		}
+	}
+}
+
 		// 3 manda id a agregacarrito.php
     function agrega(codi){
-			if(validarCant()){
+			var val = validarCant();
+			if(val){
 				var can = $('#txtcan').val()
 				console.log(can)
 				// function agrega(codi){
 				var cadena = "codi="+codi+"&can="+can;
 				// var cadena = "codi="+codi;
-						$.ajax({
+				$.ajax({
 					url:"php/agregacarrito.php",
 					type:"POST",
 					data: cadena,
@@ -294,7 +326,7 @@
 				})
 				.fail(function(){
 					console.log("Error");
-				})
+				});
 			}
 			else{
 				console.log("cantidad invalida");
@@ -320,9 +352,10 @@
 		})
 		.fail(function(){
 			console.log("Error");
-		})
+		});
 	}
 	$(document).on('load', function(){
 			buscar_datos();
 	});
+	
 </script>

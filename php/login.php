@@ -12,7 +12,7 @@
 		$usuario = $mysqli->real_escape_string($_POST['email']);
 		$pas = $mysqli->real_escape_string($_POST['pass']);
 
-		if($nueva_consulta = $mysqli->prepare("SELECT nombre, email, tipo FROM usuarios WHERE email = ? AND password = ? ")){
+		if($nueva_consulta = $mysqli->prepare("SELECT idusuario, nombre, email, tipo FROM usuarios WHERE email = ? AND password = ? ")){
 			$nueva_consulta->bind_param('ss',$usuario,$pas);
 
 			$nueva_consulta->execute();
@@ -31,6 +31,5 @@
 		}
 
 	}
-
 	$mysqli->close();
 ?>

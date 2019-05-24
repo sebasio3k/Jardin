@@ -1,3 +1,5 @@
+
+
 // LOGIN------------------------------------------------------------------------------------
 
 function validarLogin(){
@@ -46,7 +48,7 @@ function validarLogin(){
 	}
 }
 
-// SIGN IN (REGISTRARSE)------------------------------------------------------------------------------------------
+// SIGN IN (REGISTRARSE-------------------------------------------------------------------------------
 
 function validarSignin(){
 
@@ -174,7 +176,7 @@ function validarSignin(){
 	}
 }
 
-// TARJETA (PAGO) FALTA VALIDAD FECHAAAAAAA!!!!!!!--------------------------------------------------------------------------------------------------------
+// TARJETA (PAGO) FALTA VALIDAD FECHAAAAAAA!!!!!!!--------------------------------------------------
 
 function carga(){
 	// variables para cambiar clases
@@ -287,70 +289,8 @@ function habilitar(){
 //   });
 
 
-function validarPago(){
-	var tienda = document.getElementById("tienda");
-	var tarj = document.getElementById("tarjeta");
-	var nt = document.getElementById("ntarjeta").value;
-	var n = document.getElementById("nombre1").value;
-	var exp = document.getElementById("expire").value;
-	var cve = document.getElementById("num").value;
-	// variables para cambiar clases
-	var ntv = document.getElementById("ntarjeta");
-	var nv = document.getElementById("nombre1");
-	var expv = document.getElementById("expire");
-	var cvev = document.getElementById("num");
-	var pago = document.getElementById("btpago");
 
-	var regnom=/^([A-Za-z\sáéíóú]{2,30})+$/;
-	var regnt=/^([0-9]{16})+$/;
-	var regcve=/^([0-9]{4})+$/;
-
-
-	if (tienda.checked){
-		location.href="7_login_signin.html";
-	}
-	else{
-		if((nt=="") || (cve=="") ){
-			alert("TODOS LOS CAMPOS SON REQUERIDOS");
-			ntv.className = "form-control is-invalid";
-			nv.className = "form-control textcolorw is-invalid";
-			expv.className = "form-control textcolorw is-invalid";
-			cvev.className = "form-control textcolorw is-invalid";
-		}
-		else{
-			/*VALIDA QUE EL formato de correo SEA VALIDO*/
-			if(regnt.test(nt)){
-				alert("TARJETA CORRECTO");
-				ntv.className = "form-control textcolorw is-valid";
-				if (regnom.test(n)){
-					alert("NOMBRE CORRECTO");
-					nv.className = "form-control textcolorw is-valid";
-					if(regcve.test(cve)){
-						alert("CLAVE CORRECTO");
-						cvev.className = "form-control textcolorw is-valid";
-						alert("Realizando pedido");
-						// document.getElementById("rpedido").submit();
-						//location.href="categorias.html";
-					}
-					else{
-						alert("Formato de CLAVE inválido, por favor verificalo");
-						cvev.className = "form-control textcolorw is-invalid";
-					}
-				}
-				else{
-					alert("Formato de Nombre inválido, por favor verificalo");
-					nv.className = "form-control textcolorw is-invalid";
-				}
-			}
-			else{
-				alert("Formato de TARJETA inválido, por favor verificalo");
-				nvt.className = "form-control textcolorw is-valid";
-			}
-		}
-	}
-}
-
-// ACTUALIZAR USUARIO------------------------------------------------------------------------------------------
+// ACTUALIZAR USUARIO-------------------------------------------------------------------------------
 function validarActualizar(){
 	var nam = document.getElementById("nombre").value;
 	var ap = document.getElementById("ap").value;
@@ -462,7 +402,7 @@ function validarActualizar(){
 	}
 }
 
-// ACTUALIZAR CURSO------------------------------------------------------------------------------------------
+// ACTUALIZAR CURSO-------------------------------------------------------------------------
 function validarActualizarC(){
 	var nam = document.getElementById("nombre").value;
 	var desc = document.getElementById("desc").value;
@@ -513,7 +453,7 @@ function validarActualizarC(){
 	}
 }
 
-// ACTUALIZAR PRODUCTO------------------------------------------------------------------------------------------
+// ACTUALIZAR PRODUCTO-------------------------------------------------------------------------
 function validarActualizarP(){
 	var idcat = document.getElementById("idcat").value;
 	var desc = document.getElementById("desc").value;
@@ -576,35 +516,4 @@ function validarActualizarP(){
 	}
 }
 
-function validarCant(){
-	var cant = document.getElementById("txtcan").value;
-	var cantv = document.getElementById("txtcan");
-	var imagenv = document.getElementById("ima");
-	var regidcant=/^([1-9]{1,2})+$/;
-
-	if(cant==""){
-		alertify.alert('Alerta', 'Se requiere que selecciones la cantidad correctamente ¬¬ pacheco', function(){ alertify.error('Verifica campos'); });
-		cantv.className = "  is-invalid";
-		return false;
-	}
-	else{//si no
-		/*VALIDA QUE EL formato de correo SEA VALIDO*/
-		if(regidcant.test(cant)){
-			// cantv.className = "form-control textcolorw is-valid";
-			return true;
-		}
-		else{
-			if(cant>=100){
-				alertify.alert('Alerta', 'Ud no aprende verdad? ¬¬', function(){ alertify.error('Verifica campos'); });
-				cantv.className = "  is-invalid";
-				return false;
-			}
-			else{
-				alertify.alert('Alerta', 'Formato de cantidad inválido', function(){ alertify.error('Verifica campos'); });
-				cantv.className = "  is-invalid";
-				return false;
-			}
-		}
-	}
-}
 

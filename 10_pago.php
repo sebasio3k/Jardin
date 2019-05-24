@@ -135,44 +135,7 @@
 			</div>
 		</div>
 		<br>
-		<table class="table bgblanco textcolorb">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Producto</th>
-					<th scope="col">Cantidad</th>
-					<th scope="col">Precio</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						Producto 1
-						<br>
-						<img src=".\img\p4.jpg" width="90" height="95">
-					</td>
-					<td>2</td>
-					<td>$$$</td>
-				</tr>
-				<tr>
-					<td>
-						Producto 2
-						<br>
-						<img src=".\img\p5.jpg" width="90" height="95">
-					</td>
-					<td>1</td>
-					<td>$$$</td>
-				</tr>
-				<tr>
-					<td>
-						Producto 3
-						<br>
-						<img src=".\img\p6.jpg" width="90" height="95">
-					</td>
-					<td>1</td>
-					<td>$$$</td>
-				</tr>
-			</tbody>
-		</table>
+		<div id="datos"></div>
 		<br>
 		<br>
 		<br>
@@ -187,7 +150,7 @@
 			<div class="form-check">
 				<div class="row justify-content-center">
 					<div class="form-group col-xs-12 col-6">
-						<input class="form-check-input" type="radio" name="pago" id="tienda" value="option1" onclick=deshabilitar();>
+						<input class="form-check-input" type="radio" name="pago" id="tienda" value="option1" onclick=deshabilitar(this.id);>
 						<label class="form-check-label textcolorw" for="tienda">Pagar en la tienda</label>
 					</div>
 					<div class="form-group col-xs-12 col-6 text-center">
@@ -209,14 +172,14 @@
 					<div class="row justify-content-center">
 						<div class="form-group col-xs-12 ">
 							<label for="numtar" class="textcolorw">N&uacute;mero de Tarjeta</label>
-							<input type="text" class="form-control" id="ntarjeta" placeholder="8888888888888888" required=”required” onblur=validarNombre();>
+							<input type="text" class="form-control" id="ntarjeta" placeholder="8888888888888888" required=”required” >
 						</div>
 					</div>
 					<!-- RENGLON -->
 					<div class="row justify-content-center">
 						<div class="form-group col-xs-12 ">
 							<label for="propietario" class="textcolorw">Nombre</label>
-							<input type="text" class="form-control" id="nombre1" placeholder="Tu nombre" required=”required” onblur=validarNombre();>
+							<input type="text" class="form-control" id="nombre1" placeholder="Tu nombre" required=”required”>
 						</div>
 					</div>
 					<div class="row justify-content-center">
@@ -230,7 +193,7 @@
 					<div class="row justify-content-center">
 						<div class="form-group col-xs-12 ">
 							<label for="cvc" class="textcolorw">N&uacute;mero de Seguridad</label>
-							<input type="text" class="form-control" id="num" placeholder="CVC" required=”required” onblur=validarNombre();>
+							<input type="text" class="form-control" id="num" placeholder="CVC" required=”required” >
 						</div>
 					</div>
 
@@ -282,7 +245,7 @@
 					</center>
 				</div>
 			</div>
-			
+
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -305,7 +268,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -317,6 +280,126 @@
 	<script src="./JS/buscador.js"></script>
 	<!-- JavaScript Validaciones-->
 	<script type="text/javascript" src=".\JS\val.js"></script>
-	
+
 </body>
 </html>
+
+<script>
+	$(buscar_datos());
+
+	function buscar_datos(){
+		$.ajax({
+			url:"php/consultarCarrito.php",
+			type:"POST",
+			// dataType:'html'
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			// console.log(respuesta);
+			$("#datos").html(respuesta);
+
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+	$(document).on('load', function(){
+			buscar_datos();
+	});
+
+
+	function validarPago(){
+	var tienda = document.getElementById("tienda");
+	var tarj = document.getElementById("tarjeta");
+
+	var nt = document.getElementById("ntarjeta").value;
+	var n = document.getElementById("nombre1").value;
+	var exp = document.getElementById("expire").value;
+	var cve = document.getElementById("num").value;
+	// variables para cambiar clases
+	var ntv = document.getElementById("ntarjeta");
+	var nv = document.getElementById("nombre1");
+	var expv = document.getElementById("expire");
+	var cvev = document.getElementById("num");
+
+	var pago = document.getElementById("btpago");
+
+	var regnom=/^([A-Za-z\sáéíóú]{2,30})+$/;
+	var regnt=/^([0-9]{16})+$/;
+	var regcve=/^([0-9]{3})+$/;
+	var regf = new RegExp("(((0[123456789]|10|11|12)/(([1][9][0-9][0-9])|([2][0-9][0-9][0-9]))))");
+
+	if (tienda.checked){
+		// var n=1;
+		var cadena = "log="+1;
+				// var cadena = "codi="+codi;
+				$.ajax({
+					url:"php/generaorden.php",
+					type:"POST",
+					data: cadena,
+					// data: {consulta: consulta},
+				})
+				.done(function(respuesta){
+					// $("#c").html(respuesta);
+					// location.href="11_orden.php";
+					console.log(respuesta);
+					// $("#tarjeta").html(respuesta);
+				})
+				.fail(function(){
+					console.log("Error");
+				});
+
+	}
+	else{
+		if((nt=="") || (cve=="") || (n=="")){
+			alert("TODOS LOS CAMPOS SON REQUERIDOS");
+			ntv.className = "form-control is-invalid";
+			nv.className = "form-control textcolorw is-invalid";
+			expv.className = "form-control textcolorw is-invalid";
+			cvev.className = "form-control textcolorw is-invalid";
+		}
+		else{
+			/*VALIDA QUE EL formato de correo SEA VALIDO*/
+			if(regnt.test(nt)){
+				// alert("TARJETA CORRECTO");
+				ntv.className = "form-control textcolorw is-valid";
+				if (regnom.test(n)){
+					// alert("NOMBRE CORRECTO");
+					nv.className = "form-control textcolorw is-valid";
+					if (regf.test(exp)){
+						// alert("Fecha CORRECTO");
+						expv.className = "form-control textcolorw is-valid";
+						if(regcve.test(cve)){
+							// alert("CLAVE CORRECTO");
+							cvev.className = "form-control textcolorw is-valid";
+							pago.val('Realizando pedido...');
+							alert("Realizando pedido");
+							// document.getElementById("rpedido").submit();
+							// location.href="categorias.html";
+						}
+						else{
+							alertify.alert('Alerta', 'Formato de CLAVE inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+							cvev.className = "form-control textcolorw is-invalid";
+						}
+					}
+					else{
+						alertify.alert('Alerta', 'Formato de FECHA inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+						expv.className = "form-control textcolorw is-invalid";
+					}
+				}
+				else{
+					alertify.alert('Alerta', 'Formato de Nombre inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+					nv.className = "form-control textcolorw is-invalid";
+				}
+			}
+			else{
+				alertify.alert('Alerta', 'Formato de TARJETA inválido, por favor verificalo', function(){ alertify.error('Verifica campos'); });
+				nvt.className = "form-control textcolorw is-valid";
+			}
+		}
+	}
+}
+
+
+
+</script>

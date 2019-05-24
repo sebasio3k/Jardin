@@ -277,7 +277,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 
 	 <!-- <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
@@ -297,7 +297,7 @@
 	<script src="./JS/buscador.js"></script>
 	<!-- JavaScript Validaciones-->
 	<script type="text/javascript" src=".\JS\val.js"></script>
-	
+
 <!-- <script>
 
 $('#registro').on('mouseover', function() {

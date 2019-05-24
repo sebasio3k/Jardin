@@ -1,6 +1,7 @@
 <?php
 	// Sesiones acceder a variable de sesion
 	session_start();
+
 	// si existe la variable de sesiones
 	if(isset($_SESSION['user'])) {
 		// que tipo se usuario ingresa para redireccionar
@@ -10,6 +11,7 @@
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
 	}
+	
 ?>
 
 <!DOCTYPE html>

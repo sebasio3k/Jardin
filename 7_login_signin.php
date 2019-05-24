@@ -263,3 +263,10 @@
 	<script type="text/javascript" src=".\JS\login.js"></script>
 </body>
 </html>
+
+<script>
+	$(document).on('load', function () {
+		$('#formlogin').reset();
+	});
+	
+</script>

@@ -14,7 +14,13 @@
 	}
 	// $lista=$_SESSION['lista'];
 	// echo sizeof($lista);
-
+// CREAR VARIABLE DE SESION cuantos PARA CONTROL DE CANTIDAD CARRITO
+if(!isset($_SESSION['cuantos'])){
+	$_SESSION['cuantos']=0;
+}
+else{
+	$_SESSION['cuantos']=$_SESSION['cuantos'];
+}
 
 
 ?>

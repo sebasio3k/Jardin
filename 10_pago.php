@@ -10,6 +10,14 @@
 	}else {//no existe, nadie se ha loggeado
 			header('Location: 1_index.php');
 	}
+	// CREAR VARIABLE DE SESION cuantos PARA CONTROL DE CANTIDAD CARRITO
+if(!isset($_SESSION['cuantos'])){
+	$_SESSION['cuantos']=0;
+}
+else{
+	$_SESSION['cuantos']=$_SESSION['cuantos'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -341,7 +349,7 @@
 				})
 				.done(function(respuesta){
 					// $("#c").html(respuesta);
-					// location.href="11_orden.php";
+					location.href="11_orden.php";
 					console.log(respuesta);
 					// $("#tarjeta").html(respuesta);
 				})

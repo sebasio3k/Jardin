@@ -10,6 +10,11 @@
     $res=mysqli_query($conexion,$sqldv);
     $cuantosdv = $res->num_rows;
 
+    //------------
+
+
+    //----------
+
     // require_once "conexion.php";
     // $conexion=conexion();
 

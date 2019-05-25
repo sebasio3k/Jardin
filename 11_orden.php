@@ -143,6 +143,9 @@ else{
 			</div>
 		</div>
 		<br>
+		<div id="datos"></div>
+
+
 		<table class="table bgblanco textcolorb">
 			<thead class="thead-dark">
 				<tr>
@@ -247,7 +250,7 @@ else{
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -260,3 +263,27 @@ else{
 	<script type="text/javascript" src=".\JS\validar.js"></script>
 </body>
 </html>
+
+<script>
+	$(buscar_datos());
+
+	function buscar_datos(){
+		$.ajax({
+			url:"php/consultarOrdenes.php",
+			type:"POST",
+			// dataType:'html'
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			// console.log(respuesta);
+			$("#datos").html(respuesta);
+
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+	$(document).on('load', function(){
+			buscar_datos();
+	});
+</script>

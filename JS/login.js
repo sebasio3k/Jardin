@@ -17,7 +17,7 @@ jQuery(document).on('submit','#formlogin', function(event){
             if(respuesta.tipo == 'Admin'){
                 location.href = '13_admin_index.php';
             }
-            else if(respuesta.tipo == 'Usuario'){ 
+            else if(respuesta.tipo == 'Usuario'){
                 location.href = '2_index_2.php'
             }
         }

@@ -268,5 +268,4 @@
 	$(document).on('load', function () {
 		$('#formlogin').reset();
 	});
-	
 </script>

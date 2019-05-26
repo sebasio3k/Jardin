@@ -31,7 +31,8 @@ else{
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
-	<!-- JavaScript -->
+	<!-- sweetalert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
@@ -144,88 +145,10 @@ else{
 			</div>
 		</div>
 		<br>
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\c1.jpg" width="500" height="250" class="card-img-top" alt="Curso1">
-					<div class="card-body">
-						<h5 class="card-title blurw text-justify">Cuidado de cesped</h5>
-					   	<p class="card-text blurw text-justify">Aprende cada cu&aacute;ndo hay que regar el cesped para tener uno ¡espectacular!</p>
-					   	<a href="#" class="btn btn-primary">Inscribirme</a>
-					</div>
-				</div>
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\c2.jpg" width="200" height="250" class="card-img-top" alt="Curso2">
-					<div class="card-body ">
-						<h5 class="card-title blurw text-justify">Hacer un jard&iacute;n interior</h5>
-					   	<p class="card-text blurw text-justify">Conoce los secretos para tener un jard&iacute;n interior. Ideal para hogares pequeños.</p>
-					   	<a href="#" class="btn btn-primary">Inscribirme</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\c3.jpg" width="200" height="250" class="card-img-top" alt="Curso3">
-					<div class="card-body">
-						<h5 class="card-title blurw text-justify">Elige tus muebles del jard&iacute;n</h5>
-					   	<p class="card-text blurw text-justify">¿Tienes buen gusto por los muebles? Aprende a elegir los de tu jard&iacute;n.</p>
-					   	<a href="#" class="btn btn-primary">Inscribirme</a>
-					</div>
-				</div>	
-			</div>
-		</div>
-		<br>
-		<br>
-		<!-- RENGLON -->
-		<div class="row justify-content-center">
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\c4.jpg" width="200" height="250" class="card-img-top" alt="Curso4">
-					<div class="card-body">
-						<h5 class="card-title blurw text-justify">Cuidado de plantas en macetas</h5>
-					   	<p class="card-text blurw text-justify blurw text-justify">Que no se te sequen tus plantas, Aprende primeros auxilios para ellas.</p>
-					   	<a href="#" class="btn btn-primary">Inscribirme</a>
-					</div>
-				</div>
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\c5.jpg" width="200" height="250" class="card-img-top" alt="Curso5">
-					<div class="card-body">
-						<h5 class="card-title blurw text-justify">Renueva tu jard&iacute;n</h5>
-					   	<p class="card-text blurw text-justify">¿Cansado de la misma vista que te ofrece tu jard&iacute;n? Inscribete para aprender algo nuevo.</p>
-					   	<a href="#" class="btn btn-primary">Inscribirme</a>
-					</div>
-				</div>	
-			</div>
-			<!-- COLUMNA -->
-			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<!-- Tarjeta de producto -->
-				<div class="card" style="width: 18rem;">
-					<img src=".\img\c6.jpg" width="600" height="250" class="card-img-top" alt="Curso6">
-					<div class="card-body">
-						<h5 class="card-title blurw text-justify">¡Manos a la obra jardinero!</h5>
-					   	<p class="card-text blurw text-justify">Aprende a utilizar correctamente herramientas de jardinería, y pon en pr&aacute;ctica tus conocimientos.</p>
-					   	<a href="#" class="btn btn-primary">Inscribirme</a>
-					</div>
-				</div>	
-			</div>
-		</div>
+		<div id="tarjeta"></div>
 		<hr>
 
-		<div class="row justify-content-center">
+		<!-- <div class="row justify-content-center">
 			<nav aria-label="...">
 				<ul class="pagination">
 					<li class="page-item disabled">
@@ -244,7 +167,7 @@ else{
 					</li>
 				</ul>
 			</nav>
-		</div>
+		</div>-->
 	</div>
 
 	<!-- FOOTER -->
@@ -280,7 +203,6 @@ else{
 					</center>
 				</div>
 			</div>
-			
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -303,7 +225,7 @@ else{
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -314,3 +236,61 @@ else{
 	<script src="./JS/buscador.js"></script>
 </body>
 </html>
+
+<script>
+	// 2 manda id a detalle.php
+	var num=0;
+	function enviar(n){
+		num = n;
+		cadena = "n="+n;
+		console.log(cadena);
+		$.ajax({
+			url:"php/agregacurso.php",
+			type:"POST",
+			// dataType:'html'
+			data:cadena,
+		})
+		.done(function(respuesta){
+			console.log(respuesta);
+			if(respuesta==1){
+				swal("Bien, Inscripción Exitosa", "Revisa detalles en tu perfil", "success");
+			}
+			else{
+				if(respuesta==2){
+					swal("Oops", "Ya estas inscrito a este curso", "error");
+				}
+				else{
+
+				}
+			}
+			// $("#datos2").html(respuesta);
+
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+
+// 1 muestra productos en pantalla (catalogo)-------------------------------
+	$(buscar_datos());
+
+	function buscar_datos(){
+		$.ajax({
+			url:"php/mostrarCC.php",
+			type:"POST",
+			dataType:'html'
+			// data: {consulta: consulta},
+		})
+		.done(function(respuesta){
+			// console.log(respuesta);
+			$("#tarjeta").html(respuesta);
+		})
+		.fail(function(){
+			console.log("Error");
+		});
+	}
+	$(document).on('load', function(){
+			buscar_datos();
+	});
+
+</script>

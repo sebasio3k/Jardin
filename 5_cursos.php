@@ -26,14 +26,12 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<!-- /Bootstrap -->
-	<!-- JavaScript -->
-	<script type="text/javascript" src=".\JS\funciones.js"></script>
 	<!-- hoja de estilos2 para barra busqueda -->
 	<link rel="stylesheet" href=".\CSS\estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href=".\img\icon.png">
 
-</head>	
+</head>
 <body class="mibody">
 	<!-- HEADER -->
 <header class="container-fluid">
@@ -141,9 +139,9 @@
 					   	<p class="card-text blurw text-justify">Aprende cada cu&aacute;ndo hay que regar el cesped para tener uno ¡espectacular!</p>
 					   	<!-- <a href="#" class="btn btn-primary">Inscribirme</a> -->
 					</div>
-				</div>	
+				</div>
 			</div>
-			<!-- COLUMNA --> 
+			<!-- COLUMNA -->
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
 				<!-- Tarjeta de producto -->
 				<div class="card" style="width: 18rem;">
@@ -153,7 +151,7 @@
 					   	<p class="card-text blurw text-justify">Conoce los secretos para tener un jard&iacute;n interior. Ideal para hogares pequeños.</p>
 					   	<!-- <a href="#" class="btn btn-primary">Inscribirme</a> -->
 					</div>
-				</div>	
+				</div>
 			</div>
 			<!-- COLUMNA -->
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
@@ -165,7 +163,7 @@
 					   	<p class="card-text blurw text-justify">¿Tienes buen gusto por los muebles? Aprende a elegir los de tu jard&iacute;n.</p>
 					   	<!-- <a href="#" class="btn btn-primary">Inscribirme</a> -->
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 		<br>
@@ -194,7 +192,7 @@
 					   	<p class="card-text blurw text-justify">¿Cansado de la misma vista que te ofrece tu jard&iacute;n? Inscribete para aprender algo nuevo.</p>
 					   	<!-- <a href="#" class="btn btn-primary">Inscribirme</a> -->
 					</div>
-				</div>	
+				</div>
 			</div>
 			<!-- COLUMNA -->
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
@@ -206,7 +204,7 @@
 					   	<p class="card-text blurw text-justify">Aprende a utilizar correctamente herramientas de jardinería, y pon en pr&aacute;ctica tus conocimientos.</p>
 					   	<!-- <a href="#" class="btn btn-primary">Inscribirme</a> -->
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 		<hr>
@@ -245,7 +243,7 @@
 					</center>
 				</div>
 			</div>
-			
+
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -268,7 +266,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -14,7 +14,6 @@
 	// CREAR VARIABLE DE SESION productos PARA UTILZIARLA DESPUES
 	include_once 'php/conecta.php';
 	$mysqli = conecta();
-    // $salida = "";
     $query = "SELECT idproducto,idcategoria,descripcion,precio FROM productos";
     // echo($query);
 	$resultado = $mysqli->query($query);
@@ -36,6 +35,29 @@
             }
         }
 	}
+
+	// CREAR VARIABLE DE SESION cursos PARA UTILZIARLA DESPUES
+	$query2 = "SELECT * FROM cursos";
+    // echo($query);
+	$resultado2 = $mysqli->query($query2);
+    if($resultado2 -> num_rows > 0){
+		if(!isset($_SESSION['cursos'])){
+			$n2=0;
+        	while($fila2=$resultado2->fetch_assoc()){
+                $listac=array(
+                    'idcurso'=>$fila2['idcurso'],
+                    'nombrecurso'=>$fila2['nombrecurso'],
+                    'descripcion'=>$fila2['descripcion'],
+                    'precio'=>$fila2['precio'],
+                    'fecha'=>$fila2['fecha']
+                    // 'stock'=>$id,
+                );
+                $_SESSION['cursos'][$n2]=$listac;
+                $n2++;
+            }
+        }
+	}
+
 	$mysqli->close();
 
 	// CREAR VARIABLE DE SESION cuantos PARA CONTROL DE CANTIDAD CARRITO

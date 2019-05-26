@@ -363,5 +363,5 @@ else{
 	$(document).on('load', function(){
 			buscar_datos();
 	});
-	
+
 </script>

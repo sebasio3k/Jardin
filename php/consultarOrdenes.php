@@ -1,38 +1,71 @@
 <?php
     session_start();
 
-	include_once 'php/conecta.php';
+	include_once 'conecta.php';
     $mysqli = conecta();
 
-    // CREAR VARIABLE DE SESION detalles PARA UTILZIARLA DESPUES
-    $query = "SELECT * FROM detallev";
-    // echo($query);
+    //CREAR VARIABLE DE SESION ventas PARA UTILZIARLA DESPUES
+    $idus = $_SESSION['user']['idusuario'];
+    $query = "SELECT * FROM ventas WHERE idusuario = $idus";
+    echo($query);
     $resultado = $mysqli->query($query);
     if($resultado -> num_rows > 0){
-		if(!isset($_SESSION['detalles'])){
-			$n=0;
+		// if(!isset($_SESSION['ventasu'])){
+			$m=0;
         	while($fila=$resultado->fetch_assoc()){
                 $listao=array(
-                    'iddetv'=>$fila['iddetv'],
-                    'idventa'=>$fila['idventa'],
-                    'claveprod'=>$fila['claveprod'],
-                    'cantidad'=>$fila['cantidad'],
-                    'precio'=>$fila['precio'],
-                    'importe'=>$fila['importe']
+                    'idventas'=>$fila['idventas'],
+                    'idusuario'=>$fila['idusuario'],
+                    'idmetodo'=>$fila['idmetodo'],
+                    'fechacompra'=>$fila['fechacompra'],
+                    'fechaentrega'=>$fila['fechaentrega'],
+                    'estado'=>$fila['estado'],
+                    'total'=>$fila['total']
                 );
-                $_SESSION['detalles'][$n]=$listap;
-                $n++;
+                // guarda venta en la posicion n
+                $_SESSION['ventasu'][$m]=$listao;
+                echo "<br>";
+                // recuperar detalle venta
+                $s =  $_SESSION['ventasu'][$m]['idventas'];
+                // echo " <br>".$s;
+                $query2 = "SELECT count(*) FROM detallev WHERE idventa = $s";
+                echo($query2);
+                // $resultado2 = $mysqli->query($query2);
+                if ($resultado2 = $mysqli->query($query2)) {
+                    $filax = $resultado2->fetch_row();
+                    printf(" detv: ".$filax[0]);
+                    $_SESSION['numdet'][$m]=$filax[0];
+                }
+                // $resultado2=mysqli_result($resultado2,0,'COUNT');
+                // echo  " ".$resultado2;
+                $m++;
             }
-        }
+            echo "<br> num detall: <br>";
+            print_r($_SESSION['numdet']);
+            echo "<br> ventas u <br>";
+            print_r($_SESSION['ventasu']);
+            // echo "detallesu u".PHP_EOL;
+            // print_r($_SESSION['detallesu']);
+        // }
+        // else{
+        //     $_SESSION['ventasu'] = $_SESSION['ventasu'];
+        // }
     }
-    // CREAR VARIABLE DE SESION ventas PARA UTILZIARLA DESPUES
-    // $query = "SELECT * FROM detallev";
-    // // echo($query);
-    // $resultado = $mysqli->query($query);
-    // if($resultado -> num_rows > 0){
-	// 	if(!isset($_SESSION['detalles'])){
+    else{
+        echo "No hay ventas de este usuario";
+    }
+    echo " | <br>";
+    
+    // $arreglo = $_SESSION['numdet'];
+    // printf ($arreglo);
+    // CREAR VARIABLE DE SESION detalles PARA UTILZIARLA DESPUES
+    // $query2 = "SELECT * FROM detallev WHERE idusuario = $idus";
+    // echo($query);
+    // $resultado2 = $mysqli->query($query2);
+    // if($resultado2 -> num_rows > 0){
+	// 	if(!isset($_SESSION['detallesu'])){
 	// 		$n=0;
-    //     	while($fila=$resultado->fetch_assoc()){
+    //     	while($fila=$resultado2->fetch_assoc()){
     //             $listao=array(
     //                 'iddetv'=>$fila['iddetv'],
     //                 'idventa'=>$fila['idventa'],
@@ -41,86 +74,79 @@
     //                 'precio'=>$fila['precio'],
     //                 'importe'=>$fila['importe']
     //             );
-    //             $_SESSION['detalles'][$n]=$listap;
+    //             $_SESSION['detallesu'][$n]=$listap;
     //             $n++;
     //         }
+    //         $_SESSION['cuantosdet'] = count($_SESSION['detalles']);
+    //     }
+    //     else{
+    //         $_SESSION['cuantosdet']=$_SESSION['cuantosdet'];
     //     }
     // }
 
-	$mysqli->close();
+    $mysqli->close();
+    $cuantasor = count($_SESSION['ventasu']);
+    echo " <br> cuantas ordenes: <br>".$cuantasor;
 
-	// CREAR VARIABLE DE SESION cuantos PARA CONTROL DE CANTIDAD CARRITO
-	if(!isset($_SESSION['cuantosdet'])){
-        // $_SESSION['cuantaso']=0;
-        $_SESSION['cuantosdet']= count($_SESSION['detalles']);
-	}
-	else{
-		$_SESSION['cuantosdet']=$_SESSION['cuantosdet'];
-	}
  //****************************************************************** */
+ 
     $salida = "";
-    if(!isset($_SESSION['ordenes'])){
+    if($cuantasor == 0){
         $salida.="No hay ordenes generadas";
         echo $salida;
     }
     else {
-        $longitud=count($_SESSION['ordenes']);
-        $fila=$_SESSION['ordenes'];
+        //guarda vecto de ventas del usuario en fila
+        $fila=$_SESSION['ventasu'];
+        // $fila2=$_SESSION['detallesu'];
+        // print_r($fila2);
+        //guarda vector de cuantos detalles tiene cada venta del usuario en numdet
+        $numdet = $_SESSION['numdet'];
         // $_SESSION['totalcompra']=0;
-        print_r($fila);
+        // print_r($fila);
 
-        if($longitud>0){
+        if($cuantasor>0){
             // for ($o=0; $o==$longitud; $o++){
                 $salida.= "<table id='tablaor' class='table bgblanco textcolorb table-responsive table-striped table-bordered table-sm'>
                                 <thead class='thead-dark'>
                                     <tr>
-                                        <th scope='col'>Id Venta</th>
+                                        <th colspan='7'>ORDENES</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope='col'>Folio Orden</th>
                                         <th scope='col'>Fecha de Compra</th>
                                         <th scope='col'>Fecha Entrega</th>
                                         <th scope='col'>Metodo de Pago</th>
-                                        
                                         <th scope='col'>Total</th>
                                         <th scope='col'>Estatus</th>
+                                        <th scope='col'>Opcion</th>
                                     </tr>
                                 </thead>
                                 <tbody>";
-                    for ($i = 0; $i < $longitud; $i++) {
-                        $total = $fila[$i]['precio'] * $fila[$i]['cant'];
+                    for ($i = 0; $i < $cuantasor; $i++) {
                         $salida.= "<tr>
-                                        <td scope='row'>".$fila[$i]['descripcion']."</td>
-                                        <td>".$fila[$i]['precio']."</td>
-                                        <td>".$fila[$i]['cant']."</td>
-                                        <td>".$total."</td>
-                                        <td><img src='./img/prod/".$fila[$i]['idproducto'].".jpg'  class='card-img-top img-fluid'  alt='".$fila[$i]['descripcion']."'></td>
-                                        <td><button id='$i' class='btn btn-danger' onclick='quita(this.id);'>Eliminar</button></td>
-                                </tr>";
-                        $_SESSION['totalcompra'] = $_SESSION['totalcompra'] + ($fila[$i]['precio']*$fila[$i]['cant']);
+                                        <td scope='row'>".$fila[$i]['idventas']."</td>
+                                        <td>".$fila[$i]['fechacompra']."</td>
+                                        <td>".$fila[$i]['fechaentrega']."</td>";
+
+                        if($fila[$i]['idmetodo']=="1"){
+                            $salida.="  <td>Pago en Tienda</td>";
+                        }
+                        else{
+                            $salida.="  <td>Pago con tarjeta</td>";
+                        }
+                        $salida.= "
+                                <td>$".number_format($fila[$i]['total'],2)."</td>
+                                <td>".$fila[$i]['estado']."</td>
+                                <td><button id='$i' class='btn btn-dark' href='javascript:void(0)' data-toggle='modal' data-target='#responsive' onclick='det(this.id);'>Ver Detalle</button></td>
+                            </tr>";
                     }
             // }
-            $salida.="
-            <tr>
-            <td >Total</td>
-            <td colspan='5'>$".number_format($_SESSION['totalcompra'],2)."</td>
-            </tr>
-            </tbody></table>";
+            $salida.="</tbody></table> ";
             echo $salida;
         }
         else {
-            $salida.="No hay datos :c";
+            $salida.="No hay ordenes generadas";
         }
     }
 ?>
-
-
-
-
-
-
-    $conexion=mysqli_connect("localhost","Sebastian","ifuseekamy","jardinabuela");
-    //rescatar cuantos detallesv hay
-    $sqldv = "SELECT * FROM detallev";
-    $res=mysqli_query($conexion,$sqldv);
-    $cuantosdv = $res->num_rows;
-
-
-    

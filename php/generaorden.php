@@ -9,6 +9,9 @@
     $sqldv = "SELECT * FROM detallev";
     $res=mysqli_query($conexion,$sqldv);
     $cuantosdv = $res->num_rows;
+    if(!isset($_SESSION['cuantasor'])){
+        $_SESSION['cuantasor']=0;
+    }
 
     //------------
 
@@ -156,37 +159,23 @@
                         echo " error en ins det v :CC ";
                     }
                 }
+                $_SESSION['carritou']=$_SESSION['carrito'];
                 unset($_SESSION['carrito']);
                 unset($_SESSION['ventas']);
                 unset($_SESSION['cuantos']);
+                unset($_SESSION['metodo']);
             }
             else{
                 echo " error en la insercion :C ";
             }
                 // echo $result=mysqli_query($conexion,$sql);
         // }
+        $_SESSION['cuantasor']=$_SESSION['cuantasor']+1;
     }
     else{  // METODO PAGO CON TARJETA
 
     }
 
-    // function buscaRepetido($id,$conexion){
-    //     $sql="SELECT * from ventas
-    //         where idventas='$id'";
-    //     $result=mysqli_query($conexion,$sql);
-
-    //     if(mysqli_num_rows($result) > 0){
-    //         return 1;
-    //     }else{
-    //         return 0;
-    //     }
-    // }
-
-    // $salida = "";
-    // if(!isset($_SESSION['carrito'])){
-    //     $salida.="No hay productos en su carrito";
-    //     echo $salida;
-    // }
 
     $conexion->close();
 ?>

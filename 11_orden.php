@@ -145,6 +145,31 @@ else{
 		<br>
 		<div id="datos"></div>
 
+		<!-- Formulario fade -->
+		<div class="modal fade" id="responsive" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          	<div class="modal-dialog">
+            	<div class="modal-content">
+            		<div class="modal-header">
+                		<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                		<h2 class="modal-title">Datos de Usuario</h2>
+              		</div>
+              		<div class="modal-body">
+                		<div class="alert alert-success text-center" id="exito" style="display:none;">
+                			<span class="glyphicon glyphicon-ok"> </span><span> Su cuenta ha sido Actulizada</span>
+                		</div>
+						<!-- TABLA DETALLE -->
+                		<div id="datos2"></div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+						</div>
+					</div>
+        		</div><!-- /.modal-content -->
+        	</div><!-- /.modal-dialog -->
+      	</div><!-- /.modal -->
+		
+		<br>
+		<br>
+
 
 		<table class="table bgblanco textcolorb">
 			<thead class="thead-dark">
@@ -227,7 +252,7 @@ else{
 					</center>
 				</div>
 			</div>
-			
+
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -265,6 +290,27 @@ else{
 </html>
 
 <script>
+	var num=0;
+	function det(n){
+		num = n;
+		cadena = "n="+n;
+		console.log(cadena);
+		$.ajax({
+			url:"php/consultadetorp.php",
+			type:"POST",
+			// dataType:'html'
+			data:cadena,
+		})
+		.done(function(respuesta){
+			// console.log(respuesta);
+			$("#datos2").html(respuesta);
+
+		})
+		.fail(function(){
+			console.log("Error");
+		})
+	}
+
 	$(buscar_datos());
 
 	function buscar_datos(){

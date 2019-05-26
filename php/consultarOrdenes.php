@@ -18,7 +18,6 @@
                     'idusuario'=>$fila['idusuario'],
                     'idmetodo'=>$fila['idmetodo'],
                     'fechacompra'=>$fila['fechacompra'],
-                    'fechaentrega'=>$fila['fechaentrega'],
                     'estado'=>$fila['estado'],
                     'total'=>$fila['total']
                 );
@@ -89,7 +88,7 @@
     echo " <br> cuantas ordenes: <br>".$cuantasor;
 
  //****************************************************************** */
- 
+
     $salida = "";
     if($cuantasor == 0){
         $salida.="No hay ordenes generadas";
@@ -127,7 +126,7 @@
                         $salida.= "<tr>
                                         <td scope='row'>".$fila[$i]['idventas']."</td>
                                         <td>".$fila[$i]['fechacompra']."</td>
-                                        <td>".$fila[$i]['fechaentrega']."</td>";
+                                        <td>3 Días hábiles después de su fecha de compra</td>";
 
                         if($fila[$i]['idmetodo']=="1"){
                             $salida.="  <td>Pago en Tienda</td>";

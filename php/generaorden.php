@@ -34,7 +34,6 @@
                     'idusuario'=>$fila['idusuario'],
                     'idmetodo'=>$fila['idmetodo'],
                     'fechacompra'=>$fila['fechacompra'],
-                    'fechaentrega'=>$fila['fechaentrega'],
                     'estado'=>$fila['estado'],
                     'total'=>$fila['total']
                 );
@@ -123,7 +122,6 @@
                             'idusuario'=>$fila['idusuario'],
                             'idmetodo'=>$fila['idmetodo'],
                             'fechacompra'=>$fila['fechacompra'],
-                            'fechaentrega'=>$fila['fechaentrega'],
                             'estado'=>$fila['estado'],
                             'total'=>$fila['total']
                         );

@@ -349,7 +349,7 @@ else{
 				})
 				.done(function(respuesta){
 					// $("#c").html(respuesta);
-					location.href="11_orden.php";
+					// location.href="11_orden.php";
 					console.log(respuesta);
 					// $("#tarjeta").html(respuesta);
 				})

@@ -171,7 +171,7 @@ else{
 		<br>
 
 
-		<table class="table bgblanco textcolorb">
+		<!-- <table class="table bgblanco textcolorb">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">Num. Orden</th>
@@ -182,19 +182,19 @@ else{
 				<tr>
 					<td>
 						<!--  -->
-						1
-					</td>
+						<!-- 1 -->
+					<!-- </td>
 					<td><a href="10_pago.php"> Ver Reporte </a></td>
 				</tr>
 				<tr>
 					<td>
 						<!--  -->
-						2
-					</td>
+						<!-- 2 -->
+					<!-- </td>
 					<td><a href="10_pago.php"> Ver Reporte </a></td>
 				</tr>
 			</tbody>
-		</table>
+		</table>  --> 
 		<br>
 		<br>
 		<!-- BOTON SEGUIR COMPRANDO -->
@@ -211,8 +211,7 @@ else{
 				<p class="text-center">
 					Ud. podr&aacute; recoger sus productos en la dirección <br>
 					BLVD. GUADALUPE VICTORIA 219, LAS ENCINAS,DURANGO,<br>
-					C.P.34039,DGO (618)128-8253. En la fecha del reporte <br>
-					correspondiente
+					C.P.34039,DGO (618)128-8253. En la fecha correspondiente
 				</p>
 			</div>
 		</div>

@@ -390,7 +390,7 @@ $('#registro').on('mouseover', function() {
 
 	$(document).ready(function(){
 
-		$('#btnregistro').on('mouseover', function() {
+		$('#btnregistro').on('click', function() {
 			var val=validarSignin();
 			if(val){
 				var res =  $('#g-recaptcha-response').val();

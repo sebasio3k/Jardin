@@ -7,7 +7,9 @@
     //CREAR VARIABLE DE SESION ventas PARA UTILZIARLA DESPUES
     $idus = $_SESSION['user']['idusuario'];
     $query = "SELECT * FROM ventas WHERE idusuario = $idus";
-    echo($query);
+
+    // echo($query);
+
     $resultado = $mysqli->query($query);
     if($resultado -> num_rows > 0){
 		// if(!isset($_SESSION['ventasu'])){
@@ -23,7 +25,9 @@
                 );
                 // guarda venta en la posicion n
                 $_SESSION['ventasu'][$m]=$listao;
-                echo "<br>";
+
+                // echo "<br>";
+
                 // recuperar detalle venta
                 $s =  $_SESSION['ventasu'][$m]['idventas'];
                 // echo " <br>".$s;
@@ -32,17 +36,22 @@
                 // $resultado2 = $mysqli->query($query2);
                 if ($resultado2 = $mysqli->query($query2)) {
                     $filax = $resultado2->fetch_row();
-                    printf(" detv: ".$filax[0]);
+
+                    // printf(" detv: ".$filax[0]);
+
                     $_SESSION['numdet'][$m]=$filax[0];
                 }
                 // $resultado2=mysqli_result($resultado2,0,'COUNT');
                 // echo  " ".$resultado2;
                 $m++;
             }
-            echo "<br> num detall: <br>";
-            print_r($_SESSION['numdet']);
-            echo "<br> ventas u <br>";
-            print_r($_SESSION['ventasu']);
+            $cuantasor = count($_SESSION['ventasu']);
+
+            // echo "<br> num detall: <br>";
+            // print_r($_SESSION['numdet']);
+            // echo "<br> ventas u <br>";
+            // print_r($_SESSION['ventasu']);
+
             // echo "detallesu u".PHP_EOL;
             // print_r($_SESSION['detallesu']);
         // }
@@ -51,9 +60,13 @@
         // }
     }
     else{
-        echo "No hay ventas de este usuario";
+        $cuantasor =0;
+
+        // echo "No hay ventas de este usuario";
+
     }
-    echo " | <br>";
+
+    // echo " | <br>";
     
     // $arreglo = $_SESSION['numdet'];
     // printf ($arreglo);
@@ -84,17 +97,19 @@
     // }
 
     $mysqli->close();
-    $cuantasor = count($_SESSION['ventasu']);
-    echo " <br> cuantas ordenes: <br>".$cuantasor;
 
  //****************************************************************** */
 
     $salida = "";
     if($cuantasor == 0){
-        $salida.="No hay ordenes generadas";
+        $salida.="<br><br><br><p class='text-center'>No has realizado ningún pedido</p>";
         echo $salida;
     }
     else {
+        $cuantasor = count($_SESSION['ventasu']);
+
+        // echo " <br> cuantas ordenes: <br>".$cuantasor;
+
         //guarda vecto de ventas del usuario en fila
         $fila=$_SESSION['ventasu'];
         // $fila2=$_SESSION['detallesu'];

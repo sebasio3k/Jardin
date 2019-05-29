@@ -36,7 +36,7 @@
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 </head>
-<body class="mibody">
+<body class="mibody2">
 	<!-- HEADER -->
 	<header class="container-fluid">
 		<div class="container-fluid justify-content-center">
@@ -52,29 +52,29 @@
 				<div class="navbar-collapse collapse" id="navbarColor01">
 					<ul class="navbar-nav mr-auto">
 						<!-- Opciones -->
-						<li class="nav-item ">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="1_index.php">Inicio</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="3_nosotros.php">Sobre Nosotros</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link"href="4_productos.php">Productos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="5_cursos.php">Cursos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="3_nosotros.php">Contacto</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="7_login_signin.php">Iniciar Sesión</a>
 						</li>
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
 					<form class="form-inline`justify-content-center">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
+						<input class="form-control mr-sm-2" type="search" placeholder="¿Buscas algo?" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 				</div>
@@ -125,8 +125,8 @@
 	 	<div class="row justify-content-center">
 			<div class="col-xs-12 align-self-center">
 				<!-- Titulo Iniciar Sesion-->
-				<h1 class="titulo text-center">Registro</h1><br>
-				<h2 class="titulo text-center">Crear Cuenta</h2>
+				<h1 class="titulo text-center b">Registro</h1><br>
+				<h2 class="titulo text-center b">Crear Cuenta</h2>
 			</div>
 		</div>
 		<br>
@@ -191,7 +191,7 @@
 					<label for="exampleInputPassword1 " class="textcolorw">Contrase&ntilde;a</label>
 					<input type="password" class="form-control" id="pass1" name="pass1"  placeholder="Password" aria-describedby="passwordHelpBlock" >
 					<small id="passwordHelpBlock" class="form-text text-muted ">
-  						Tu contraseña debe ser de 8-6 caracteres de longitud, debe contener al menos 1 letra y 1 n&uacute;meros, no debe contener espacios, caracteres especiales, o emoji.
+  						Tu contraseña debe ser de m&iacute;nimo 8 caracteres de longitud, debe contener al menos 1 letra y 1 n&uacute;mero, no debe contener espacios, caracteres especiales, o emoji.
 					</small>
 				</div>
 			</div>
@@ -221,7 +221,7 @@
 					<div class="form-check">
 						<input class="form-check-input" type="checkbox" id="tyc" required onmouseout=validarSignin();>
 						<label class="form-check-label textcolorw" for="gridCheck">
-							He leído y acepto los <a class="colorbg" href="">Términos y Condiciones y Aviso de privacidad.</a>
+							He leído y acepto los <a class="colorbg" href="" data-toggle='modal' data-target='#exampleModal'>Términos y Condiciones y Aviso de privacidad.</a>
 						</label>
 					</div>
 				</div>
@@ -247,6 +247,71 @@
 				</div>
 			</div>
 		</form>
+
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title b" id="exampleModalLabel">TERMINOS Y CONDICIONES</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				<div class="modal-body">
+					<div class="row justify-content-center">
+						<div class="col text-center justify-content-center">
+							<p class="text-center b">POLÍTICA DE PRIVACIDAD</p>
+							<p class="pp text-justify">
+							El presente Política de Privacidad establece los términos en que usa y protege la información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento. Sin embargo esta Política de Privacidad puede cambiar con el tiempo o ser actualizada por lo que le recomendamos y enfatizamos revisar continuamente esta página para asegurarse que está de acuerdo con dichos cambios.
+							</p>
+							<p class="text-center b">Información que es recogida</p>
+							<p class="pp text-justify">
+							Nuestro sitio web podrá recoger información personal por ejemplo: Nombre,  información de contacto como  su dirección de correo electrónica e información demográfica. Así mismo cuando sea necesario podrá ser requerida información específica para procesar algún pedido o realizar una entrega o facturación.
+							</p>
+							<p class="text-center b">Uso de la información recogida</p>
+							<p class="pp text-justify">
+							Nuestro sitio web emplea la información con el fin de proporcionar el mejor servicio posible, particularmente para mantener un registro de usuarios, de pedidos en caso que aplique, y mejorar nuestros productos y servicios.  Es posible que sean enviados correos electrónicos periódicamente a través de nuestro sitio con ofertas especiales, nuevos productos y otra información publicitaria que consideremos relevante para usted o que pueda brindarle algún beneficio, estos correos electrónicos serán enviados a la dirección que usted proporcione y podrán ser cancelados en cualquier momento.
+							</p>
+							<p>
+							está altamente comprometido para cumplir con el compromiso de mantener su información segura. Usamos los sistemas más avanzados y los actualizamos constantemente para asegurarnos que no exista ningún acceso no autorizado.
+							</p>
+							<p class="text-center b">Cookies</p>
+							<p class="pp text-justify">
+							Una cookie se refiere a un fichero que es enviado con la finalidad de solicitar permiso para almacenarse en su ordenador, al aceptar dicho fichero se crea y la cookie sirve entonces para tener información respecto al tráfico web, y también facilita las futuras visitas a una web recurrente. Otra función que tienen las cookies es que con ellas las web pueden reconocerte individualmente y por tanto brindarte el mejor servicio personalizado de su web.
+							</p>
+							<p class="pp text-justify">
+							Nuestro sitio web emplea las cookies para poder identificar las páginas que son visitadas y su frecuencia. Esta información es empleada únicamente para análisis estadístico y después la información se elimina de forma permanente. Usted puede eliminar las cookies en cualquier momento desde su ordenador. Sin embargo las cookies ayudan a proporcionar un mejor servicio de los sitios web, estás no dan acceso a información de su ordenador ni de usted, a menos de que usted así lo quiera y la proporcione directamente. Usted puede aceptar o negar el uso de cookies, sin embargo la mayoría de navegadores aceptan cookies automáticamente pues sirve para tener un mejor servicio web. También usted puede cambiar la configuración de su ordenador para declinar las cookies. Si se declinan es posible que no pueda utilizar algunos de nuestros servicios.
+							</p>
+							<p class="text-center b">Enlaces a Terceros</p>
+							<p class="pp text-justify">
+							Este sitio web pudiera contener en laces a otros sitios que pudieran ser de su interés. Una vez que usted de clic en estos enlaces y abandone nuestra página, ya no tenemos control sobre al sitio al que es redirigido y por lo tanto no somos responsables de los términos o privacidad ni de la protección de sus datos en esos otros sitios terceros. Dichos sitios están sujetos a sus propias políticas de privacidad por lo cual es recomendable que los consulte para confirmar que usted está de acuerdo con estas.
+							</p>
+							<p class="text-center b">Control de su información personal</p>
+							<p class="pp text-justify">
+							En cualquier momento usted puede restringir la recopilación o el uso de la información personal que es proporcionada a nuestro sitio web.  Cada vez que se le solicite rellenar un formulario, como el de alta de usuario, puede marcar o desmarcar la opción de recibir información por correo electrónico.  En caso de que haya marcado la opción de recibir nuestro boletín o publicidad usted puede cancelarla en cualquier momento.
+							</p>
+							<p class="pp text-justify">
+							Esta compañía no venderá, cederá ni distribuirá la información personal que es recopilada sin su consentimiento, salvo que sea requerido por un juez con un orden judicial.
+							</p>
+							<p class="pp text-justify">
+							Se reserva el derecho de cambiar los términos de la presente Política de Privacidad en cualquier momento.
+							</p>
+							<small id="passwordHelpBlock" class="form-text text-muted">
+							Estas terminos y condiciones se han generado en plantillaterminosycondicionestiendaonline.com.
+							</small>
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">No acepto</button>
+					<button type="button" class="btn btn-primary" data-dismiss="modal">De acuerdo</button>
+				</div>
+				</div>
+			</div>
+		</div>
+
 
 	</div>
 		<br>
@@ -416,7 +481,7 @@ $('#registro').on('mouseover', function() {
 				// return false;
 			}
 			else{
-				swal("Oops" ,"VERIFICA LOS CAMPOPS", "error");
+				// swal("Oops" ,"VERIFICA LOS CAMPOPS", "error");
 			}
 		});
 	});

@@ -127,15 +127,19 @@ if (request.getParameter("MM_insert") != null) {
 <html lang ="en">
 <head>
 	<meta charset =	"UTF-8">
-<title>U - Insertar</title>
+	<title>U - Insertar</title>
 	
 	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity=	"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-	
-    <link href="estilos.css" rel="stylesheet" type="text/css">
-    <link href="estilos2.css" rel="stylesheet" type="text/css">
+	<!-- Alertify -->
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/alertify.css">
+	<link rel="stylesheet" type="text/css" href="./alertifyjs/css/themes/default.css">
+	<script src="./alertifyjs/alertify.js"></script>
+	<!-- sweetalert -->
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<!-- hoja de estilos2 para barra busqueda -->
+	<link rel="stylesheet" href="estilos2.css">
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href="icon.png">
 </head>
@@ -145,7 +149,7 @@ if (request.getParameter("MM_insert") != null) {
 	<header class="container-fluid">
 		<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
-				<a class="navbar-brand " href="13_admin_index.html">
+				<a class="navbar-brand " href="13_admin_index.php">
 					<!-- logo -->
 					<img src="logo.png" class="img-fluid " alt="Responsive image" width="60" height="60">El Jard&iacute;n de la Abuela  A D M I N I S T R A D O R  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				</a>
@@ -164,7 +168,7 @@ if (request.getParameter("MM_insert") != null) {
 					<ul class="navbar-nav mr-auto">
 						<li>
 							<!-- Cerrar Sesion -->
-							<a class="nav-link" href="7_login_signin.html">Cerrar Sesi&oacute;n</a>
+							<a class="nav-link" href="7_login_signin.php">Cerrar Sesi&oacute;n</a>
 						</li>
 					</ul>
 				</div>
@@ -181,49 +185,49 @@ if (request.getParameter("MM_insert") != null) {
 					</thead>
 					<tbody>
 						<tr>
-							<td><a href="13_admin_index.html">Inicio</a></td>
+							<td><a href="13_admin_index.php">Inicio</a></td>
 						</tr>
 						<tr>
-							<td><a href="14_a_usuarios.html">Usuarios</a></td></a>
+							<td><a href="14_a_usuarios.php">Usuarios</a></td></a>
 						</tr>
 						<tr>
-							<td><a href="19_a_cursos.html">Cursos</a></td>
+							<td><a href="19_a_cursos.php">Cursos</a></td>
 						</tr>
 						<tr>
-							<td><a href="24_a_productos.html">Productos</a></td>
+							<td><a href="24_a_productos.php">Productos</a></td>
 						</tr>
 						<tr>
-							<td><a href="15_u_insertar.html">Insertar Usuario</a></td>
+							<td><a href="insertarU.jsp">Insertar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="16_u_eliminar.html">Eliminar Usuario</a></td>
+							<td><a href="16_u_eliminar.php">Eliminar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="18_u_consultar.html">Consultar Usuario</a></td>
+							<td><a href="18_u_consultar.php">Consultar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="17_u_actualizar.html">Actualizar Usuario</a></td>
+							<td><a href="17_u_actualizar.php">Actualizar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="20_c_insertar.html">Insertar Curso</a></td>
+							<td><a href="insertarC.jsp">Insertar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="21_c_eliminar.html">Eliminar Curso</a></td>
+							<td><a href="21_c_eliminar.js">Eliminar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="23_c_consultar.html">Consultar Curso</a></td>
+							<td><a href="23_c_consultar.php">Consultar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="22_c_actualizar.html">Actualizar Curso</a></td>
+							<td><a href="22_c_actualizar.php">Actualizar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="25_p_insertar.html">Insertar Producto</a></td>
+							<td><a href="insertarP.jsp">Insertar Producto</a></td>
 						</tr>
 						<tr>
-							<td><a href="26_p_eliminar.html">Eliminar Producto</a></td>
+							<td><a href="26_p_eliminar.php">Eliminar Producto</a></td>
 						</tr>
 						<tr>
-							<td><a href="28_p_consultar.html">Consultar Producto</a></td>
+							<td><a href="28_p_consultar.php">Consultar Producto</a></td>
 						</tr>
 						<tr>
 							<td><a href="27_p_actualizar.html">Actualizar Producto</a></td>
@@ -271,13 +275,13 @@ if (request.getParameter("MM_insert") != null) {
 							</div>
 							<div class="row justify-content-center text-center">
 								<div class="col-sm-12 col-md-3 align-self-center">
-									<a class="btn btn-primary textcolorb" href="14_a_usuarios.html" role="button">Usuarios</a>
+									<a class="btn btn-primary textcolorb" href="14_a_usuarios.php" role="button">Usuarios</a>
 								</div>
 								<div class="col-sm-12 col-md-3 align-self-center">
-									<a class="btn btn-primary textcolorb" href="19_a_cursos.html" role="button">Cursos</a>
+									<a class="btn btn-primary textcolorb" href="19_a_cursos.php" role="button">Cursos</a>
 								</div>
 								<div class="col-sm-12 col-md-3 align-self-center">
-									<a class="btn btn-primary textcolorb" href="24_a_productos.html" role="button">Productos</a>
+									<a class="btn btn-primary textcolorb" href="24_a_productos.php" role="button">Productos</a>
 								</div>
 							</div>
 
@@ -318,18 +322,14 @@ if (request.getParameter("MM_insert") != null) {
 								</div>
 								<!-- SEXO -->
 								<div class="row form-group justify-content-center">
-									<div class="form-group col-sm-12  col-auto text-center">
+									<div class="form-group  text-center justify-content-center">
 										<label for="exampleInputEmail1" class="textcolorB text-center">Sexo</label>
-										<div class="form-check">
+										<div class="form-check ">
 											<input class="form-check-input" type="radio" name="sexo" id="rmujer" value="Mujer" checked>
-											<label class="form-check-label b" for="gridRadios1">
-												Mujer
-											</label>
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<label class="form-check-label b" for="gridRadios1">Mujer</label>
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 											<input class="form-check-input" type="radio" name="sexo" id="rhombre" value="Hombre">
-											<label class="form-check-label b" for="gridRadios2">
-												Hombre
-											</label>
+											<label class="form-check-label b" for="gridRadios2">Hombre</label>
 										</div>
 									</div>
 								</div>
@@ -424,7 +424,7 @@ if (request.getParameter("MM_insert") != null) {
 							<br>
 							<div class="row justify-content-center text-center">
 								<div class="col-xs-12 col-4 align-self-center text-center">
-									<a class="btn btn-primary shadow-lg" href="14_a_usuarios.html" role="button">Regresar a Opciones Usuario</a>
+									<a class="btn btn-primary shadow-lg" href="14_a_usuarios.php" role="button">Regresar a Opciones Usuario</a>
 								</div>
 							</div>
 						<!-- </div> -->
@@ -440,20 +440,20 @@ if (request.getParameter("MM_insert") != null) {
 					  </div>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="20_c_insertar.html" role="button">Agregar</a>
+								<a class="btn btn-primary textcolorb" href="insertarC.jsp" role="button">Agregar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="21_c_eliminar.html" role="button">Eliminar</a>
+								<a class="btn btn-primary textcolorb" href="21_c_eliminar.php" role="button">Eliminar</a>
 							</div>
 						</div>
 						<br>
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="22_c_actualizar.html" role="button">Actualizar</a>
+								<a class="btn btn-primary textcolorb" href="22_c_actualizar.php" role="button">Actualizar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="23_c_consultar.html" role="button">Consultar</a>
+								<a class="btn btn-primary textcolorb" href="23_c_consultar.php" role="button">Consultar</a>
 							</div>
 						</div>
 					</div>
@@ -468,20 +468,20 @@ if (request.getParameter("MM_insert") != null) {
 					  </div>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="25_p_insertar.html" role="button">Agregar</a>
+								<a class="btn btn-primary textcolorb" href="insertarP.jsp" role="button">Agregar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="26_p_eliminar.html" role="button">Eliminar</a>
+								<a class="btn btn-primary textcolorb" href="26_p_eliminar.php" role="button">Eliminar</a>
 							</div>
 						</div>
 						<br>
 						<!-- RENGLON -->
 						<div class="row justify-content-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="27_p_actualizar.html" role="button">Actualizar</a>
+								<a class="btn btn-primary textcolorb" href="27_p_actualizar.php" role="button">Actualizar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="28_p_consultar.html" role="button">Consultar</a>
+								<a class="btn btn-primary textcolorb" href="28_p_consultar.php" role="button">Consultar</a>
 							</div>
 						</div>
 					</div>

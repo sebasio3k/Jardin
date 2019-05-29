@@ -50,7 +50,7 @@
         echo " no hay ventas ";
         $cuantasv = 0;
     }
-    echo (" ventas: ".$cuantasv." ");
+    // echo (" ventas: ".$cuantasv." ");
 
     // $mysqli = new mysqli("localhost", "Sebastian", "ifuseekamy", "jardinabuela");
     // $cons = "SELECT idventas FROM ventas";
@@ -62,7 +62,9 @@
     // }
 
      //campos a insertar
-     echo " met = ".$_SESSION['metodo']." ";
+
+    //  echo " met = ".$_SESSION['metodo']." ";
+
     //  if ($cuantasv==0){
     //     //  $idv = 0;
     // }
@@ -108,7 +110,9 @@
             // $conexion=conexion();
             //inserta la venta
             $sql1="INSERT INTO ventas (idusuario,idmetodo,estado,total) VALUES ($idu,$idm,'$e',$tot)";
-            echo ($sql1);
+            
+            // echo ($sql1);
+
             mysqli_query($conexion,$sql1);
             $sql1 = "SELECT * FROM ventas";
             $result=mysqli_query($conexion,$sql1);
@@ -133,8 +137,10 @@
                     // echo $nid;
                     $vent = $_SESSION['ventasn'];
                     $idv = $vent[$x-1]['idventas'];
-                    echo " idventa= ".$idv." ";
-                    echo " cuantas veces ".$cuantosp;
+
+                    // echo " idventa= ".$idv." ";
+                    // echo " cuantas veces ".$cuantosp;
+
                 for($i=0; $i<$cuantosp; $i++){
                     //datos del carrito
                     $clv = $_SESSION['carrito'][$i]['idproducto'];
@@ -146,15 +152,17 @@
                     // values ('$idv','$clv','$cant','$p','$im')");
                     $sql2="INSERT into detallev (idventa,claveprod,cantidad,precio,importe)
                     values ($idv,$clv,$cant,$p,$imp)";
-                    echo $sql2;
+
+                    // echo $sql2;
+
                     mysqli_query($conexion,$sql2);
                     $sql2 = "SELECT * FROM detallev";
                     $result=mysqli_query($conexion,$sql2);
                     if($result -> num_rows == ($cuantosdv+1)){
-                        echo "insertado detv";
+                        // echo "insertado detv";
                     }
                     else{
-                        echo " error en ins det v :CC ";
+                        // echo " error en ins det v :CC ";
                     }
                 }
                 $_SESSION['carritou']=$_SESSION['carrito'];
@@ -164,7 +172,7 @@
                 unset($_SESSION['metodo']);
             }
             else{
-                echo " error en la insercion :C ";
+                // echo " error en la insercion :C ";
             }
                 // echo $result=mysqli_query($conexion,$sql);
         // }

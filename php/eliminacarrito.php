@@ -48,6 +48,7 @@
                 // unset($_SESSION['carrito']);
                 unset($_SESSION['carrito'][$i]);
                 $_SESSION['carrito'][$i-1]=$listac;
+                header('Location: 4_productos2.php');
                 // $j++;
         }
         else{

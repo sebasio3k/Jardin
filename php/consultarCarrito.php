@@ -10,7 +10,7 @@
         $fila=$_SESSION['carrito'];
         $_SESSION['totalcompra']=0;
 
-        print_r($fila);
+        // print_r($fila);
 
         if($longitud>0){
             // for ($o=0; $o==$longitud; $o++){
@@ -30,9 +30,9 @@
                         $total = $fila[$i]['precio'] * $fila[$i]['cant'];
                         $salida.= "<tr>
                                         <td scope='row'>".$fila[$i]['descripcion']."</td>
-                                        <td>".$fila[$i]['precio']."</td>
+                                        <td>$".number_format($fila[$i]['precio'],2)."</td>
                                         <td>".$fila[$i]['cant']."</td>
-                                        <td>".$total."</td>
+                                        <td>$".number_format($total,2)."</td>
                                         <td><img src='./img/prod/".$fila[$i]['idproducto'].".jpg'  class='card-img-top img-fluid'  alt='".$fila[$i]['descripcion']."'></td>
                                         <td><button id='$i' class='btn btn-danger' onclick='quita(this.id);'>Eliminar</button></td>
                                 </tr>";
@@ -41,7 +41,7 @@
             // }
             $salida.="
             <tr>
-            <td >Total</td>
+            <td >Total Compra</td>
             <td colspan='5'>$".number_format($_SESSION['totalcompra'],2)."</td>
             </tr>
             </tbody></table>";

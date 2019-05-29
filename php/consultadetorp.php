@@ -42,7 +42,7 @@
             <table id='tablaord' class='table bgblanco textcolorb table-responsive table-striped table-bordered table-sm'>
                 <thead class='thead-dark'>
                     <tr>
-                        <th colspan='3'>DETALLES COMPRA</th>
+                        <th colspan='4'>DETALLES COMPRA</th>
                     </tr>
                     <tr>
                         <th scope='col'>Descripcion</th>
@@ -59,7 +59,7 @@
         $nprod = $v;
         $salida.= "<tr>
                         <td scope='row'>".$_SESSION['productos'][$v]['descripcion']."</td>
-                        <td>".$fila2[$i]['precio']."</td>
+                        <td>$".number_format($fila2[$i]['precio'],2)."</td>
                         <td>".$fila2[$i]['cantidad']."</td>
                         <td><img src='./img/prod/".$fila2[$i]['claveprod'].".jpg'  class='card-img-top img-fluid' ></td>
                     </tr>";

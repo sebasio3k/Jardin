@@ -7,7 +7,9 @@
     //CREAR VARIABLE DE SESION ventas PARA UTILZIARLA DESPUES
     $idus = $_SESSION['user']['idusuario'];
     $query = "SELECT * FROM inscripciones WHERE idusuario = $idus";
-    echo($query);
+
+    // echo($query);
+
     $resultado = $mysqli->query($query);
     if($resultado -> num_rows > 0){
 			$m=0;
@@ -19,32 +21,39 @@
                 );
                 // guarda venta en la posicion n
                 $_SESSION['consiu'][$m]=$listac;
-                echo "<br>";
+
+                // echo "<br>";
+
                 $m++;
             }
-            echo "<br> cursos: <br>";
-            print_r($_SESSION['consiu']);
+
+            // echo "<br> cursos: <br>";
+            // print_r($_SESSION['consiu']);
+
             $cuantasi = count($_SESSION['consiu']);
             // echo "<br> ventas u <br>";
             // print_r($_SESSION['ventasu']);
     }
     else{
-        echo "No se ha inscrito en ningún curso";
+
+        // echo "No se ha inscrito en ningún curso";
+
         $cuantasi = 0;;
     }
-    echo " | <br>";
+
+    // echo " | <br>";
 
     $mysqli->close();
-    
-    echo " <br> cuantas insc: <br>".$cuantasi;
-    echo "<br> cursos: <br>";
-    print_r($_SESSION['cursos']);
+
+    // echo " <br> cuantas insc: <br>".$cuantasi;
+    // echo "<br> cursos: <br>";
+    // print_r($_SESSION['cursos']);
 
  //****************************************************************** */
 
     $salida = "";
     if($cuantasi == 0){
-        $salida.="No hay se ha inscrito en ningún curso";
+        $salida.="<br><br><br><p class='text-center'>No te has inscrito aun a ningún curso</p>";
         echo $salida;
     }
     else {

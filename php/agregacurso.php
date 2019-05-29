@@ -82,22 +82,23 @@
             // $conexion->close();
         // }
         // else{
-            $_SESSION['cursosu'][0]=$listac;
-            $cuantasins =  $cuantasins +1 ;
+            
             //inserta la inscripcion
             $sql1="INSERT INTO inscripciones (idusuario,idcurso) VALUES ($idu,$idc)";
             // echo ($sql1);
             mysqli_query($conexion,$sql1);
-            $sql1 = "SELECT * FROM inscripciones";
+            $sql1 = "SELECT * FROM inscripciones WHERE idusuario = $idu ";
             $result=mysqli_query($conexion,$sql1);
             //si fue exitosa, inserta sus detalles
             // if($inserta1==true){
             if($result -> num_rows == (intval($cuantasins)+1)){
+                $_SESSION['cursosu'][0]=$listac;
+                $cuantasins =  $cuantasins +1 ;
                 //inscripcion ok
                 // echo " inscrito pv ";
                 echo 1;
                 // echo "<br> cursos de usn  <br>";
-                print_r($_SESSION['cursosu']);
+                // print_r($_SESSION['cursosu']);
                 $conexion->close();
                     //  $x=0;
                     //  while($fila=$result->fetch_assoc()){

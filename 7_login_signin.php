@@ -33,7 +33,7 @@
 	<link rel="shortcur icon" href=".\img\icon.png">
 
 </head>
-<body class="mibody">
+<body class="mibody3">
 	<!-- HEADER -->
 	<header class="container-fluid">
 		<div class="container-fluid justify-content-center">
@@ -49,29 +49,29 @@
 				<div class="navbar-collapse collapse" id="navbarColor01" style="">
 					<ul class="navbar-nav mr-auto">
 						<!-- Opciones -->
-						<li class="nav-item ">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="./1_index.php">Inicio</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="3_nosotros.php">Sobre Nosotros</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link"href="4_productos.php">Productos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="5_cursos.php">Cursos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="3_nosotros.php">Contacto</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="8_signin.php">Registrarme</a>
 						</li>
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
 					<form class="form-inline`justify-content-center">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
+						<input class="form-control mr-sm-2" type="search" placeholder="¿Buscas algo?" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 				</div>
@@ -117,16 +117,17 @@
 		</div>
 	</header>
 	<!-- MAIN -->
+	<br>
+	<br>
 	<div class="container pad">
-		<!-- RENGLON -->
 		<!-- Titulo Iniciar Sesion-->
 	 	<div class="row justify-content-center">
 			<div class="col-xs-12 ">
-				<h1 class="titulo text-center ">Iniciar Sesi&oacute;n</h1>
+				<h1 class="titulo text-center b ">Iniciar Sesi&oacute;n</h1>
 			</div>
 		</div>
 		<br>
-
+		<br>
 		<!-- Formulario Iniciar Sesion -->
 		<form  id="formlogin" name="formlogin" method="post" >
 			<div class="row justify-content-center">
@@ -139,7 +140,7 @@
 			<div class="row justify-content-center">
 				<div class="form-group justify-content-center col-xs-12 col-4">
 					<label for="pass" class="textcolorw">Contrase&ntilde;a</label>
-					<input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required>
+					<input type="password" class="form-control" id="pass" name="pass" placeholder="Password" required onfocusout=validarLogin();>
 				</div>
 			</div>
 			<!-- <div class="form-group form-check justify-content-center">
@@ -154,7 +155,7 @@
 		</div>
 		<br>
 			<div class="row justify-content-center">
-				<input type="submit" id="login" value="Iniciar Sesi&oacute;n" class=" btn btn-primary shadow-lg" onmouseover=validarLogin();>
+				<input type="submit" id="login" value="Iniciar Sesi&oacute;n" class=" btn btn-primary shadow-lg" >
 			</div>
 		</form>
 		<br>

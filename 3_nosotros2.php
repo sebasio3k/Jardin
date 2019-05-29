@@ -50,19 +50,19 @@ else{
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="navbar-collapse collapse" id="navbarColor01" style="">
-					<ul class="navbar-nav mr-auto ul2">
+				<div class="navbar-collapse collapse " id="navbarColor01" style="">
+					<ul class="navbar-nav mr-auto ul2 rounded">
 						<!-- Opciones -->
-						<li class="nav-item">
-							<a class="nav-link" href="2_index_2.php">Inicio</a>
+						<li class="nav-item rounded">
+							<a class="nav-link " href="2_index_2.php">Inicio</a>
 						</li>
-						<li class="nav-item active">
+						<li class="nav-item active rounded">
 							<a class="nav-link" href="3_nosotros2.php">Sobre Nosotros<span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link"href="4_productos2.php">Productos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="5_cursos2.php">Cursos</a>
 						</li>
 						<!-- <li class="nav-item">
@@ -72,12 +72,12 @@ else{
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
 					<form class="form-inline`justify-content-center">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
+						<input class="form-control mr-sm-2" type="search" placeholder="¿Buscas algo?" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<ul class="navbar-nav mr-auto ul2">
-						<li>
+					<ul class="navbar-nav mr-auto ul2 ">
+						<li class="rounded">
 							<!-- Carrito -->
 							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20">( <?php echo $_SESSION['cuantos'];?> )</a>
 						</li>
@@ -86,7 +86,7 @@ else{
 					</ul>
 					<!-- Dropdown MI CUENTA -->
 					<ul class="navbar-nav mr-auto ">
-						<li class="nav-item dropdown">
+						<li class="nav-item dropdown rounded">
 							<a class="nav-link dropdown-toggle" href="12_cuenta.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['user']['nombre'] ?></a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="12_cuenta.php">Mi Perfil</a>
@@ -186,7 +186,7 @@ else{
 		<div class="row justify-content-center">
 			<div class="col-xs-12 ">
 				<!-- Titulo -->
-				<h1  class="titulo text-center">EL JARD&Iacute;N DE LA ABUELA</h1>
+				<h1  class="titulo text-center b">EL JARD&Iacute;N DE LA ABUELA</h1>
 			</div>
 		</div>
 		<br>
@@ -194,9 +194,9 @@ else{
 		<div class="row justify-content-justify">
 			<div class="col-xs-12 ">
 				<p class="text-center">
-					El Jardín de la abuela es un negocio que ofrece los siguientes servicios: 
-					Venta de productos de jardinería (herramientas, aspersores, macetas, costales de tierra, graba de ornamento, semillas florales y de plantas, muebles de jardín, entre otros.) 
-					Oferta de diversos cursos de jardinería, en los cuales se enseñan consejos, técnicas y métodos que ayudan tanto a construir tu propio jardín ideal, como al cuidado de las plantas.
+				El Jardín de la abuela es una empresa que ofrece los siguientes servicios:
+					Venta de productos de jardinería (herramientas, aspersores, macetas, costales de tierra, grava de ornamento, semillas florales y de plantas, muebles de jardín, entre otros.)
+					Oferta de diversos cursos de jardinería, en los cuales te daremos consejos, técnicas y métodos que te ayudarán a construir tu propio jardín ideal, así como al cuidado de las plantas.
 				</p>
 			</div>
 		</div>
@@ -207,13 +207,13 @@ else{
 		<!-- RENGLON -->
 		<div class="row justify-content-center">
 			<div class="col-auto  col-xs-12  col-md-4 align-self-center">
-				<h3 class="text-center">Misi&oacute;n</h3>
-				<p class="text-justify">
+				<h3 class="text-center b">Misi&oacute;n</h3>
+				<p class="text-justify ">
 					Brindar el mejor servicio y atención a nuestros clientes, buscando satisfacer sus necesidades y requerimientos de jardiner&iacute;.
 				</p>
 			</div>
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<h3 class="text-center">Visi&oacute;n</h3>
+				<h3 class="text-center b">Visi&oacute;n</h3>
 				<p class="text-justify">
 					Ser un empresa líder nacional en servicio y atención, con un enfoque dirigido hacia las mejoras de jard&iacute; del hoogar.
 				</p>
@@ -225,7 +225,7 @@ else{
 		<!-- RENGLON -->
 		<div class="row justify-content-center">
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<h3 class="text-center">Preguntas Frecuentes</h3>
+				<h3 class="text-center b">Preguntas Frecuentes</h3>
 				<p class="text-center">
 					FAQs sobre envío <br>
 					¿Realizan envíos? <br>
@@ -239,7 +239,7 @@ else{
 				</p>
 			</div>
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<h3 class="text-center">Contactos corporativos</h3>
+				<h3 class="text-center b">Contactos corporativos</h3>
 				<p class="text-justify">
 					México
 					El Jardin de la Abuela (para consumidores)
@@ -259,7 +259,7 @@ else{
 				</p>
 			</div>
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<h3 class="text-center">Dirección corporativa</h3>
+				<h3 class="text-center b">Dirección corporativa</h3>
 				<p class="text-justify">
 					BLVD. GUADALUPE VICTORIA 219, <br>
 					LAS ENCINAS,DURANGO,C.P.34039,DGO <br>
@@ -325,7 +325,7 @@ else{
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

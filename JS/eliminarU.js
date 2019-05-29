@@ -89,7 +89,7 @@ function eliminar(){
 		data: {Id: Id}
 	})
 	.done(function(respuesta){
-		alert( respuesta);
+		// alert( respuesta);
 	})
 	.fail(function(){
         console.log("Error");

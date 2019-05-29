@@ -31,11 +31,11 @@
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href=".\img\icon.png">
 
-</head>	
+</head>
 <body class="mibody">
 	<!-- HEADER -->
-<header class="container-fluid">
-		<div class="container-fluid justify-content-center">
+	<header class="container-fluid">
+	<div class="container-fluid justify-content-center">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
 				<a class="navbar-brand" href="1_index.php">
 					<!-- logo -->
@@ -45,34 +45,34 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="navbar-collapse collapse" id="navbarColor01" style="">
+				<div class="navbar-collapse collapse" id="navbarColor01" >
 					<ul class="navbar-nav mr-auto">
 						<!-- Opciones -->
-						<li class="nav-item ">
-							<a class="nav-link" href="1_index.php">Inicio</a>
+						<li class="nav-item rounded">
+							<a class="nav-link" href="1_index.php">Inicio<span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item active">
-							<a class="nav-link" href="3_nosotros.php">Sobre Nosotros<span class="sr-only">(current)</span></a>
+						<li class="nav-item active rounded">
+							<a class="nav-link" href="3_nosotros.php">Sobre Nosotros</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link"href="4_productos.php">Productos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="5_cursos.php">Cursos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="3_nosotros.php">Contacto</a>
 						</li>
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
 					<form class="form-inline`justify-content-center">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
+						<input class="form-control mr-sm-2" type="search" placeholder="¿Buscas algo?" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<ul class="navbar-nav mr-auto">
-						<li>
+					<ul class="navbar-nav mr-auto rounded">
+						<li class="rounded">
 							<!-- Iniciar sesion -->
 							<a class="nav-link" href="7_login_signin.php">Iniciar Sesi&oacute;n</a>
 						</li>
@@ -157,7 +157,7 @@
 					<br>
 					<br>
 					<br>
-	    		</div>  
+	    		</div>
 			</div>
 		</div>
 		<!-- BANNER -->
@@ -172,7 +172,7 @@
 		<div class="row justify-content-center">
 			<div class="col-xs-12 ">
 				<!-- Titulo -->
-				<h1  class="titulo text-center">EL JARD&Iacute;N DE LA ABUELA</h1>
+				<h1  class="titulo text-center b">EL JARD&Iacute;N DE LA ABUELA</h1>
 			</div>
 		</div>
 		<br>
@@ -180,9 +180,9 @@
 		<div class="row justify-content-justify">
 			<div class="col-xs-12 ">
 				<p class="text-center">
-					El Jardín de la abuela es un negocio que ofrece los siguientes servicios: 
-					Venta de productos de jardinería (herramientas, aspersores, macetas, costales de tierra, graba de ornamento, semillas florales y de plantas, muebles de jardín, entre otros.) 
-					Oferta de diversos cursos de jardinería, en los cuales se enseñan consejos, técnicas y métodos que ayudan tanto a construir tu propio jardín ideal, como al cuidado de las plantas.
+					El Jardín de la abuela es una empresa que ofrece los siguientes servicios:
+					Venta de productos de jardinería (herramientas, aspersores, macetas, costales de tierra, grava de ornamento, semillas florales y de plantas, muebles de jardín, entre otros.)
+					Oferta de diversos cursos de jardinería, en los cuales te daremos consejos, técnicas y métodos que te ayudarán a construir tu propio jardín ideal, así como al cuidado de las plantas.
 				</p>
 			</div>
 		</div>
@@ -193,13 +193,13 @@
 		<!-- RENGLON -->
 		<div class="row justify-content-center">
 			<div class="col-auto  col-xs-12  col-md-4 align-self-center">
-				<h3 class="text-center">Misi&oacute;n</h3>
+				<h3 class="text-center b">Misi&oacute;n</h3>
 				<p class="text-justify">
 					Brindar el mejor servicio y atención a nuestros clientes, buscando satisfacer sus necesidades y requerimientos de jardiner&iacute;.
 				</p>
 			</div>
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<h3 class="text-center">Visi&oacute;n</h3>
+				<h3 class="text-center b">Visi&oacute;n</h3>
 				<p class="text-justify">
 					Ser un empresa líder nacional en servicio y atención, con un enfoque dirigido hacia las mejoras de jard&iacute; del hoogar.
 				</p>
@@ -211,7 +211,7 @@
 		<!-- RENGLON -->
 		<div class="row justify-content-center">
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<h3 class="text-center">Preguntas Frecuentes</h3>
+				<h3 class="text-center b">Preguntas Frecuentes</h3>
 				<p class="text-center">
 					FAQs sobre envío <br>
 					¿Realizan envíos? <br>
@@ -225,12 +225,12 @@
 				</p>
 			</div>
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<h3 class="text-center">Contactos corporativos</h3>
+				<h3 class="text-center b">Contactos corporativos</h3>
 				<p class="text-justify">
 					México
 					El Jardin de la Abuela (para consumidores)
 					001-800 696-4723 Correo (para empresas y consumidores)
-					abuelasgarden@mail.com 
+					abuelasgarden@mail.com
 				</p>
 			</div>
 		</div>
@@ -245,7 +245,7 @@
 				</p>
 			</div>
 			<div class="col-auto col-xs-12 col-md-4 align-self-center">
-				<h3 class="text-center">Dirección corporativa</h3>
+				<h3 class="text-center b">Dirección corporativa</h3>
 				<p class="text-justify">
 					BLVD. GUADALUPE VICTORIA 219, <br>
 					LAS ENCINAS,DURANGO,C.P.34039,DGO <br>
@@ -288,7 +288,7 @@
 					</center>
 				</div>
 			</div>
-			
+
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -311,7 +311,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

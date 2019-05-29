@@ -232,6 +232,7 @@ function deshabilitar(){
 
 //pago con tarjeta
 function habilitar(){
+
 // variables para cambiar clases
 	var ntv = document.getElementById("ntarjeta");
 	var nv = document.getElementById("nombre1");
@@ -239,6 +240,10 @@ function habilitar(){
 	var numv = document.getElementById("num");
 	var pago = document.getElementById("btpago");
 
+	if(!document.getElementById("tablapl")){
+		deshabilitar();
+	}
+	else{
 	// habilita campos
 	ntv.disabled=false;
 	nv.disabled=false;
@@ -246,7 +251,7 @@ function habilitar(){
 	num.disabled=false;
 	// habilita boton
 	pago.disabled=false;
-	pago.className = "btn btn-primary shadow-lg";
+	pago.className = "btn btn-primary shadow-lg";}
 
 }
 

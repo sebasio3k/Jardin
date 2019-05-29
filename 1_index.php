@@ -31,7 +31,7 @@
 	<!-- ICONO EN LA PESTAÑA -->
 	<link rel="shortcur icon" href=".\img\icon.png">
 
-</head>	
+</head>
 <body class="mibody">
 	<!-- HEADER -->
 	<header class="container-fluid">
@@ -48,31 +48,31 @@
 				<div class="navbar-collapse collapse" id="navbarColor01" >
 					<ul class="navbar-nav mr-auto">
 						<!-- Opciones -->
-						<li class="nav-item active">
+						<li class="nav-item active rounded">
 							<a class="nav-link" href="1_index.php">Inicio<span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="3_nosotros.php">Sobre Nosotros</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link"href="4_productos.php">Productos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="5_cursos.php">Cursos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="3_nosotros.php">Contacto</a>
 						</li>
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
 					<form class="form-inline`justify-content-center">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
+						<input class="form-control mr-sm-2" type="search" placeholder="¿Buscas algo?" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<ul class="navbar-nav mr-auto">
-						<li>
+					<ul class="navbar-nav mr-auto rounded">
+						<li class="rounded">
 							<!-- Iniciar sesion -->
 							<a class="nav-link" href="7_login_signin.php">Iniciar Sesi&oacute;n</a>
 						</li>
@@ -203,7 +203,7 @@
 				<br>
 				<br>
 				<br>
-    		</div>  
+    		</div>
 		</div>
 	</div>
 	<!-- IMAGEN PARALLAX -->
@@ -233,7 +233,7 @@
 				<br>
 				<br>
 				<br>
-    		</div>  
+    		</div>
 		</div>
 	</div>
 	<!-- IMAGEN PARALLAX -->
@@ -263,7 +263,7 @@
 				<br>
 				<br>
 				<br>
-    		</div>  
+    		</div>
 		</div>
 	</div>
 	<!-- IMAGEN PARALLAX -->
@@ -293,7 +293,7 @@
 				<br>
 				<br>
 				<br>
-    		</div>  
+    		</div>
 		</div>
 	</div>
 
@@ -313,7 +313,7 @@
 		<div class="row justify-content-center">
 			<div class="col-xs-12">
 				<a href="8_signin.php"><img src=".\img\reg.png" class="img-fluid" alt="Responsive image" width="200" height="50"></a>
-			</div>			
+			</div>
 		</div>
 		<hr>
 		<!-- <div class="row align-items-center">
@@ -358,7 +358,7 @@
 					</center>
 				</div>
 			</div>
-			
+
 			<div class="row justify-content-center">
 				<div class="col-xs-12">
 					<h5 class="text-center">Siguenos en nuestras Redes Sociales</h5>
@@ -381,7 +381,7 @@
 					</p>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</footer>
 	<!-- Scripts Bootstrap JQuery -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

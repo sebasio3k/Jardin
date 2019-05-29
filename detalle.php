@@ -93,7 +93,7 @@
 					</div>
 					<div class="row justify-content-center b">
 						<div class="col b">
-							$/. <?php echo $precio; ?>
+                        Precio $ <?php echo number_format($precio,2)  ; ?>
 						</div>
 						<div class="col">
 							Ingrese Cantidad: <input type="number" min="1" max="100" value="1" id="txtcan" name="txtcan">

@@ -43,13 +43,13 @@
 				<div class="navbar-collapse collapse" id="navbarColor01" >
 					<!-- Barra Busqueda  -->
 					<form class="form-inline justify-content-center" id="barra_bus" name="barra_bus">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
+						<input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<ul class="navbar-nav mr-auto">
-						<li>
+						<li class="rounded">
 							<!-- Cerrar Sesion -->
 							<a class="nav-link" href="./php/salir.php">Cerrar Sesi&oacute;n</a>
 						</li>
@@ -80,7 +80,7 @@
 							<td><a href="24_a_productos.php">Productos</a></td>
 						</tr>
 						<tr>
-							<td><a href="15_u_insertar.php">Insertar Usuario</a></td>
+							<td><a href="insertarU.jsp">Insertar Usuario</a></td>
 						</tr>
 						<tr>
 							<td><a href="16_u_eliminar.php">Eliminar Usuario</a></td>

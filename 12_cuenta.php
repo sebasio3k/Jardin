@@ -42,7 +42,7 @@ else{
 <!--  <body>-->
 	<!-- HEADER -->
 	<header class="container-fluid">
-		<div class="container-fluid">
+	<div class="container-fluid">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
 				<a class="navbar-brand" href="2_index_2.php">
 					<!-- logo -->
@@ -52,19 +52,19 @@ else{
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="navbar-collapse collapse" id="navbarColor01" style="">
-					<ul class="navbar-nav mr-auto ul2">
+				<div class="navbar-collapse collapse " id="navbarColor01" style="">
+					<ul class="navbar-nav mr-auto ul2 rounded">
 						<!-- Opciones -->
-						<li class="nav-item active">
-							<a class="nav-link" href="2_index_2.php">Inicio<span class="sr-only">(current)</span></a>
+						<li class="nav-item rounded">
+							<a class="nav-link " href="2_index_2.php">Inicio</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="3_nosotros2.php">Sobre Nosotros</a>
+						<li class="nav-item active rounded">
+							<a class="nav-link" href="3_nosotros2.php">Sobre Nosotros<span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link"href="4_productos2.php">Productos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="5_cursos2.php">Cursos</a>
 						</li>
 						<!-- <li class="nav-item">
@@ -73,13 +73,13 @@ else{
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
-					<form class="form-inline`justify-content-center" id="barra_bus" name="barra_bus">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
+					<form class="form-inline`justify-content-center">
+						<input class="form-control mr-sm-2" type="search" placeholder="¿Buscas algo?" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<ul class="navbar-nav mr-auto ul2">
-						<li>
+					<ul class="navbar-nav mr-auto ul2 ">
+						<li class="rounded">
 							<!-- Carrito -->
 							<a class="nav-link" href="9_carrito.php">Carrito <img src="./img/car.png" class="img-fluid" alt="Responsive image" width="20" height="20">( <?php echo $_SESSION['cuantos'];?> )</a>
 						</li>
@@ -88,7 +88,7 @@ else{
 					</ul>
 					<!-- Dropdown MI CUENTA -->
 					<ul class="navbar-nav mr-auto ">
-						<li class="nav-item dropdown">
+						<li class="nav-item dropdown rounded">
 							<a class="nav-link dropdown-toggle" href="12_cuenta.php" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['user']['nombre'] ?></a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 								<a class="dropdown-item" href="12_cuenta.php">Mi Perfil</a>
@@ -141,7 +141,7 @@ else{
 	 	<div class="row justify-content-center">
 			<div class="col-sm-12 align-self-center">
 				<!-- Titulo Carrito-->
-				<h1 class="titulo text-center">Mis Inscripciones</h1>
+				<h1 class="titulo text-center b">Mis Inscripciones</h1>
 			</div>
 		</div>
 		<br>

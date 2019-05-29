@@ -37,7 +37,7 @@
 <body class="mibody">
 	<!-- HEADER -->
 	<header class="container-fluid">
-		<div class="container-fluid justify-content-center">
+	<div class="container-fluid justify-content-center">
 			<nav class="navbar navbar-expand-lg navbar-dark ">
 				<a class="navbar-brand" href="1_index.php">
 					<!-- logo -->
@@ -47,34 +47,34 @@
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<div class="navbar-collapse collapse" id="navbarColor01">
+				<div class="navbar-collapse collapse" id="navbarColor01" >
 					<ul class="navbar-nav mr-auto">
 						<!-- Opciones -->
-						<li class="nav-item">
-							<a class="nav-link" href="1_index.php">Inicio</a>
+						<li class="nav-item rounded">
+							<a class="nav-link" href="1_index.php">Inicio<span class="sr-only">(current)</span></a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="3_nosotros.php">Sobre Nosotros</a>
 						</li>
-						<li class="nav-item active">
-							<a class="nav-link"href="4_productos.php">Productos<span class="sr-only">(current)</span></a>
+						<li class="nav-item active rounded">
+							<a class="nav-link"href="4_productos.php">Productos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="5_cursos.php">Cursos</a>
 						</li>
-						<li class="nav-item">
+						<li class="nav-item rounded">
 							<a class="nav-link" href="3_nosotros.php">Contacto</a>
 						</li>
 					</ul>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<!-- Barra Busqueda  -->
 					<form class="form-inline`justify-content-center">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda">
+						<input class="form-control mr-sm-2" type="search" placeholder="¿Buscas algo?" aria-label="Search" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<ul class="navbar-nav mr-auto">
-						<li>
+					<ul class="navbar-nav mr-auto rounded">
+						<li class="rounded">
 							<!-- Iniciar sesion -->
 							<a class="nav-link" href="7_login_signin.php">Iniciar Sesi&oacute;n</a>
 						</li>
@@ -127,7 +127,7 @@
 		<!-- TITULO -->
 		<div class="row justify-content-center">
 			<div class="col-xs-12">
-				<h1 class="titulo pad text-center">Productos</h1>
+				<h1 class="titulo pad text-center b">Productos</h1>
 			</div>
 		</div>
 		<br>

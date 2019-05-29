@@ -43,7 +43,7 @@
                                 <img src='./img/prod/".$fila[$o]['idproducto'].".jpg'  class='card-img-top img-fluid' alt='".$fila[$o]['descripcion']."'>
                                 <div class='card-body '>
                                     <h5 class='card-title blurw'>".$fila[$o]['descripcion']."</h5>
-                                    <p class='card-text blurw text-justify'>".$fila[$o]['precio'].".</p>
+                                    <p class='card-text blurw text-justify'>$".number_format($fila[$o]['precio'],2)."</p>
                                     <button type='button' href='#' class='btn btn-primary' data-toggle='modal' data-target='#exampleModal' onmouseover='enviar(".$count2.")'>Me interesa...</button>
                                 </div>
                             </div>

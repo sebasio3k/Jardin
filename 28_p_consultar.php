@@ -43,13 +43,13 @@
 				<div class="navbar-collapse collapse" id="navbarColor01" >
 					<!-- Barra Busqueda  -->
 					<form class="form-inline justify-content-center" id="barra_bus" name="barra_bus">
-						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="inputBusqueda" >
+						<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Buscar" id="inputBusqueda" >
 						<!-- <button class="btn btn-outline-info my-2 my-sm-0" type="submit" >Search</button> -->
 					</form>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<ul class="navbar-nav mr-auto">
-						<li>
+						<li class="rounded">
 							<!-- Cerrar Sesion -->
 							<a class="nav-link" href="./php/salir.php">Cerrar Sesi&oacute;n</a>
 						</li>

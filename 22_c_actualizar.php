@@ -84,7 +84,7 @@
 							<td><a href="24_a_productos.php">Productos</a></td>
 						</tr>
 						<tr>
-							<td><a href="15_u_insertar.php">Insertar Usuario</a></td>
+							<td><a href="http://localhost:8080/vincula/insertarU.jsp">Insertar Usuario</a></td>
 						</tr>
 						<tr>
 							<td><a href="16_u_eliminar.php">Eliminar Usuario</a></td>
@@ -96,7 +96,7 @@
 							<td><a href="17_u_actualizar.php">Actualizar Usuario</a></td>
 						</tr>
 						<tr>
-							<td><a href="20_c_insertar.php">Insertar Curso</a></td>
+							<td><a href="http://localhost:8080/vincula/insertarC.jsp">Insertar Curso</a></td>
 						</tr>
 						<tr>
 							<td><a href="21_c_eliminar.php">Eliminar Curso</a></td>
@@ -108,7 +108,7 @@
 							<td><a href="22_c_actualizar.php">Actualizar Curso</a></td>
 						</tr>
 						<tr>
-							<td><a href="25_p_insertar.php">Insertar Producto</a></td>
+							<td><a href="http://localhost:8080/vincula/insertarP.jsp">Insertar Producto</a></td>
 						</tr>
 						<tr>
 							<td><a href="26_p_eliminar.php">Eliminar Producto</a></td>
@@ -186,7 +186,7 @@
 							</div>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="15_u_insertar.php" role="button">Agregar</a>
+								<a class="btn btn-primary textcolorb" href="http://localhost:8080/vincula/insertarU.jsp" role="button">Agregar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
 								<a class="btn btn-primary textcolorb" href="16_u_eliminar.php" role="button">Eliminar</a>
@@ -277,7 +277,7 @@
 							</div>
 						<div class="row justify-content-center text-center">
 							<div class="col-xs-12 col-4 align-self-center text-center">
-								<a class="btn btn-primary textcolorb" href="25_p_insertar.php" role="button">Agregar</a>
+								<a class="btn btn-primary textcolorb" href="http://localhost:8080/vincula/insertarP.jsp" role="button">Agregar</a>
 							</div>
 							<div class="col-xs-12 col-4 align-self-center text-center">
 								<a class="btn btn-primary textcolorb" href="26_p_eliminar.php" role="button">Eliminar</a>
